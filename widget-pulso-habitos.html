@@ -311,28 +311,7 @@
           Salud: '♡',
           Ejercicio: '⚡',
           Orar: '◇',
-          Ahorrar: '
-          ? new Date(window.pulsoGeneral.ultima_actualizacion).toLocaleString('es-MX', {
-              day: '2-digit', month: 'short', year: 'numeric',
-              hour: '2-digit', minute: '2-digit'
-            })
-          : '—';
-        document.getElementById('updateText').textContent = 'Actualizado: ' + updated;
-
-        status.hidden = true;
-        document.getElementById('content').hidden = false;
-
-        console.info('Pulso de Hábitos: cálculo general', window.pulsoGeneral);
-      } catch (error) {
-        status.textContent = 'No se pudieron cargar los datos de hábitos.';
-        console.error('Pulso de Hábitos:', error);
-      }
-    }
-
-    loadHabitData();
-  </script>
-</body>
-</html>,
+          Ahorrar: '$',
           Leer: '▤',
           Agua: '◉',
           'Uñas': '✦',
@@ -347,16 +326,32 @@
           const shownPct = Number.isFinite(pct) ? pct : 0;
           const card = document.createElement('div');
           card.className = 'habit';
-          card.innerHTML =
-            '<div class="habit-ring" style="--pct:' + shownPct + '" aria-label="' + h + ': ' + shownPct + '%">' +
-              '<div class="habit-ring-inner"><span class="habit-icon" aria-hidden="true">' +
-                (habitIcons[h] || '•') +
-              '</span></div>' +
-            '</div>' +
-            '<span class="habit-name">' + h + '</span>' +
-            '<strong class="habit-pct">' +
-              (Number.isFinite(pct) ? pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) + '%' : '—') +
-            '</strong>';
+
+          const ring = document.createElement('div');
+          ring.className = 'habit-ring';
+          ring.style.setProperty('--pct', shownPct);
+          ring.setAttribute('aria-label', h + ': ' + shownPct + '%');
+
+          const inner = document.createElement('div');
+          inner.className = 'habit-ring-inner';
+          const icon = document.createElement('span');
+          icon.className = 'habit-icon';
+          icon.setAttribute('aria-hidden', 'true');
+          icon.textContent = habitIcons[h] || '•';
+          inner.appendChild(icon);
+          ring.appendChild(inner);
+
+          const name = document.createElement('span');
+          name.className = 'habit-name';
+          name.textContent = h;
+
+          const value = document.createElement('strong');
+          value.className = 'habit-pct';
+          value.textContent = Number.isFinite(pct)
+            ? pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) + '%'
+            : '—';
+
+          card.append(ring, name, value);
           habitsStrip.appendChild(card);
         });
 
