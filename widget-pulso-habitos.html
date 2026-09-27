@@ -49,10 +49,47 @@
 <body>
   <main class="widget">
     <section class="panel" aria-label="Pulso general de hábitos">
-      <div class="placeholder">
-        Estructura base del widget · Pulso de Hábitos
+      <div class="placeholder" id="status" role="status" aria-live="polite">
+        Conectando con los datos de hábitos…
       </div>
     </section>
   </main>
+  <script>
+    'use strict';
+
+    const status = document.getElementById('status');
+    let habitData = null;
+
+    async function loadHabitData() {
+      try {
+        const response = await fetch('data-seguimiento-habitos.json?t=' + Date.now(), {
+          cache: 'no-store'
+        });
+
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data.habitos) || !Array.isArray(data.items)) {
+          throw new Error('Formato de datos inválido');
+        }
+
+        habitData = data;
+        status.textContent =
+          'Datos conectados correctamente · ' +
+          data.habitos.length +
+          ' hábitos disponibles';
+
+        console.info('Pulso de Hábitos: datos cargados', habitData);
+      } catch (error) {
+        status.textContent = 'No se pudieron cargar los datos de hábitos.';
+        console.error('Pulso de Hábitos:', error);
+      }
+    }
+
+    loadHabitData();
+  </script>
 </body>
 </html>
