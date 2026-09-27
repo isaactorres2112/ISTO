@@ -81,6 +81,64 @@
       line-height: 1;
     }
 
+    .habits-strip {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(82px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+    }
+
+    .habit {
+      min-width: 82px;
+      text-align: center;
+    }
+
+    .habit-ring {
+      --pct: 0;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 9px;
+      padding: 3px;
+      border-radius: 50%;
+      background: conic-gradient(var(--gold) calc(var(--pct) * 1%), #29251f 0);
+    }
+
+    .habit-ring-inner {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #080808;
+      border: 1px solid #24211c;
+    }
+
+    .habit-icon {
+      color: #fff;
+      font-size: 23px;
+      line-height: 1;
+      font-family: "Apple Symbols", "Segoe UI Symbol", sans-serif;
+    }
+
+    .habit-name {
+      display: block;
+      color: var(--text);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .habit-pct {
+      display: block;
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
     .update {
       margin: 16px 2px 0;
       color: var(--muted);
@@ -118,6 +176,7 @@
             <strong class="metric-value" id="targetValue">—</strong>
           </div>
         </div>
+        <div class="habits-strip" id="habitsStrip" aria-label="Cumplimiento general por hábito"></div>
         <p class="update" id="updateText"></p>
       </div>
     </section>
@@ -203,6 +262,60 @@
           window.pulsoGeneral.dias_evaluados.toLocaleString('es-MX');
         document.getElementById('targetValue').textContent =
           onTarget + '/' + totalHabits;
+
+        const habitIcons = {
+          Dormir: '☾',
+          Salud: '♡',
+          Ejercicio: '⚡',
+          Orar: '◇',
+          Ahorrar: '
+          ? new Date(window.pulsoGeneral.ultima_actualizacion).toLocaleString('es-MX', {
+              day: '2-digit', month: 'short', year: 'numeric',
+              hour: '2-digit', minute: '2-digit'
+            })
+          : '—';
+        document.getElementById('updateText').textContent = 'Actualizado: ' + updated;
+
+        status.hidden = true;
+        document.getElementById('content').hidden = false;
+
+        console.info('Pulso de Hábitos: cálculo general', window.pulsoGeneral);
+      } catch (error) {
+        status.textContent = 'No se pudieron cargar los datos de hábitos.';
+        console.error('Pulso de Hábitos:', error);
+      }
+    }
+
+    loadHabitData();
+  </script>
+</body>
+</html>,
+          Leer: '▤',
+          Agua: '◉',
+          'Uñas': '✦',
+          Tocarse: '○',
+          Animo: '☀'
+        };
+
+        const habitsStrip = document.getElementById('habitsStrip');
+        habitsStrip.innerHTML = '';
+        data.habitos.forEach(h => {
+          const pct = window.pulsoGeneral.habitos[h];
+          const shownPct = Number.isFinite(pct) ? pct : 0;
+          const card = document.createElement('div');
+          card.className = 'habit';
+          card.innerHTML =
+            '<div class="habit-ring" style="--pct:' + shownPct + '" aria-label="' + h + ': ' + shownPct + '%">' +
+              '<div class="habit-ring-inner"><span class="habit-icon" aria-hidden="true">' +
+                (habitIcons[h] || '•') +
+              '</span></div>' +
+            '</div>' +
+            '<span class="habit-name">' + h + '</span>' +
+            '<strong class="habit-pct">' +
+              (Number.isFinite(pct) ? pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) + '%' : '—') +
+            '</strong>';
+          habitsStrip.appendChild(card);
+        });
 
         const updated = window.pulsoGeneral.ultima_actualizacion
           ? new Date(window.pulsoGeneral.ultima_actualizacion).toLocaleString('es-MX', {
