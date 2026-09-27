@@ -13,7 +13,7 @@
 <div class="card stat"><div class="icon">▦</div><div class="label">Días evaluados</div><strong id="days">—</strong><p class="muted" id="updated">Días registrados · sin incluir hoy</p></div></section>
 <div class="grid"><section class="card"><div class="heading"><h2>Así van tus hábitos</h2><span class="tag">Selecciona uno para explorar</span></div><div id="bars"></div></section>
 <section class="card"><div class="heading"><h2>Hábitos que llegaron a la meta</h2><span class="tag" id="period"></span></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue"></strong><span class="muted">meta ≥ 70%</span></div></div><div class="legend"><span><i class="dot"></i><span id="ontarget"></span> con meta alcanzada</span><span><i class="dot dim"></i><span id="below"></span> por debajo del 70%</span></div></div><div class="insight" id="insight"></div><p class="muted">Meta alcanzada = cumplimiento de al menos el 70% en el mes seleccionado.</p></section>
-<section class="card full" id="explorar"><div class="heading"><h2>Explora un hábito</h2><label>Hábito <select id="habit"></select></label></div><div class="details"><div><span class="muted">Cumplimiento</span><b id="hvalue"></b></div><div><span class="muted">Sesiones realizadas / esperadas</span><b id="sessions"></b></div><div><span class="muted">Meta semanal</span><b id="weekly"></b></div></div><div id="habitChart"></div><p class="muted" id="habitCaption"></p></section>
+<section class="card full" id="explorar"><div class="heading"><h2>Explora un hábito</h2><label>Hábito <select id="habit"></select></label></div><div class="details"><div><span class="muted">Cumplimiento</span><b id="hvalue"></b></div><div><span class="muted">Sesiones realizadas / meta</span><b id="sessions"></b></div><div><span class="muted">Meta semanal</span><b id="weekly"></b></div></div><div id="habitChart"></div><p class="muted" id="habitCaption"></p></section>
 <section class="card full" id="historial"><div class="heading"><h2>Evolución general</h2><span class="tag">Todos los meses disponibles</span></div><div id="generalChart"></div><p class="muted" id="historyCaption"></p></section>
 </div>
 <footer><span>✧ LA CONSTANCIA SE CONSTRUYE DÍA A DÍA.</span><span>REGISTRA EN NOTION · OBSERVA AQUÍ</span></footer></div></main>
@@ -37,7 +37,7 @@ function chart(target,values,names,title){
 }
 function drawHabit(){
  const row=data.items.find(r=>r.key===el('month').value),h=el('habit').value,detail=row.detalle?.[h];
- el('hvalue').textContent=fmt(row.habitos[h])+'%';el('sessions').textContent=detail?fmt(detail.realizadas)+' / '+fmt(detail.esperadas):'—';
+ el('hvalue').textContent=fmt(row.habitos[h])+'%';el('sessions').textContent=detail?fmt(detail.realizadas)+' de '+fmt(detail.esperadas)+' realizadas':'—';
  el('weekly').textContent=fmt(detail?.meta_semanal??data.metas_semanales?.[h])+' veces';
  chart('habitChart',data.items.map(r=>r.habitos[h]),data.items.map(r=>r.mes.slice(0,3)+' '+r.anio),'Evolución de '+label(h));
  el('habitCaption').textContent=data.items.length===1?'Por ahora hay un mes disponible. La evolución aparecerá conforme se acumulen más meses.':'Evolución mensual de '+label(h)+'. La selección de periodo controla las cifras superiores.';
