@@ -14,14 +14,14 @@
   "metas_semanales": {
     "Dormir": 7,
     "Salud": 7,
-    "Orar": 4,
     "Ejercicio": 3,
-    "Uñas": 7,
-    "Leer": 5,
+    "Orar": 4,
     "Ahorrar": 1,
-    "Animo": 7,
+    "Leer": 5,
     "Agua": 5,
-    "Tocarse": 6
+    "Uñas": 7,
+    "Tocarse": 6,
+    "Animo": 7
   },
   "items": [
     {
@@ -66,7 +66,7 @@
           "meta_semanal": 4
         },
         "Ahorrar": {
-          "realizadas": 8,
+          "realizadas": 2,
           "esperadas": 1.5714,
           "dias_evaluados": 11,
           "meta_semanal": 1
