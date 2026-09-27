@@ -139,6 +139,36 @@
       font-weight: 600;
     }
 
+    .highlight {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0b0b0b;
+    }
+
+    .highlight-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .highlight-text {
+      margin: 0;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .highlight-text strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
     .update {
       margin: 16px 2px 0;
       color: var(--muted);
@@ -177,6 +207,10 @@
           </div>
         </div>
         <div class="habits-strip" id="habitsStrip" aria-label="Cumplimiento general por hábito"></div>
+        <div class="highlight" id="highlightBox">
+          <span class="highlight-label">Lo más destacado</span>
+          <p class="highlight-text" id="highlightText">—</p>
+        </div>
         <p class="update" id="updateText"></p>
       </div>
     </section>
@@ -316,6 +350,39 @@
             '</strong>';
           habitsStrip.appendChild(card);
         });
+
+        const rankedHabits = data.habitos
+          .map(h => ({ name: h, pct: window.pulsoGeneral.habitos[h] }))
+          .filter(item => Number.isFinite(item.pct))
+          .sort((a, b) => b.pct - a.pct);
+
+        const leaders = rankedHabits.filter(item => item.pct >= 70);
+        const highlightText = document.getElementById('highlightText');
+
+        if (leaders.length >= 2) {
+          const first = leaders[0];
+          const second = leaders[1];
+          highlightText.innerHTML =
+            '<strong>' + first.name + '</strong> (' +
+            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
+            '%) y <strong>' + second.name + '</strong> (' +
+            second.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
+            '%) lideran tu constancia histórica.';
+        } else if (leaders.length === 1) {
+          const first = leaders[0];
+          highlightText.innerHTML =
+            '<strong>' + first.name + '</strong> destaca con ' +
+            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
+            '% de cumplimiento histórico y ya supera la meta del 70%.';
+        } else if (rankedHabits.length) {
+          const first = rankedHabits[0];
+          highlightText.innerHTML =
+            '<strong>' + first.name + '</strong> es actualmente tu hábito con mayor cumplimiento (' +
+            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
+            '%). Aún no hay hábitos por encima del 70%.';
+        } else {
+          highlightText.textContent = 'Aún no hay suficientes datos para identificar un hábito destacado.';
+        }
 
         const updated = window.pulsoGeneral.ultima_actualizacion
           ? new Date(window.pulsoGeneral.ultima_actualizacion).toLocaleString('es-MX', {
