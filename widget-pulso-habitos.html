@@ -83,6 +83,16 @@
       line-height: 1;
     }
 
+    .metric-update {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: .3px;
+      line-height: 1.2;
+    }
+
     .habits-strip {
       display: grid;
       grid-template-columns: repeat(10, minmax(82px, 1fr));
@@ -211,6 +221,7 @@
           <div class="metric">
             <span class="metric-label">Días evaluados</span>
             <strong class="metric-value" id="daysValue">—</strong>
+            <small class="metric-update" id="daysUpdate">—</small>
           </div>
           <div class="metric">
             <span class="metric-label">Hábitos ≥ 70%</span>
@@ -222,7 +233,7 @@
           <span class="highlight-label">Lo más destacado</span>
           <p class="highlight-text" id="highlightText">—</p>
         </div>
-        <p class="update" id="updateText"></p>
+        <p class="update" id="updateText" hidden></p>
       </div>
     </section>
   </main>
@@ -323,8 +334,17 @@
 
         const habitsStrip = document.getElementById('habitsStrip');
         habitsStrip.innerHTML = '';
-        data.habitos.forEach(h => {
-          const pct = window.pulsoGeneral.habitos[h];
+        const habitsAscending = data.habitos
+          .map(h => ({ name: h, pct: window.pulsoGeneral.habitos[h] }))
+          .sort((a, b) => {
+            if (!Number.isFinite(a.pct)) return 1;
+            if (!Number.isFinite(b.pct)) return -1;
+            return a.pct - b.pct;
+          });
+
+        habitsAscending.forEach(item => {
+          const h = item.name;
+          const pct = item.pct;
           const shownPct = Number.isFinite(pct) ? pct : 0;
           const card = document.createElement('div');
           card.className = 'habit';
@@ -365,38 +385,61 @@
         const leaders = rankedHabits.filter(item => item.pct >= 70);
         const highlightText = document.getElementById('highlightText');
 
-        if (leaders.length >= 2) {
-          const first = leaders[0];
-          const second = leaders[1];
-          highlightText.innerHTML =
-            '<strong>' + first.name + '</strong> (' +
-            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
-            '%) y <strong>' + second.name + '</strong> (' +
-            second.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
-            '%) lideran tu constancia histórica.';
-        } else if (leaders.length === 1) {
-          const first = leaders[0];
-          highlightText.innerHTML =
-            '<strong>' + first.name + '</strong> destaca con ' +
-            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
-            '% de cumplimiento histórico y ya supera la meta del 70%.';
-        } else if (rankedHabits.length) {
-          const first = rankedHabits[0];
-          highlightText.innerHTML =
-            '<strong>' + first.name + '</strong> es actualmente tu hábito con mayor cumplimiento (' +
-            first.pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) +
-            '%). Aún no hay hábitos por encima del 70%.';
-        } else {
-          highlightText.textContent = 'Aún no hay suficientes datos para identificar un hábito destacado.';
+        const previousItems = data.items.length >= 2 ? data.items.slice(-2) : [];
+        const improving = [];
+        const declining = [];
+
+        if (previousItems.length === 2) {
+          const older = previousItems[0].habitos || {};
+          const newer = previousItems[1].habitos || {};
+          data.habitos.forEach(h => {
+            const before = Number(older[h]);
+            const after = Number(newer[h]);
+            if (!Number.isFinite(before) || !Number.isFinite(after)) return;
+            const change = after - before;
+            if (change >= 10) improving.push({ name: h, change });
+            if (change <= -10) declining.push({ name: h, change });
+          });
+          improving.sort((a, b) => b.change - a.change);
+          declining.sort((a, b) => a.change - b.change);
         }
 
-        const updated = window.pulsoGeneral.ultima_actualizacion
-          ? new Date(window.pulsoGeneral.ultima_actualizacion).toLocaleString('es-MX', {
-              day: '2-digit', month: 'short', year: 'numeric',
-              hour: '2-digit', minute: '2-digit'
-            })
+        if (rankedHabits.length) {
+          const strong = leaders.slice(0, 2).map(item => item.name);
+          const parts = [];
+
+          if (strong.length >= 2) {
+            parts.push('<strong>' + strong[0] + '</strong> y <strong>' + strong[1] + '</strong> se mantienen como tus hábitos más constantes.');
+          } else if (strong.length === 1) {
+            parts.push('<strong>' + strong[0] + '</strong> se mantiene como tu hábito más constante.');
+          } else {
+            parts.push('<strong>' + rankedHabits[0].name + '</strong> es el hábito que actualmente muestra mayor constancia.');
+          }
+
+          if (improving.length) {
+            parts.push('<strong>' + improving[0].name + '</strong> muestra una tendencia reciente de mejora.');
+          }
+          if (declining.length) {
+            parts.push('<strong>' + declining[0].name + '</strong> ha perdido constancia recientemente.');
+          }
+
+          const lowest = rankedHabits[rankedHabits.length - 1];
+          if (!declining.length && lowest && !strong.includes(lowest.name)) {
+            parts.push('<strong>' + lowest.name + '</strong> es actualmente el área con mayor oportunidad de mejora.');
+          }
+
+          highlightText.innerHTML = parts.join(' ');
+        } else {
+          highlightText.textContent = 'Aún no hay suficientes datos para identificar tendencias relevantes.';
+        }
+
+        const updatedDate = window.pulsoGeneral.ultima_actualizacion
+          ? new Date(window.pulsoGeneral.ultima_actualizacion)
+          : null;
+        const updatedTime = updatedDate
+          ? updatedDate.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
           : '—';
-        document.getElementById('updateText').textContent = 'Actualizado: ' + updated;
+        document.getElementById('daysUpdate').textContent = 'Actualizado ' + updatedTime;
 
         status.hidden = true;
         document.getElementById('content').hidden = false;
