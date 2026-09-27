@@ -10,7 +10,7 @@
 <div class="card stat"><div class="icon">◉</div><div class="label">Cumplimiento general</div><strong id="average">—</strong><div class="track"><div class="bar" id="avgbar"></div></div><p class="muted">Promedio de todos los meses disponibles, incluido el mes en curso</p></div>
 
 
-<div class="card stat"><div class="icon">▦</div><div class="label">Días evaluados</div><strong id="days">—</strong><p class="muted">Días registrados · sin incluir hoy</p></div></section>
+<div class="card stat"><div class="icon">▦</div><div class="label">Días evaluados</div><strong id="days">—</strong><p class="muted" id="updated">Días registrados · sin incluir hoy</p></div></section>
 <div class="grid"><section class="card"><div class="heading"><h2>Así van tus hábitos</h2><span class="tag">Selecciona uno para explorar</span></div><div id="bars"></div></section>
 <section class="card"><div class="heading"><h2>Hábitos que llegaron a la meta</h2><span class="tag" id="period"></span></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue"></strong><span class="muted">meta ≥ 70%</span></div></div><div class="legend"><span><i class="dot"></i><span id="ontarget"></span> con meta alcanzada</span><span><i class="dot dim"></i><span id="below"></span> por debajo del 70%</span></div></div><div class="insight" id="insight"></div><p class="muted">Meta alcanzada = cumplimiento de al menos el 70% en el mes seleccionado.</p></section>
 <section class="card full" id="explorar"><div class="heading"><h2>Explora un hábito</h2><label>Hábito <select id="habit"></select></label></div><div class="details"><div><span class="muted">Cumplimiento</span><b id="hvalue"></b></div><div><span class="muted">Sesiones realizadas / esperadas</span><b id="sessions"></b></div><div><span class="muted">Meta semanal</span><b id="weekly"></b></div></div><div id="habitChart"></div><p class="muted" id="habitCaption"></p></section>
@@ -47,6 +47,9 @@ function render(){
  const row=data.items.find(r=>r.key===el('month').value),habits=data.habitos.filter(h=>Number.isFinite(row.habitos[h])),avg=globalAverage(data.items),details=Object.values(row.detalle||{});
  el('average').textContent=fmt(avg)+'%';el('avgbar').style.width=(avg??0)+'%';
  el('days').textContent=details.length?Math.max(...details.map(x=>x.dias_evaluados)):'—';
+ const lastDay=data.ultimo_dia_evaluado?new Date(data.ultimo_dia_evaluado+'T12:00:00').toLocaleDateString('es-MX',{day:'2-digit',month:'short',year:'numeric'}):'—';
+ const sync=data.ultima_actualizacion?new Date(data.ultima_actualizacion).toLocaleString('es-MX',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'—';
+ el('updated').textContent='Último día evaluado: '+lastDay+' · Actualizado: '+sync;
  el('period').textContent=row.mes+' '+row.anio;
  const good=habits.filter(h=>row.habitos[h]>=70).length;el('ringvalue').textContent=good+' / '+habits.length;el('ontarget').textContent=good;el('below').textContent=habits.length-good;el('ring').style.background='conic-gradient(var(--gold) '+(habits.length?good/habits.length*360:0)+'deg,#30302c 0deg)';
  const sorted=[...habits].sort((a,b)=>row.habitos[a]-row.habitos[b]||a.localeCompare(b,'es'));
