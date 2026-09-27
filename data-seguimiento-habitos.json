@@ -23,7 +23,7 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-09-27T08:45:39-06:00",
+  "ultima_actualizacion": "2026-09-27T09:00:32-06:00",
   "ultimo_dia_evaluado": "2026-09-26",
   "items": [
     {
@@ -31,76 +31,86 @@
       "mes": "Septiembre",
       "anio": 2026,
       "habitos": {
-        "Dormir": 50.0,
-        "Salud": 66.7,
+        "Dormir": 42.9,
+        "Salud": 57.1,
         "Ejercicio": 0.0,
         "Orar": 0.0,
         "Ahorrar": 100,
         "Leer": 0.0,
-        "Agua": 35.0,
-        "Uñas": 91.7,
-        "Tocarse": 77.8,
-        "Animo": 83.3
+        "Agua": 30.0,
+        "Uñas": 78.6,
+        "Tocarse": 66.7,
+        "Animo": 71.4
       },
       "detalle": {
         "Dormir": {
           "realizadas": 6,
-          "esperadas": 12.0,
+          "esperadas": 14,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 7
         },
         "Salud": {
           "realizadas": 8,
-          "esperadas": 12.0,
+          "esperadas": 14,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 7
         },
         "Ejercicio": {
           "realizadas": 0,
-          "esperadas": 5.1429,
+          "esperadas": 6,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 3
         },
         "Orar": {
           "realizadas": 0,
-          "esperadas": 6.8571,
+          "esperadas": 8,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 4
         },
         "Ahorrar": {
           "realizadas": 2,
-          "esperadas": 1.7143,
+          "esperadas": 2,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 1
         },
         "Leer": {
           "realizadas": 0,
-          "esperadas": 8.5714,
+          "esperadas": 10,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 5
         },
         "Agua": {
           "realizadas": 3,
-          "esperadas": 8.5714,
+          "esperadas": 10,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 5
         },
         "Uñas": {
           "realizadas": 11,
-          "esperadas": 12.0,
+          "esperadas": 14,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 7
         },
         "Tocarse": {
           "realizadas": 8,
-          "esperadas": 10.2857,
+          "esperadas": 12,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 6
         },
         "Animo": {
           "realizadas": 10,
-          "esperadas": 12.0,
+          "esperadas": 14,
           "dias_evaluados": 12,
+          "semanas_evaluadas": 2,
           "meta_semanal": 7
         }
       }
