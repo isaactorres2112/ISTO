@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Leer Notion y generar data-seguimiento-habitos.json
         env:
@@ -124,4 +127,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Actualizar seguimiento mensual de hábitos"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
