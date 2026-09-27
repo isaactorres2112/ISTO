@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulso de Hábitos</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f4f1e9;
+      --muted: #aaa69e;
+      --gold: #c6a367;
+      --line: #3b3327;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .widget {
+      width: 100%;
+      padding: 24px;
+    }
+
+    .panel {
+      min-height: 240px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: 24px;
+    }
+
+    .placeholder {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="widget">
+    <section class="panel" aria-label="Pulso general de hábitos">
+      <div class="placeholder">
+        Estructura base del widget · Pulso de Hábitos
+      </div>
+    </section>
+  </main>
+</body>
+</html>
