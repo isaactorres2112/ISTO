@@ -77,6 +77,7 @@ jobs:
           today = date.today()
           monthly = defaultdict(lambda: {h:{'done':0,'days':0} for h in habits})
           seen_dates = set()
+          last_evaluated_date = None
           for page in results:
               p = page.get('properties', {})
               raw_date = (p.get('Fecha', {}).get('date') or {}).get('start')
@@ -87,6 +88,8 @@ jobs:
               if dt in seen_dates:
                   raise ValueError(f'Fecha duplicada en seguimiento: {dt}')
               seen_dates.add(dt)
+              if last_evaluated_date is None or dt > last_evaluated_date:
+                  last_evaluated_date = dt
               key = dt.strftime('%Y-%m')
               for h in habits:
                   monthly[key][h]['days'] += 1
@@ -108,7 +111,10 @@ jobs:
               items.append(row)
 
           with open('data-seguimiento-habitos.json','w',encoding='utf-8') as f:
-              json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),'items':items},f,ensure_ascii=False,indent=2)
+              json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),
+                         'ultima_actualizacion': datetime.now().astimezone().isoformat(timespec='seconds'),
+                         'ultimo_dia_evaluado': last_evaluated_date.isoformat() if last_evaluated_date else None,
+                         'items':items},f,ensure_ascii=False,indent=2)
           PY
 
       - name: Guardar cambios
