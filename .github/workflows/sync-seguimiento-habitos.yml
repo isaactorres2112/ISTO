@@ -19,6 +19,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATA_SOURCE_ID: 3b401ec1-e57b-80a1-a29e-000b303d2775
+          CONFIG_DATA_SOURCE_ID: 7dedf860-c738-459a-b692-e60a55d41f23
           TZ: America/Mexico_City
         run: |
           python - <<'PY'
@@ -27,24 +28,55 @@ jobs:
           from datetime import datetime, date
 
           habits = ['Dormir','Salud','Ejercicio','Orar','Ahorrar','Leer','Agua','Uñas','Tocarse','Animo']
-          url = f"https://api.notion.com/v1/data_sources/{os.environ['DATA_SOURCE_ID']}/query"
-          results, cursor = [], None
+          def query_data_source(source_id):
+              url = f"https://api.notion.com/v1/data_sources/{source_id}/query"
+              results, cursor = [], None
+              while True:
+                  body = {} if not cursor else {'start_cursor': cursor}
+                  req = urllib.request.Request(url, data=json.dumps(body).encode(), method='POST', headers={
+                      'Authorization': f"Bearer {os.environ['NOTION_TOKEN']}",
+                      'Notion-Version': '2026-03-11',
+                      'Content-Type': 'application/json'
+                  })
+                  with urllib.request.urlopen(req) as r:
+                      payload = json.load(r)
+                  results.extend(payload['results'])
+                  if not payload.get('has_more'):
+                      return results
+                  cursor = payload.get('next_cursor')
+                  if not cursor:
+                      raise ValueError('Notion no devolvió el cursor de la siguiente página')
 
-          while True:
-              body = {} if not cursor else {'start_cursor': cursor}
-              req = urllib.request.Request(url, data=json.dumps(body).encode(), method='POST', headers={
-                  'Authorization': f"Bearer {os.environ['NOTION_TOKEN']}",
-                  'Notion-Version': '2026-03-11',
-                  'Content-Type': 'application/json'
-              })
-              with urllib.request.urlopen(req) as r:
-                  payload = json.load(r)
-              results.extend(payload.get('results', []))
-              if not payload.get('has_more'): break
-              cursor = payload.get('next_cursor')
+          # The configuration is authoritative; fail before writing if it is invalid.
+          goals, configured = {}, set()
+          for page in query_data_source(os.environ['CONFIG_DATA_SOURCE_ID']):
+              p = page.get('properties', {})
+              name = ''.join(t.get('plain_text', t.get('text', {}).get('content', ''))
+                             for t in p.get('Hábito', {}).get('title', [])).strip()
+              name = 'Animo' if name == 'Ánimo' else name
+              if name not in habits:
+                  continue
+              if name in configured:
+                  raise ValueError(f'Hábito duplicado en configuración: {name}')
+              configured.add(name)
+              if p.get('Activo', {}).get('checkbox') is not True:
+                  continue
+              goal = p.get('Meta semanal', {}).get('number')
+              if (isinstance(goal, bool) or not isinstance(goal, (int, float))
+                      or not 1 <= goal <= 7 or int(goal) != goal):
+                  raise ValueError(f'Meta semanal inválida para {name}: {goal}')
+              goals[name] = int(goal)
+          missing = set(habits) - configured
+          if missing:
+              raise ValueError(f'Faltan hábitos en configuración: {sorted(missing)}')
+          habits = [h for h in habits if h in goals]
+          if not habits:
+              raise ValueError('No hay hábitos activos')
+          results = query_data_source(os.environ['DATA_SOURCE_ID'])
 
           today = date.today()
           monthly = defaultdict(lambda: {h:{'done':0,'days':0} for h in habits})
+          seen_dates = set()
           for page in results:
               p = page.get('properties', {})
               raw_date = (p.get('Fecha', {}).get('date') or {}).get('start')
@@ -52,6 +84,9 @@ jobs:
               try: dt = datetime.fromisoformat(raw_date[:10]).date()
               except: continue
               if dt >= today: continue
+              if dt in seen_dates:
+                  raise ValueError(f'Fecha duplicada en seguimiento: {dt}')
+              seen_dates.add(dt)
               key = dt.strftime('%Y-%m')
               for h in habits:
                   monthly[key][h]['days'] += 1
@@ -62,13 +97,17 @@ jobs:
           items=[]
           for key in sorted(monthly):
               y,m=map(int,key.split('-'))
-              row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{}}
+              row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{},'detalle':{}}
               for h,v in monthly[key].items():
-                  row['habitos'][h]=round(v['done']*100/v['days'],1) if v['days'] else None
+                  # Preserve the existing evaluated days; prorate weekly goals.
+                  expected = v['days'] * goals[h] / 7
+                  row['habitos'][h] = round(min(100, v['done'] * 100 / expected), 1) if expected else None
+                  row['detalle'][h] = {'realizadas': v['done'], 'esperadas': round(expected, 4),
+                                       'dias_evaluados': v['days'], 'meta_semanal': goals[h]}
               items.append(row)
 
           with open('data-seguimiento-habitos.json','w',encoding='utf-8') as f:
-              json.dump({'habitos':habits,'items':items},f,ensure_ascii=False,indent=2)
+              json.dump({'habitos':habits,'metas_semanales':goals,'items':items},f,ensure_ascii=False,indent=2)
           PY
 
       - name: Guardar cambios
