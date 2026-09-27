@@ -1,6 +1,10 @@
 name: Sincronizar seguimiento de hábitos desde Notion
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-seguimiento-habitos.yml'
   workflow_dispatch:
   schedule:
     - cron: '37 * * * *'
