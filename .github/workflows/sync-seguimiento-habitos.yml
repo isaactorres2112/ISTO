@@ -31,7 +31,7 @@ jobs:
           python - <<'PY'
           import json, os, urllib.request
           from collections import defaultdict
-          from datetime import datetime, date
+          from datetime import datetime, date, timedelta
 
           habits = ['Dormir','Salud','Ejercicio','Orar','Ahorrar','Leer','Agua','Uñas','Tocarse','Animo']
           def query_data_source(source_id):
@@ -75,7 +75,7 @@ jobs:
           results = query_data_source(os.environ['DATA_SOURCE_ID'])
 
           today = date.today()
-          monthly = defaultdict(lambda: {h:{'done':0,'days':0} for h in habits})
+          monthly = defaultdict(lambda: {h:{'done':0,'days':0,'weeks':set()} for h in habits})
           seen_dates = set()
           last_evaluated_date = None
           for page in results:
@@ -91,8 +91,10 @@ jobs:
               if last_evaluated_date is None or dt > last_evaluated_date:
                   last_evaluated_date = dt
               key = dt.strftime('%Y-%m')
+              week_start = dt - timedelta(days=dt.weekday())
               for h in habits:
                   monthly[key][h]['days'] += 1
+                  monthly[key][h]['weeks'].add(week_start.isoformat())
                   if p.get(h, {}).get('checkbox') is True:
                       monthly[key][h]['done'] += 1
 
@@ -103,11 +105,12 @@ jobs:
               y,m=map(int,key.split('-'))
               row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{},'detalle':{}}
               for h,v in monthly[key].items():
-                  # Preserve the existing evaluated days; prorate weekly goals.
-                  expected = v['days'] * goals[h] / 7
+                  # Cada semana cuenta desde el lunes con su meta semanal completa.
+                  # Si un mes toca una semana parcial, esa semana sigue contando una sola vez.
+                  expected = len(v['weeks']) * goals[h]
                   row['habitos'][h] = round(min(100, v['done'] * 100 / expected), 1) if expected else None
                   row['detalle'][h] = {'realizadas': v['done'], 'esperadas': round(expected, 4),
-                                       'dias_evaluados': v['days'], 'meta_semanal': goals[h]}
+                                       'dias_evaluados': v['days'], 'semanas_evaluadas': len(v['weeks']), 'meta_semanal': goals[h]}
               items.append(row)
 
           with open('data-seguimiento-habitos.json','w',encoding='utf-8') as f:
