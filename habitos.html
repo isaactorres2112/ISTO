@@ -7,12 +7,12 @@
 <main><header class="hero"><div><div class="eyebrow">Tu espacio de seguimiento</div><h1>CONSTANCIA<span>.</span></h1><p class="subtitle">Observa tu progreso. Encuentra tu siguiente paso.</p></div><div class="filters"><label for="month">PERIODO<select id="month" disabled></select></label><button id="reload" type="button">↻ Actualizar</button></div></header>
 <div id="status" role="status" aria-live="polite">Cargando tus hábitos…</div>
 <div id="dashboard" hidden><section class="stats" id="resumen" aria-label="Resumen del periodo">
-<div class="card stat"><div class="icon">◉</div><div class="label">Cumplimiento general</div><strong id="average">—</strong><div class="track"><div class="bar" id="avgbar"></div></div><p class="muted">Promedio de los hábitos del mes seleccionado</p></div>
+<div class="card stat"><div class="icon">◉</div><div class="label">Cumplimiento general</div><strong id="average">—</strong><div class="track"><div class="bar" id="avgbar"></div></div><p class="muted">Promedio de todos los meses disponibles, incluido el mes en curso</p></div>
 
 
 <div class="card stat"><div class="icon">▦</div><div class="label">Días evaluados</div><strong id="days">—</strong><p class="muted">Días registrados · sin incluir hoy</p></div></section>
 <div class="grid"><section class="card"><div class="heading"><h2>Así van tus hábitos</h2><span class="tag">Selecciona uno para explorar</span></div><div id="bars"></div></section>
-<section class="card"><div class="heading"><h2>Hábitos que llegaron a la meta</h2><span class="tag" id="period"></span></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue"></strong><span class="muted">meta al 100%</span></div></div><div class="legend"><span><i class="dot"></i><span id="ontarget"></span> con meta completa</span><span><i class="dot dim"></i><span id="below"></span> pendientes de completar</span></div></div><div class="insight" id="insight"></div><p class="muted">Meta alcanzada = 100% de las sesiones esperadas para los días evaluados del mes.</p></section>
+<section class="card"><div class="heading"><h2>Hábitos que llegaron a la meta</h2><span class="tag" id="period"></span></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue"></strong><span class="muted">meta ≥ 70%</span></div></div><div class="legend"><span><i class="dot"></i><span id="ontarget"></span> con meta alcanzada</span><span><i class="dot dim"></i><span id="below"></span> por debajo del 70%</span></div></div><div class="insight" id="insight"></div><p class="muted">Meta alcanzada = cumplimiento de al menos el 70% en el mes seleccionado.</p></section>
 <section class="card full" id="explorar"><div class="heading"><h2>Explora un hábito</h2><label>Hábito <select id="habit"></select></label></div><div class="details"><div><span class="muted">Cumplimiento</span><b id="hvalue"></b></div><div><span class="muted">Sesiones realizadas / esperadas</span><b id="sessions"></b></div><div><span class="muted">Meta semanal</span><b id="weekly"></b></div></div><div id="habitChart"></div><p class="muted" id="habitCaption"></p></section>
 <section class="card full" id="historial"><div class="heading"><h2>Evolución general</h2><span class="tag">Todos los meses disponibles</span></div><div id="generalChart"></div><p class="muted" id="historyCaption"></p></section>
 </div>
@@ -22,6 +22,7 @@
 const el=id=>document.getElementById(id), fmt=v=>Number.isFinite(v)?v.toLocaleString('es-MX',{maximumFractionDigits:1}):'—', label=h=>h==='Animo'?'Ánimo':h;
 let data=null;
 const average=row=>{const a=Object.values(row.habitos).filter(Number.isFinite);return a.length?a.reduce((s,v)=>s+v,0)/a.length:null};
+function globalAverage(items){const months=items.map(average).filter(Number.isFinite);return months.length?months.reduce((s,v)=>s+v,0)/months.length:null}
 function chart(target,values,names,title){
  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 900 210');svg.setAttribute('class','chart');svg.setAttribute('role','img');svg.setAttribute('aria-label',title+': '+names.map((n,i)=>n+' '+fmt(values[i])+'%').join(', '));
  function add(tag,attrs,text){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;svg.appendChild(e);return e}
@@ -43,13 +44,13 @@ function drawHabit(){
  document.querySelectorAll('.barrow').forEach(b=>{b.classList.toggle('selected',b.dataset.habit===h);b.setAttribute('aria-pressed',String(b.dataset.habit===h))});
 }
 function render(){
- const row=data.items.find(r=>r.key===el('month').value),habits=data.habitos.filter(h=>Number.isFinite(row.habitos[h])),avg=average(row),details=Object.values(row.detalle||{});
+ const row=data.items.find(r=>r.key===el('month').value),habits=data.habitos.filter(h=>Number.isFinite(row.habitos[h])),avg=globalAverage(data.items),details=Object.values(row.detalle||{});
  el('average').textContent=fmt(avg)+'%';el('avgbar').style.width=(avg??0)+'%';
  el('days').textContent=details.length?Math.max(...details.map(x=>x.dias_evaluados)):'—';
  el('period').textContent=row.mes+' '+row.anio;
- const good=habits.filter(h=>row.habitos[h]>=100).length;el('ringvalue').textContent=good+' / '+habits.length;el('ontarget').textContent=good;el('below').textContent=habits.length-good;el('ring').style.background='conic-gradient(var(--gold) '+(habits.length?good/habits.length*360:0)+'deg,#30302c 0deg)';
+ const good=habits.filter(h=>row.habitos[h]>=70).length;el('ringvalue').textContent=good+' / '+habits.length;el('ontarget').textContent=good;el('below').textContent=habits.length-good;el('ring').style.background='conic-gradient(var(--gold) '+(habits.length?good/habits.length*360:0)+'deg,#30302c 0deg)';
  const sorted=[...habits].sort((a,b)=>row.habitos[a]-row.habitos[b]||a.localeCompare(b,'es'));
- el('insight').textContent=sorted.length?(row.habitos[sorted[0]]>=100?'Todas tus metas están completas en este periodo.': 'Tu siguiente paso: dedica atención a '+sorted.slice(0,3).map(label).join(', ')+'. Son los hábitos con menor cumplimiento en este periodo.'):'Sin datos para este periodo.';
+ el('insight').textContent=sorted.length?(row.habitos[sorted[0]]>=70?'Todos tus hábitos alcanzaron la meta del 70% en este periodo.': 'Tu siguiente paso: dedica atención a '+sorted.slice(0,3).map(label).join(', ')+'. Son los hábitos con menor cumplimiento en este periodo.'):'Sin datos para este periodo.';
  el('bars').replaceChildren();
  sorted.forEach(h=>{
  const b=document.createElement('button');b.type='button';b.className='barrow';b.dataset.habit=h;b.setAttribute('aria-label','Explorar '+label(h)+', '+fmt(row.habitos[h])+'%');
