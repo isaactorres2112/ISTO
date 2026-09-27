@@ -26,7 +26,6 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATA_SOURCE_ID: 3b401ec1-e57b-80a1-a29e-000b303d2775
-          CONFIG_DATA_SOURCE_ID: 7dedf860-c738-459a-b692-e60a55d41f23
           TZ: America/Mexico_City
         run: |
           python - <<'PY'
@@ -54,31 +53,28 @@ jobs:
                   if not cursor:
                       raise ValueError('Notion no devolvió el cursor de la siguiente página')
 
-          # The configuration is authoritative; fail before writing if it is invalid.
-          goals, configured = {}, set()
-          for page in query_data_source(os.environ['CONFIG_DATA_SOURCE_ID']):
-              p = page.get('properties', {})
-              name = ''.join(t.get('plain_text', t.get('text', {}).get('content', ''))
-                             for t in p.get('Hábito', {}).get('title', [])).strip()
-              name = 'Animo' if name == 'Ánimo' else name
-              if name not in habits:
-                  continue
-              if name in configured:
-                  raise ValueError(f'Hábito duplicado en configuración: {name}')
-              configured.add(name)
-              if p.get('Activo', {}).get('checkbox') is not True:
-                  continue
-              goal = p.get('Meta semanal', {}).get('number')
-              if (isinstance(goal, bool) or not isinstance(goal, (int, float))
-                      or not 1 <= goal <= 7 or int(goal) != goal):
-                  raise ValueError(f'Meta semanal inválida para {name}: {goal}')
-              goals[name] = int(goal)
-          missing = set(habits) - configured
-          if missing:
-              raise ValueError(f'Faltan hábitos en configuración: {sorted(missing)}')
-          habits = [h for h in habits if h in goals]
-          if not habits:
-              raise ValueError('No hay hábitos activos')
+          # Metas semanales por mes de entrada en vigor.
+          # Para cambiar un mes futuro, añadir una entrada (ej. '2026-10':
+          # {'Ejercicio': 4}). Los cambios se heredan hacia adelante, nunca atrás.
+          goal_changes = {
+              '0001-01': dict(zip(habits, [7, 7, 3, 4, 1, 5, 5, 7, 6, 7])),
+              '2026-09': dict(zip(habits, [7, 7, 3, 4, 1, 5, 5, 7, 6, 7])),
+          }
+
+          def goals_for_month(key):
+              goals = {}
+              for effective, changes in sorted(goal_changes.items()):
+                  datetime.strptime(effective + '-01', '%Y-%m-%d')
+                  if effective > key:
+                      continue
+                  goals.update(changes)
+              if set(goals) != set(habits):
+                  raise ValueError('La configuración debe incluir todos los hábitos')
+              for name, goal in goals.items():
+                  if type(goal) is not int or not 1 <= goal <= 7:
+                      raise ValueError(f'Meta semanal inválida para {name}: {goal}')
+              return goals
+
           results = query_data_source(os.environ['DATA_SOURCE_ID'])
 
           today = date.today()
@@ -103,6 +99,7 @@ jobs:
           months_es=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
           items=[]
           for key in sorted(monthly):
+              goals = goals_for_month(key)
               y,m=map(int,key.split('-'))
               row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{},'detalle':{}}
               for h,v in monthly[key].items():
@@ -114,7 +111,7 @@ jobs:
               items.append(row)
 
           with open('data-seguimiento-habitos.json','w',encoding='utf-8') as f:
-              json.dump({'habitos':habits,'metas_semanales':goals,'items':items},f,ensure_ascii=False,indent=2)
+              json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),'items':items},f,ensure_ascii=False,indent=2)
           PY
 
       - name: Guardar cambios
