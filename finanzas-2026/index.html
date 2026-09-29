@@ -1,38 +1,27 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ISTO · Finanzas 2026</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISTO · Finanzas 2026</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0d0d0f;color:#f5f5f5;font-family:Inter,system-ui,-apple-system,sans-serif}.wrap{max-width:1400px;margin:auto;padding:32px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.eyebrow{font-size:11px;letter-spacing:.18em;color:#b99a55;font-weight:800}.head h1{font-size:30px;margin:5px 0}.muted{color:#8f9097;font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.panel{background:#151518;border:1px solid #27272c;border-radius:16px;padding:20px;min-width:0}.panel h2{font-size:14px;margin:0;color:#b8b8be;font-weight:600}.value{font-size:27px;font-weight:800;margin:8px 0 3px}.avg{font-size:12px;color:#b99a55;margin-bottom:20px}.chart{height:270px}.note{margin-top:20px;padding:15px 18px;border:1px solid #27272c;border-radius:12px;color:#8f9097;font-size:12px}.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:11px;color:#8f9097}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#b99a55;margin-right:5px}
-@media(max-width:1000px){.grid{grid-template-columns:1fr}.chart{height:240px}}@media(max-width:600px){.wrap{padding:20px}.head{align-items:start;flex-direction:column;gap:8px}}
-</style>
-</head>
-<body><main class="wrap">
-<header class="head"><div><div class="eyebrow">ISTO · FINANZAS</div><h1>Resultados acumulados</h1><div class="muted">Ejercicio 2026 · evolución mensual</div></div><div class="muted">MXN</div></header>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#0d2b57;font-family:Arial,Helvetica,sans-serif}.wrap{max-width:1450px;margin:auto;padding:0 34px 36px}.head{background:#082957;color:#fff;margin:0 -34px 30px;padding:22px 34px;display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:11px;letter-spacing:.16em;color:#9fb8d8;font-weight:700}.head h1{font-size:28px;margin:4px 0;text-transform:uppercase;letter-spacing:.02em}.muted{color:#718096;font-size:12px}.head .muted{color:#b9c8dc}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.panel{padding:6px 4px;min-width:0}.panel h2{font-size:13px;text-transform:uppercase;margin:0;color:#183b69;font-weight:800}.value{font-size:29px;font-weight:800;margin:8px 0 3px;color:#092b59}.avg{font-size:12px;color:#6d7f96;margin-bottom:20px}.chart{height:280px}.legend{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px;font-size:11px;color:#60738b}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#0b376d;margin-right:5px}.note{margin-top:28px;padding-top:13px;border-top:1px solid #d8e0ea;color:#718096;font-size:11px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.chart{height:250px}}@media(max-width:600px){.wrap{padding:0 18px 24px}.head{margin:0 -18px 24px;padding:18px;align-items:flex-start;flex-direction:column;gap:7px}.head h1{font-size:22px}}
+</style></head><body><main class="wrap">
+<header class="head"><div><div class="eyebrow">ISTO · FINANZAS</div><h1>Resultados acumulados</h1><div class="muted">Análisis financiero · Ejercicio 2026</div></div><div class="muted">MXN</div></header>
 <section class="grid">
 <article class="panel"><h2>Ingresos acumulados</h2><div class="value" id="ingTotal">—</div><div class="avg" id="ingAvg">Promedio mensual —</div><div class="chart"><canvas id="ingChart"></canvas></div></article>
 <article class="panel"><h2>Egresos acumulados</h2><div class="value" id="egrTotal">—</div><div class="avg" id="egrAvg">Promedio mensual —</div><div class="chart"><canvas id="egrChart"></canvas></div><div class="legend"><span><i class="dot"></i>Administración</span><span><i class="dot"></i>Operación</span><span><i class="dot"></i>Financieros</span></div></article>
 <article class="panel"><h2>Utilidad acumulada</h2><div class="value" id="utiTotal">—</div><div class="avg" id="utiAvg">Promedio mensual —</div><div class="chart"><canvas id="utiChart"></canvas></div></article>
-</section>
-<div class="note">Estructura inicial del dashboard. Los importes se conectarán a los estados financieros mensuales; la utilidad se calculará como ingresos menos egresos.</div>
-</main>
-<script>
+</section><div class="note">Los importes de egresos se incorporarán desde los estados financieros mensuales.</div>
+</main><script>
 const meses=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago"];
-const datos={
- ingresos:[1779002.26,1920929.01,2039193.11,1938844.34,1906629.71,2072130.40,2042979.23,1973243.67],
- administracion:[0,0,0,0,0,0,0,0],operacion:[0,0,0,0,0,0,0,0],financieros:[0,0,0,0,0,0,0,0]
-};
-const mxn=v=>v.toLocaleString("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0});
-const suma=a=>a.reduce((x,y)=>x+y,0),prom=a=>a.length?suma(a)/a.length:0;
-const egresos=meses.map((_,i)=>datos.administracion[i]+datos.operacion[i]+datos.financieros[i]);
-const utilidad=meses.map((_,i)=>datos.ingresos[i]-egresos[i]);
-function metric(prefix,a){document.getElementById(prefix+"Total").textContent=mxn(suma(a));document.getElementById(prefix+"Avg").textContent="Promedio mensual "+mxn(prom(a))}
+const datos={ingresos:[1779002.26,1920929.01,2039193.11,1938844.34,1906629.71,2072130.40,2042979.23,1973243.67],administracion:[0,0,0,0,0,0,0,0],operacion:[0,0,0,0,0,0,0,0],financieros:[0,0,0,0,0,0,0,0]};
+const mxn=v=>v.toLocaleString("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0}),suma=a=>a.reduce((x,y)=>x+y,0),prom=a=>a.length?suma(a)/a.length:0;
+const egresos=meses.map((_,i)=>datos.administracion[i]+datos.operacion[i]+datos.financieros[i]),utilidad=meses.map((_,i)=>datos.ingresos[i]-egresos[i]);
+function metric(p,a){document.getElementById(p+"Total").textContent=mxn(suma(a));document.getElementById(p+"Avg").textContent="Promedio mensual "+mxn(prom(a))}
 metric("ing",datos.ingresos);metric("egr",egresos);metric("uti",utilidad);
-const common={responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:"index"},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+": "+mxn(c.raw)}}},scales:{x:{grid:{display:false},ticks:{color:"#77777f"}},y:{grid:{color:"#252529"},ticks:{color:"#77777f",callback:v=>"$"+(v/1000000).toFixed(1)+"M"}}}};
-const ds=(label,data,dash=false)=>({label,data,borderColor:"#b99a55",backgroundColor:"transparent",borderWidth:2,pointRadius:3,pointHoverRadius:5,tension:.3,borderDash:dash?[5,4]:[]});
+const colors=["#092f62","#467fb5","#86acd0"];
+const common={responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:"index"},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+": "+mxn(c.raw)}}},scales:{x:{grid:{display:false},ticks:{color:"#63768e"}},y:{grid:{color:"#dfe5ed"},ticks:{color:"#63768e",callback:v=>"$"+(v/1000000).toFixed(1)+"M"}}}};
+const ds=(label,data,i=0)=>({label,data,borderColor:colors[i],backgroundColor:"transparent",borderWidth:2.2,pointRadius:2.5,pointHoverRadius:5,tension:.25});
 new Chart(document.getElementById("ingChart"),{type:"line",data:{labels:meses,datasets:[ds("Ingresos",datos.ingresos)]},options:common});
-new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Administración",datos.administracion),ds("Operación",datos.operacion,true),ds("Financieros",datos.financieros)]},options:common});
+new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Administración",datos.administracion,0),ds("Operación",datos.operacion,1),ds("Financieros",datos.financieros,2)]},options:common});
 new Chart(document.getElementById("utiChart"),{type:"line",data:{labels:meses,datasets:[ds("Utilidad",utilidad)]},options:common});
 </script></body></html>
