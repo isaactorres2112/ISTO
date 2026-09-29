@@ -8,7 +8,7 @@
 <header class="head"><div><div class="eyebrow">ISTO · FINANZAS</div><h1>Resultados acumulados</h1><div class="muted">Análisis financiero · Ejercicio 2026</div></div><div class="muted">MXN</div></header>
 <section class="grid">
 <article class="panel"><h2>Ingresos acumulados</h2><div class="value" id="ingTotal">—</div><div class="avg" id="ingAvg">Promedio mensual —</div><div class="chart"><canvas id="ingChart"></canvas></div></article>
-<article class="panel"><h2>Egresos acumulados</h2><div class="value" id="egrTotal">—</div><div class="avg" id="egrAvg">Promedio mensual —</div><div class="chart"><canvas id="egrChart"></canvas></div><div class="legend"><span><i class="dot"></i>Administración</span><span><i class="dot"></i>Operación</span><span><i class="dot"></i>Financieros</span></div></article>
+<article class="panel"><h2>Egresos acumulados</h2><div class="value" id="egrTotal">—</div><div class="avg" id="egrAvg">Promedio mensual —</div><div class="chart"><canvas id="egrChart"></canvas></div></article>
 <article class="panel"><h2>Utilidad acumulada</h2><div class="value" id="utiTotal">—</div><div class="avg" id="utiAvg">Promedio mensual —</div><div class="chart"><canvas id="utiChart"></canvas></div></article>
 </section><div class="note">Ingresos, egresos de administración, operación y financieros incorporados de enero a agosto de 2026. La utilidad corresponde a ingresos menos egresos totales.</div>
 </main><script>
@@ -22,6 +22,6 @@ const colors=["#092f62","#467fb5","#86acd0"];
 const common={responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:"index"},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+": "+mxn(c.raw)}}},scales:{x:{grid:{display:false},ticks:{color:"#63768e"}},y:{grid:{color:"#dfe5ed"},ticks:{color:"#63768e",callback:v=>"$"+(v/1000000).toFixed(1)+"M"}}}};
 const ds=(label,data,i=0)=>({label,data,borderColor:colors[i],backgroundColor:"transparent",borderWidth:2.2,pointRadius:2.5,pointHoverRadius:5,tension:.25});
 new Chart(document.getElementById("ingChart"),{type:"line",data:{labels:meses,datasets:[ds("Ingresos",datos.ingresos)]},options:common});
-new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Administración",datos.administracion,0),ds("Operación",datos.operacion,1),ds("Financieros",datos.financieros,2)]},options:common});
+new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Egresos",egresos)]},options:common});
 new Chart(document.getElementById("utiChart"),{type:"line",data:{labels:meses,datasets:[ds("Utilidad",utilidad)]},options:common});
 </script></body></html>
