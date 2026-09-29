@@ -10,10 +10,10 @@
 <article class="panel"><h2>Ingresos acumulados</h2><div class="value" id="ingTotal">—</div><div class="avg" id="ingAvg">Promedio mensual —</div><div class="chart"><canvas id="ingChart"></canvas></div></article>
 <article class="panel"><h2>Egresos acumulados</h2><div class="value" id="egrTotal">—</div><div class="avg" id="egrAvg">Promedio mensual —</div><div class="chart"><canvas id="egrChart"></canvas></div><div class="legend"><span><i class="dot"></i>Administración</span><span><i class="dot"></i>Operación</span><span><i class="dot"></i>Financieros</span></div></article>
 <article class="panel"><h2>Utilidad acumulada</h2><div class="value" id="utiTotal">—</div><div class="avg" id="utiAvg">Promedio mensual —</div><div class="chart"><canvas id="utiChart"></canvas></div></article>
-</section><div class="note">Los importes de egresos se incorporarán desde los estados financieros mensuales.</div>
+</section><div class="note">Egresos de operación incorporados de enero a agosto. Administración y financieros quedan pendientes de integrar.</div>
 </main><script>
 const meses=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago"];
-const datos={ingresos:[1779002.26,1920929.01,2039193.11,1938844.34,1906629.71,2072130.40,2042979.23,1973243.67],administracion:[0,0,0,0,0,0,0,0],operacion:[0,0,0,0,0,0,0,0],financieros:[0,0,0,0,0,0,0,0]};
+const datos={ingresos:[1779002.26,1920929.01,2039193.11,1938844.34,1906629.71,2072130.40,2042979.23,1973243.67],administracion:[0,0,0,0,0,0,0,0],operacion:[760340.70,593850.88,611093.69,572631.64,613802.35,639089.25,693066.03,603405.39],financieros:[0,0,0,0,0,0,0,0]};
 const mxn=v=>v.toLocaleString("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0}),suma=a=>a.reduce((x,y)=>x+y,0),prom=a=>a.length?suma(a)/a.length:0;
 const egresos=meses.map((_,i)=>datos.administracion[i]+datos.operacion[i]+datos.financieros[i]),utilidad=meses.map((_,i)=>datos.ingresos[i]-egresos[i]);
 function metric(p,a){document.getElementById(p+"Total").textContent=mxn(suma(a));document.getElementById(p+"Avg").textContent="Promedio mensual "+mxn(prom(a))}
