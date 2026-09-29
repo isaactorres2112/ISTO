@@ -113,7 +113,7 @@ jobs:
                                        'dias_evaluados': v['days'], 'semanas_evaluadas': len(v['weeks']), 'meta_semanal': goals[h]}
               items.append(row)
 
-          with open('data-seguimiento-habitos.json','w',encoding='utf-8') as f:
+          with open('NOTION/data-seguimiento-habitos.json','w',encoding='utf-8') as f:
               json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),
                          'ultima_actualizacion': datetime.now().astimezone().isoformat(timespec='seconds'),
                          'ultimo_dia_evaluado': last_evaluated_date.isoformat() if last_evaluated_date else None,
@@ -122,7 +122,7 @@ jobs:
 
       - name: Guardar cambios
         run: |
-          git add data-seguimiento-habitos.json
+          git add NOTION/data-seguimiento-habitos.json
           if git diff --cached --quiet; then
             echo "Sin cambios en los datos"
             exit 0
