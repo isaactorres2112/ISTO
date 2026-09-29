@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulso de Hábitos</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f4f1e9;
+      --muted: #aaa69e;
+      --gold: #c6a367;
+      --line: #3b3327;
+    }
+
+    * { box-sizing: border-box; }
+
+    [hidden] { display: none !important; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .widget {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .panel {
+      min-height: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      padding: 18px;
+    }
+
+    .placeholder {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--line);
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 20px 14px;
+      background: #0d0d0d;
+      text-align: center;
+    }
+
+    .metric-label {
+      display: block;
+      min-height: 34px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      display: block;
+      margin-top: 10px;
+      color: var(--gold);
+      font-size: clamp(30px, 7vw, 46px);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .metric-update {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: .3px;
+      line-height: 1.2;
+    }
+
+    .habits-strip {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(82px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+    }
+
+    .habit {
+      min-width: 82px;
+      text-align: center;
+    }
+
+    .habit-ring {
+      --pct: 0;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 9px;
+      padding: 3px;
+      border-radius: 50%;
+      background: conic-gradient(var(--gold) calc(var(--pct) * 1%), #29251f 0);
+    }
+
+    .habit-ring-inner {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #080808;
+      border: 1px solid #24211c;
+    }
+
+    .habit-icon {
+      color: #fff;
+      font-size: 23px;
+      line-height: 1;
+      font-family: "Apple Symbols", "Segoe UI Symbol", sans-serif;
+    }
+
+    .habit-name {
+      display: block;
+      color: var(--text);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .habit-pct {
+      display: block;
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .highlight {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0b0b0b;
+    }
+
+    .highlight-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .highlight-text {
+      margin: 0;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .highlight-text strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .update {
+      margin: 10px 2px 0;
+      color: var(--muted);
+      font-size: 11px;
+      text-align: right;
+    }
+
+    @media (max-width: 560px) {
+      .widget { padding: 6px; }
+      .panel { padding: 12px; border-radius: 13px; }
+      .metric { padding: 16px 6px; }
+      .metric-label { font-size: 9px; letter-spacing: .8px; }
+      .metric-value { font-size: 28px; }
+      .habits-strip { margin-top: 14px; gap: 9px; }
+      .habit-ring { width: 62px; height: 62px; }
+      .habit-icon { font-size: 20px; }
+      .highlight { padding: 12px 14px; }
+      .highlight-text { font-size: 13px; }
+    }
+
+    @media (min-width: 900px) {
+      .widget { max-width: 1180px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="widget">
+    <section class="panel" aria-label="Pulso general de hábitos">
+      <div class="placeholder" id="status" role="status" aria-live="polite">
+        Conectando con los datos de hábitos…
+      </div>
+      <div id="content" hidden>
+        <div class="metrics" aria-label="Resumen general de hábitos">
+          <div class="metric">
+            <span class="metric-label">Cumplimiento general</span>
+            <strong class="metric-value" id="generalValue">—</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Días evaluados</span>
+            <strong class="metric-value" id="daysValue">—</strong>
+            <small class="metric-update" id="daysUpdate">—</small>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Hábitos ≥ 70%</span>
+            <strong class="metric-value" id="targetValue">—</strong>
+          </div>
+        </div>
+        <div class="habits-strip" id="habitsStrip" aria-label="Cumplimiento general por hábito"></div>
+        <div class="highlight" id="highlightBox">
+          <span class="highlight-label">Lo más destacado</span>
+          <p class="highlight-text" id="highlightText">—</p>
+        </div>
+        <p class="update" id="updateText" hidden></p>
+      </div>
+    </section>
+  </main>
+  <script>
+    'use strict';
+
+    const status = document.getElementById('status');
+    let habitData = null;
+
+    async function loadHabitData() {
+      try {
+        const response = await fetch('data-seguimiento-habitos.json?t=' + Date.now(), {
+          cache: 'no-store'
+        });
+
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data.habitos) || !Array.isArray(data.items)) {
+          throw new Error('Formato de datos inválido');
+        }
+
+        habitData = data;
+
+        const totals = Object.fromEntries(
+          data.habitos.map(h => [h, { realizadas: 0, esperadas: 0 }])
+        );
+        const evaluatedDates = new Set();
+
+        data.items.forEach(item => {
+          data.habitos.forEach(h => {
+            const detail = item.detalle?.[h];
+            if (!detail) return;
+            totals[h].realizadas += Number(detail.realizadas) || 0;
+            totals[h].esperadas += Number(detail.esperadas) || 0;
+          });
+        });
+
+        const habitPercentages = Object.fromEntries(
+          data.habitos.map(h => {
+            const t = totals[h];
+            const pct = t.esperadas > 0
+              ? Math.min(100, t.realizadas * 100 / t.esperadas)
+              : null;
+            return [h, pct === null ? null : Math.round(pct * 10) / 10];
+          })
+        );
+
+        const validPercentages = Object.values(habitPercentages)
+          .filter(Number.isFinite);
+        const general = validPercentages.length
+          ? validPercentages.reduce((sum, value) => sum + value, 0) / validPercentages.length
+          : null;
+
+        const daysByMonth = data.items.map(item => {
+          const details = Object.values(item.detalle || {});
+          return details.length
+            ? Math.max(...details.map(d => Number(d.dias_evaluados) || 0))
+            : 0;
+        });
+
+        window.pulsoGeneral = {
+          cumplimiento_general: general === null ? null : Math.round(general * 10) / 10,
+          dias_evaluados: daysByMonth.reduce((sum, days) => sum + days, 0),
+          habitos: habitPercentages,
+          totales: totals,
+          ultima_actualizacion: data.ultima_actualizacion || null,
+          ultimo_dia_evaluado: data.ultimo_dia_evaluado || null
+        };
+
+        const onTarget = validPercentages.filter(value => value >= 70).length;
+        const totalHabits = validPercentages.length;
+
+        document.getElementById('generalValue').textContent =
+          window.pulsoGeneral.cumplimiento_general === null
+            ? '—'
+            : window.pulsoGeneral.cumplimiento_general.toLocaleString('es-MX', { maximumFractionDigits: 1 }) + '%';
+        document.getElementById('daysValue').textContent =
+          window.pulsoGeneral.dias_evaluados.toLocaleString('es-MX');
+        document.getElementById('targetValue').textContent =
+          onTarget + '/' + totalHabits;
+
+        const habitIcons = {
+          Dormir: '☾',
+          Salud: '♡',
+          Ejercicio: '⚡',
+          Orar: '◇',
+          Ahorrar: '$',
+          Leer: '▤',
+          Agua: '◉',
+          'Uñas': '✦',
+          Tocarse: '○',
+          Animo: '☀'
+        };
+
+        const habitsStrip = document.getElementById('habitsStrip');
+        habitsStrip.innerHTML = '';
+        const habitsAscending = data.habitos
+          .map(h => ({ name: h, pct: window.pulsoGeneral.habitos[h] }))
+          .sort((a, b) => {
+            if (!Number.isFinite(a.pct)) return 1;
+            if (!Number.isFinite(b.pct)) return -1;
+            return a.pct - b.pct;
+          });
+
+        habitsAscending.forEach(item => {
+          const h = item.name;
+          const pct = item.pct;
+          const shownPct = Number.isFinite(pct) ? pct : 0;
+          const card = document.createElement('div');
+          card.className = 'habit';
+
+          const ring = document.createElement('div');
+          ring.className = 'habit-ring';
+          ring.style.setProperty('--pct', shownPct);
+          ring.setAttribute('aria-label', h + ': ' + shownPct + '%');
+
+          const inner = document.createElement('div');
+          inner.className = 'habit-ring-inner';
+          const icon = document.createElement('span');
+          icon.className = 'habit-icon';
+          icon.setAttribute('aria-hidden', 'true');
+          icon.textContent = habitIcons[h] || '•';
+          inner.appendChild(icon);
+          ring.appendChild(inner);
+
+          const name = document.createElement('span');
+          name.className = 'habit-name';
+          name.textContent = h;
+
+          const value = document.createElement('strong');
+          value.className = 'habit-pct';
+          value.textContent = Number.isFinite(pct)
+            ? pct.toLocaleString('es-MX', { maximumFractionDigits: 1 }) + '%'
+            : '—';
+
+          card.append(ring, name, value);
+          habitsStrip.appendChild(card);
+        });
+
+        const rankedHabits = data.habitos
+          .map(h => ({ name: h, pct: window.pulsoGeneral.habitos[h] }))
+          .filter(item => Number.isFinite(item.pct))
+          .sort((a, b) => b.pct - a.pct);
+
+        const leaders = rankedHabits.filter(item => item.pct >= 70);
+        const highlightText = document.getElementById('highlightText');
+
+        const previousItems = data.items.length >= 2 ? data.items.slice(-2) : [];
+        const improving = [];
+        const declining = [];
+
+        if (previousItems.length === 2) {
+          const older = previousItems[0].habitos || {};
+          const newer = previousItems[1].habitos || {};
+          data.habitos.forEach(h => {
+            const before = Number(older[h]);
+            const after = Number(newer[h]);
+            if (!Number.isFinite(before) || !Number.isFinite(after)) return;
+            const change = after - before;
+            if (change >= 10) improving.push({ name: h, change });
+            if (change <= -10) declining.push({ name: h, change });
+          });
+          improving.sort((a, b) => b.change - a.change);
+          declining.sort((a, b) => a.change - b.change);
+        }
+
+        if (rankedHabits.length) {
+          const strong = leaders.slice(0, 2).map(item => item.name);
+          const parts = [];
+
+          if (strong.length >= 2) {
+            parts.push('<strong>' + strong[0] + '</strong> y <strong>' + strong[1] + '</strong> se mantienen como tus hábitos más constantes.');
+          } else if (strong.length === 1) {
+            parts.push('<strong>' + strong[0] + '</strong> se mantiene como tu hábito más constante.');
+          } else {
+            parts.push('<strong>' + rankedHabits[0].name + '</strong> es el hábito que actualmente muestra mayor constancia.');
+          }
+
+          if (improving.length) {
+            parts.push('<strong>' + improving[0].name + '</strong> muestra una tendencia reciente de mejora.');
+          }
+          if (declining.length) {
+            parts.push('<strong>' + declining[0].name + '</strong> ha perdido constancia recientemente.');
+          }
+
+          const lowest = rankedHabits[rankedHabits.length - 1];
+          if (!declining.length && lowest && !strong.includes(lowest.name)) {
+            parts.push('<strong>' + lowest.name + '</strong> es actualmente el área con mayor oportunidad de mejora.');
+          }
+
+          highlightText.innerHTML = parts.join(' ');
+        } else {
+          highlightText.textContent = 'Aún no hay suficientes datos para identificar tendencias relevantes.';
+        }
+
+        const updatedDate = window.pulsoGeneral.ultima_actualizacion
+          ? new Date(window.pulsoGeneral.ultima_actualizacion)
+          : null;
+        const updatedTime = updatedDate
+          ? updatedDate.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+          : '—';
+        document.getElementById('daysUpdate').textContent = 'Actualizado ' + updatedTime;
+
+        status.hidden = true;
+        document.getElementById('content').hidden = false;
+
+        console.info('Pulso de Hábitos: cálculo general', window.pulsoGeneral);
+      } catch (error) {
+        status.textContent = 'No se pudieron cargar los datos de hábitos.';
+        console.error('Pulso de Hábitos:', error);
+      }
+    }
+
+    loadHabitData();
+  </script>
+</body>
+</html>
