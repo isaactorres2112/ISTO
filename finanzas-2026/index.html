@@ -21,7 +21,8 @@ metric("ing",datos.ingresos);metric("egr",egresos);metric("uti",utilidad);
 const colors=["#092f62","#467fb5","#86acd0"];
 const common={responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:"index"},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+": "+mxn(c.raw)}}},scales:{x:{grid:{display:false},ticks:{color:"#63768e"}},y:{grid:{color:"#dfe5ed"},ticks:{color:"#63768e",callback:v=>"$"+(v/1000000).toFixed(1)+"M"}}}};
 const ds=(label,data,i=0)=>({label,data,borderColor:colors[i],backgroundColor:"transparent",borderWidth:2.2,pointRadius:2.5,pointHoverRadius:5,tension:.25});
-new Chart(document.getElementById("ingChart"),{type:"line",data:{labels:meses,datasets:[ds("Ingresos",datos.ingresos)]},options:common});
-new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Egresos",egresos)]},options:common});
-new Chart(document.getElementById("utiChart"),{type:"line",data:{labels:meses,datasets:[ds("Utilidad",utilidad)]},options:common});
+const avgLine=(data)=>({label:"Promedio mensual",data:data.map(()=>prom(data)),borderColor:"#8b95a3",backgroundColor:"transparent",borderWidth:1.5,borderDash:[6,5],pointRadius:0,pointHoverRadius:0,tension:0});
+new Chart(document.getElementById("ingChart"),{type:"line",data:{labels:meses,datasets:[ds("Ingresos",datos.ingresos),avgLine(datos.ingresos)]},options:common});
+new Chart(document.getElementById("egrChart"),{type:"line",data:{labels:meses,datasets:[ds("Egresos",egresos),avgLine(egresos)]},options:common});
+new Chart(document.getElementById("utiChart"),{type:"line",data:{labels:meses,datasets:[ds("Utilidad",utilidad),avgLine(utilidad)]},options:common});
 </script></body></html>
