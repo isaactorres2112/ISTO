@@ -67,12 +67,12 @@ jobs:
               for c,vals in monthly[key].items():
                   row['circulos'][c]=round((sum(vals)/len(vals))/5*100,1) if vals else None
               items.append(row)
-          with open('data-seguimiento-bienestar.json','w',encoding='utf-8') as f:
+          with open('NOTION/data-seguimiento-bienestar.json','w',encoding='utf-8') as f:
               json.dump({'circulos':circles,'items':items},f,ensure_ascii=False,indent=2)
           PY
       - name: Guardar cambios
         run: |
-          git add data-seguimiento-bienestar.json
+          git add NOTION/data-seguimiento-bienestar.json
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
