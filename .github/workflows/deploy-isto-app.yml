@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false\n# deployment refresh 2026-09-29
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -25,13 +25,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
+        uses: actions/checkout@v6
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload ISTO App
-        uses: actions/upload-pages-artifact@v3
+      - name: Validate app shell
+        run: |
+          test -f app/index.html
+          test -f app/styles.css
+          test -f app/app.js
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: "./app"
-      - name: Deploy
+          path: ./app
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
