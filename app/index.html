@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11110f"><title>ISTO</title>
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+  <section class="hero">
+    <div class="top"><span class="brand">ISTO</span><button class="round" aria-label="Notificaciones">⌁</button></div>
+    <div class="welcome">
+      <p id="greeting">Buenas noches, Isaac</p><h1 id="date">Martes, 29 de septiembre</h1>
+      <blockquote id="quote">“La disciplina de hoy construye la libertad de mañana.”</blockquote>
+    </div>
+    <div class="glass today">
+      <div class="section-title"><span>Para hoy</span><span class="muted">2 pendientes</span></div>
+      <label><input type="checkbox"><span>Cambiar cheque</span></label>
+      <label><input type="checkbox"><span>Hacer arqueo de caja chica</span></label>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="glass habits">
+      <div><span class="eyebrow">Hábitos · esta semana</span><strong id="habitPct">Sin registros</strong></div>
+      <div class="ring" style="--p:0"><span>—</span></div>
+    </div>
+
+    <div class="next">
+      <div class="section-title"><span>Lo siguiente</span></div>
+      <article class="glass item"><span class="icon">◌</span><div><b>Mañana</b><p>Comenzar sistema de finanzas personales</p></div></article>
+      <article class="glass item"><span class="icon">✦</span><div><b>3 oct · Hora pendiente</b><p>Cirque du Soleil · Playa del Carmen</p></div></article>
+    </div>
+
+    <nav class="access">
+      <button><span>⌁</span>Agenda</button><button><span>✓</span>Hábitos</button>
+      <button><span>◉</span>Ánimo</button><button><span>✧</span>Ideas</button>
+    </nav>
+  </section>
+
+  <div class="ask glass"><button class="plus">＋</button><input aria-label="Dile algo a ISTO" placeholder="Dile algo a ISTO…"><button class="mic">●</button></div>
+</main>
+<script src="app.js"></script>
+</body></html>
