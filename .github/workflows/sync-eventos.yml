@@ -20,7 +20,7 @@ jobs:
       - name: Leer Eventos de Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          DATA_SOURCE_ID: 53cc6f7f-2295-42f2-9380-d26015f5f097
+          DATA_SOURCE_ID: 56d4077c-ae29-48fe-acf5-77b9561ee458
           TZ: America/Cancun
         run: |
           python - <<'PY'
