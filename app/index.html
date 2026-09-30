@@ -1,44 +1,21 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#11110f"><title>ISTO</title>
-  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#11110f"><title>ISTO</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css"></head><body>
 <main class="shell">
-  <section class="hero">
-    <div class="top"><span class="brand">ISTO</span><button class="round" aria-label="Notificaciones">⌁</button></div>
-    <div class="welcome">
-      <p id="greeting">Buenas noches, Isaac</p><h1 id="date">Martes, 29 de septiembre</h1>
-      <blockquote id="quote">“La disciplina de hoy construye la libertad de mañana.”</blockquote>
-    </div>
-    <div class="glass today">
-      <div class="section-title"><span>Para hoy</span><span class="muted">2 pendientes</span></div>
-      <label><input type="checkbox"><span>Cambiar cheque</span></label>
-      <label><input type="checkbox"><span>Hacer arqueo de caja chica</span></label>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="glass habits">
-      <div><span class="eyebrow">Hábitos · esta semana</span><strong id="habitPct">Sin registros</strong></div>
-      <div class="ring" style="--p:0"><span>—</span></div>
-    </div>
-
-    <div class="next">
-      <div class="section-title"><span>Lo siguiente</span></div>
-      <article class="glass item"><span class="icon">◌</span><div><b>Mañana</b><p>Comenzar sistema de finanzas personales</p></div></article>
-      <article class="glass item"><span class="icon">✦</span><div><b>3 oct · Hora pendiente</b><p>Cirque du Soleil · Playa del Carmen</p></div></article>
-    </div>
-
-    <nav class="access">
-      <button><span>⌁</span>Agenda</button><button><span>✓</span>Hábitos</button>
-      <button><span>◉</span>Ánimo</button><button><span>✧</span>Ideas</button>
-    </nav>
-  </section>
-
-  <div class="ask glass"><button class="plus">＋</button><input aria-label="Dile algo a ISTO" placeholder="Dile algo a ISTO…"><button class="mic">●</button></div>
-</main>
-<script src="app.js"></script>
-</body></html>
+<section id="homeView">
+<div class="top"><span class="brand">ISTO</span><button class="round">⌁</button></div>
+<div class="welcome"><p id="greeting">Buenas noches, Isaac</p><h1 id="date"></h1><blockquote id="quote"></blockquote></div>
+<div class="glass today"><div class="section-title"><span>Para hoy</span><span class="muted">ISTO</span></div><p class="muted">Tu resumen diario aparecerá aquí.</p></div>
+<section class="content"><div class="glass habits"><div><span class="eyebrow">Hábitos · esta semana</span><strong>Sin registros</strong></div><div class="ring" style="--p:0"><span>—</span></div></div><div class="next"><div class="section-title"><span>Lo siguiente</span></div><article class="glass item"><span class="icon">✦</span><div><b>03 OCT · 17:30</b><p>Cirque du Soleil</p></div></article></div>
+<nav class="access"><button id="agendaBtn"><span>⌁</span>Agenda</button><button><span>✓</span>Hábitos</button><button><span>◉</span>Ánimo</button><button><span>✧</span>Ideas</button></nav></section>
+</section>
+<section id="agendaView" class="agenda-view hidden">
+<div class="top"><button id="backBtn" class="back">‹ Inicio</button><span class="brand">AGENDA</span><button class="round">＋</button></div>
+<div class="agenda-head"><span class="eyebrow">Los próximos 5 días</span><h1>Tu tiempo,<br>en orden.</h1><p>Lo pendiente, hoy y lo que viene.</p></div>
+<div class="agenda-grid">
+<section class="agenda-column overdue"><div class="agenda-label"><span>Pendiente</span><small>Antes de hoy</small></div><div class="empty-card glass"><span>✓</span><p>No hay eventos pendientes</p></div></section>
+<section class="agenda-column focus"><div class="agenda-label"><span>Hoy</span><small id="agendaToday"></small></div><div class="empty-card glass"><span>○</span><p>No tienes eventos para hoy</p></div></section>
+<section class="agenda-column upcoming"><div class="agenda-label"><span>Próximos</span><small>Hasta 5 días</small></div>
+<article class="event-card glass"><div class="date-tile"><b>03</b><span>OCT</span></div><div class="event-copy"><span class="eyebrow">17:30 — 21:30</span><h2>Cirque du Soleil</h2><p>Evento programado</p></div><span class="event-check">○</span></article>
+</section></div>
+</section>
+<div class="ask glass"><button class="plus">＋</button><input aria-label="Dile algo a ISTO" placeholder="Dile algo a ISTO…"><button class="mic">●</button></div>
+</main><script src="app.js"></script></body></html>
