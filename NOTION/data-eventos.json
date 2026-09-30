@@ -1,0 +1,1149 @@
+{
+  "ultima_actualizacion": "2026-09-30T17:00:11-05:00",
+  "items": [
+    {
+      "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
+      "evento": "Pago Verificación",
+      "fecha": "2026-09-26T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "58901ec1-e57b-83c8-a0f7-81d0cb95eb27",
+      "evento": "Cumple Rodolfo Torres",
+      "fecha": "2026-10-01T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e5b01ec1-e57b-8331-97db-8195b4617e8a",
+      "evento": "Pago CFE",
+      "fecha": "2026-10-01T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
+      "evento": "Finanzas personales",
+      "fecha": "2026-10-01T13:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b3801ec1-e57b-820c-b346-01cc6d9a1cf8",
+      "evento": "Cumple Sebastian Torres",
+      "fecha": "2026-10-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "92d01ec1-e57b-83f2-a012-81f385344d4f",
+      "evento": "Cumple Angel Rodriguez",
+      "fecha": "2026-10-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "4b701ec1-e57b-8390-8ace-010a3e5f0226",
+      "evento": "Pago Sapal",
+      "fecha": "2026-10-02T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "0ac01ec1-e57b-8206-ad23-0102008ecb01",
+      "evento": "Cumple Viviana Rodriguez",
+      "fecha": "2026-10-03T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
+      "evento": "Despensa",
+      "fecha": "2026-10-03T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "f9d01ec1-e57b-833a-ad58-013174a55eb9",
+      "evento": "Pago Megacable",
+      "fecha": "2026-10-03T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "3ea01ec1-e57b-8160-bfb4-e509fb3fd81a",
+      "evento": "Cirque du Soleil",
+      "fecha": "2026-10-03T17:30:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Evento"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "1ca01ec1-e57b-837f-bd37-0139ed769593",
+      "evento": "Pagó H. de Morelia",
+      "fecha": "2026-10-04T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a5c01ec1-e57b-8374-b37e-81a749ae8d72",
+      "evento": "Pago de Gas Rosa",
+      "fecha": "2026-10-05T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9ac01ec1-e57b-829c-9da1-01df43b4eb33",
+      "evento": "Cumple Martha Puga",
+      "fecha": "2026-10-06T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "3a801ec1-e57b-8340-9169-81dd6b8ccd0c",
+      "evento": "Cumple Adriana Perez",
+      "fecha": "2026-10-09T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9ba01ec1-e57b-82a8-95a1-8161f7ea59f1",
+      "evento": "Corte de Pelo",
+      "fecha": "2026-10-09T19:30:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "c3c01ec1-e57b-8244-9d88-01cbd8014291",
+      "evento": "Cumple Patricia Rodriguez",
+      "fecha": "2026-10-10T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "87801ec1-e57b-82c3-bec6-81624e6188a2",
+      "evento": "Cumple Elias Rincon",
+      "fecha": "2026-10-10T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
+      "evento": "América vs Monterrey",
+      "fecha": "2026-10-10T22:00:00.000-05:00",
+      "fin": "2026-10-10T23:59:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "eda01ec1-e57b-8316-9c32-0162c743f674",
+      "evento": "Viernes de valores",
+      "fecha": "2026-10-16T07:30:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "c6a01ec1-e57b-8387-bab6-010ff4321188",
+      "evento": "Cumple Miguel Rodriguez",
+      "fecha": "2026-10-17T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b6d01ec1-e57b-834c-87b3-81b2f8ed0dc8",
+      "evento": "Cumple Valeria Rodriguez",
+      "fecha": "2026-10-19T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "04301ec1-e57b-8245-b417-013b1a3bba7e",
+      "evento": "Cumple Ivon Llanos",
+      "fecha": "2026-10-20T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "79f01ec1-e57b-8314-bf55-017e45d65c6e",
+      "evento": "Cumple Diego Garcia",
+      "fecha": "2026-10-24T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "43601ec1-e57b-83ef-8783-8178f38fdd2f",
+      "evento": "Cumple Cristina Rodriguez",
+      "fecha": "2026-10-27T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "68d01ec1-e57b-83d6-bfcb-81b0b803daad",
+      "evento": "Cumple Arturo Teran",
+      "fecha": "2026-10-29T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "3e301ec1-e57b-803f-bd18-f22bb05ef2c4",
+      "evento": "Halloween",
+      "fecha": "2026-10-31T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "4a401ec1-e57b-836b-bd41-01007aceda37",
+      "evento": "Cumple Alejandra Huerta",
+      "fecha": "2026-10-31T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "51901ec1-e57b-8201-84cf-010b9666db5f",
+      "evento": "Cumple Luis Garces",
+      "fecha": "2026-10-31T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "c1401ec1-e57b-8361-b4c4-01d4e2be6037",
+      "evento": "Cumple Carolina Torres",
+      "fecha": "2026-11-12T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e5101ec1-e57b-83df-ac12-81bf9ae2739b",
+      "evento": "Puente de Noviembre",
+      "fecha": "2026-11-16T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a7a01ec1-e57b-8262-be0b-012ad22ed049",
+      "evento": "Dia de Accion de gracias",
+      "fecha": "2026-11-26T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "6b801ec1-e57b-824e-b970-8117b740f6c3",
+      "evento": "Vacaciones",
+      "fecha": "2026-12-19",
+      "fin": "2027-01-03",
+      "check": false,
+      "grupo": [
+        "Evento"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "49801ec1-e57b-835c-9dd2-811f0eef4617",
+      "evento": "Noche buena",
+      "fecha": "2026-12-24T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b6501ec1-e57b-83c2-9828-81f21faa821b",
+      "evento": "Navidad",
+      "fecha": "2026-12-25T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "47101ec1-e57b-833e-b629-8197674a1c1d",
+      "evento": "Cumple Silvestre Rodriguez",
+      "fecha": "2026-12-29T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "86a01ec1-e57b-8239-a5ee-813117fb4e34",
+      "evento": "Cumple David Torres",
+      "fecha": "2026-12-29T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "6ea01ec1-e57b-826f-871a-012cf1a7520e",
+      "evento": "Fin de Año",
+      "fecha": "2026-12-31T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "1c801ec1-e57b-8236-94f2-814338ee6ca9",
+      "evento": "Año nuevo",
+      "fecha": "2027-01-01T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "5be01ec1-e57b-823b-a68d-81de47c9e75c",
+      "evento": "Pago Predial",
+      "fecha": "2027-01-01T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "0e301ec1-e57b-8233-bdf5-01765fc1f6fe",
+      "evento": "Cumple Angelica Rodriguez",
+      "fecha": "2027-01-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "21001ec1-e57b-83ee-a7aa-81d6ef75911e",
+      "evento": "Cumple Judith Juárez",
+      "fecha": "2027-01-10T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "99001ec1-e57b-8362-845d-01a7ee844d4f",
+      "evento": "Cumple Juan Torres",
+      "fecha": "2027-01-14T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b6601ec1-e57b-826a-b82d-81c12d8f087a",
+      "evento": "Cumple Felipe Torres",
+      "fecha": "2027-01-14T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "2c101ec1-e57b-821b-8d46-01ebc64eaaa5",
+      "evento": "Pago Refrendo",
+      "fecha": "2027-01-15T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e9b01ec1-e57b-82e2-b81b-81d211157277",
+      "evento": "Fundación de Leon",
+      "fecha": "2027-01-20T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "f8701ec1-e57b-8299-85cd-016a255812a1",
+      "evento": "Cumple Yareli Aguilar",
+      "fecha": "2027-01-20T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "39f01ec1-e57b-8274-9310-019ea81a2689",
+      "evento": "Cumple Fide Aguilar",
+      "fecha": "2027-01-21T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "f3101ec1-e57b-83c7-aaa4-8119836d97ce",
+      "evento": "Cumple Maria de la Paz Llanos",
+      "fecha": "2027-01-24T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "f1501ec1-e57b-8345-9a19-81783a60ed99",
+      "evento": "Cumple Elvira Llanos",
+      "fecha": "2027-01-25T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "68b01ec1-e57b-8241-bffe-81834b7d8f84",
+      "evento": "Cumple Said Torres",
+      "fecha": "2027-01-26T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "56101ec1-e57b-83c4-808c-019970bd68d4",
+      "evento": "Cumple Maribel Llanos",
+      "fecha": "2027-01-28T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b2c01ec1-e57b-83af-8df2-01e955424cda",
+      "evento": "Miércoles de ceniza",
+      "fecha": "2027-02-10T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "13d01ec1-e57b-833d-8fdd-81927b73291d",
+      "evento": "Cumple Karen Ramos",
+      "fecha": "2027-02-20T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "1bd01ec1-e57b-82a8-ae43-01ebdfec16c4",
+      "evento": "Dia de la bandera",
+      "fecha": "2027-02-24T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "57201ec1-e57b-8350-95b7-81af9c988c8d",
+      "evento": "Cumple Julia Montalvo",
+      "fecha": "2027-02-25T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a0501ec1-e57b-8377-8772-81e5f3c6ee36",
+      "evento": "Día de la Familia",
+      "fecha": "2027-03-07T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "41901ec1-e57b-8273-b85b-811c2b6cca34",
+      "evento": "Día de la Mujer",
+      "fecha": "2027-03-08T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "58201ec1-e57b-8383-a391-01f211c5e1bc",
+      "evento": "Cumple Jose Gomez",
+      "fecha": "2027-03-14T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "80201ec1-e57b-82fa-9121-01409487e531",
+      "evento": "Puente de Marzo",
+      "fecha": "2027-03-15T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "c6401ec1-e57b-8315-bb6e-01899a5d376b",
+      "evento": "Día de San Patricio",
+      "fecha": "2027-03-17T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "15401ec1-e57b-82b3-bd3e-011f5dfc5bf4",
+      "evento": "Domingo de Ramos",
+      "fecha": "2027-03-21T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "2d501ec1-e57b-8379-b3ef-011549e036d1",
+      "evento": "Jueves Santo",
+      "fecha": "2027-03-25T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "40601ec1-e57b-821c-a154-810add8a0acf",
+      "evento": "Viernes Santo",
+      "fecha": "2027-03-26T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "59701ec1-e57b-836d-b705-81864e44980f",
+      "evento": "Sábado Santo",
+      "fecha": "2027-03-27T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a9601ec1-e57b-82f4-8093-019eb7bddb5b",
+      "evento": "Domingo de Resurrección",
+      "fecha": "2027-03-28T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "6fb01ec1-e57b-822d-a0b6-014c6fd48250",
+      "evento": "Anv. 3 de bodas",
+      "fecha": "2027-04-07T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "fa901ec1-e57b-831c-8d7a-01df75c8b96c",
+      "evento": "Cumple Ernesto García",
+      "fecha": "2027-04-08T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "76e01ec1-e57b-83bc-833d-0131b49b0b3b",
+      "evento": "Anv. 6 Rodolfo Torres",
+      "fecha": "2027-04-09T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "eed01ec1-e57b-8224-8550-0166a51e57b5",
+      "evento": "Cumple Jesús Rodríguez",
+      "fecha": "2027-04-21T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "42701ec1-e57b-82ce-b79d-81befe589f6e",
+      "evento": "Cumple Adrián Gómez",
+      "fecha": "2027-04-22T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "7f601ec1-e57b-82db-a27f-01e26418c8e0",
+      "evento": "Cumple Vero Torres",
+      "fecha": "2027-04-25T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "0e001ec1-e57b-83e0-bfb9-0195e73237b9",
+      "evento": "Cumple Elena Torres",
+      "fecha": "2027-04-26T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "80e01ec1-e57b-8369-95bd-81296b0a29ef",
+      "evento": "Día del niño",
+      "fecha": "2027-04-30T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "6de01ec1-e57b-8298-bc2d-816d107ead3a",
+      "evento": "Día del Trabajo",
+      "fecha": "2027-05-01T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "80e01ec1-e57b-8241-b2f3-81dd6abfb5d5",
+      "evento": "Cumple Filiberto Beltrán",
+      "fecha": "2027-05-03T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9a301ec1-e57b-829c-a609-8119648d84b0",
+      "evento": "Cumple Lupita Llanos",
+      "fecha": "2027-05-07T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "5d601ec1-e57b-828f-9008-01dec33bcbe1",
+      "evento": "Día de las madres",
+      "fecha": "2027-05-10T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a7201ec1-e57b-8237-829f-81c000cab9b6",
+      "evento": "Cumple Amairani Avendaño",
+      "fecha": "2027-05-10T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "41201ec1-e57b-8341-8a1b-81318b88912b",
+      "evento": "Día del Contador",
+      "fecha": "2027-05-25T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "dcb01ec1-e57b-822d-a999-010dacab80cb",
+      "evento": "Cumple Salvador Villalobos",
+      "fecha": "2027-05-25T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "fde01ec1-e57b-824b-b938-8108b2de7a14",
+      "evento": "Cumple Angel Molina",
+      "fecha": "2027-05-30T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "55201ec1-e57b-828a-b1b0-0101dd5535fe",
+      "evento": "Cumple Fanny Rovelo",
+      "fecha": "2027-06-01T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "1d501ec1-e57b-8222-8812-81e0f627c495",
+      "evento": "Cumple Moises Falcon",
+      "fecha": "2027-06-01T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "2fa01ec1-e57b-82a4-ba0a-0199046a4930",
+      "evento": "Cumple Juanita Rodríguez",
+      "fecha": "2027-06-01T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "6f101ec1-e57b-8262-94a8-817e15f0dfed",
+      "evento": "Día del Padre",
+      "fecha": "2027-06-20T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "d2601ec1-e57b-83e0-841c-01504e7f48bc",
+      "evento": "Cumple Catherine Torres",
+      "fecha": "2027-06-20T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "5c701ec1-e57b-839d-8387-01f00082b3b8",
+      "evento": "No abrir hasta",
+      "fecha": "2027-06-21T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "02b01ec1-e57b-8285-9cb5-81ece61002f5",
+      "evento": "Cumple Manuel Gonzáles",
+      "fecha": "2027-07-03T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "61001ec1-e57b-8220-9537-81362fecfa65",
+      "evento": "Cumple Jose Llanos",
+      "fecha": "2027-07-03T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "17601ec1-e57b-8370-868f-81a5f4e14ecd",
+      "evento": "Cumple Sebastian Trujillo",
+      "fecha": "2027-07-05T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9fe01ec1-e57b-822f-8c6f-0177dc95c2e7",
+      "evento": "Cumple Roberto González",
+      "fecha": "2027-07-13T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "83b01ec1-e57b-8397-8d70-81ca69d5fb5c",
+      "evento": "Cumple Mili Mendiola",
+      "fecha": "2027-08-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "1b001ec1-e57b-8341-a698-01fa2c7cabe6",
+      "evento": "Cumple Abril Cardeña",
+      "fecha": "2027-08-04T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "ebc01ec1-e57b-8314-899e-019dc572c7a2",
+      "evento": "Cumple Horacio Torres",
+      "fecha": "2027-08-12T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b1001ec1-e57b-830c-970e-0192db8cf299",
+      "evento": "Dia de los abuelos",
+      "fecha": "2027-08-28T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3501ec1-e57b-828a-9014-01a4dec12ad8",
+      "evento": "Pago de seguro auto",
+      "fecha": "2027-09-01T12:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "77001ec1-e57b-8265-aadf-01ea3c1788bd",
+      "evento": "Cumple Lía Rodriguez",
+      "fecha": "2027-09-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9bd01ec1-e57b-830c-b4c0-01710494929c",
+      "evento": "Cumple Andrea Ramos",
+      "fecha": "2027-09-14T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "7ab01ec1-e57b-82d3-965c-01619e8a7710",
+      "evento": "Día de la Independencia",
+      "fecha": "2027-09-16T06:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Celebración anual"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "cfd01ec1-e57b-83b7-8213-81c783e9c26a",
+      "evento": "Cumple Zeidy Martinez",
+      "fecha": "2027-09-18T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a9201ec1-e57b-838b-8325-816d55279345",
+      "evento": "Cumple Fabiola Cruz",
+      "fecha": "2027-09-22T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e4e01ec1-e57b-83c2-b407-01587fdb745d",
+      "evento": "Cumple Erick Velazquez",
+      "fecha": "2027-09-24T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "7e501ec1-e57b-829c-a257-015d38e52f47",
+      "evento": "Cumple America Llanos",
+      "fecha": "2027-09-29T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    }
+  ]
+}
