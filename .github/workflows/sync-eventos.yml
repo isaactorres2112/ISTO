@@ -1,0 +1,65 @@
+name: Sincronizar eventos desde Notion
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Leer Eventos de Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATA_SOURCE_ID: 53cc6f7f-2295-42f2-9380-d26015f5f097
+          TZ: America/Cancun
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          from datetime import datetime
+          url=f"https://api.notion.com/v1/data_sources/{os.environ['DATA_SOURCE_ID']}/query"
+          results=[]; cursor=None
+          while True:
+              body={} if not cursor else {'start_cursor':cursor}
+              req=urllib.request.Request(url,data=json.dumps(body).encode(),method='POST',headers={
+                  'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
+                  'Notion-Version':'2026-03-11','Content-Type':'application/json'})
+              with urllib.request.urlopen(req) as r: payload=json.load(r)
+              results.extend(payload.get('results',[]))
+              if not payload.get('has_more'): break
+              cursor=payload.get('next_cursor')
+          items=[]
+          for page in results:
+              p=page.get('properties',{})
+              fecha=(p.get('Fecha',{}).get('date') or {})
+              if not fecha.get('start'): continue
+              title=p.get('Evento',{}).get('title',[])
+              name=''.join(x.get('plain_text','') for x in title).strip() or 'Evento'
+              detail=''.join(x.get('plain_text','') for x in p.get('Detalles',{}).get('rich_text',[])).strip()
+              items.append({'id':page.get('id'),'evento':name,'fecha':fecha.get('start'),'fin':fecha.get('end'),
+                            'check':bool(p.get('Check',{}).get('checkbox')),
+                            'grupo':[x.get('name') for x in p.get('Grupo',{}).get('multi_select',[])],
+                            'detalles':detail or None})
+          items.sort(key=lambda x:x['fecha'])
+          os.makedirs('NOTION',exist_ok=True)
+          with open('NOTION/data-eventos.json','w',encoding='utf-8') as f:
+              json.dump({'ultima_actualizacion':datetime.now().astimezone().isoformat(timespec='seconds'),'items':items},f,ensure_ascii=False,indent=2)
+          PY
+      - name: Guardar cambios
+        run: |
+          git add NOTION/data-eventos.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Actualizar eventos desde Notion"
+          git pull --rebase origin main
+          git push origin HEAD:main
