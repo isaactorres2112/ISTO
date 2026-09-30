@@ -1,11 +1,6 @@
 name: Deploy ISTO App to GitHub Pages
 
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - "app/**"
-      - ".github/workflows/deploy-isto-app.yml"
   workflow_dispatch:
 
 permissions:
