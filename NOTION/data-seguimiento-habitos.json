@@ -23,7 +23,7 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-01T00:55:14-06:00",
+  "ultima_actualizacion": "2026-10-01T01:49:58-06:00",
   "ultimo_dia_evaluado": "2026-09-30",
   "hoy": {
     "fecha": "2026-10-01",
@@ -58,7 +58,7 @@
         "Agua": 33.3,
         "Uñas": 71.4,
         "Tocarse": 66.7,
-        "Animo": 61.9
+        "Animo": 66.7
       },
       "detalle": {
         "Dormir": {
@@ -125,7 +125,7 @@
           "meta_semanal": 6
         },
         "Animo": {
-          "realizadas": 13,
+          "realizadas": 14,
           "esperadas": 21,
           "dias_evaluados": 16,
           "semanas_evaluadas": 3,
