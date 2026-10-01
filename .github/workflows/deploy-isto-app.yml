@@ -1,6 +1,13 @@
-name: Deploy ISTO App to GitHub Pages
+name: Deploy ISTO to GitHub Pages
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "app/**"
+      - "NOTION/**"
+      - "finanzas-2026/**"
+      - ".github/workflows/deploy-isto-app.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,15 +30,19 @@ jobs:
         uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Validate app shell
+      - name: Preparar sitio completo
         run: |
           test -f app/index.html
           test -f app/styles.css
           test -f app/app.js
+          mkdir -p _site
+          cp -R app/. _site/
+          cp -R NOTION _site/NOTION
+          cp -R finanzas-2026 _site/finanzas-2026
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./app
+          path: ./_site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
