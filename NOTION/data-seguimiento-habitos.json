@@ -23,8 +23,26 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-09-30T20:49:35-06:00",
+  "ultima_actualizacion": "2026-09-30T21:35:39-06:00",
   "ultimo_dia_evaluado": "2026-09-29",
+  "hoy": {
+    "fecha": "2026-09-30",
+    "cumplidos": 5,
+    "total": 10,
+    "porcentaje": 50,
+    "habitos": {
+      "Dormir": true,
+      "Salud": true,
+      "Ejercicio": false,
+      "Orar": false,
+      "Ahorrar": true,
+      "Leer": false,
+      "Agua": false,
+      "Uñas": true,
+      "Tocarse": true,
+      "Animo": false
+    }
+  },
   "items": [
     {
       "key": "2026-09",
