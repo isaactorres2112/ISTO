@@ -75,6 +75,8 @@ jobs:
           results = query_data_source(os.environ['DATA_SOURCE_ID'])
 
           today = date.today()
+          today_state = {h: False for h in habits}
+          today_done = 0
           monthly = defaultdict(lambda: {h:{'done':0,'days':0,'weeks':set()} for h in habits})
           seen_dates = set()
           last_evaluated_date = None
@@ -84,7 +86,11 @@ jobs:
               if not raw_date: continue
               try: dt = datetime.fromisoformat(raw_date[:10]).date()
               except: continue
-              if dt >= today: continue
+              if dt > today: continue
+              if dt == today:
+                  today_state = {h: bool(p.get(h, {}).get('checkbox')) for h in habits}
+                  today_done = sum(today_state.values())
+                  continue
               if dt in seen_dates:
                   raise ValueError(f'Fecha duplicada en seguimiento: {dt}')
               seen_dates.add(dt)
@@ -117,6 +123,7 @@ jobs:
               json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),
                          'ultima_actualizacion': datetime.now().astimezone().isoformat(timespec='seconds'),
                          'ultimo_dia_evaluado': last_evaluated_date.isoformat() if last_evaluated_date else None,
+                         'hoy': {'fecha': today.isoformat(), 'cumplidos': today_done, 'total': len(habits), 'porcentaje': round(today_done*100/len(habits)), 'habitos': today_state},
                          'items':items},f,ensure_ascii=False,indent=2)
           PY
 
