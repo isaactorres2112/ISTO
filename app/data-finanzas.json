@@ -1,53 +1,55 @@
 {
-  "actualizado": "01/10/2026",
-  "disponible": 7820,
-  "gasto_hoy": 647.75,
-  "gasto_mes": 647.75,
+  "actualizado": "02/10/2026 00:12",
+  "disponible": 2546.12,
+  "gasto_hoy": 0,
+  "gasto_mes": 8147.75,
+  "ingresos_mes": 0,
   "cuentas": [
     {
       "nombre": "Banorte Nómina",
-      "tipo": "Banco",
-      "saldo": 7500
+      "tipo": "Activo · Banco",
+      "saldo": 0
     },
     {
       "nombre": "Efectivo",
-      "tipo": "Efectivo",
+      "tipo": "Activo · Efectivo",
       "saldo": 320
     },
     {
-      "nombre": "TC Mercado Libre",
-      "tipo": "Tarjeta de crédito",
-      "saldo": -547.75
-    }
-  ],
-  "categorias": [
-    {
-      "nombre": "Suscripciones",
-      "importe": 399
+      "nombre": "Mercado Pago",
+      "tipo": "Activo · Banco",
+      "saldo": 2226.12
     },
     {
-      "nombre": "Alimentos",
-      "importe": 248.75
+      "nombre": "TC Mercado Libre",
+      "tipo": "Pasivo · Tarjeta de crédito",
+      "saldo": 547.75
     }
   ],
   "movimientos": [
     {
-      "fecha": "01/10/2026",
+      "fecha": "2026-10-01",
       "concepto": "Café",
       "nombre": "Cafe290",
       "importe": 148.75
     },
     {
-      "fecha": "01/10/2026",
+      "fecha": "2026-10-01",
       "concepto": "Suscripción ChatGPT",
       "nombre": "OpenAI",
       "importe": 399
     },
     {
-      "fecha": "01/10/2026",
+      "fecha": "2026-10-01",
       "concepto": "Comida",
       "nombre": "Fonda Nicolle",
       "importe": 100
+    },
+    {
+      "fecha": "2026-10-01",
+      "concepto": "Renta del departamento",
+      "nombre": "Renta",
+      "importe": 7500
     }
   ]
 }
