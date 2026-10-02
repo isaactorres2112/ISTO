@@ -6,7 +6,7 @@ on:
       - '.github/workflows/sync-seguimiento-bienestar.yml'
   workflow_dispatch:
   schedule:
-    - cron: '47 * * * *'
+    - cron: '45 * * * *'
 permissions:
   contents: write
 jobs:
