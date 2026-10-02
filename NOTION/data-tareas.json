@@ -1,92 +1,68 @@
 {
-  "ultima_actualizacion": "2026-10-02T08:39:29.655Z",
+  "ultima_actualizacion": "2026-10-02T07:45:00-06:00",
   "items": [
     {
-      "id": "3c701ec1-e57b-800a-a4c1-c3f2d1bb7998",
-      "tarea": "Presupuesto DAFI",
-      "trabajo": "2026-09-22",
-      "trabajo_fin": "2026-09-30",
-      "fecha_limite": "2026-09-30",
+      "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
+      "tarea": "Inventario de Activos",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-10-30",
+      "fecha_limite": "2026-11-27",
       "check": false
     },
     {
-      "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
-      "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-02",
-      "trabajo_fin": null,
-      "fecha_limite": "2026-10-02",
-      "check": false
-    },
-    {
-      "id": "3c801ec1-e57b-8015-abf6-ef5257b64fcc",
-      "tarea": "Actualizar firmas CT",
-      "trabajo": "2026-09-29",
-      "trabajo_fin": "2026-09-30",
-      "fecha_limite": "2026-09-30",
-      "check": false
-    },
-    {
-      "id": "3c801ec1-e57b-8023-8b5f-cd135ccc1abf",
-      "tarea": "Capacitación Tesorero",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-28",
-      "fecha_limite": "2026-09-30",
-      "check": true
-    },
-    {
-      "id": "3c801ec1-e57b-8097-a284-e428d293ccd8",
-      "tarea": "Presupuesto FIGLO",
-      "trabajo": "2026-09-22",
-      "trabajo_fin": "2026-09-30",
-      "fecha_limite": "2026-09-30",
-      "check": false
-    },
-    {
-      "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
-      "tarea": "Cobranza",
-      "trabajo": "2026-09-30",
-      "trabajo_fin": "2026-09-30",
-      "fecha_limite": "2026-09-30",
-      "check": false
-    },
-    {
-      "id": "3c801ec1-e57b-80eb-ab18-c60b2a287bac",
-      "tarea": "Convivió con CT",
-      "trabajo": "2026-10-03",
-      "trabajo_fin": null,
-      "fecha_limite": "2026-10-03",
-      "check": false
-    },
-    {
-      "id": "3c901ec1-e57b-8046-b87c-d77347610b71",
-      "tarea": "Cierre contable",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-07",
-      "fecha_limite": "2026-10-07",
-      "check": false
-    },
-    {
-      "id": "3c901ec1-e57b-804c-a1c9-fcc80d3bbb1a",
-      "tarea": "Compra de escritorios",
-      "trabajo": "2026-08-03",
-      "trabajo_fin": "2026-08-05",
-      "fecha_limite": "2026-08-05",
-      "check": true
-    },
-    {
-      "id": "3c901ec1-e57b-80b0-b054-faf78db1d004",
-      "tarea": "Evaluaciones",
+      "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
+      "tarea": "Eventos DAFI",
       "trabajo": "2026-10-08",
-      "trabajo_fin": "2026-10-09",
-      "fecha_limite": "2026-10-09",
+      "trabajo_fin": "2026-10-30",
+      "fecha_limite": "2026-10-23",
       "check": false
     },
     {
-      "id": "3c901ec1-e57b-80c5-b9f6-f05e99f53694",
-      "tarea": "Reparto de utilidades",
-      "trabajo": "2027-01-11",
-      "trabajo_fin": "2027-01-29",
-      "fecha_limite": "2027-01-29",
+      "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
+      "tarea": "Eventos FIGLO",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-10-06",
+      "fecha_limite": "2026-10-17",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b4-b325-c70b1c912d2e",
+      "tarea": "Vacaciones del personal",
+      "trabajo": "2026-10-08",
+      "trabajo_fin": "2026-10-12",
+      "fecha_limite": "2026-09-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8029-9eaa-d2582ecdd655",
+      "tarea": "Actas de Honorarios",
+      "trabajo": "2026-10-02",
+      "trabajo_fin": "2026-10-13",
+      "fecha_limite": "2026-10-15",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80aa-ac12-c533b2f31ba6",
+      "tarea": "PIPC",
+      "trabajo": "2026-10-19",
+      "trabajo_fin": "2026-10-23",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b9-a154-c66bc6274ba5",
+      "tarea": "Oficinas Regionales",
+      "trabajo": "2026-10-01",
+      "trabajo_fin": "2026-10-15",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
+      "tarea": "Inventarios",
+      "trabajo": "2026-09-30",
+      "trabajo_fin": null,
+      "fecha_limite": "2026-09-30",
       "check": false
     },
     {
@@ -94,6 +70,70 @@
       "tarea": "Devolución de Impuestos",
       "trabajo": "2026-10-01",
       "trabajo_fin": "2026-10-02",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8065-96a2-cb1989597052",
+      "tarea": "Objetivos específicos",
+      "trabajo": "2026-10-01",
+      "trabajo_fin": "2026-10-15",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
+      "tarea": "Compras DAFI",
+      "trabajo": "2026-10-01",
+      "trabajo_fin": "2026-10-09",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8011-b9ad-f690f502c113",
+      "tarea": "AC-26-1378 “COMPRAS”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80e1-960c-fe30ccdb8760",
+      "tarea": "AC-26-1379 “RECORRIDO”",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b6-9b68-c0e6a7604b7b",
+      "tarea": "AC-26-1381 “ACTIVOS”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80ed-b1c9-ca5f3ebb7990",
+      "tarea": "AC-26-1382 “PROVEDORES”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b3-96d4-e6e7fe665bf9",
+      "tarea": "AC-26-1383 “DYA”",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8026-b30a-fb544be591e0",
+      "tarea": "OC-26-6 “1005”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -106,51 +146,11 @@
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-8011-b9ad-f690f502c113",
-      "tarea": "AC-26-1378 “COMPRAS”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
-      "fecha_limite": "2026-12-04",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
-      "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-30",
-      "fecha_limite": "2026-10-23",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-8026-b30a-fb544be591e0",
-      "tarea": "OC-26-6 “1005”",
+      "id": "3ca01ec1-e57b-80ac-b9bb-edab0317ea4c",
+      "tarea": "OC-26-5 “ARCHIVO”",
       "trabajo": "2026-09-28",
       "trabajo_fin": "2026-09-29",
       "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-8029-9eaa-d2582ecdd655",
-      "tarea": "Actas de Honorarios",
-      "trabajo": "2026-10-02",
-      "trabajo_fin": "2026-10-13",
-      "fecha_limite": "2026-10-15",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
-      "tarea": "Revisión contable",
-      "trabajo": "2026-09-30",
-      "trabajo_fin": "2026-10-01",
-      "fecha_limite": "2026-10-02",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
-      "tarea": "Eventos FIGLO",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-10-06",
-      "fecha_limite": "2026-10-17",
       "check": false
     },
     {
@@ -162,32 +162,16 @@
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-805e-853d-fd8a801fb6a6",
-      "tarea": "OC-26-2 “2001”",
+      "id": "3ca01ec1-e57b-806d-bb6f-f0c3d6d1a568",
+      "tarea": "OC-26-3 “1103”",
       "trabajo": "2026-09-28",
       "trabajo_fin": "2026-09-29",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
-      "tarea": "Inventarios",
-      "trabajo": "2026-09-30",
-      "trabajo_fin": "2026-09-30",
-      "fecha_limite": "2026-09-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-8065-96a2-cb1989597052",
-      "tarea": "Objetivos específicos",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-15",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-806d-bb6f-f0c3d6d1a568",
-      "tarea": "OC-26-3 “1103”",
+      "id": "3ca01ec1-e57b-805e-853d-fd8a801fb6a6",
+      "tarea": "OC-26-2 “2001”",
       "trabajo": "2026-09-28",
       "trabajo_fin": "2026-09-29",
       "fecha_limite": "2026-10-30",
@@ -202,67 +186,11 @@
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
-      "tarea": "Compras DAFI",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-10-09",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80aa-ac12-c533b2f31ba6",
-      "tarea": "PIPC",
-      "trabajo": "2026-10-19",
-      "trabajo_fin": "2026-10-23",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80ac-b9bb-edab0317ea4c",
-      "tarea": "OC-26-5 “ARCHIVO”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80b3-96d4-e6e7fe665bf9",
-      "tarea": "AC-26-1383 “DYA”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-12-04",
-      "fecha_limite": "2026-12-04",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80b4-b325-c70b1c912d2e",
-      "tarea": "Vacaciones del personal",
-      "trabajo": "2026-10-08",
-      "trabajo_fin": "2026-10-12",
-      "fecha_limite": "2026-09-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80b6-9b68-c0e6a7604b7b",
-      "tarea": "AC-26-1381 “ACTIVOS”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
-      "fecha_limite": "2026-12-04",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80b9-a154-c66bc6274ba5",
-      "tarea": "Oficinas Regionales",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-15",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
-    {
-      "id": "3ca01ec1-e57b-80e1-960c-fe30ccdb8760",
-      "tarea": "AC-26-1379 “RECORRIDO”",
-      "trabajo": "2026-10-26",
-      "trabajo_fin": "2026-12-04",
-      "fecha_limite": "2026-12-04",
+      "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
+      "tarea": "Revisión contable",
+      "trabajo": "2026-09-30",
+      "trabajo_fin": "2026-10-01",
+      "fecha_limite": "2026-10-02",
       "check": false
     },
     {
@@ -276,25 +204,97 @@
     {
       "id": "3ca01ec1-e57b-80e7-8d89-fbc1fc7fd64f",
       "tarea": "Certificados",
-      "trabajo": "2026-10-01",
+      "trabajo": "2026-11-03",
+      "trabajo_fin": "2026-11-13",
+      "fecha_limite": "2026-11-03",
+      "check": false
+    },
+    {
+      "id": "3c901ec1-e57b-80b0-b054-faf78db1d004",
+      "tarea": "Evaluaciones",
+      "trabajo": "2026-10-08",
       "trabajo_fin": "2026-10-09",
+      "fecha_limite": "2026-10-09",
+      "check": false
+    },
+    {
+      "id": "3c901ec1-e57b-804c-a1c9-fcc80d3bbb1a",
+      "tarea": "Compra de escritorios",
+      "trabajo": "2026-08-03",
+      "trabajo_fin": "2026-08-05",
+      "fecha_limite": "2026-08-05",
+      "check": true
+    },
+    {
+      "id": "3c901ec1-e57b-80c5-b9f6-f05e99f53694",
+      "tarea": "Reparto de utilidades",
+      "trabajo": "2027-01-11",
+      "trabajo_fin": "2027-01-29",
+      "fecha_limite": "2027-01-29",
+      "check": false
+    },
+    {
+      "id": "3c901ec1-e57b-8046-b87c-d77347610b71",
+      "tarea": "Cierre contable",
+      "trabajo": "2026-10-01",
+      "trabajo_fin": "2026-10-07",
+      "fecha_limite": "2026-10-07",
+      "check": false
+    },
+    {
+      "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
+      "tarea": "Cobranza",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-15",
       "fecha_limite": "2026-10-15",
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-80ed-b1c9-ca5f3ebb7990",
-      "tarea": "AC-26-1382 “PROVEDORES”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
-      "fecha_limite": "2026-12-04",
+      "id": "3c801ec1-e57b-80eb-ab18-c60b2a287bac",
+      "tarea": "Convivió con CT",
+      "trabajo": "2026-10-03",
+      "trabajo_fin": null,
+      "fecha_limite": "2026-10-03",
       "check": false
     },
     {
-      "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
-      "tarea": "Inventario de Activos",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-30",
-      "fecha_limite": "2026-11-27",
+      "id": "3c801ec1-e57b-8023-8b5f-cd135ccc1abf",
+      "tarea": "Capacitación Tesorero",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-28",
+      "fecha_limite": "2026-09-30",
+      "check": true
+    },
+    {
+      "id": "3c801ec1-e57b-8015-abf6-ef5257b64fcc",
+      "tarea": "Actualizar firmas CT",
+      "trabajo": "2026-09-29",
+      "trabajo_fin": "2026-09-30",
+      "fecha_limite": "2026-09-30",
+      "check": false
+    },
+    {
+      "id": "3c801ec1-e57b-8097-a284-e428d293ccd8",
+      "tarea": "Presupuesto FIGLO",
+      "trabajo": "2026-09-22",
+      "trabajo_fin": "2026-09-30",
+      "fecha_limite": "2026-09-30",
+      "check": false
+    },
+    {
+      "id": "3c701ec1-e57b-800a-a4c1-c3f2d1bb7998",
+      "tarea": "Presupuesto DAFI",
+      "trabajo": "2026-09-22",
+      "trabajo_fin": "2026-09-30",
+      "fecha_limite": "2026-09-30",
+      "check": false
+    },
+    {
+      "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
+      "tarea": "Tareas Subgerente",
+      "trabajo": "2026-10-02",
+      "trabajo_fin": null,
+      "fecha_limite": "2026-10-02",
       "check": false
     }
   ]
