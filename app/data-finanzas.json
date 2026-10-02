@@ -1,0 +1,53 @@
+{
+  "actualizado": "01/10/2026",
+  "disponible": 7820,
+  "gasto_hoy": 647.75,
+  "gasto_mes": 647.75,
+  "cuentas": [
+    {
+      "nombre": "Banorte Nómina",
+      "tipo": "Banco",
+      "saldo": 7500
+    },
+    {
+      "nombre": "Efectivo",
+      "tipo": "Efectivo",
+      "saldo": 320
+    },
+    {
+      "nombre": "TC Mercado Libre",
+      "tipo": "Tarjeta de crédito",
+      "saldo": -547.75
+    }
+  ],
+  "categorias": [
+    {
+      "nombre": "Suscripciones",
+      "importe": 399
+    },
+    {
+      "nombre": "Alimentos",
+      "importe": 248.75
+    }
+  ],
+  "movimientos": [
+    {
+      "fecha": "01/10/2026",
+      "concepto": "Café",
+      "nombre": "Cafe290",
+      "importe": 148.75
+    },
+    {
+      "fecha": "01/10/2026",
+      "concepto": "Suscripción ChatGPT",
+      "nombre": "OpenAI",
+      "importe": 399
+    },
+    {
+      "fecha": "01/10/2026",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicolle",
+      "importe": 100
+    }
+  ]
+}
