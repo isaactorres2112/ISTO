@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-02T15:11:49-05:00",
+  "ultima_actualizacion": "2026-10-02T15:29:35-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -13,17 +13,6 @@
       "detalles": null
     },
     {
-      "id": "58901ec1-e57b-83c8-a0f7-81d0cb95eb27",
-      "evento": "Cumple Rodolfo Torres",
-      "fecha": "2026-10-01T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
       "id": "e5b01ec1-e57b-8331-97db-8195b4617e8a",
       "evento": "Pago CFE",
       "fecha": "2026-10-01T10:00:00.000-05:00",
@@ -31,39 +20,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
-      "evento": "Finanzas personales",
-      "fecha": "2026-10-01T13:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "b3801ec1-e57b-820c-b346-01cc6d9a1cf8",
-      "evento": "Cumple Sebastian Torres",
-      "fecha": "2026-10-02T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "92d01ec1-e57b-83f2-a012-81f385344d4f",
-      "evento": "Cumple Angel Rodriguez",
-      "fecha": "2026-10-02T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
       ],
       "detalles": null
     },
@@ -104,6 +60,17 @@
       "id": "f9d01ec1-e57b-833a-ad58-013174a55eb9",
       "evento": "Pago Megacable",
       "fecha": "2026-10-03T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
+      "evento": "Finanzas personales",
+      "fecha": "2026-10-03T13:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
@@ -1138,6 +1105,39 @@
       "id": "7e501ec1-e57b-829c-a257-015d38e52f47",
       "evento": "Cumple America Llanos",
       "fecha": "2027-09-29T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "58901ec1-e57b-83c8-a0f7-81d0cb95eb27",
+      "evento": "Cumple Rodolfo Torres",
+      "fecha": "2027-10-01T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b3801ec1-e57b-820c-b346-01cc6d9a1cf8",
+      "evento": "Cumple Sebastian Torres",
+      "fecha": "2027-10-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "92d01ec1-e57b-83f2-a012-81f385344d4f",
+      "evento": "Cumple Angel Rodriguez",
+      "fecha": "2027-10-02T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
