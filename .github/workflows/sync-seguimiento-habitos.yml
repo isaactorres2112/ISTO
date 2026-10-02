@@ -34,97 +34,86 @@ jobs:
           from datetime import datetime, date, timedelta
 
           habits = ['Dormir','Salud','Ejercicio','Orar','Ahorrar','Leer','Agua','Uñas','Tocarse','Animo']
+          weekly_goals = dict(zip(habits,[7,7,3,4,1,5,5,7,6,7]))
+
           def query_data_source(source_id):
-              url = f"https://api.notion.com/v1/data_sources/{source_id}/query"
-              results, cursor = [], None
+              url=f"https://api.notion.com/v1/data_sources/{source_id}/query"
+              results,cursor=[],None
               while True:
-                  body = {} if not cursor else {'start_cursor': cursor}
-                  req = urllib.request.Request(url, data=json.dumps(body).encode(), method='POST', headers={
-                      'Authorization': f"Bearer {os.environ['NOTION_TOKEN']}",
-                      'Notion-Version': '2026-03-11',
-                      'Content-Type': 'application/json'
-                  })
-                  with urllib.request.urlopen(req) as r:
-                      payload = json.load(r)
+                  body={} if not cursor else {'start_cursor':cursor}
+                  req=urllib.request.Request(url,data=json.dumps(body).encode(),method='POST',headers={
+                      'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
+                      'Notion-Version':'2026-03-11','Content-Type':'application/json'})
+                  with urllib.request.urlopen(req) as r: payload=json.load(r)
                   results.extend(payload['results'])
-                  if not payload.get('has_more'):
-                      return results
-                  cursor = payload.get('next_cursor')
-                  if not cursor:
-                      raise ValueError('Notion no devolvió el cursor de la siguiente página')
+                  if not payload.get('has_more'): return results
+                  cursor=payload.get('next_cursor')
+                  if not cursor: raise ValueError('Notion no devolvió cursor')
 
-          # Metas semanales vigentes. Al cierre de cada mes se pueden revisar
-          # y registrar cambios con fecha de entrada en vigor, sin alterar meses anteriores.
-          goal_changes = {
-              '0001-01': dict(zip(habits, [7, 7, 3, 4, 1, 5, 5, 7, 6, 7])),
-          }
+          results=query_data_source(os.environ['DATA_SOURCE_ID'])
+          today=date.today()
+          daily=[]
+          seen=set()
 
-          def goals_for_month(key):
-              goals = {}
-              for effective_month in sorted(goal_changes):
-                  if effective_month <= key:
-                      goals.update(goal_changes[effective_month])
-              missing = [h for h in habits if h not in goals]
-              if missing:
-                  raise ValueError('Faltan metas para: ' + ', '.join(missing))
-              for h, goal in goals.items():
-                  if not isinstance(goal, int) or not 1 <= goal <= 7:
-                      raise ValueError(f'Meta semanal inválida para {h}: {goal}')
-              return goals
-
-          results = query_data_source(os.environ['DATA_SOURCE_ID'])
-
-          today = date.today()
-          today_state = {h: False for h in habits}
-          today_done = 0
-          monthly = defaultdict(lambda: {h:{'done':0,'days':0,'weeks':set()} for h in habits})
-          seen_dates = set()
-          last_evaluated_date = None
           for page in results:
-              p = page.get('properties', {})
-              raw_date = (p.get('Fecha', {}).get('date') or {}).get('start')
-              if not raw_date: continue
-              try: dt = datetime.fromisoformat(raw_date[:10]).date()
+              p=page.get('properties',{})
+              raw=(p.get('Fecha',{}).get('date') or {}).get('start')
+              if not raw: continue
+              try: dt=datetime.fromisoformat(raw[:10]).date()
               except: continue
-              if dt > today: continue
-              if dt == today:
-                  today_state = {h: bool(p.get(h, {}).get('checkbox')) for h in habits}
-                  today_done = sum(today_state.values())
-                  continue
-              if dt in seen_dates:
-                  raise ValueError(f'Fecha duplicada en seguimiento: {dt}')
-              seen_dates.add(dt)
-              if last_evaluated_date is None or dt > last_evaluated_date:
-                  last_evaluated_date = dt
-              key = dt.strftime('%Y-%m')
-              week_start = dt - timedelta(days=dt.weekday())
-              for h in habits:
-                  monthly[key][h]['days'] += 1
-                  monthly[key][h]['weeks'].add(week_start.isoformat())
-                  if p.get(h, {}).get('checkbox') is True:
-                      monthly[key][h]['done'] += 1
+              if dt>today: continue
+              if dt in seen: raise ValueError(f'Fecha duplicada en seguimiento: {dt}')
+              seen.add(dt)
+              state={h:bool(p.get(h,{}).get('checkbox')) for h in habits}
+              daily.append({'fecha':dt.isoformat(),'habitos':state,'cumplidos':sum(state.values()),'total':len(habits)})
 
+          daily.sort(key=lambda x:x['fecha'])
+          total_checks=sum(x['cumplidos'] for x in daily)
+          total_possible=len(daily)*len(habits)
+          habit_global={h:round(sum(1 for x in daily if x['habitos'][h])*100/len(daily),1) if daily else 0 for h in habits}
+          general=round(total_checks*100/total_possible,1) if total_possible else 0
+
+          # Tendencia: semana actual contra la semana anterior, usando los días registrados de cada una.
+          monday=today-timedelta(days=today.weekday())
+          prev_monday=monday-timedelta(days=7)
+          current=[x for x in daily if monday.isoformat()<=x['fecha']<=today.isoformat()]
+          previous=[x for x in daily if prev_monday.isoformat()<=x['fecha']<(monday.isoformat())]
+          trend={}
+          for h in habits:
+              cur=round(sum(x['habitos'][h] for x in current)*100/len(current),1) if current else None
+              prev=round(sum(x['habitos'][h] for x in previous)*100/len(previous),1) if previous else None
+              trend[h]={'actual':cur,'anterior':prev,'cambio':round(cur-prev,1) if cur is not None and prev is not None else None}
+
+          # Se conservan items mensuales por compatibilidad con la app mientras se unifica su interfaz.
+          monthly=defaultdict(lambda:{h:{'done':0,'days':0,'weeks':set()} for h in habits})
+          for x in daily:
+              dt=datetime.fromisoformat(x['fecha']).date()
+              if dt==today: continue
+              key=dt.strftime('%Y-%m'); week=dt-timedelta(days=dt.weekday())
+              for h in habits:
+                  monthly[key][h]['days']+=1; monthly[key][h]['weeks'].add(week.isoformat())
+                  if x['habitos'][h]: monthly[key][h]['done']+=1
           months_es=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
           items=[]
           for key in sorted(monthly):
-              goals = goals_for_month(key)
-              y,m=map(int,key.split('-'))
-              row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{},'detalle':{}}
+              y,m=map(int,key.split('-')); row={'key':key,'mes':months_es[m-1],'anio':y,'habitos':{},'detalle':{}}
               for h,v in monthly[key].items():
-                  # Cada semana cuenta desde el lunes con su meta semanal completa.
-                  # Si un mes toca una semana parcial, esa semana sigue contando una sola vez.
-                  expected = len(v['weeks']) * goals[h]
-                  row['habitos'][h] = round(min(100, v['done'] * 100 / expected), 1) if expected else None
-                  row['detalle'][h] = {'realizadas': v['done'], 'esperadas': round(expected, 4),
-                                       'dias_evaluados': v['days'], 'semanas_evaluadas': len(v['weeks']), 'meta_semanal': goals[h]}
+                  expected=len(v['weeks'])*weekly_goals[h]
+                  row['habitos'][h]=round(min(100,v['done']*100/expected),1) if expected else None
+                  row['detalle'][h]={'realizadas':v['done'],'esperadas':expected,'dias_evaluados':v['days'],'semanas_evaluadas':len(v['weeks']),'meta_semanal':weekly_goals[h]}
               items.append(row)
 
+          today_row=next((x for x in daily if x['fecha']==today.isoformat()),None)
+          output={
+              'habitos':habits,'metas_semanales':weekly_goals,
+              'ultima_actualizacion':datetime.now().astimezone().isoformat(timespec='seconds'),
+              'ultimo_dia_evaluado':daily[-1]['fecha'] if daily else None,
+              'hoy':{'fecha':today.isoformat(),'cumplidos':today_row['cumplidos'] if today_row else 0,'total':len(habits),'porcentaje':round((today_row['cumplidos'] if today_row else 0)*100/len(habits)),'habitos':today_row['habitos'] if today_row else {h:False for h in habits}},
+              'global':{'cumplimiento':general,'cumplidos':total_checks,'posibles':total_possible,'dias_registrados':len(daily),'habitos':habit_global},
+              'tendencia_semanal':trend,'diarios':daily,'items':items
+          }
           with open('NOTION/data-seguimiento-habitos.json','w',encoding='utf-8') as f:
-              json.dump({'habitos':habits,'metas_semanales':goals_for_month(today.strftime('%Y-%m')),
-                         'ultima_actualizacion': datetime.now().astimezone().isoformat(timespec='seconds'),
-                         'ultimo_dia_evaluado': last_evaluated_date.isoformat() if last_evaluated_date else None,
-                         'hoy': {'fecha': today.isoformat(), 'cumplidos': today_done, 'total': len(habits), 'porcentaje': round(today_done*100/len(habits)), 'habitos': today_state},
-                         'items':items},f,ensure_ascii=False,indent=2)
+              json.dump(output,f,ensure_ascii=False,indent=2)
           PY
 
       - name: Guardar cambios
@@ -136,6 +125,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Actualizar seguimiento mensual de hábitos"
+          git commit -m "Actualizar seguimiento global de hábitos"
           git pull --rebase origin main
           git push origin HEAD:main
