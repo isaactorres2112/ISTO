@@ -51,5 +51,19 @@
       "nombre": "Renta",
       "importe": 7500
     }
+  ],
+  "categorias": [
+    {
+      "nombre": "Vivienda",
+      "importe": 7500
+    },
+    {
+      "nombre": "Suscripciones",
+      "importe": 399
+    },
+    {
+      "nombre": "Alimentos",
+      "importe": 248.75
+    }
   ]
 }
