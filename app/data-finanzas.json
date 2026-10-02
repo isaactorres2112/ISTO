@@ -1,9 +1,9 @@
 {
-  "actualizado": "02/10/2026 00:12",
-  "disponible": 2546.12,
-  "gasto_hoy": 0,
-  "gasto_mes": 8147.75,
-  "ingresos_mes": 0,
+  "actualizado": "02/10/2026 18:50",
+  "disponible": 4078.12,
+  "gasto_hoy": 75,
+  "gasto_mes": 8222.75,
+  "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "Banorte Nómina",
@@ -13,7 +13,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 320
+      "saldo": 1852
     },
     {
       "nombre": "Mercado Pago",
@@ -23,21 +23,33 @@
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 547.75
+      "saldo": 2154.63
     }
   ],
   "movimientos": [
     {
-      "fecha": "2026-10-01",
-      "concepto": "Café",
-      "nombre": "Cafe290",
-      "importe": 148.75
+      "fecha": "2026-10-02",
+      "concepto": "Cobro de préstamo a DAFI",
+      "nombre": "DAFI",
+      "importe": 1607
+    },
+    {
+      "fecha": "2026-10-02",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicolle",
+      "importe": 75
+    },
+    {
+      "fecha": "2026-10-02",
+      "concepto": "Préstamo a DAFI",
+      "nombre": "Cafetería",
+      "importe": 1606.88
     },
     {
       "fecha": "2026-10-01",
-      "concepto": "Suscripción ChatGPT",
-      "nombre": "OpenAI",
-      "importe": 399
+      "concepto": "Renta del departamento",
+      "nombre": "Renta",
+      "importe": 7500
     },
     {
       "fecha": "2026-10-01",
@@ -47,9 +59,15 @@
     },
     {
       "fecha": "2026-10-01",
-      "concepto": "Renta del departamento",
-      "nombre": "Renta",
-      "importe": 7500
+      "concepto": "Suscripción ChatGPT",
+      "nombre": "OpenAI",
+      "importe": 399
+    },
+    {
+      "fecha": "2026-10-01",
+      "concepto": "Café",
+      "nombre": "Cafe290",
+      "importe": 148.75
     }
   ],
   "categorias": [
@@ -63,7 +81,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 248.75
+      "importe": 323.75
     }
   ]
 }
