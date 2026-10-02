@@ -6,19 +6,198 @@
     "Trabajo",
     "Amistad"
   ],
-  "items": [
+  "ultima_actualizacion": "2026-10-01T20:44:03-06:00",
+  "global": {
+    "bienestar": 61.8,
+    "dias_registrados": 17,
+    "circulos": {
+      "Yo": 64.7,
+      "Pareja": 64.7,
+      "Familia": 65.0,
+      "Trabajo": 61.7,
+      "Amistad": 70.0
+    }
+  },
+  "tendencia_semanal": {
+    "Yo": {
+      "actual": 63.3,
+      "anterior": 60.8,
+      "cambio": 2.5
+    },
+    "Pareja": {
+      "actual": 63.3,
+      "anterior": 60.8,
+      "cambio": 2.5
+    },
+    "Familia": {
+      "actual": null,
+      "anterior": 63.3,
+      "cambio": null
+    },
+    "Trabajo": {
+      "actual": 63.3,
+      "anterior": 60.0,
+      "cambio": 3.3
+    },
+    "Amistad": {
+      "actual": 65.0,
+      "anterior": null,
+      "cambio": null
+    }
+  },
+  "diarios": [
     {
-      "key": "2026-09",
-      "mes": "Septiembre",
-      "anio": 2026,
-      "general": 64.4,
-      "circulos": {
-        "Yo": 64.7,
-        "Pareja": 64.7,
-        "Familia": 65.0,
-        "Trabajo": 61.7,
-        "Amistad": 70.0
-      }
+      "fecha": "2026-09-15",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-16",
+      "bienestar": 70.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia"
+      ]
+    },
+    {
+      "fecha": "2026-09-17",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-18",
+      "bienestar": 60.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia",
+        "Trabajo",
+        "Amistad"
+      ]
+    },
+    {
+      "fecha": "2026-09-19",
+      "bienestar": 85.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Amistad"
+      ]
+    },
+    {
+      "fecha": "2026-09-20",
+      "bienestar": 70.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia"
+      ]
+    },
+    {
+      "fecha": "2026-09-21",
+      "bienestar": 60.0,
+      "circulos": [
+        "Yo",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-22",
+      "bienestar": 60.0,
+      "circulos": [
+        "Pareja",
+        "Familia",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-23",
+      "bienestar": 50.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-24",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-25",
+      "bienestar": 60.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-26",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia"
+      ]
+    },
+    {
+      "fecha": "2026-09-27",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Familia",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-28",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-29",
+      "bienestar": 60.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo"
+      ]
+    },
+    {
+      "fecha": "2026-09-30",
+      "bienestar": 65.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo",
+        "Amistad"
+      ]
+    },
+    {
+      "fecha": "2026-10-01",
+      "bienestar": 20.0,
+      "circulos": []
     }
   ]
 }
