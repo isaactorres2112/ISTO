@@ -23,8 +23,8 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-01T19:48:48-06:00",
-  "ultimo_dia_evaluado": "2026-09-30",
+  "ultima_actualizacion": "2026-10-01T19:58:44-06:00",
+  "ultimo_dia_evaluado": "2026-10-01",
   "hoy": {
     "fecha": "2026-10-01",
     "cumplidos": 4,
@@ -43,6 +43,367 @@
       "Animo": false
     }
   },
+  "global": {
+    "cumplimiento": 44.7,
+    "cumplidos": 76,
+    "posibles": 170,
+    "dias_registrados": 17,
+    "habitos": {
+      "Dormir": 47.1,
+      "Salud": 76.5,
+      "Ejercicio": 0.0,
+      "Orar": 5.9,
+      "Ahorrar": 35.3,
+      "Leer": 0.0,
+      "Agua": 29.4,
+      "Uñas": 94.1,
+      "Tocarse": 76.5,
+      "Animo": 82.4
+    }
+  },
+  "tendencia_semanal": {
+    "Dormir": {
+      "actual": 50.0,
+      "anterior": 28.6,
+      "cambio": 21.4
+    },
+    "Salud": {
+      "actual": 100.0,
+      "anterior": 71.4,
+      "cambio": 28.6
+    },
+    "Ejercicio": {
+      "actual": 0.0,
+      "anterior": 0.0,
+      "cambio": 0.0
+    },
+    "Orar": {
+      "actual": 25.0,
+      "anterior": 0.0,
+      "cambio": 25.0
+    },
+    "Ahorrar": {
+      "actual": 100.0,
+      "anterior": 14.3,
+      "cambio": 85.7
+    },
+    "Leer": {
+      "actual": 0.0,
+      "anterior": 0.0,
+      "cambio": 0.0
+    },
+    "Agua": {
+      "actual": 50.0,
+      "anterior": 42.9,
+      "cambio": 7.1
+    },
+    "Uñas": {
+      "actual": 100.0,
+      "anterior": 85.7,
+      "cambio": 14.3
+    },
+    "Tocarse": {
+      "actual": 100.0,
+      "anterior": 85.7,
+      "cambio": 14.3
+    },
+    "Animo": {
+      "actual": 75.0,
+      "anterior": 71.4,
+      "cambio": 3.6
+    }
+  },
+  "diarios": [
+    {
+      "fecha": "2026-09-15",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 6,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-16",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-17",
+      "habitos": {
+        "Dormir": true,
+        "Salud": false,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": false,
+        "Animo": true
+      },
+      "cumplidos": 3,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-18",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": false,
+        "Animo": true
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-19",
+      "habitos": {
+        "Dormir": false,
+        "Salud": false,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": false,
+        "Animo": true
+      },
+      "cumplidos": 2,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-20",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 5,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-21",
+      "habitos": {
+        "Dormir": false,
+        "Salud": false,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 3,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-22",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": true,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 7,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-23",
+      "habitos": {
+        "Dormir": false,
+        "Salud": false,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": true,
+        "Uñas": false,
+        "Tocarse": false,
+        "Animo": false
+      },
+      "cumplidos": 1,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-24",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": true,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 5,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-25",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-26",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": false
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-27",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-28",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": true,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": true,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 8,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-29",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": true,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 6,
+      "total": 10
+    },
+    {
+      "fecha": "2026-09-30",
+      "habitos": {
+        "Dormir": true,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 6,
+      "total": 10
+    },
+    {
+      "fecha": "2026-10-01",
+      "habitos": {
+        "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": true,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
+        "Animo": false
+      },
+      "cumplidos": 4,
+      "total": 10
+    }
+  ],
   "items": [
     {
       "key": "2026-09",
