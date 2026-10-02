@@ -8,6 +8,7 @@ on:
       - "NOTION/**"
       - "finanzas-2026/**"
       - ".github/workflows/deploy-isto-app.yml"
+      - ".github/workflows/sync-seguimiento-bienestar.yml"
   workflow_dispatch:
 
 permissions:
