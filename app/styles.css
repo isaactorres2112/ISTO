@@ -8,3 +8,20 @@
 
 /* Agenda · lenguaje visual ISTO */
 #agendaView .page-title{margin-bottom:18px}.agenda-overdue{margin-bottom:18px;overflow:hidden}.agenda-overdue summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:16px 18px;font-family:Georgia,serif;font-size:18px;font-weight:500}.agenda-overdue summary::-webkit-details-marker{display:none}.agenda-overdue summary b{font-family:Inter,ui-sans-serif,system-ui,sans-serif;min-width:28px;height:28px;padding:0 8px;border-radius:999px;display:grid;place-items:center;background:rgba(216,189,122,.14);color:var(--gold);font-size:11px}.agenda-overdue .read-list{padding:0 18px 16px}.agenda-task-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 2px;border-top:1px solid var(--line);font-size:12px}.agenda-task-row small{color:var(--gold);font-size:9px;white-space:nowrap}#agendaView .agenda-label>span{font-family:Georgia,serif;font-size:18px;font-weight:500;color:var(--text)}#agendaView .agenda-label small{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:9px;color:var(--muted)}#agendaView .event-card{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--text);font-size:12px}#agendaView .event-card strong{font-size:12px;font-weight:600;color:var(--text)}#agendaView .event-card small{display:block;margin-top:3px;font-size:9px;color:var(--gold)}#agendaView .event-time{font-size:9px;color:var(--muted);text-align:center}
+
+/* ISTO visual system · cierre 2.0 */
+:root{--radius:20px;--pad:17px;--section-gap:12px;--title:18px;--body:12px;--meta:9px}
+.glass{border-radius:var(--radius);background:rgba(20,19,17,.46);border-color:rgba(255,255,255,.14);box-shadow:0 14px 38px rgba(0,0,0,.2)}
+.page-title{margin-bottom:18px}.brand{font-size:13px;letter-spacing:.2em}.home-summary,.agenda-grid,.metric-mosaic,.finance-grid{gap:var(--section-gap)}
+.panel,.metric-mosaic>section,.chart-card{padding:var(--pad)}
+.panel-head,.agenda-label>span,.home-tasks summary span,.agenda-overdue summary span{font-family:Georgia,serif;font-size:var(--title);font-weight:500;color:var(--text)}
+.event-card,.task-card{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:14px;padding:12px}
+.event-card strong,.task-card strong{font-size:12px;font-weight:600;color:var(--text)}
+.event-card small,.task-card small{font-size:9px;color:var(--gold)}
+.task-card{display:flex;justify-content:space-between;align-items:center;gap:14px}.task-card small{white-space:nowrap}
+.home-tasks .read-list,.agenda-overdue .read-list{display:grid;gap:8px}.home-tasks .read-list{padding:0 18px 18px}.agenda-overdue .read-list{padding:0 18px 16px}
+.eyebrow{font-size:9px}.muted{font-size:11px}.metric-small strong,.metric-wide>strong{line-height:1.05}
+.idea-card,.idea-feature,.finance-hero,.chart-card,.metric-mosaic>section,.panel,.home-pulse,.home-tasks,.agenda-overdue{border-radius:var(--radius)}
+.bottom-nav{background:rgba(20,19,17,.64);border-color:rgba(255,255,255,.16)}
+@media(max-width:800px){:root{--radius:18px;--pad:15px;--section-gap:10px;--title:17px}.shell{padding:14px 12px 96px}.welcome{margin-bottom:18px}.welcome h1{font-size:34px}.home-ring{width:82px;height:82px}.agenda-grid{gap:18px}.event-card,.task-card{padding:11px}.finance-hero{padding:16px}.bottom-nav{height:60px}}
+@media(min-width:801px){.shell{max-width:1080px}.home-summary{max-width:900px;margin-inline:auto}#homeView .welcome,#homeView .top,#homeView .app-meta{max-width:900px;margin-left:auto;margin-right:auto}}
