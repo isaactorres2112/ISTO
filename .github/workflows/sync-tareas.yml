@@ -1,0 +1,72 @@
+name: Sincronizar tareas desde Notion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-tareas.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '45 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Leer Notion y generar data-tareas.json
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATA_SOURCE_ID: 69e12577-888b-4524-b86b-9fd17931c926
+          TZ: America/Mexico_City
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          from datetime import datetime
+
+          def query(source_id):
+              url=f"https://api.notion.com/v1/data_sources/{source_id}/query"
+              out,cursor=[],None
+              while True:
+                  body={} if not cursor else {'start_cursor':cursor}
+                  req=urllib.request.Request(url,data=json.dumps(body).encode(),method='POST',headers={
+                      'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
+                      'Notion-Version':'2026-03-11','Content-Type':'application/json'})
+                  with urllib.request.urlopen(req) as r: data=json.load(r)
+                  out.extend(data.get('results',[]))
+                  if not data.get('has_more'): return out
+                  cursor=data.get('next_cursor')
+
+          items=[]
+          for page in query(os.environ['DATA_SOURCE_ID']):
+              p=page.get('properties',{})
+              title=''.join(x.get('plain_text','') for x in p.get('Tarea',{}).get('title',[]))
+              work=p.get('Trabajo',{}).get('date') or {}
+              due=p.get('Fecha limite',{}).get('date') or {}
+              items.append({
+                  'id':page.get('id'),'tarea':title,
+                  'trabajo':work.get('start'),'trabajo_fin':work.get('end'),
+                  'fecha_limite':due.get('start'),
+                  'check':bool(p.get('Check',{}).get('checkbox'))
+              })
+          output={'ultima_actualizacion':datetime.now().astimezone().replace(minute=45,second=0,microsecond=0).isoformat(timespec='seconds'),'items':items}
+          with open('NOTION/data-tareas.json','w',encoding='utf-8') as f: json.dump(output,f,ensure_ascii=False,indent=2)
+          PY
+
+      - name: Guardar cambios
+        run: |
+          git add NOTION/data-tareas.json
+          if git diff --cached --quiet; then echo "Sin cambios en los datos"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Actualizar tareas desde Notion"
+          git pull --rebase origin main
+          git push origin HEAD:main
