@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-02T14:45:00-06:00",
+  "ultima_actualizacion": "2026-10-02T15:11:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -292,9 +292,9 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-02",
+      "trabajo": "2026-10-05",
       "trabajo_fin": null,
-      "fecha_limite": "2026-10-02",
+      "fecha_limite": "2026-10-05",
       "check": false
     }
   ]
