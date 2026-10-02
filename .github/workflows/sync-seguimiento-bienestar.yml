@@ -1,80 +1,68 @@
 name: Sincronizar seguimiento de bienestar desde Notion
-
 on:
   workflow_dispatch:
   schedule:
     - cron: '47 * * * *'
-
 permissions:
   contents: write
-
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Leer Notion y generar datos
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Generar datos globales
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATA_SOURCE_ID: 3b401ec1-e57b-809f-aac5-000bd6e3f459
           TZ: America/Mexico_City
         run: |
           python - <<'PY'
-          import json, os, urllib.request
-          from collections import defaultdict
-          from datetime import datetime, date
-
-          circles=['Yo','Pareja','Familia','Trabajo','Amistad']
-          metrics=['Energia','Motivacion','Animo','Calma']
-          url=f"https://api.notion.com/v1/data_sources/{os.environ['DATA_SOURCE_ID']}/query"
-          results=[]; cursor=None
+          import json,os,urllib.request
+          from datetime import datetime,date,timedelta
+          circles=['Yo','Pareja','Familia','Trabajo','Amistad']; metrics=['Energia','Motivacion','Animo','Calma']
+          url='https://api.notion.com/v1/data_sources/'+os.environ['DATA_SOURCE_ID']+'/query'; results=[]; cursor=None
           while True:
-              body={} if not cursor else {'start_cursor':cursor}
-              req=urllib.request.Request(url,data=json.dumps(body).encode(),method='POST',headers={
-                  'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
-                  'Notion-Version':'2026-03-11','Content-Type':'application/json'})
-              with urllib.request.urlopen(req) as r: payload=json.load(r)
-              results.extend(payload.get('results',[]))
-              if not payload.get('has_more'): break
-              cursor=payload.get('next_cursor')
-
-          today=date.today()
-          monthly=defaultdict(lambda:{c:[] for c in circles})
-          general=defaultdict(list)
+            body={} if not cursor else {'start_cursor':cursor}
+            req=urllib.request.Request(url,data=json.dumps(body).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['NOTION_TOKEN'],'Notion-Version':'2026-03-11','Content-Type':'application/json'})
+            with urllib.request.urlopen(req) as r: p=json.load(r)
+            results+=p.get('results',[])
+            if not p.get('has_more'): break
+            cursor=p.get('next_cursor')
+          today=date.today(); daily=[]; seen=set()
           for page in results:
-              p=page.get('properties',{})
-              raw=(p.get('Fecha',{}).get('date') or {}).get('start')
-              if not raw: continue
-              try: dt=datetime.fromisoformat(raw[:10]).date()
-              except: continue
-              if dt >= today: continue
-              vals=[p.get(m,{}).get('number') for m in metrics]
-              vals=[v for v in vals if v is not None]
-              if not vals: continue
-              wellbeing=sum(vals)/len(vals)
-              key=dt.strftime('%Y-%m')
-              general[key].append(wellbeing)
-              selected=[x.get('name') for x in p.get('Circulo',{}).get('multi_select',[])]
-              for c in selected:
-                  if c in circles: monthly[key][c].append(wellbeing)
-
-          months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
-          items=[]
-          for key in sorted(general):
-              y,m=map(int,key.split('-'))
-              row={'key':key,'mes':months[m-1],'anio':y,'general':round((sum(general[key])/len(general[key]))/5*100,1),'circulos':{}}
-              for c,vals in monthly[key].items():
-                  row['circulos'][c]=round((sum(vals)/len(vals))/5*100,1) if vals else None
-              items.append(row)
-          with open('NOTION/data-seguimiento-bienestar.json','w',encoding='utf-8') as f:
-              json.dump({'circulos':circles,'items':items},f,ensure_ascii=False,indent=2)
+            p=page.get('properties',{}); raw=(p.get('Fecha',{}).get('date') or {}).get('start')
+            if not raw: continue
+            try: dt=datetime.fromisoformat(raw[:10]).date()
+            except: continue
+            if dt>today: continue
+            if dt in seen: raise ValueError('Fecha duplicada: '+str(dt))
+            seen.add(dt); vals=[p.get(m,{}).get('number') for m in metrics]; vals=[v for v in vals if v is not None]
+            if not vals: continue
+            selected=[x.get('name') for x in p.get('Circulo',{}).get('multi_select',[]) if x.get('name') in circles]
+            daily.append({'fecha':dt.isoformat(),'bienestar':round(sum(vals)/len(vals)/5*100,1),'circulos':selected})
+          daily.sort(key=lambda x:x['fecha'])
+          general=round(sum(x['bienestar'] for x in daily)/len(daily),1) if daily else 0
+          cg={}
+          for c in circles:
+            v=[x['bienestar'] for x in daily if c in x['circulos']]; cg[c]=round(sum(v)/len(v),1) if v else None
+          mon=today-timedelta(days=today.weekday()); prev=mon-timedelta(days=7); trend={}
+          for c in circles:
+            a=[x['bienestar'] for x in daily if mon.isoformat()<=x['fecha']<=today.isoformat() and c in x['circulos']]
+            b=[x['bienestar'] for x in daily if prev.isoformat()<=x['fecha']<mon.isoformat() and c in x['circulos']]
+            av=round(sum(a)/len(a),1) if a else None; bv=round(sum(b)/len(b),1) if b else None
+            trend[c]={'actual':av,'anterior':bv,'cambio':round(av-bv,1) if av is not None and bv is not None else None}
+          out={'circulos':circles,'ultima_actualizacion':datetime.now().astimezone().isoformat(timespec='seconds'),'global':{'bienestar':general,'dias_registrados':len(daily),'circulos':cg},'tendencia_semanal':trend,'diarios':daily}
+          with open('NOTION/data-seguimiento-bienestar.json','w',encoding='utf-8') as f: json.dump(out,f,ensure_ascii=False,indent=2)
           PY
       - name: Guardar cambios
         run: |
           git add NOTION/data-seguimiento-bienestar.json
-          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Actualizar seguimiento mensual de bienestar"
-          git push
+          git commit -m "Actualizar bienestar global"
+          git pull --rebase origin main
+          git push origin HEAD:main
