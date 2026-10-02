@@ -7,7 +7,7 @@ on:
       - '.github/workflows/sync-tareas.yml'
   workflow_dispatch:
   schedule:
-    - cron: '45 * * * *'
+    - cron: '*/15 * * * *'
 
 permissions:
   contents: write
@@ -57,7 +57,7 @@ jobs:
                   'fecha_limite':due.get('start'),
                   'check':bool(p.get('Check',{}).get('checkbox'))
               })
-          output={'ultima_actualizacion':datetime.now().astimezone().replace(minute=45,second=0,microsecond=0).isoformat(timespec='seconds'),'items':items}
+          output={'ultima_actualizacion':datetime.now().astimezone().replace(second=0,microsecond=0).isoformat(timespec='seconds'),'items':items}
           with open('NOTION/data-tareas.json','w',encoding='utf-8') as f: json.dump(output,f,ensure_ascii=False,indent=2)
           PY
 
