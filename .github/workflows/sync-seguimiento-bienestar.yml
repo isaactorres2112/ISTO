@@ -6,7 +6,7 @@ on:
       - '.github/workflows/sync-seguimiento-bienestar.yml'
   workflow_dispatch:
   schedule:
-    - cron: '45 * * * *'
+    - cron: '*/15 * * * *'
 permissions:
   contents: write
 jobs:
@@ -58,7 +58,7 @@ jobs:
             b=[x['bienestar'] for x in daily if prev.isoformat()<=x['fecha']<mon.isoformat() and c in x['circulos']]
             av=round(sum(a)/len(a),1) if a else None; bv=round(sum(b)/len(b),1) if b else None
             trend[c]={'actual':av,'anterior':bv,'cambio':round(av-bv,1) if av is not None and bv is not None else None}
-          out={'circulos':circles,'ultima_actualizacion':datetime.now().astimezone().replace(minute=45,second=0,microsecond=0).isoformat(timespec='seconds'),'global':{'bienestar':general,'dias_registrados':len(daily),'circulos':cg},'tendencia_semanal':trend,'diarios':daily}
+          out={'circulos':circles,'ultima_actualizacion':datetime.now().astimezone().replace(second=0,microsecond=0).isoformat(timespec='seconds'),'global':{'bienestar':general,'dias_registrados':len(daily),'circulos':cg},'tendencia_semanal':trend,'diarios':daily}
           with open('NOTION/data-seguimiento-bienestar.json','w',encoding='utf-8') as f: json.dump(out,f,ensure_ascii=False,indent=2)
           PY
       - name: Guardar cambios
