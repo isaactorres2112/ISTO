@@ -16,7 +16,7 @@
  <section class="card"><div class="heading"><h2>Así van tus hábitos</h2><span class="tag">Meta 70%</span></div><div id="bars"></div><div class="muted">Ordenados de mayor a menor · línea vertical = meta 70%</div></section>
  <div class="side">
   <section class="card"><div class="heading"><h2>Hábitos que cumplen la meta</h2></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue">—</strong><span class="muted">cumplen la meta</span></div></div></div></section>
-  <section class="card trend"><div class="heading"><h2>Tendencia semanal</h2></div><p id="trend">—</p></section>
+  <section class="card trend"><div class="heading"><h2>Cambios relevantes</h2></div><p id="trend">—</p></section>
  </div>
 </div>
 <footer>✧ LA CONSTANCIA SE CONSTRUYE DÍA A DÍA · TODOS LOS REGISTROS INCLUYEN HOY</footer>
@@ -40,9 +40,10 @@ function render(d){
  const sorted=[...habits].sort((a,b)=>(hp[b]||0)-(hp[a]||0)||a.localeCompare(b,'es'));
  $('bars').replaceChildren();sorted.forEach(h=>{const v=hp[h]||0,r=document.createElement('div');r.className='barrow';r.innerHTML='<span>'+label(h)+'</span><span class="track"><span class="bar" style="width:'+Math.min(100,v)+'%"></span><i class="goalmark"></i></span><b>'+fmt(v)+'%</b>';$('bars').append(r)});
  const good=habits.filter(h=>(hp[h]||0)>=META).length;$('ringvalue').textContent=good+' de '+habits.length;$('ring').style.background='conic-gradient(var(--gold) '+(habits.length?good/habits.length*360:0)+'deg,#303537 0deg)';
- const metas={Dormir:7,Salud:7,Ejercicio:3,Orar:4,Ahorrar:1,Leer:5,Agua:5,'Uñas':7,Tocarse:6,Animo:7};const today=new Date(),tk=today.toISOString().slice(0,10),cur=weekStart(tk),pd=new Date(cur+'T12:00:00');pd.setDate(pd.getDate()-7);const prevStart=pd.toISOString().slice(0,10),prevEnd=new Date(cur+'T12:00:00');prevEnd.setDate(prevEnd.getDate()-1);const pe=prevEnd.toISOString().slice(0,10);const rate=(h,a,b)=>{const n=diarios.filter(x=>x.fecha>=a&&x.fecha<=b&&x.habitos?.[h]).length,m=metas[h]||7;return Math.min(100,n*100/m)};const changes=habits.map(h=>({h,v:rate(h,cur,tk)-rate(h,prevStart,pe)})).filter(x=>Number.isFinite(x.v)).sort((a,b)=>Math.abs(b.v)-Math.abs(a.v));
- if(!changes.length)$('trend').textContent='Aún no hay dos semanas con datos comparables por hábito.';
- else{const x=changes[0],abs=Math.abs(x.v),name=label(x.h);$('trend').innerHTML=abs<.05?'<strong>'+name+'</strong> se mantiene estable frente a la semana anterior.':x.v>0?'<strong>'+name+'</strong> mejoró <strong>'+fmt(abs)+' puntos</strong> frente a la semana anterior.':'<strong>'+name+'</strong> bajó <strong>'+fmt(abs)+' puntos</strong> frente a la semana anterior.'}
+ const prior=diarios.slice(0,-1),pctHabit=(h,rows)=>rows.length?rows.filter(x=>x.habitos?.[h]).length*100/rows.length:0;
+ const changes=habits.map(h=>{const before=pctHabit(h,prior),now=pctHabit(h,diarios);return {h,before,now,v:now-before}}).filter(x=>Number.isFinite(x.v)).sort((a,b)=>Math.abs(b.v)-Math.abs(a.v));
+ if(!changes.length||!prior.length)$('trend').textContent='Aún no hay registros suficientes para comparar cambios acumulados.';
+ else{const x=changes[0];$('trend').innerHTML='<strong>'+label(x.h)+'</strong> es el cambio más relevante: pasó de <strong>'+fmt(x.before)+'%</strong> a <strong>'+fmt(x.now)+'%</strong> de cumplimiento acumulado.'}
  const stamp=d.ultima_actualizacion?new Date(d.ultima_actualizacion):null;$('updated').textContent='Última actualización · '+(stamp?stamp.toLocaleString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—');
 }
 async function load(){$('status').hidden=false;try{const r=await fetch('data-seguimiento-habitos.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(r.status);const d=await r.json();render(d);$('dashboard').hidden=false;$('status').hidden=true}catch(e){$('status').textContent='No se pudieron cargar los datos de hábitos.'}}
