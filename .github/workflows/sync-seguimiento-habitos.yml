@@ -106,7 +106,7 @@ jobs:
           today_row=next((x for x in daily if x['fecha']==today.isoformat()),None)
           output={
               'habitos':habits,'metas_semanales':weekly_goals,
-              'ultima_actualizacion':datetime.now().astimezone().isoformat(timespec='seconds'),
+              'ultima_actualizacion':datetime.now().astimezone().replace(minute=45,second=0,microsecond=0).isoformat(timespec='seconds'),
               'ultimo_dia_evaluado':daily[-1]['fecha'] if daily else None,
               'hoy':{'fecha':today.isoformat(),'cumplidos':today_row['cumplidos'] if today_row else 0,'total':len(habits),'porcentaje':round((today_row['cumplidos'] if today_row else 0)*100/len(habits)),'habitos':today_row['habitos'] if today_row else {h:False for h in habits}},
               'global':{'cumplimiento':general,'cumplidos':total_checks,'posibles':total_possible,'dias_registrados':len(daily),'habitos':habit_global},
