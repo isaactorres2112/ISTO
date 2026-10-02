@@ -23,13 +23,13 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-01T22:49:36-06:00",
+  "ultima_actualizacion": "2026-10-01T23:03:26-06:00",
   "ultimo_dia_evaluado": "2026-10-01",
   "hoy": {
     "fecha": "2026-10-01",
-    "cumplidos": 4,
+    "cumplidos": 5,
     "total": 10,
-    "porcentaje": 40,
+    "porcentaje": 50,
     "habitos": {
       "Dormir": false,
       "Salud": true,
@@ -40,12 +40,12 @@
       "Agua": false,
       "Uñas": true,
       "Tocarse": true,
-      "Animo": false
+      "Animo": true
     }
   },
   "global": {
-    "cumplimiento": 44.7,
-    "cumplidos": 76,
+    "cumplimiento": 45.3,
+    "cumplidos": 77,
     "posibles": 170,
     "dias_registrados": 17,
     "habitos": {
@@ -58,7 +58,7 @@
       "Agua": 29.4,
       "Uñas": 94.1,
       "Tocarse": 76.5,
-      "Animo": 82.4
+      "Animo": 88.2
     }
   },
   "tendencia_semanal": {
@@ -108,9 +108,9 @@
       "cambio": 14.3
     },
     "Animo": {
-      "actual": 75.0,
+      "actual": 100.0,
       "anterior": 71.4,
-      "cambio": 3.6
+      "cambio": 28.6
     }
   },
   "diarios": [
@@ -398,9 +398,9 @@
         "Agua": false,
         "Uñas": true,
         "Tocarse": true,
-        "Animo": false
+        "Animo": true
       },
-      "cumplidos": 4,
+      "cumplidos": 5,
       "total": 10
     }
   ],
