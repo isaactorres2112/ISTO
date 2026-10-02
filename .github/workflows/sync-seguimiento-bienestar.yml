@@ -1,5 +1,9 @@
 name: Sincronizar seguimiento de bienestar desde Notion
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-seguimiento-bienestar.yml'
   workflow_dispatch:
   schedule:
     - cron: '47 * * * *'
