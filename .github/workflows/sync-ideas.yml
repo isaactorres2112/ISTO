@@ -1,0 +1,124 @@
+name: Sincronizar ideas desde Notion
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+  push:
+    paths:
+      - '.github/workflows/sync-ideas.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Leer Ideas de Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATA_SOURCE_ID: de12973a-f073-4b82-827a-7c73b1450d8a
+          TZ: America/Cancun
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request, html
+          from datetime import datetime
+
+          headers={'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
+                   'Notion-Version':'2026-03-11','Content-Type':'application/json'}
+
+          def request(url, body=None):
+              data=json.dumps(body).encode() if body is not None else None
+              req=urllib.request.Request(url,data=data,method='POST' if body is not None else 'GET',headers=headers)
+              with urllib.request.urlopen(req) as r: return json.load(r)
+
+          def rich_text(arr):
+              return ''.join(x.get('plain_text','') for x in (arr or [])).strip()
+
+          def children(block_id):
+              out=[]; cursor=None
+              while True:
+                  url=f"https://api.notion.com/v1/blocks/{block_id}/children?page_size=100"
+                  if cursor: url += '&start_cursor='+cursor
+                  p=request(url); out.extend(p.get('results',[]))
+                  if not p.get('has_more'): break
+                  cursor=p.get('next_cursor')
+              return out
+
+          def blocks_html(blocks):
+              out=[]; list_mode=None
+              def close_list():
+                  nonlocal list_mode
+                  if list_mode: out.append(f'</{list_mode}>'); list_mode=None
+              for b in blocks:
+                  t=b.get('type',''); v=b.get(t,{})
+                  txt=html.escape(rich_text(v.get('rich_text',[])))
+                  if t in ('bulleted_list_item','numbered_list_item'):
+                      tag='ul' if t=='bulleted_list_item' else 'ol'
+                      if list_mode!=tag:
+                          close_list(); out.append(f'<{tag}>'); list_mode=tag
+                      inner=txt
+                      if b.get('has_children'):
+                          inner += blocks_html(children(b['id']))
+                      out.append(f'<li>{inner}</li>'); continue
+                  close_list()
+                  if t=='paragraph' and txt: out.append(f'<p>{txt}</p>')
+                  elif t=='heading_1' and txt: out.append(f'<h2>{txt}</h2>')
+                  elif t=='heading_2' and txt: out.append(f'<h2>{txt}</h2>')
+                  elif t=='heading_3' and txt: out.append(f'<h3>{txt}</h3>')
+                  elif t=='quote' and txt: out.append(f'<blockquote>{txt}</blockquote>')
+                  elif t=='callout' and txt: out.append(f'<p>{txt}</p>')
+                  elif t=='divider': out.append('<hr>')
+                  elif t=='to_do' and txt: out.append(f'<p>{"☑" if v.get("checked") else "☐"} {txt}</p>')
+              close_list()
+              return ''.join(out)
+
+          url=f"https://api.notion.com/v1/data_sources/{os.environ['DATA_SOURCE_ID']}/query"
+          results=[]; cursor=None
+          while True:
+              body={} if not cursor else {'start_cursor':cursor}
+              p=request(url,body); results.extend(p.get('results',[]))
+              if not p.get('has_more'): break
+              cursor=p.get('next_cursor')
+
+          items=[]
+          for page in results:
+              p=page.get('properties',{})
+              title=p.get('Tema',{}).get('title',[])
+              tema=rich_text(title) or 'Sin título'
+              sel=p.get('Seleccionar',{})
+              estado=(sel.get('select') or {}).get('name') or (sel.get('status') or {}).get('name') or ''
+              tipo=[x.get('name') for x in p.get('Tipo',{}).get('multi_select',[])]
+              fecha=(p.get('Fecha de registro',{}).get('date') or {}).get('start')
+              ultima=page.get('last_edited_time')
+              cover=page.get('cover') or {}
+              image=None
+              if cover.get('type')=='external': image=(cover.get('external') or {}).get('url')
+              elif cover.get('type')=='file': image=(cover.get('file') or {}).get('url')
+              icon=page.get('icon') or {}
+              if not image and icon.get('type')=='external': image=(icon.get('external') or {}).get('url')
+              content=blocks_html(children(page['id']))
+              items.append({'id':page.get('id'),'tema':tema,'estado':estado,'tipo':tipo,'fecha':fecha,
+                            'ultima_edicion':ultima,'url':page.get('url'),'image':image,'content_html':content})
+
+          items.sort(key=lambda x:x.get('ultima_edicion') or '')
+          os.makedirs('NOTION',exist_ok=True)
+          with open('NOTION/data-ideas.json','w',encoding='utf-8') as f:
+              json.dump({'ultima_actualizacion':datetime.now().astimezone().isoformat(timespec='seconds'),'items':items},
+                        f,ensure_ascii=False,indent=2)
+          PY
+      - name: Guardar cambios
+        run: |
+          git add NOTION/data-ideas.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Actualizar ideas desde Notion"
+          git pull --rebase origin main
+          git push origin HEAD:main
