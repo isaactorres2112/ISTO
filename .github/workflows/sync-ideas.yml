@@ -92,7 +92,7 @@ jobs:
               p=page.get('properties',{})
               title=p.get('Tema',{}).get('title',[])
               tema=rich_text(title) or 'Sin título'
-              sel=p.get('Seleccionar',{})
+              sel=p.get('Accion',{})
               estado=(sel.get('select') or {}).get('name') or (sel.get('status') or {}).get('name') or ''
               tipo=[x.get('name') for x in p.get('Tipo',{}).get('multi_select',[])]
               fecha=(p.get('Fecha de registro',{}).get('date') or {}).get('start')
