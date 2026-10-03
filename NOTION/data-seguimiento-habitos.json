@@ -23,7 +23,7 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-03T00:23:00-06:00",
+  "ultima_actualizacion": "2026-10-03T00:58:00-06:00",
   "ultimo_dia_evaluado": "2026-10-03",
   "hoy": {
     "fecha": "2026-10-03",
@@ -44,8 +44,8 @@
     }
   },
   "global": {
-    "cumplimiento": 43.7,
-    "cumplidos": 83,
+    "cumplimiento": 44.2,
+    "cumplidos": 84,
     "posibles": 190,
     "dias_registrados": 19,
     "habitos": {
@@ -58,7 +58,7 @@
       "Agua": 26.3,
       "Uñas": 94.7,
       "Tocarse": 78.9,
-      "Animo": 78.9
+      "Animo": 84.2
     }
   },
   "tendencia_semanal": {
@@ -108,9 +108,9 @@
       "cambio": 14.3
     },
     "Animo": {
-      "actual": 66.7,
+      "actual": 83.3,
       "anterior": 71.4,
-      "cambio": -4.7
+      "cambio": 11.9
     }
   },
   "diarios": [
@@ -415,9 +415,9 @@
         "Agua": false,
         "Uñas": true,
         "Tocarse": true,
-        "Animo": false
+        "Animo": true
       },
-      "cumplidos": 4,
+      "cumplidos": 5,
       "total": 10
     },
     {
@@ -542,7 +542,7 @@
         "Agua": 0.0,
         "Uñas": 28.6,
         "Tocarse": 33.3,
-        "Animo": 14.3
+        "Animo": 28.6
       },
       "detalle": {
         "Dormir": {
@@ -609,7 +609,7 @@
           "meta_semanal": 6
         },
         "Animo": {
-          "realizadas": 1,
+          "realizadas": 2,
           "esperadas": 7,
           "dias_evaluados": 2,
           "semanas_evaluadas": 1,
