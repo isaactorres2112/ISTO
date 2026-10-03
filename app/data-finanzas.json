@@ -1,8 +1,8 @@
 {
-  "actualizado": "02/10/2026 18:50",
-  "disponible": 4078.12,
-  "gasto_hoy": 75,
-  "gasto_mes": 8222.75,
+  "actualizado": "03/10/2026 01:28",
+  "disponible": 3668.12,
+  "gasto_hoy": 0,
+  "gasto_mes": 8632.75,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -18,7 +18,7 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Banco",
-      "saldo": 2226.12
+      "saldo": 1816.12
     },
     {
       "nombre": "TC Mercado Libre",
@@ -27,6 +27,12 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-02",
+      "concepto": "Comida",
+      "nombre": "Mi Sushi Kin",
+      "importe": 410
+    },
     {
       "fecha": "2026-10-02",
       "concepto": "Cobro de préstamo a DAFI",
@@ -76,12 +82,12 @@
       "importe": 7500
     },
     {
-      "nombre": "Suscripciones",
-      "importe": 399
+      "nombre": "Alimentos",
+      "importe": 733.75
     },
     {
-      "nombre": "Alimentos",
-      "importe": 323.75
+      "nombre": "Suscripciones",
+      "importe": 399
     }
   ]
 }
