@@ -27,7 +27,7 @@ jobs:
           TZ: America/Cancun
         run: |
           python - <<'PY'
-          import json, os, urllib.request, html
+          import json, os, urllib.request, urllib.parse, html
           from datetime import datetime
 
           headers={'Authorization':f"Bearer {os.environ['NOTION_TOKEN']}",
@@ -40,6 +40,20 @@ jobs:
 
           def rich_text(arr):
               return ''.join(x.get('plain_text','') for x in (arr or [])).strip()
+
+          def rich_html(arr):
+              parts=[]
+              for x in (arr or []):
+                  txt=html.escape(x.get('plain_text',''))
+                  ann=x.get('annotations') or {}
+                  if ann.get('code'): txt=f'<code>{txt}</code>'
+                  if ann.get('bold'): txt=f'<strong>{txt}</strong>'
+                  if ann.get('italic'): txt=f'<em>{txt}</em>'
+                  if ann.get('strikethrough'): txt=f'<s>{txt}</s>'
+                  href=x.get('href')
+                  if href: txt=f'<a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener noreferrer">{txt}</a>'
+                  parts.append(txt)
+              return ''.join(parts).strip()
 
           def children(block_id):
               out=[]; cursor=None
@@ -58,7 +72,7 @@ jobs:
                   if list_mode: out.append(f'</{list_mode}>'); list_mode=None
               for b in blocks:
                   t=b.get('type',''); v=b.get(t,{})
-                  txt=html.escape(rich_text(v.get('rich_text',[])))
+                  txt=rich_html(v.get('rich_text',[]))
                   if t in ('bulleted_list_item','numbered_list_item'):
                       tag='ul' if t=='bulleted_list_item' else 'ol'
                       if list_mode!=tag:
@@ -103,6 +117,16 @@ jobs:
               elif cover.get('type')=='file': image=(cover.get('file') or {}).get('url')
               icon=page.get('icon') or {}
               if not image and icon.get('type')=='external': image=(icon.get('external') or {}).get('url')
+              # Imagen estable para tarjetas cuando la página no tiene portada en Notion.
+              if not image:
+                  q=urllib.parse.quote_plus(tema)
+                  image=f'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80'
+                  if any('Salud' in x for x in tipo):
+                      image='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80'
+                  elif any('Tecnolog' in x for x in tipo):
+                      image='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80'
+                  elif any('Finanzas' in x for x in tipo):
+                      image='https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=900&q=80'
               content=blocks_html(children(page['id']))
               items.append({'id':page.get('id'),'tema':tema,'estado':estado,'tipo':tipo,'fecha':fecha,
                             'ultima_edicion':ultima,'url':page.get('url'),'image':image,'content_html':content})
