@@ -1,13 +1,18 @@
 {
-  "actualizado": "03/10/2026 01:28",
+  "actualizado": "04/10/2026 13:54",
   "disponible": 3668.12,
   "gasto_hoy": 0,
-  "gasto_mes": 8632.75,
+  "gasto_mes": 8999.55,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
+      "nombre": "TC Mercado Libre",
+      "tipo": "Pasivo · Tarjeta de crédito",
+      "saldo": 2656.74
+    },
+    {
       "nombre": "Banorte Nómina",
-      "tipo": "Activo · Banco",
+      "tipo": "Activo · Bancos",
       "saldo": 0
     },
     {
@@ -17,63 +22,87 @@
     },
     {
       "nombre": "Mercado Pago",
-      "tipo": "Activo · Banco",
+      "tipo": "Activo · Bancos",
       "saldo": 1816.12
-    },
-    {
-      "nombre": "TC Mercado Libre",
-      "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 2154.63
     }
   ],
   "movimientos": [
     {
-      "fecha": "2026-10-02",
-      "concepto": "Comida",
-      "nombre": "Mi Sushi Kin",
-      "importe": 410
+      "fecha": "2026-10-04",
+      "concepto": "Préstamo a DAFI",
+      "nombre": "Uber",
+      "importe": 67.01,
+      "id": ""
     },
     {
-      "fecha": "2026-10-02",
-      "concepto": "Cobro de préstamo a DAFI",
-      "nombre": "DAFI",
-      "importe": 1607
+      "fecha": "2026-10-03",
+      "concepto": "Despensa",
+      "nombre": "Despensa",
+      "importe": 366.8,
+      "id": ""
     },
     {
-      "fecha": "2026-10-02",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicolle",
-      "importe": 75
+      "fecha": "2026-10-03",
+      "concepto": "Préstamo a DAFI",
+      "nombre": "Uber",
+      "importe": 68.3,
+      "id": ""
     },
     {
       "fecha": "2026-10-02",
       "concepto": "Préstamo a DAFI",
       "nombre": "Cafetería",
-      "importe": 1606.88
+      "importe": 1606.88,
+      "id": ""
     },
     {
-      "fecha": "2026-10-01",
-      "concepto": "Renta del departamento",
-      "nombre": "Renta",
-      "importe": 7500
-    },
-    {
-      "fecha": "2026-10-01",
+      "fecha": "2026-10-02",
       "concepto": "Comida",
       "nombre": "Fonda Nicolle",
-      "importe": 100
+      "importe": 75,
+      "id": ""
     },
     {
-      "fecha": "2026-10-01",
-      "concepto": "Suscripción ChatGPT",
-      "nombre": "OpenAI",
-      "importe": 399
+      "fecha": "2026-10-02",
+      "concepto": "Cobro de préstamo a DAFI",
+      "nombre": "DAFI",
+      "importe": 1607,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-02",
+      "concepto": "Comida",
+      "nombre": "Mi Sushi Kin",
+      "importe": 410,
+      "id": ""
     },
     {
       "fecha": "2026-10-01",
       "concepto": "Café",
       "nombre": "Cafe290",
-      "importe": 148.75
+      "importe": 148.75,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-01",
+      "concepto": "Suscripción ChatGPT",
+      "nombre": "OpenAI",
+      "importe": 399,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-01",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicolle",
+      "importe": 100,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-01",
+      "concepto": "Renta del departamento",
+      "nombre": "Renta",
+      "importe": 7500,
+      "id": ""
     }
   ],
   "categorias": [
@@ -83,7 +112,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 733.75
+      "importe": 1100.55
     },
     {
       "nombre": "Suscripciones",
