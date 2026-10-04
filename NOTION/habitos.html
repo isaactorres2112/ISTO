@@ -23,7 +23,7 @@
 </div></main>
 <script>
 'use strict';
-const $=id=>document.getElementById(id),META=70,label=h=>h==='Animo'?'Ánimo':h,fmt=v=>Number(v).toLocaleString('es-MX',{maximumFractionDigits:1});
+const $=id=>document.getElementById(id),META=70,label=h=>h==='Animo'?'Ánimo':h,fmt=v=>Number(v).toLocaleString('es-MX',{maximumFractionDigits:0});
 function weekStart(ds){const d=new Date(ds+'T12:00:00'),day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return d.toISOString().slice(0,10)}
 function weeklyGeneral(diarios){
  const today=new Date(),tk=today.toISOString().slice(0,10),cur=weekStart(tk),p=new Date(cur+'T12:00:00');p.setDate(p.getDate()-7);const prev=p.toISOString().slice(0,10);
