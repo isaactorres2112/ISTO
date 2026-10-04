@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-03T13:53:36-05:00",
+  "ultima_actualizacion": "2026-10-03T21:27:52-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -35,42 +35,9 @@
       "detalles": null
     },
     {
-      "id": "0ac01ec1-e57b-8206-ad23-0102008ecb01",
-      "evento": "Cumple Viviana Rodriguez",
-      "fecha": "2026-10-03T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
-      "evento": "Despensa",
-      "fecha": "2026-10-03T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
       "id": "f9d01ec1-e57b-833a-ad58-013174a55eb9",
       "evento": "Pago Megacable",
       "fecha": "2026-10-03T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
-      "evento": "Finanzas personales",
-      "fecha": "2026-10-03T13:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
@@ -163,6 +130,28 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
+      "evento": "Despensa",
+      "fecha": "2026-10-10T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
+      "evento": "Finanzas personales",
+      "fecha": "2026-10-10T13:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
       ],
       "detalles": null
     },
@@ -1138,6 +1127,17 @@
       "id": "92d01ec1-e57b-83f2-a012-81f385344d4f",
       "evento": "Cumple Angel Rodriguez",
       "fecha": "2027-10-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "0ac01ec1-e57b-8206-ad23-0102008ecb01",
+      "evento": "Cumple Viviana Rodriguez",
+      "fecha": "2027-10-03T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
