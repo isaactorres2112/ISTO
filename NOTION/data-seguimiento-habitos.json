@@ -23,15 +23,15 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-03T12:41:00-06:00",
+  "ultima_actualizacion": "2026-10-03T20:19:00-06:00",
   "ultimo_dia_evaluado": "2026-10-03",
   "hoy": {
     "fecha": "2026-10-03",
-    "cumplidos": 2,
+    "cumplidos": 3,
     "total": 10,
-    "porcentaje": 20,
+    "porcentaje": 30,
     "habitos": {
-      "Dormir": false,
+      "Dormir": true,
       "Salud": false,
       "Ejercicio": false,
       "Orar": false,
@@ -44,12 +44,12 @@
     }
   },
   "global": {
-    "cumplimiento": 44.2,
-    "cumplidos": 84,
+    "cumplimiento": 44.7,
+    "cumplidos": 85,
     "posibles": 190,
     "dias_registrados": 19,
     "habitos": {
-      "Dormir": 42.1,
+      "Dormir": 47.4,
       "Salud": 73.7,
       "Ejercicio": 0.0,
       "Orar": 5.3,
@@ -63,9 +63,9 @@
   },
   "tendencia_semanal": {
     "Dormir": {
-      "actual": 33.3,
+      "actual": 50.0,
       "anterior": 28.6,
-      "cambio": 4.7
+      "cambio": 21.4
     },
     "Salud": {
       "actual": 83.3,
@@ -423,7 +423,7 @@
     {
       "fecha": "2026-10-03",
       "habitos": {
-        "Dormir": false,
+        "Dormir": true,
         "Salud": false,
         "Ejercicio": false,
         "Orar": false,
@@ -434,7 +434,7 @@
         "Tocarse": true,
         "Animo": false
       },
-      "cumplidos": 2,
+      "cumplidos": 3,
       "total": 10
     }
   ],
