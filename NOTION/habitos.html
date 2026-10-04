@@ -33,7 +33,7 @@ function weeklyGeneral(diarios){
 }
 function render(d){
  const diarios=d.diarios||[],habits=d.habitos||[],g=d.global||{};
- const possible=g.posibles??diarios.length*habits.length,done=g.cumplidos??diarios.reduce((s,x)=>s+(x.cumplidos||0),0),general=possible?done*100/possible:0;
+ const possible=g.posibles??diarios.length*habits.length,done=g.cumplidos??diarios.reduce((s,x)=>s+(x.cumplidos||0),0),general=Number.isFinite(Number(g.cumplimiento))?Number(g.cumplimiento):(possible?done*100/possible:0);
  $('general').textContent=fmt(general)+'%';$('generalDetail').textContent=done+' de '+possible+' cumplimientos · '+diarios.length+' días registrados';
  const gap=general-META;$('gap').textContent=(gap>0?'+':'')+fmt(gap)+' pp';$('gap').classList.toggle('negative',gap<0);
  const hp=g.habitos||Object.fromEntries(habits.map(h=>[h,diarios.length?diarios.filter(x=>x.habitos?.[h]).length*100/diarios.length:0]));
