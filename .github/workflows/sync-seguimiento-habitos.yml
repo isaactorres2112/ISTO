@@ -68,10 +68,26 @@ jobs:
               daily.append({'fecha':dt.isoformat(),'habitos':state,'cumplidos':sum(state.values()),'total':len(habits)})
 
           daily.sort(key=lambda x:x['fecha'])
-          total_checks=sum(x['cumplidos'] for x in daily)
-          total_possible=len(daily)*len(habits)
-          habit_global={h:round(sum(1 for x in daily if x['habitos'][h])*100/len(daily),1) if daily else 0 for h in habits}
-          general=round(total_checks*100/total_possible,1) if total_possible else 0
+          # Cumplimiento global normalizado por la frecuencia semanal de cada hábito.
+          # Para semanas parciales, nunca se exigen más sesiones que días registrados.
+          weeks=defaultdict(list)
+          for x in daily:
+              dt=datetime.fromisoformat(x['fecha']).date()
+              week=(dt-timedelta(days=dt.weekday())).isoformat()
+              weeks[week].append(x)
+
+          habit_done={h:sum(1 for x in daily if x['habitos'][h]) for h in habits}
+          habit_expected={}
+          habit_global={}
+          for h in habits:
+              expected=sum(min(weekly_goals[h],len(rows)) for rows in weeks.values())
+              habit_expected[h]=expected
+              habit_global[h]=round(min(100,habit_done[h]*100/expected),1) if expected else 0
+
+          # El general es el promedio de los 10 hábitos ya normalizados por su propia meta.
+          general=round(sum(habit_global.values())/len(habits),1) if habits else 0
+          total_checks=sum(habit_done.values())
+          total_possible=sum(habit_expected.values())
 
           # Tendencia: semana actual contra la semana anterior, usando los días registrados de cada una.
           monday=today-timedelta(days=today.weekday())
@@ -109,7 +125,7 @@ jobs:
               'ultima_actualizacion':datetime.now().astimezone().replace(second=0,microsecond=0).isoformat(timespec='seconds'),
               'ultimo_dia_evaluado':daily[-1]['fecha'] if daily else None,
               'hoy':{'fecha':today.isoformat(),'cumplidos':today_row['cumplidos'] if today_row else 0,'total':len(habits),'porcentaje':round((today_row['cumplidos'] if today_row else 0)*100/len(habits)),'habitos':today_row['habitos'] if today_row else {h:False for h in habits}},
-              'global':{'cumplimiento':general,'cumplidos':total_checks,'posibles':total_possible,'dias_registrados':len(daily),'habitos':habit_global},
+              'global':{'cumplimiento':general,'cumplidos':total_checks,'posibles':total_possible,'dias_registrados':len(daily),'habitos':habit_global,'detalle':{h:{'realizadas':habit_done[h],'esperadas':habit_expected[h],'meta_semanal':weekly_goals[h]} for h in habits}},
               'tendencia_semanal':trend,'diarios':daily,'items':items
           }
           with open('NOTION/data-seguimiento-habitos.json','w',encoding='utf-8') as f:
