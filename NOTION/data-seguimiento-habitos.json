@@ -23,15 +23,15 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-03T20:19:00-06:00",
-  "ultimo_dia_evaluado": "2026-10-03",
+  "ultima_actualizacion": "2026-10-04T04:50:00-06:00",
+  "ultimo_dia_evaluado": "2026-10-04",
   "hoy": {
-    "fecha": "2026-10-03",
-    "cumplidos": 3,
+    "fecha": "2026-10-04",
+    "cumplidos": 2,
     "total": 10,
-    "porcentaje": 30,
+    "porcentaje": 20,
     "habitos": {
-      "Dormir": true,
+      "Dormir": false,
       "Salud": false,
       "Ejercicio": false,
       "Orar": false,
@@ -44,33 +44,33 @@
     }
   },
   "global": {
-    "cumplimiento": 44.7,
-    "cumplidos": 85,
-    "posibles": 190,
-    "dias_registrados": 19,
+    "cumplimiento": 44.0,
+    "cumplidos": 88,
+    "posibles": 200,
+    "dias_registrados": 20,
     "habitos": {
-      "Dormir": 47.4,
-      "Salud": 73.7,
+      "Dormir": 45.0,
+      "Salud": 70.0,
       "Ejercicio": 0.0,
-      "Orar": 5.3,
-      "Ahorrar": 36.8,
+      "Orar": 5.0,
+      "Ahorrar": 35.0,
       "Leer": 0.0,
-      "Agua": 26.3,
-      "Uñas": 94.7,
-      "Tocarse": 78.9,
-      "Animo": 84.2
+      "Agua": 25.0,
+      "Uñas": 95.0,
+      "Tocarse": 80.0,
+      "Animo": 85.0
     }
   },
   "tendencia_semanal": {
     "Dormir": {
-      "actual": 50.0,
+      "actual": 42.9,
       "anterior": 28.6,
-      "cambio": 21.4
+      "cambio": 14.3
     },
     "Salud": {
-      "actual": 83.3,
+      "actual": 71.4,
       "anterior": 71.4,
-      "cambio": 11.9
+      "cambio": 0.0
     },
     "Ejercicio": {
       "actual": 0.0,
@@ -78,14 +78,14 @@
       "cambio": 0.0
     },
     "Orar": {
-      "actual": 16.7,
+      "actual": 14.3,
       "anterior": 0.0,
-      "cambio": 16.7
+      "cambio": 14.3
     },
     "Ahorrar": {
-      "actual": 83.3,
+      "actual": 71.4,
       "anterior": 14.3,
-      "cambio": 69.0
+      "cambio": 57.1
     },
     "Leer": {
       "actual": 0.0,
@@ -93,9 +93,9 @@
       "cambio": 0.0
     },
     "Agua": {
-      "actual": 33.3,
+      "actual": 28.6,
       "anterior": 42.9,
-      "cambio": -9.6
+      "cambio": -14.3
     },
     "Uñas": {
       "actual": 100.0,
@@ -108,9 +108,9 @@
       "cambio": 14.3
     },
     "Animo": {
-      "actual": 83.3,
+      "actual": 85.7,
       "anterior": 71.4,
-      "cambio": 11.9
+      "cambio": 14.3
     }
   },
   "diarios": [
@@ -432,9 +432,26 @@
         "Agua": false,
         "Uñas": true,
         "Tocarse": true,
+        "Animo": true
+      },
+      "cumplidos": 4,
+      "total": 10
+    },
+    {
+      "fecha": "2026-10-04",
+      "habitos": {
+        "Dormir": false,
+        "Salud": false,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": true,
+        "Tocarse": true,
         "Animo": false
       },
-      "cumplidos": 3,
+      "cumplidos": 2,
       "total": 10
     }
   ],
@@ -533,85 +550,85 @@
       "mes": "Octubre",
       "anio": 2026,
       "habitos": {
-        "Dormir": 0.0,
+        "Dormir": 14.3,
         "Salud": 28.6,
         "Ejercicio": 0.0,
         "Orar": 0.0,
         "Ahorrar": 100,
         "Leer": 0.0,
         "Agua": 0.0,
-        "Uñas": 28.6,
-        "Tocarse": 33.3,
-        "Animo": 28.6
+        "Uñas": 42.9,
+        "Tocarse": 50.0,
+        "Animo": 42.9
       },
       "detalle": {
         "Dormir": {
-          "realizadas": 0,
+          "realizadas": 1,
           "esperadas": 7,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 7
         },
         "Salud": {
           "realizadas": 2,
           "esperadas": 7,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 7
         },
         "Ejercicio": {
           "realizadas": 0,
           "esperadas": 3,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 3
         },
         "Orar": {
           "realizadas": 0,
           "esperadas": 4,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 4
         },
         "Ahorrar": {
           "realizadas": 2,
           "esperadas": 1,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 1
         },
         "Leer": {
           "realizadas": 0,
           "esperadas": 5,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 5
         },
         "Agua": {
           "realizadas": 0,
           "esperadas": 5,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 5
         },
         "Uñas": {
-          "realizadas": 2,
+          "realizadas": 3,
           "esperadas": 7,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 7
         },
         "Tocarse": {
-          "realizadas": 2,
+          "realizadas": 3,
           "esperadas": 6,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 6
         },
         "Animo": {
-          "realizadas": 2,
+          "realizadas": 3,
           "esperadas": 7,
-          "dias_evaluados": 2,
+          "dias_evaluados": 3,
           "semanas_evaluadas": 1,
           "meta_semanal": 7
         }
