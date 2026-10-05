@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-04T20:13:11-05:00",
+  "ultima_actualizacion": "2026-10-04T20:32:46-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -46,17 +46,6 @@
       "detalles": null
     },
     {
-      "id": "3a801ec1-e57b-8340-9169-81dd6b8ccd0c",
-      "evento": "Cumple Adriana Perez",
-      "fecha": "2026-10-09T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
       "id": "9ba01ec1-e57b-82a8-95a1-8161f7ea59f1",
       "evento": "Corte de Pelo",
       "fecha": "2026-10-09T19:30:00.000-05:00",
@@ -70,17 +59,6 @@
     {
       "id": "c3c01ec1-e57b-8244-9d88-01cbd8014291",
       "evento": "Cumple Patricia Rodriguez",
-      "fecha": "2026-10-10T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "87801ec1-e57b-82c3-bec6-81624e6188a2",
-      "evento": "Cumple Elias Rincon",
       "fecha": "2026-10-10T08:00:00.000-05:00",
       "fin": null,
       "check": false,
@@ -1017,6 +995,28 @@
       "id": "77001ec1-e57b-8265-aadf-01ea3c1788bd",
       "evento": "Cumple Lía Rodriguez",
       "fecha": "2027-09-02T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "3a801ec1-e57b-8340-9169-81dd6b8ccd0c",
+      "evento": "Cumple Adriana Perez",
+      "fecha": "2027-09-09T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "87801ec1-e57b-82c3-bec6-81624e6188a2",
+      "evento": "Cumple Elias Rincon",
+      "fecha": "2027-09-10T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
