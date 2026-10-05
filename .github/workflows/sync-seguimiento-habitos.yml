@@ -143,5 +143,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Actualizar seguimiento global de hábitos"
           git pull --rebase origin main
-          git push origin HEAD:main
+          git push origin HEAD:main || (sleep 3 && git pull --rebase origin main && git push origin HEAD:main)
 # Actualización manual: 2026-10-02 01:40
