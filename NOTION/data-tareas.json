@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-05T17:31:00-06:00",
+  "ultima_actualizacion": "2026-10-05T17:52:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -28,9 +28,9 @@
     {
       "id": "3ca01ec1-e57b-80b4-b325-c70b1c912d2e",
       "tarea": "Vacaciones del personal",
-      "trabajo": "2026-10-08",
-      "trabajo_fin": "2026-10-12",
-      "fecha_limite": "2026-09-30",
+      "trabajo": "2026-11-09",
+      "trabajo_fin": "2026-11-13",
+      "fecha_limite": "2026-11-30",
       "check": false
     },
     {
@@ -52,8 +52,8 @@
     {
       "id": "3ca01ec1-e57b-80b9-a154-c66bc6274ba5",
       "tarea": "Oficinas Regionales",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-15",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-23",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -132,8 +132,8 @@
     {
       "id": "3ca01ec1-e57b-8026-b30a-fb544be591e0",
       "tarea": "OC-26-6 “1005”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-12",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -148,49 +148,49 @@
     {
       "id": "3ca01ec1-e57b-80ac-b9bb-edab0317ea4c",
       "tarea": "OC-26-5 “ARCHIVO”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-803f-a575-e2d91b475eb1",
       "tarea": "OC-26-4 “CANCELACIONES”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-11-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-806d-bb6f-f0c3d6d1a568",
       "tarea": "OC-26-3 “1103”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-805e-853d-fd8a801fb6a6",
       "tarea": "OC-26-2 “2001”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-808d-9b2d-c692e8fb639c",
       "tarea": "OC-26-1 “2012”",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-29",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
       "tarea": "Revisión contable",
-      "trabajo": "2026-09-30",
-      "trabajo_fin": "2026-10-01",
-      "fecha_limite": "2026-10-02",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-16",
+      "fecha_limite": "2026-10-16",
       "check": false
     },
     {
