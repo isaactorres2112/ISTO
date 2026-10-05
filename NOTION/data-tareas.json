@@ -1,14 +1,6 @@
 {
-  "ultima_actualizacion": "2026-10-05T16:42:00-06:00",
+  "ultima_actualizacion": "2026-10-05T16:56:00-06:00",
   "items": [
-    {
-      "id": "3f001ec1-e57b-803f-89ff-db1e2338eac0",
-      "tarea": "Revision de SGC",
-      "trabajo": "2026-10-12",
-      "trabajo_fin": "2026-10-16",
-      "fecha_limite": "2026-10-30",
-      "check": false
-    },
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
       "tarea": "Inventario de Activos",
@@ -98,11 +90,99 @@
       "check": false
     },
     {
+      "id": "3ca01ec1-e57b-8011-b9ad-f690f502c113",
+      "tarea": "AC-26-1378 “COMPRAS”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80e1-960c-fe30ccdb8760",
+      "tarea": "AC-26-1379 “RECORRIDO”",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b6-9b68-c0e6a7604b7b",
+      "tarea": "AC-26-1381 “ACTIVOS”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80ed-b1c9-ca5f3ebb7990",
+      "tarea": "AC-26-1382 “PROVEDORES”",
+      "trabajo": "2026-10-05",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80b3-96d4-e6e7fe665bf9",
+      "tarea": "AC-26-1383 “DYA”",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-12-04",
+      "fecha_limite": "2026-12-04",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-8026-b30a-fb544be591e0",
+      "tarea": "OC-26-6 “1005”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
       "id": "3ca01ec1-e57b-800b-895f-eccdb6ab087b",
       "tarea": "AC-26-766 “BODEGAS”",
       "trabajo": "2026-11-04",
       "trabajo_fin": "2026-11-20",
       "fecha_limite": "2026-10-14",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-80ac-b9bb-edab0317ea4c",
+      "tarea": "OC-26-5 “ARCHIVO”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-803f-a575-e2d91b475eb1",
+      "tarea": "OC-26-4 “CANCELACIONES”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-11-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-806d-bb6f-f0c3d6d1a568",
+      "tarea": "OC-26-3 “1103”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-805e-853d-fd8a801fb6a6",
+      "tarea": "OC-26-2 “2001”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-808d-9b2d-c692e8fb639c",
+      "tarea": "OC-26-1 “2012”",
+      "trabajo": "2026-09-28",
+      "trabajo_fin": "2026-09-29",
+      "fecha_limite": "2026-10-30",
       "check": false
     },
     {
