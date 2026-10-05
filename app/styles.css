@@ -28,3 +28,8 @@
 
 /* Ajustes Inicio */
 #homeView .event-card{grid-template-columns:52px 1fr}#homeView .event-time{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:9px!important;font-weight:500;line-height:1.15;color:var(--muted);text-align:left;white-space:nowrap}
+
+
+/* Agenda · tarjetas unificadas con el sistema visual ISTO */
+#agendaView .event-card{background:rgba(20,19,17,.46);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 38px rgba(0,0,0,.20);backdrop-filter:blur(22px) saturate(120%);-webkit-backdrop-filter:blur(22px) saturate(120%);border-radius:var(--radius);padding:var(--pad)}
+#agendaView .date-tile{background:rgba(216,189,122,.10);border-color:rgba(216,189,122,.30)}
