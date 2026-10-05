@@ -8,10 +8,6 @@ on:
     paths:
       - '.github/workflows/sync-ideas.yml'
 
-concurrency:
-  group: isto-notion-sync
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
