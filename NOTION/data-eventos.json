@@ -1,32 +1,10 @@
 {
-  "ultima_actualizacion": "2026-10-04T19:51:18-05:00",
+  "ultima_actualizacion": "2026-10-04T20:13:11-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
       "evento": "Pago Verificación",
       "fecha": "2026-09-26T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "4b701ec1-e57b-8390-8ace-010a3e5f0226",
-      "evento": "Pago Sapal",
-      "fecha": "2026-10-02T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "f9d01ec1-e57b-833a-ad58-013174a55eb9",
-      "evento": "Pago Megacable",
-      "fecha": "2026-10-03T10:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
@@ -251,6 +229,28 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "4b701ec1-e57b-8390-8ace-010a3e5f0226",
+      "evento": "Pago Sapal",
+      "fecha": "2026-11-02T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "f9d01ec1-e57b-833a-ad58-013174a55eb9",
+      "evento": "Pago Megacable",
+      "fecha": "2026-11-03T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
       ],
       "detalles": null
     },
