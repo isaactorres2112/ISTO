@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-05T12:50:00-06:00",
+  "ultima_actualizacion": "2026-10-05T15:34:00-06:00",
   "items": [
     {
       "id": "3f001ec1-e57b-803f-89ff-db1e2338eac0",
@@ -44,9 +44,9 @@
     {
       "id": "3ca01ec1-e57b-8029-9eaa-d2582ecdd655",
       "tarea": "Actas de Honorarios",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-10-13",
-      "fecha_limite": "2026-10-15",
+      "trabajo": "2026-10-16",
+      "trabajo_fin": "2026-10-28",
+      "fecha_limite": "2026-10-29",
       "check": false
     },
     {
@@ -76,25 +76,33 @@
     {
       "id": "3ca01ec1-e57b-8000-9b1d-d6fd7321c63f",
       "tarea": "Devolución de Impuestos",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-02",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-13",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-8065-96a2-cb1989597052",
       "tarea": "Objetivos específicos",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-15",
+      "trabajo": "2026-10-15",
+      "trabajo_fin": "2026-10-16",
       "fecha_limite": "2026-10-30",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
       "tarea": "Compras DAFI",
-      "trabajo": "2026-10-01",
+      "trabajo": "2026-10-06",
       "trabajo_fin": "2026-10-09",
       "fecha_limite": "2026-10-30",
+      "check": false
+    },
+    {
+      "id": "3ca01ec1-e57b-800b-895f-eccdb6ab087b",
+      "tarea": "AC-26-766 “BODEGAS”",
+      "trabajo": "2026-11-04",
+      "trabajo_fin": "2026-11-20",
+      "fecha_limite": "2026-10-14",
       "check": false
     },
     {
@@ -204,9 +212,9 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-05",
+      "trabajo": "2026-10-06",
       "trabajo_fin": null,
-      "fecha_limite": "2026-10-05",
+      "fecha_limite": "2026-10-06",
       "check": false
     }
   ]
