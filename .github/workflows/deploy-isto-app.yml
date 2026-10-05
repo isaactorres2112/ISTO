@@ -9,6 +9,7 @@ on:
       - "finanzas-2026/**"
       - ".github/workflows/deploy-isto-app.yml"
       - ".github/workflows/sync-seguimiento-bienestar.yml"
+      - ".github/workflows/sync-seguimiento-habitos.yml"
   workflow_dispatch:
 
 permissions:
