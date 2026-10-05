@@ -7,6 +7,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '*/15 * * * *'
+concurrency:
+  group: isto-notion-sync
+  cancel-in-progress: false
+
 permissions:
   contents: write
 jobs:
