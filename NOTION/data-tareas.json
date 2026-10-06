@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-05T17:52:00-06:00",
+  "ultima_actualizacion": "2026-10-05T18:21:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -20,8 +20,8 @@
     {
       "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
       "tarea": "Eventos FIGLO",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-10-06",
+      "trabajo": "2026-10-08",
+      "trabajo_fin": "2026-10-09",
       "fecha_limite": "2026-10-17",
       "check": false
     },
@@ -60,7 +60,7 @@
     {
       "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
       "tarea": "Inventarios",
-      "trabajo": "2026-10-05",
+      "trabajo": "2026-10-08",
       "trabajo_fin": "2026-10-09",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -92,8 +92,8 @@
     {
       "id": "3ca01ec1-e57b-8011-b9ad-f690f502c113",
       "tarea": "AC-26-1378 “COMPRAS”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
+      "trabajo": "2026-10-19",
+      "trabajo_fin": "2026-10-20",
       "fecha_limite": "2026-12-04",
       "check": false
     },
@@ -108,16 +108,16 @@
     {
       "id": "3ca01ec1-e57b-80b6-9b68-c0e6a7604b7b",
       "tarea": "AC-26-1381 “ACTIVOS”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
+      "trabajo": "2026-10-19",
+      "trabajo_fin": "2026-10-20",
       "fecha_limite": "2026-12-04",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-80ed-b1c9-ca5f3ebb7990",
       "tarea": "AC-26-1382 “PROVEDORES”",
-      "trabajo": "2026-10-05",
-      "trabajo_fin": "2026-12-04",
+      "trabajo": "2026-10-19",
+      "trabajo_fin": "2026-10-20",
       "fecha_limite": "2026-12-04",
       "check": false
     },
