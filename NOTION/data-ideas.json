@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-05T22:16:21-05:00",
+  "ultima_actualizacion": "2026-10-05T22:47:11-05:00",
   "items": [
     {
       "id": "3ed01ec1-e57b-816e-a31d-d12458770355",
@@ -43,15 +43,28 @@
     {
       "id": "3f001ec1-e57b-816f-acaf-d5830faefd47",
       "tema": "Sesiones psicológicas",
-      "estado": "",
+      "estado": "En desarrollo",
       "tipo": [
         "Salud y ejercicio"
       ],
       "fecha": "2026-10-04",
-      "ultima_edicion": "2026-10-05T02:29:00.000Z",
+      "ultima_edicion": "2026-10-06T03:28:00.000Z",
       "url": "https://app.notion.com/p/Sesiones-psicol-gicas-3f001ec1e57b816facafd5830faefd47",
       "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80",
-      "content_html": "<h2>Enfoque de las sesiones</h2><p>Estas sesiones serán conversaciones abiertas para partir de una experiencia, recuerdo, situación o emoción y comprender con mayor profundidad qué está ocurriendo psicológicamente.</p><h3>Qué veremos en cada sesión</h3><ol><li><strong>Experiencia o situación</strong> — Qué pasó y qué elementos fueron importantes.</li><li><strong>Cómo me sentí</strong> — Emociones que aparecieron durante y después.</li><li><strong>Qué pensé</strong> — Interpretaciones, expectativas o conclusiones que surgieron.</li><li><strong>Cómo reaccioné</strong> — Qué hice, evité, dije o decidí.</li><li><strong>Desglose psicológico</strong> — Explorar cada acción, evento, pensamiento y reacción para entender qué podría estar detrás: necesidades, miedos, expectativas, patrones, mecanismos de protección o experiencias previas.</li><li><strong>Patrones y conexiones</strong> — Relacionar lo ocurrido con otras experiencias cuando aparezcan similitudes.</li><li><strong>Otras interpretaciones</strong> — Explorar explicaciones alternativas sin asumir que una hipótesis es necesariamente cierta.</li><li><strong>Qué me deja la sesión</strong> — Identificar qué entendí mejor de mí mismo y qué conviene observar en situaciones futuras.</li></ol><h3>Forma de conversar</h3><p>La conversación será natural y progresiva, no un cuestionario rígido. Iremos profundizando mediante preguntas según lo que vaya apareciendo. Diferenciaremos observaciones de hipótesis y evitaremos convertirlas en diagnósticos.</p><p>Cada sesión podrá cerrarse con una breve retrospectiva que sintetice lo descubierto y los aspectos que conviene seguir observando.</p>"
+      "content_html": "<h2>Enfoque de las sesiones</h2><p>Estas sesiones serán conversaciones abiertas para partir de una experiencia, recuerdo, situación o emoción y comprender con mayor profundidad qué está ocurriendo psicológicamente.</p>"
+    },
+    {
+      "id": "3f101ec1-e57b-8181-9f80-deb7f4324036",
+      "tema": "Hyperfocus — Chris Bailey",
+      "estado": "",
+      "tipo": [
+        "Productividad y organización"
+      ],
+      "fecha": "2026-10-05",
+      "ultima_edicion": "2026-10-06T03:34:00.000Z",
+      "url": "https://app.notion.com/p/Hyperfocus-Chris-Bailey-3f101ec1e57b81819f80deb7f4324036",
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+      "content_html": ""
     }
   ]
 }
