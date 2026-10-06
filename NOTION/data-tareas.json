@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-05T19:55:00-06:00",
+  "ultima_actualizacion": "2026-10-05T20:13:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -44,7 +44,7 @@
     {
       "id": "3ca01ec1-e57b-80aa-ac12-c533b2f31ba6",
       "tarea": "PIPC",
-      "trabajo": "2026-10-19",
+      "trabajo": "2026-10-06",
       "trabajo_fin": "2026-10-23",
       "fecha_limite": "2026-10-30",
       "check": false
