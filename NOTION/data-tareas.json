@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-07T08:45:00-06:00",
+  "ultima_actualizacion": "2026-10-07T09:24:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -236,8 +236,8 @@
     {
       "id": "3c901ec1-e57b-8046-b87c-d77347610b71",
       "tarea": "Cierre contable",
-      "trabajo": "2026-10-01",
-      "trabajo_fin": "2026-10-07",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-15",
       "fecha_limite": "2026-10-07",
       "check": false
     },
