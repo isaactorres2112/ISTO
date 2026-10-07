@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-07T00:58:57-05:00",
+  "ultima_actualizacion": "2026-10-07T01:24:35-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -9,28 +9,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "a5c01ec1-e57b-8374-b37e-81a749ae8d72",
-      "evento": "Pago de Gas Rosa",
-      "fecha": "2026-10-05T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "9ac01ec1-e57b-829c-9da1-01df43b4eb33",
-      "evento": "Cumple Martha Puga",
-      "fecha": "2026-10-06T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
       ],
       "detalles": null
     },
@@ -225,6 +203,17 @@
       "id": "1ca01ec1-e57b-837f-bd37-0139ed769593",
       "evento": "Pagó H. de Morelia",
       "fecha": "2026-11-04T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "a5c01ec1-e57b-8374-b37e-81a749ae8d72",
+      "evento": "Pago de Gas Rosa",
+      "fecha": "2026-11-05T10:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
@@ -1127,6 +1116,17 @@
       "id": "0ac01ec1-e57b-8206-ad23-0102008ecb01",
       "evento": "Cumple Viviana Rodriguez",
       "fecha": "2027-10-03T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "9ac01ec1-e57b-829c-9da1-01df43b4eb33",
+      "evento": "Cumple Martha Puga",
+      "fecha": "2027-10-06T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
