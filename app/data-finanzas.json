@@ -1,8 +1,8 @@
 {
-  "actualizado": "07/10/2026 12:14",
-  "disponible": 3668.12,
-  "gasto_hoy": 0,
-  "gasto_mes": 10351.93,
+  "actualizado": "07/10/2026 12:19",
+  "disponible": 27730.89,
+  "gasto_hoy": 500,
+  "gasto_mes": 10851.93,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -23,10 +23,29 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Bancos",
-      "saldo": 1816.12
+      "saldo": 1316.12
+    },
+    {
+      "nombre": "CETES Directo",
+      "tipo": "Activo · Inversiones",
+      "saldo": 24562.77
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-07",
+      "concepto": "Traspaso entre cuentas",
+      "nombre": "Mercado Pago → Banorte Nómina",
+      "importe": 500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-07",
+      "concepto": "Traspaso entre cuentas",
+      "nombre": "Banorte Nómina → CETES Directo",
+      "importe": 500,
+      "id": ""
+    },
     {
       "fecha": "2026-10-06",
       "concepto": "Transporte",
@@ -117,20 +136,6 @@
       "nombre": "Mi Sushi Kin",
       "importe": 410,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-01",
-      "concepto": "Café",
-      "nombre": "Cafe290",
-      "importe": 148.75,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-01",
-      "concepto": "Suscripción ChatGPT",
-      "nombre": "OpenAI",
-      "importe": 399,
-      "id": ""
     }
   ],
   "categorias": [
@@ -147,12 +152,12 @@
       "importe": 825
     },
     {
-      "nombre": "Suscripciones",
-      "importe": 399
+      "nombre": "CETES Directo",
+      "importe": 500
     },
     {
-      "nombre": "Transporte",
-      "importe": 39.95
+      "nombre": "Suscripciones",
+      "importe": 399
     }
   ]
 }
