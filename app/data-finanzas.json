@@ -1,14 +1,14 @@
 {
-  "actualizado": "06/10/2026 20:59",
+  "actualizado": "06/10/2026 21:04",
   "disponible": 3668.12,
-  "gasto_hoy": 0,
-  "gasto_mes": 10130.74,
+  "gasto_hoy": 221.19,
+  "gasto_mes": 10351.93,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 3787.93
+      "saldo": 4009.12
     },
     {
       "nombre": "Banorte Nómina",
@@ -27,6 +27,20 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-06",
+      "concepto": "Transporte",
+      "nombre": "Uber",
+      "importe": 39.95,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-06",
+      "concepto": "Comida",
+      "nombre": "Los Reyes del Sabor · Uber Eats",
+      "importe": 181.24,
+      "id": ""
+    },
     {
       "fecha": "2026-10-04",
       "concepto": "Préstamo a DAFI",
@@ -117,20 +131,6 @@
       "nombre": "OpenAI",
       "importe": 399,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-01",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicolle",
-      "importe": 100,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-01",
-      "concepto": "Renta del departamento",
-      "nombre": "Renta",
-      "importe": 7500,
-      "id": ""
     }
   ],
   "categorias": [
@@ -140,7 +140,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 1406.74
+      "importe": 1587.98
     },
     {
       "nombre": "Servicios",
@@ -149,6 +149,10 @@
     {
       "nombre": "Suscripciones",
       "importe": 399
+    },
+    {
+      "nombre": "Transporte",
+      "importe": 39.95
     }
   ]
 }
