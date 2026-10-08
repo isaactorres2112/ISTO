@@ -1,14 +1,14 @@
 {
-  "actualizado": "08/10/2026 16:49",
-  "disponible": 27605.89,
-  "gasto_hoy": 50,
-  "gasto_mes": 10976.93,
+  "actualizado": "08/10/2026 16:54",
+  "disponible": 27505.89,
+  "gasto_hoy": 205.5,
+  "gasto_mes": 11132.43,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 4009.12
+      "saldo": 4064.62
     },
     {
       "nombre": "Banorte Nómina",
@@ -18,7 +18,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 1727
+      "saldo": 1627
     },
     {
       "nombre": "Mercado Pago",
@@ -37,6 +37,20 @@
       "concepto": "Lavandería",
       "nombre": "Lavandería Val",
       "importe": 50,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-08",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicolle",
+      "importe": 100,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-08",
+      "concepto": "Garrafón de agua",
+      "nombre": "Oxxo",
+      "importe": 55.5,
       "id": ""
     },
     {
@@ -122,20 +136,6 @@
       "nombre": "Uber",
       "importe": 68.3,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-02",
-      "concepto": "Préstamo a DAFI",
-      "nombre": "Cafetería",
-      "importe": 1606.88,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-02",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicolle",
-      "importe": 75,
-      "id": ""
     }
   ],
   "categorias": [
@@ -145,7 +145,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 1662.98
+      "importe": 1818.48
     },
     {
       "nombre": "Servicios",
