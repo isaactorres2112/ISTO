@@ -1,8 +1,8 @@
 {
-  "actualizado": "07/10/2026 17:54",
-  "disponible": 27730.89,
-  "gasto_hoy": 500,
-  "gasto_mes": 10851.93,
+  "actualizado": "07/10/2026 17:59",
+  "disponible": 27655.89,
+  "gasto_hoy": 575,
+  "gasto_mes": 10926.93,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -18,7 +18,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 1852
+      "saldo": 1777
     },
     {
       "nombre": "Mercado Pago",
@@ -44,6 +44,13 @@
       "concepto": "Traspaso entre cuentas",
       "nombre": "Banorte Nómina → CETES Directo",
       "importe": 500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-07",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicole",
+      "importe": 75,
       "id": ""
     },
     {
@@ -129,13 +136,6 @@
       "nombre": "DAFI",
       "importe": 1607,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-02",
-      "concepto": "Comida",
-      "nombre": "Mi Sushi Kin",
-      "importe": 410,
-      "id": ""
     }
   ],
   "categorias": [
@@ -145,7 +145,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 1587.98
+      "importe": 1662.98
     },
     {
       "nombre": "Servicios",
