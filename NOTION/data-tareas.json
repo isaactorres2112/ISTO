@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-08T07:47:00-06:00",
+  "ultima_actualizacion": "2026-10-08T08:17:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -284,7 +284,7 @@
     {
       "id": "3c701ec1-e57b-800a-a4c1-c3f2d1bb7998",
       "tarea": "Presupuesto DAFI",
-      "trabajo": "2026-10-07",
+      "trabajo": "2026-10-06",
       "trabajo_fin": "2026-10-16",
       "fecha_limite": "2026-10-20",
       "check": false
