@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-08T10:17:40-05:00",
+  "ultima_actualizacion": "2026-10-08T10:49:49-05:00",
   "items": [
     {
       "id": "3ed01ec1-e57b-816e-a31d-d12458770355",
@@ -74,10 +74,10 @@
         "Productividad y organización"
       ],
       "fecha": "2026-10-08",
-      "ultima_edicion": "2026-10-08T15:11:00.000Z",
+      "ultima_edicion": "2026-10-08T15:34:00.000Z",
       "url": "https://app.notion.com/p/C-mo-mejorar-la-evaluaci-n-del-personal-a-cargo-3f301ec1e57b81139aa4f49aaaca27f3",
       "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
-      "content_html": ""
+      "content_html": "<h2>Objetivo</h2><p>Evaluar al personal con indicadores cuantitativos y retroalimentación útil.</p><h2>Temario</h2><ol><li>Definir objetivos y responsabilidades por puesto.</li><li>Seleccionar indicadores: metas, productividad, calidad, tiempos y errores.</li><li>Establecer criterios, ponderaciones y fuentes de datos comparables.</li><li>Crear una ficha individual con metas, resultados y evolución mensual.</li><li>Dar retroalimentación basada en evidencias, fortalezas y oportunidades de mejora.</li><li>Acordar acciones y compromisos medibles.</li><li>Revisar avances periódicamente.</li></ol><h2>Entregable</h2><p>Plantilla mensual con 3 a 5 indicadores por colaborador, resultados y acuerdos de mejora.</p>"
     }
   ]
 }
