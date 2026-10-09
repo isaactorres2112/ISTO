@@ -1,8 +1,8 @@
 {
-  "actualizado": "09/10/2026 07:19",
-  "disponible": 27205.89,
-  "gasto_hoy": 0,
-  "gasto_mes": 11597.63,
+  "actualizado": "09/10/2026 14:04",
+  "disponible": 27105.89,
+  "gasto_hoy": 100,
+  "gasto_mes": 11697.63,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -18,7 +18,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 1327
+      "saldo": 1227
     },
     {
       "nombre": "Mercado Pago",
@@ -32,6 +32,13 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-09",
+      "concepto": "Comida",
+      "nombre": "Fonda Nicolle",
+      "importe": 100,
+      "id": ""
+    },
     {
       "fecha": "2026-10-08",
       "concepto": "Arreglo de pantalones",
@@ -129,13 +136,6 @@
       "nombre": "Pizza Hut · Uber Eats",
       "importe": 306.19,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-04",
-      "concepto": "Préstamo a DAFI",
-      "nombre": "Uber",
-      "importe": 67.01,
-      "id": ""
     }
   ],
   "categorias": [
@@ -145,7 +145,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 1983.68
+      "importe": 2083.68
     },
     {
       "nombre": "Servicios",
