@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-09T15:57:00-06:00",
+  "ultima_actualizacion": "2026-10-09T16:18:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -12,9 +12,9 @@
     {
       "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
       "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-08",
+      "trabajo": "2026-10-12",
       "trabajo_fin": "2026-10-30",
-      "fecha_limite": "2026-10-23",
+      "fecha_limite": "2026-10-30",
       "check": false
     },
     {
