@@ -1,8 +1,8 @@
 {
-  "actualizado": "09/10/2026 00:05",
-  "disponible": 27505.89,
+  "actualizado": "09/10/2026 07:19",
+  "disponible": 27205.89,
   "gasto_hoy": 0,
-  "gasto_mes": 11297.63,
+  "gasto_mes": 11597.63,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -18,7 +18,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 1627
+      "saldo": 1327
     },
     {
       "nombre": "Mercado Pago",
@@ -32,6 +32,13 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-08",
+      "concepto": "Arreglo de pantalones",
+      "nombre": "Sastre",
+      "importe": 300,
+      "id": ""
+    },
     {
       "fecha": "2026-10-08",
       "concepto": "Comida",
@@ -128,13 +135,6 @@
       "concepto": "Préstamo a DAFI",
       "nombre": "Uber",
       "importe": 67.01,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-03",
-      "concepto": "Préstamo a DAFI",
-      "nombre": "Uber",
-      "importe": 68.3,
       "id": ""
     }
   ],
