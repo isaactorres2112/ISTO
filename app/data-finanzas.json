@@ -1,14 +1,14 @@
 {
-  "actualizado": "10/10/2026 00:04",
-  "disponible": 27105.89,
-  "gasto_hoy": 0,
-  "gasto_mes": 11697.63,
+  "actualizado": "10/10/2026 12:19",
+  "disponible": 26622.89,
+  "gasto_hoy": 1949.58,
+  "gasto_mes": 13880.21,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 4229.82
+      "saldo": 5929.4
     },
     {
       "nombre": "Banorte Nómina",
@@ -18,7 +18,7 @@
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 1227
+      "saldo": 744
     },
     {
       "nombre": "Mercado Pago",
@@ -32,6 +32,41 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Flores para regalo de Paty",
+      "nombre": "Florería Carlos Olivas",
+      "importe": 1648.14,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Uber",
+      "nombre": "Uber",
+      "importe": 51.44,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Uber",
+      "nombre": "Uber",
+      "importe": 50,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Corte de pelo",
+      "nombre": "Élite Barber",
+      "importe": 200,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-09",
+      "concepto": "Comida",
+      "nombre": "McDonald's · Uber Eats",
+      "importe": 233,
+      "id": ""
+    },
     {
       "fecha": "2026-10-09",
       "concepto": "Comida",
@@ -101,41 +136,6 @@
       "nombre": "Los Reyes del Sabor · Uber Eats",
       "importe": 181.24,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-06",
-      "concepto": "Transporte",
-      "nombre": "Uber",
-      "importe": 39.95,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-04",
-      "concepto": "Internet",
-      "nombre": "Megacable León",
-      "importe": 500,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-04",
-      "concepto": "Agua",
-      "nombre": "SAPAL León",
-      "importe": 181,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-04",
-      "concepto": "Electricidad",
-      "nombre": "CFE León",
-      "importe": 144,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-04",
-      "concepto": "Comida",
-      "nombre": "Pizza Hut · Uber Eats",
-      "importe": 306.19,
-      "id": ""
     }
   ],
   "categorias": [
@@ -145,7 +145,11 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 2083.68
+      "importe": 2316.68
+    },
+    {
+      "nombre": "Regalos",
+      "importe": 1648.14
     },
     {
       "nombre": "Servicios",
@@ -154,10 +158,6 @@
     {
       "nombre": "CETES Directo",
       "importe": 500
-    },
-    {
-      "nombre": "Suscripciones",
-      "importe": 399
     }
   ]
 }
