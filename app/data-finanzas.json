@@ -1,8 +1,8 @@
 {
-  "actualizado": "10/10/2026 12:19",
-  "disponible": 26622.89,
-  "gasto_hoy": 1949.58,
-  "gasto_mes": 13880.21,
+  "actualizado": "10/10/2026 12:24",
+  "disponible": 26522.89,
+  "gasto_hoy": 2049.58,
+  "gasto_mes": 13980.21,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -23,7 +23,7 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Bancos",
-      "saldo": 1316.12
+      "saldo": 1216.12
     },
     {
       "nombre": "CETES Directo",
@@ -32,6 +32,13 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Recarga de teléfono",
+      "nombre": "Telefonía móvil",
+      "importe": 100,
+      "id": ""
+    },
     {
       "fecha": "2026-10-10",
       "concepto": "Flores para regalo de Paty",
@@ -129,13 +136,6 @@
       "nombre": "Mercado Pago → Banorte Nómina",
       "importe": 500,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-06",
-      "concepto": "Comida",
-      "nombre": "Los Reyes del Sabor · Uber Eats",
-      "importe": 181.24,
-      "id": ""
     }
   ],
   "categorias": [
@@ -153,7 +153,7 @@
     },
     {
       "nombre": "Servicios",
-      "importe": 875
+      "importe": 975
     },
     {
       "nombre": "CETES Directo",
