@@ -92,7 +92,26 @@ const key='bosque-vivo-svg-v4';
 const mat=(c)=>new THREE.MeshStandardMaterial({color:c,roughness:.95,flatShading:true});
 function mesh(geo,m,x,y,z,parent=group){const a=new THREE.Mesh(geo,m);a.position.set(x,y,z);parent.add(a);a.castShadow=true;a.receiveShadow=true;return a}
 function ball(x,y,z,r,c,sx=1,sy=1,sz=1){let a=mesh(new THREE.IcosahedronGeometry(r,2),mat(c),x,y,z);a.scale.set(sx,sy,sz);return a}
-function tree(x,z,kind,age){const size=Math.max(.14,Math.min(1,age));const h=1.3*size;mesh(new THREE.CylinderGeometry(.095*size,.15*size,h,7),mat('#866348'),x,.75+h/2,z);if(kind==='pino'||kind==='cipres'){for(let j=0;j<3;j++){let q=mesh(new THREE.ConeGeometry((.65-j*.12)*size,1.1*size,9),mat(j===0?'#4d987f':'#7db49a'),x,1.5*size+j*.4*size,z)}}else{ball(x,1.8*size,z,.8*size,kind==='abedul'?'#b5d8a1':'#7cac86',1.1,.86,1);ball(x-.38*size,1.65*size,z,.55*size,'#a9cda0');ball(x+.38*size,1.8*size,z,.55*size,'#689d7e')}}
+function tree(x,z,kind,age){
+ const size=Math.max(.14,Math.min(1,age)),h=1.25*size;
+ const trunk=mesh(new THREE.CylinderGeometry(.095*size,.17*size,h,9),mat(kind==='abedul'?'#eee8d6':'#927357'),x,.34+h/2,z);
+ if(kind==='pino'||kind==='cipres'){
+  const layers=kind==='cipres'?4:3;
+  for(let j=0;j<layers;j++){
+   const radius=(kind==='cipres'?.49:.78)*(1-j*.17)*size;
+   const crown=mesh(new THREE.ConeGeometry(radius,(kind==='cipres'?1.1:1.0)*size,10),mat(['#6eaa90','#80b99a','#96c5a8','#b0d4b6'][j]),x,.85*size+j*.39*size,z);
+   crown.rotation.y=j*.35;
+  }
+ }else if(kind==='sauce'){
+  ball(x,1.45*size,z,.84*size,'#93bfa0',1.25,.78,1.1);
+  for(let j=0;j<11;j++){const a=j*Math.PI*2/11;let twig=mesh(new THREE.CylinderGeometry(.025*size,.038*size,.7*size,5),mat('#a1c6a0'),x+Math.cos(a)*.72*size,.87*size,z+Math.sin(a)*.65*size);twig.rotation.z=Math.sin(a)*.18;}
+ }else{
+  const tones=kind==='abedul'?['#a5c9a1','#c5dab0','#e0dfb7']:['#81ad8a','#a2c9a0','#bad7a5'];
+  for(const [dx,dy,dz,r,col] of [[0,1.7,0,.72,0],[-.46,1.49,.06,.53,1],[.43,1.6,-.12,.56,2],[.04,1.9,.27,.51,1]]){
+   ball(x+dx*size,dy*size,z+dz*size,r*size,tones[col],1.1,.83,1);
+  }
+ }
+}
 function build(){selectionMarker=null;while(group.children.length){let obj=group.children.pop();obj.parent=null;obj.traverse?.(o=>{o.geometry?.dispose();if(o.material)o.material.dispose()})}let base=mesh(new THREE.BoxGeometry(14,.9,11),mat('#c5b68e'),0,-.4,0);base.rotation.y=-.13;let turf=mesh(new THREE.BoxGeometry(14,.2,11),mat('#a9ca95'),0,.08,0);turf.rotation.y=-.13;
 // Pastel diorama: stepped land, rounded shrubs, stones and flower clusters.
 for(const [x,z,w,d] of [[-5,-4,2.8,1.8],[4.7,-3.5,3,2.1],[-4.9,3.7,2.6,1.6]]){let ledge=mesh(new THREE.CylinderGeometry(w*.55,w*.6,.35,9),mat('#c3cda2'),x,.29,z);ledge.scale.z=d/w;let grass=mesh(new THREE.CylinderGeometry(w*.54,w*.54,.08,9),mat('#b7d7a0'),x,.51,z);grass.scale.z=d/w;}
@@ -101,6 +120,24 @@ for(let i=0;i<85;i++){let x=Math.sin(i*39.18)*6.4,z=Math.cos(i*23.41)*4.9;if(Mat
 const pts=[];for(let i=0;i<=35;i++){let z=-5.3+i*10.6/35,x=.8*Math.sin(z*1.15)+.5*Math.sin(z*2);pts.push(new THREE.Vector3(x,.205,z))}const curve=new THREE.CatmullRomCurve3(pts);let river=mesh(new THREE.TubeGeometry(curve,90,.53,10,false),new THREE.MeshStandardMaterial({color:'#6cbcc5',roughness:.25,metalness:.05}),0,0,0);river.scale.y=.13;
 for(let i=0;i<2;i++){let z=i?2.3:-2.3,x=.8*Math.sin(z*1.15)+.5*Math.sin(z*2);let bridge=mesh(new THREE.BoxGeometry(2.7,.19,.95),mat('#d7aa75'),x,.43,z);for(let j=-1;j<=1;j++)mesh(new THREE.BoxGeometry(2.6,.04,.035),mat('#9a754d'),x,.55,z+j*.29)}
 const rocks=[[-5,-3],[-4,2],[4.7,-3.8],[5,3.6],[-5,4.2]];for(const [x,z] of rocks)ball(x,.33,z,.46,'#b3b9a9',1.2,.65,1);
+// Acabado de jardín: senderos de piedra, flores y pequeños grupos de setas.
+for(let i=0;i<21;i++){
+ const z=-4.8+i*.47, x=-3.15+.45*Math.sin(z*1.25);
+ let stone=mesh(new THREE.CylinderGeometry(.25,.27,.035,8),mat(i%3===0?'#e8d8bd':'#d8d5bd'),x,.205,z);
+ stone.scale.z=.72;stone.rotation.y=i*.32;
+}
+for(let i=0;i<52;i++){
+ const x=Math.sin(i*17.31)*6.1,z=Math.cos(i*12.79)*4.7;
+ if(Math.abs(x)<1.25||Math.abs(x+3.15)<.5)continue;
+ const col=['#f5d3d3','#fff0be','#d5c7e9','#f6e1b2'][i%4];
+ ball(x,.3,z,.075,col,1,.65,1);
+ if(i%7===0){mesh(new THREE.CylinderGeometry(.025,.035,.16,5),mat('#a9b982'),x,.28,z);}
+}
+for(let i=0;i<9;i++){
+ const x=4.0+Math.sin(i*2.6)*1.6,z=-2.9+Math.cos(i*1.7)*1.3;
+ mesh(new THREE.CylinderGeometry(.035,.045,.18,6),mat('#efe5c8'),x,.29,z);
+ ball(x,.4,z,.12,i%2?'#dca6a1':'#e4bc9d',1,.58,1);
+}
 // Small decorative trees outside planting clearings.
 for(const [x,z,k] of [[-5,-2,'pino'],[-5,1,'roble'],[5,-1,'pino'],[4.8,3,'roble'],[-3.7,-4.2,'cipres']])tree(x,z,k,.85);
 let saved;try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch{saved={}};for(const t of (saved.trees||[])){let x=(t.x-600)/80,z=(t.y-350)/55;if(Math.abs(x)>6.6||Math.abs(z)>5.1)continue;let days={pino:30,roble:35,cipres:28,sauce:32,abedul:25}[t.kind]||30;let ratio=Math.min(1,Math.max(.06,(Date.now()-(t.plantedAt||Date.now()))/86400000/days));tree(x,z,t.kind,ratio)}
