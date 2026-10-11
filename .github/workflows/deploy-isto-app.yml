@@ -7,6 +7,7 @@ on:
       - "app/**"
       - "NOTION/**"
       - "finanzas-2026/**"
+      - "bosque-vivo/**"
       - ".github/workflows/deploy-isto-app.yml"
       - ".github/workflows/sync-seguimiento-bienestar.yml"
       - ".github/workflows/sync-seguimiento-habitos.yml"
@@ -41,6 +42,7 @@ jobs:
           cp -R app/. _site/
           cp -R NOTION _site/NOTION
           cp -R finanzas-2026 _site/finanzas-2026
+          cp -R bosque-vivo _site/bosque-vivo
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
