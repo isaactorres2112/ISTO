@@ -87,7 +87,7 @@ window.bosqueAPI={select:(x,y)=>{if(mode)setPreview({x,y})},getSelection:()=>can
 })();
 </script><script type="module">
 const button=document.querySelector('#mode3d'), holder=document.querySelector('#view3d'), map=document.querySelector('#map'), info=document.querySelector('#threeinfo');
-let THREE,renderer,scene,camera,group,ready=false,active=false,az=-.8,el=.8,dist=21,drag=null,selectionMarker=null;let weather='sol';
+let THREE,renderer,scene,camera,group,ready=false,active=false,az=-.8,el=.8,dist=21,drag=null,selectionMarker=null;let weather='sol',riverSurface=null,ambientLeaves=[],fireflies=[],sunLight=null;const animationClock={last:0};
 const key='bosque-vivo-svg-v4';
 const mat=(c)=>new THREE.MeshStandardMaterial({color:c,roughness:.95,flatShading:true});
 function mesh(geo,m,x,y,z,parent=group){const a=new THREE.Mesh(geo,m);a.position.set(x,y,z);parent.add(a);a.castShadow=true;a.receiveShadow=true;return a}
@@ -112,12 +112,12 @@ function tree(x,z,kind,age){
   }
  }
 }
-function build(){selectionMarker=null;while(group.children.length){let obj=group.children.pop();obj.parent=null;obj.traverse?.(o=>{o.geometry?.dispose();if(o.material)o.material.dispose()})}let base=mesh(new THREE.BoxGeometry(14,.9,11),mat('#c5b68e'),0,-.4,0);base.rotation.y=-.13;let turf=mesh(new THREE.BoxGeometry(14,.2,11),mat('#a9ca95'),0,.08,0);turf.rotation.y=-.13;
+function build(){riverSurface=null;ambientLeaves=[];fireflies=[];selectionMarker=null;while(group.children.length){let obj=group.children.pop();obj.parent=null;obj.traverse?.(o=>{o.geometry?.dispose();if(o.material)o.material.dispose()})}let base=mesh(new THREE.BoxGeometry(14,.9,11),mat('#c5b68e'),0,-.4,0);base.rotation.y=-.13;let turf=mesh(new THREE.BoxGeometry(14,.2,11),mat('#a9ca95'),0,.08,0);turf.rotation.y=-.13;
 // Pastel diorama: stepped land, rounded shrubs, stones and flower clusters.
 for(const [x,z,w,d] of [[-5,-4,2.8,1.8],[4.7,-3.5,3,2.1],[-4.9,3.7,2.6,1.6]]){let ledge=mesh(new THREE.CylinderGeometry(w*.55,w*.6,.35,9),mat('#c3cda2'),x,.29,z);ledge.scale.z=d/w;let grass=mesh(new THREE.CylinderGeometry(w*.54,w*.54,.08,9),mat('#b7d7a0'),x,.51,z);grass.scale.z=d/w;}
 for(let i=0;i<85;i++){let x=Math.sin(i*39.18)*6.4,z=Math.cos(i*23.41)*4.9;if(Math.abs(x)<1.5||Math.abs(z)>5)continue;let c=['#8ab994','#a4cba1','#d4dca5','#78ad92'][i%4];ball(x,.24,z,.11,c,1.5,.8,1.2)}
 // River, drawn as a winding band with physical depth and pale banks.
-const pts=[];for(let i=0;i<=35;i++){let z=-5.3+i*10.6/35,x=.8*Math.sin(z*1.15)+.5*Math.sin(z*2);pts.push(new THREE.Vector3(x,.205,z))}const curve=new THREE.CatmullRomCurve3(pts);let river=mesh(new THREE.TubeGeometry(curve,90,.53,10,false),new THREE.MeshStandardMaterial({color:'#6cbcc5',roughness:.25,metalness:.05}),0,0,0);river.scale.y=.13;
+const pts=[];for(let i=0;i<=35;i++){let z=-5.3+i*10.6/35,x=.8*Math.sin(z*1.15)+.5*Math.sin(z*2);pts.push(new THREE.Vector3(x,.205,z))}const curve=new THREE.CatmullRomCurve3(pts);let river=mesh(new THREE.TubeGeometry(curve,90,.53,10,false),new THREE.MeshStandardMaterial({color:'#6cbcc5',roughness:.25,metalness:.05}),0,0,0);river.scale.y=.13;riverSurface=river;
 for(let i=0;i<2;i++){let z=i?2.3:-2.3,x=.8*Math.sin(z*1.15)+.5*Math.sin(z*2);let bridge=mesh(new THREE.BoxGeometry(2.7,.19,.95),mat('#d7aa75'),x,.43,z);for(let j=-1;j<=1;j++)mesh(new THREE.BoxGeometry(2.6,.04,.035),mat('#9a754d'),x,.55,z+j*.29)}
 const rocks=[[-5,-3],[-4,2],[4.7,-3.8],[5,3.6],[-5,4.2]];for(const [x,z] of rocks)ball(x,.33,z,.46,'#b3b9a9',1.2,.65,1);
 // Acabado de jardín: senderos de piedra, flores y pequeños grupos de setas.
@@ -138,6 +138,17 @@ for(let i=0;i<9;i++){
  mesh(new THREE.CylinderGeometry(.035,.045,.18,6),mat('#efe5c8'),x,.29,z);
  ball(x,.4,z,.12,i%2?'#dca6a1':'#e4bc9d',1,.58,1);
 }
+// Hojas flotantes y luciérnagas discretas, sin interacción con la plantación.
+for(let i=0;i<18;i++){
+ const x=Math.sin(i*9.17)*5.8,z=Math.cos(i*13.4)*4.4;
+ const leaf=mesh(new THREE.IcosahedronGeometry(.065,0),new THREE.MeshStandardMaterial({color:i%3?'#d9cfa3':'#b8d5a3',flatShading:true}),x,.7+(i%5)*.27,z);
+ leaf.scale.set(1.6,.4,.75);leaf.userData={baseY:leaf.position.y,phase:i*.73};ambientLeaves.push(leaf);
+}
+for(let i=0;i<12;i++){
+ const x=Math.sin(i*6.37)*5.1,z=Math.cos(i*8.29)*3.9;
+ const glow=mesh(new THREE.SphereGeometry(.055,8,6),new THREE.MeshBasicMaterial({color:'#fff0ba',transparent:true,opacity:.38,depthWrite:false}),x,.8+(i%4)*.37,z);
+ glow.userData={phase:i*.91};fireflies.push(glow);
+}
 // Small decorative trees outside planting clearings.
 for(const [x,z,k] of [[-5,-2,'pino'],[-5,1,'roble'],[5,-1,'pino'],[4.8,3,'roble'],[-3.7,-4.2,'cipres']])tree(x,z,k,.85);
 let saved;try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch{saved={}};for(const t of (saved.trees||[])){let x=(t.x-600)/80,z=(t.y-350)/55;if(Math.abs(x)>6.6||Math.abs(z)>5.1)continue;let days={pino:30,roble:35,cipres:28,sauce:32,abedul:25}[t.kind]||30;let ratio=Math.min(1,Math.max(.06,(Date.now()-(t.plantedAt||Date.now()))/86400000/days));tree(x,z,t.kind,ratio)}
@@ -148,9 +159,18 @@ function syncMarker(){if(!ready||!group)return;if(selectionMarker){group.remove(
 window.addEventListener('bosque-preview',syncMarker);window.addEventListener('bosque-planted',()=>{if(ready){build();syncMarker()}});
 function position(){camera.position.set(Math.cos(az)*Math.cos(el)*dist,Math.sin(el)*dist,Math.sin(az)*Math.cos(el)*dist);camera.lookAt(0,0,0)}
 function resize(){let w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
-async function init(){if(ready)return;const mod=await import('https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js');THREE=mod;scene=new THREE.Scene();scene.background=new THREE.Color('#c4e1d4');scene.fog=new THREE.Fog('#c4e1d4',25,52);camera=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,.1,100);renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;holder.appendChild(renderer.domElement);scene.add(new THREE.HemisphereLight('#fff6df','#739b82',2.1));let light=new THREE.DirectionalLight('#fff0cf',2.5);light.position.set(-5,13,8);light.castShadow=true;light.shadow.mapSize.set(1024,1024);light.shadow.camera.left=-13;light.shadow.camera.right=13;light.shadow.camera.top=13;light.shadow.camera.bottom=-13;scene.add(light);group=new THREE.Group();scene.add(group);build();position();addEventListener('resize',resize);resize();ready=true;function frame(){requestAnimationFrame(frame);if(active)renderer.render(scene,camera)}frame();const cv=renderer.domElement;cv.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,sx:e.clientX,sy:e.clientY,moved:false};cv.setPointerCapture(e.pointerId)});cv.addEventListener('pointermove',e=>{if(!drag)return;if(Math.hypot(e.clientX-drag.sx,e.clientY-drag.sy)>7)drag.moved=true;az+=(e.clientX-drag.x)*.007;el=Math.max(.25,Math.min(1.35,el+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY};position()});cv.addEventListener('pointerup',e=>{if(drag&&!drag.moved&&window.bosqueAPI?.isPlanting()){let rect=cv.getBoundingClientRect();let mouse=new THREE.Vector2((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);let ray=new THREE.Raycaster();ray.setFromCamera(mouse,camera);let hit=new THREE.Vector3();if(ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,1,0),-.25),hit)){window.bosqueAPI.select(hit.x*80+600,hit.z*55+350)}}drag=null});cv.addEventListener('wheel',e=>{e.preventDefault();dist=Math.max(10,Math.min(38,dist+e.deltaY*.015));position()},{passive:false})}
+async function init(){if(ready)return;const mod=await import('https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js');THREE=mod;scene=new THREE.Scene();scene.background=new THREE.Color('#c4e1d4');scene.fog=new THREE.Fog('#c4e1d4',25,52);camera=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,.1,100);renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;holder.appendChild(renderer.domElement);scene.add(new THREE.HemisphereLight('#fff6df','#739b82',2.1));let light=new THREE.DirectionalLight('#fff0cf',2.5);light.position.set(-5,13,8);light.castShadow=true;light.shadow.mapSize.set(1024,1024);light.shadow.camera.left=-13;light.shadow.camera.right=13;light.shadow.camera.top=13;light.shadow.camera.bottom=-13;scene.add(light);sunLight=light;group=new THREE.Group();scene.add(group);build();position();addEventListener('resize',resize);resize();ready=true;function frame(time){
+ requestAnimationFrame(frame);
+ if(!active)return;
+ const t=(time||0)*.001;
+ if(riverSurface){riverSurface.material.color.setHSL(.51,.39,weather==='lluvia'?.56:.64+Math.sin(t*1.4)*.018);}
+ for(const leaf of ambientLeaves){leaf.position.y=leaf.userData.baseY+Math.sin(t*.9+leaf.userData.phase)*.08;leaf.rotation.y=t*.27+leaf.userData.phase;}
+ for(const glow of fireflies){glow.material.opacity=weather==='lluvia'?.10:.18+.23*(.5+.5*Math.sin(t*1.3+glow.userData.phase));glow.position.y+=Math.sin(t+glow.userData.phase)*.00015;}
+ if(sunLight){sunLight.intensity=weather==='sol'?2.25+Math.sin(t*.3)*.13:weather==='niebla'?1.25:1.05;}
+ renderer.render(scene,camera);
+}frame();const cv=renderer.domElement;cv.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,sx:e.clientX,sy:e.clientY,moved:false};cv.setPointerCapture(e.pointerId)});cv.addEventListener('pointermove',e=>{if(!drag)return;if(Math.hypot(e.clientX-drag.sx,e.clientY-drag.sy)>7)drag.moved=true;az+=(e.clientX-drag.x)*.007;el=Math.max(.25,Math.min(1.35,el+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY};position()});cv.addEventListener('pointerup',e=>{if(drag&&!drag.moved&&window.bosqueAPI?.isPlanting()){let rect=cv.getBoundingClientRect();let mouse=new THREE.Vector2((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);let ray=new THREE.Raycaster();ray.setFromCamera(mouse,camera);let hit=new THREE.Vector3();if(ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,1,0),-.25),hit)){window.bosqueAPI.select(hit.x*80+600,hit.z*55+350)}}drag=null});cv.addEventListener('wheel',e=>{e.preventDefault();dist=Math.max(10,Math.min(38,dist+e.deltaY*.015));position()},{passive:false})}
 document.querySelector('#threeinfo').innerHTML='Diorama 3D experimental · Arrastra para explorar · Rueda para zoom. Abre Inventario, selecciona una semilla y pulsa un punto del terreno para plantar. <div style="margin-top:8px"><button id="weatherSunny">☀️ Sol</button> <button id="weatherFog">🌫️ Niebla</button> <button id="weatherRain">🌧️ Lluvia</button></div>';
-function setWeather(w){weather=w;if(!scene)return;scene.background.set(w==='niebla'?'#d3ded5':w==='lluvia'?'#aebfc2':'#c4e1d4');scene.fog=new THREE.Fog(scene.background, w==='niebla'?9:25,w==='niebla'?24:52);}
+function setWeather(w){weather=w;if(!scene)return;scene.background.set(w==='niebla'?'#d3ded5':w==='lluvia'?'#aebfc2':'#c4e1d4');scene.fog=new THREE.Fog(scene.background, w==='niebla'?9:25,w==='niebla'?24:52);if(renderer)renderer.toneMappingExposure=w==='lluvia'?.85:w==='niebla'?.95:1.06;}
 document.querySelector('#weatherSunny').onclick=()=>setWeather('sol');document.querySelector('#weatherFog').onclick=()=>setWeather('niebla');document.querySelector('#weatherRain').onclick=()=>setWeather('lluvia');
 button.addEventListener('click',async()=>{if(active){active=false;holder.classList.remove('active');map.classList.remove('hidden');info.classList.remove('active');document.body.classList.remove('in3d');button.textContent='✦ Explorar diorama 3D';return}button.disabled=true;button.textContent='Cargando 3D…';try{await init();build();active=true;holder.classList.add('active');map.classList.add('hidden');info.classList.add('active');document.body.classList.add('in3d');button.textContent='↩ Vista SVG';syncMarker();document.querySelector('#panel').classList.remove('show');syncMarker()}catch(err){button.textContent='3D no disponible · SVG activo';alert('No se pudo cargar la vista 3D (necesita internet y WebGL). El bosque SVG sigue disponible y funcional.')}finally{button.disabled=false}});
 
