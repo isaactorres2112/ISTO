@@ -206,7 +206,7 @@ async function syncRemote(){
    for(const h of habits){
      const goal=Number(data.metas_semanales[h]);
      if(Number.isInteger(goal)&&goal>=1&&goal<=7){
-       config[h]={base:[10,15,20].includes(Number(config[h]?.base))?Number(config[h].base):15,goal};
+       config[h]={base:[10,15,20].includes(Number(config[h]?.base))?Number(config[h].base):0,goal};
      }
    }
    localStorage.setItem(key,JSON.stringify(config));
