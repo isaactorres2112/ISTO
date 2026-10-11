@@ -147,17 +147,18 @@ document.getElementById('notionFile').onchange=async e=>{let file=e.target.files
 #realRewards .rline{display:flex;justify-content:space-between;border-bottom:1px solid #e2e8da;padding:7px 0}
 </style>
 <div id="realRewards"><article><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">🍃 Recompensas de hábitos</h2><button id="rrClose">✕</button></div>
-<p id="rrStatus">Importa primero tus registros de Notion.</p><p style="font-size:12px">Los registros importados se conservarán en este navegador para que no necesites cargar el mismo archivo cada vez. Puedes importar uno actualizado cuando quieras.</p>
-<details id="rrConfig"><summary><b>Configurar metas y dificultades</b></summary><p style="font-size:12px">Las metas y dificultades siguientes son valores manuales, <b>no</b> el ranking oficial de Constancia. Ajústalas antes de cobrar.</p><table><thead><tr><th>Hábito</th><th>Dificultad</th><th>Meta semanal</th></tr></thead><tbody id="rrSettings"></tbody></table><button id="rrApply">Guardar configuración</button></details>
+<p id="rrStatus">Conectando con el seguimiento de Notion…</p><p style="font-size:12px">El bosque consulta automáticamente el archivo de seguimiento que ISTO ya sincroniza con Notion. También puedes importar un CSV/JSON como respaldo.</p>
+<button id="rrSync" class="primary" type="button">↻ Actualizar hábitos desde Notion</button><p id="rrSyncInfo" style="font-size:12px;color:#526d5d"></p><details id="rrConfig"><summary><b>Configurar metas y dificultades</b></summary><p style="font-size:12px">Las metas semanales se toman del seguimiento existente de Notion. La dificultad todavía es manual porque no está disponible el ranking oficial de Constancia. Ajústala antes de cobrar.</p><table><thead><tr><th>Hábito</th><th>Dificultad</th><th>Meta semanal</th></tr></thead><tbody id="rrSettings"></tbody></table><button id="rrApply">Guardar configuración</button></details>
 <div id="rrBreakdown"></div><div id="rrTotal" style="font-size:19px;font-weight:bold;margin-top:12px"></div>
 <button id="rrClaim" class="primary" disabled>Cobrar pendientes</button><button id="rrDismiss">Cerrar</button>
-<p style="font-size:11px;color:#607364">Cálculo local a partir del CSV/JSON importado. La bonificación se estima con el total semanal del archivo, no con el progreso conocido al cierre de cada día. Los cobros se guardan en este navegador; no se sincronizan entre dispositivos. No se modifica Notion.</p>
+<p style="font-size:11px;color:#607364">Cálculo local desde los registros de Notion (o archivo importado). La bonificación se calcula según el progreso acumulado hasta cada fecha. Los cobros se guardan solo en este navegador, no se sincronizan entre dispositivos. No se modifica Notion.</p>
 </article></div>
 <script>
 (()=>{
 const habits=['Dormir','Salud','Ejercicio','Orar','Ahorrar','Leer','Agua','Uñas','Tocarse','Animo'];
 const names=Object.fromEntries(habits.map(h=>[h,h==='Animo'?'Ánimo':h]));
 const key='bosque-vivo-reward-config-v1',ledgerKey='bosque-vivo-reward-ledger-v1', importKey='bosque-vivo-import-cache-v1';
+const remoteURL='../NOTION/data-seguimiento-habitos.json';
 let rows=[],config={},ledger={},pending=[];
 try{config=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
 try{ledger=JSON.parse(localStorage.getItem(ledgerKey)||'{}')}catch(e){}
@@ -173,7 +174,7 @@ function settings(){document.getElementById('rrSettings').innerHTML=habits.map(h
 function compute(){pending=[];if(!rows.length||!configured()){status.textContent=rows.length?'Datos cargados. Configura las metas y dificultades para calcular monedas.':'Importa primero tus registros de Notion.';document.getElementById('rrBreakdown').innerHTML='';document.getElementById('rrTotal').textContent='';document.getElementById('rrClaim').disabled=true;return}
 const daily=new Map();for(const r of rows){if(!daily.has(r.date))daily.set(r.date,{});for(const h of habits)if(r.flags[h])daily.get(r.date)[h]=true}
 const all=[...daily.keys()].filter(d=>d<=yesterday()).sort();const weeks=new Map();for(const d of all){let w=monday(d);if(!weeks.has(w))weeks.set(w,{});for(const h of habits)if(daily.get(d)[h])weeks.get(w)[h]=(weeks.get(w)[h]||0)+1}
-for(const d of all){if(ledger[d])continue;let items=[];for(const h of habits){if(!daily.get(d)[h])continue;const {base,goal}=config[h];const ratio=(weeks.get(monday(d))[h]||0)/goal;const pct=ratio>=1?.25:ratio>=.75?.20:ratio>=.5?.10:0;const bonus=Math.round(base*pct);items.push({h,base,bonus,pct})}pending.push({date:d,items,total:items.reduce((n,i)=>n+i.base+i.bonus,0)})}
+for(const d of all){if(ledger[d])continue;let items=[];for(const h of habits){if(!daily.get(d)[h])continue;const {base,goal}=config[h];const ratio=all.filter(x=>x<=d&&monday(x)===monday(d)&&daily.get(x)[h]).length/goal;const pct=ratio>=1?.25:ratio>=.75?.20:ratio>=.5?.10:0;const bonus=Math.round(base*pct);items.push({h,base,bonus,pct})}pending.push({date:d,items,total:items.reduce((n,i)=>n+i.base+i.bonus,0)})}
 const total=pending.reduce((n,d)=>n+d.total,0);
 status.textContent=`${rows.length} registros importados · ${pending.length} días pendientes · ${Object.keys(ledger).length} días ya cobrados/revisados.`;
 document.getElementById('rrBreakdown').innerHTML=pending.length?pending.map(d=>`<details style="border-bottom:1px solid #e3e9dc;padding:8px 0"><summary><b>${d.date}</b> · ${d.items.length} sesiones · +${d.total} 🪙</summary>${d.items.map(i=>`<div class="rline"><span>${names[i.h]} · ${i.base} base + ${i.bonus} bono (${Math.round(i.pct*100)}%)</span><b>${i.base+i.bonus}</b></div>`).join('')||'<p>Sin sesiones completadas.</p>'}</details>`).join(''):'<p>No hay días pendientes en el archivo importado.</p>';
@@ -185,7 +186,42 @@ const close=()=>modal.classList.remove('open');document.getElementById('rrClose'
 document.getElementById('rewardBtn').onclick=()=>{settings();compute();modal.classList.add('open')};
 document.getElementById('notionFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const raw=await file.text();rows=parse(raw,file.name);if(!rows.length)throw Error('No hay registros con fecha válida');localStorage.setItem(importKey,JSON.stringify({name:file.name,text:raw,savedAt:new Date().toISOString()}));settings();compute()}catch(err){rows=[];status.textContent='Error de importación: '+err.message}});
 try{const saved=JSON.parse(localStorage.getItem(importKey)||'null');if(saved?.text){rows=parse(saved.text,saved.name);settings();compute();status.textContent+=' · Última importación guardada: '+new Date(saved.savedAt).toLocaleDateString('es-MX')}}catch(e){console.warn('No se pudo restaurar el archivo',e)}
+
+// La app utiliza la copia JSON que ya publica el workflow de Notion; nunca necesita el token.
+async function syncRemote(){
+ const info=document.getElementById('rrSyncInfo'),btn=document.getElementById('rrSync');
+ btn.disabled=true;info.textContent='Consultando seguimiento de hábitos…';
+ try{
+   const response=await fetch(remoteURL+'?t='+Date.now(),{cache:'no-store'});
+   if(!response.ok)throw Error('HTTP '+response.status);
+   const data=await response.json();
+   if(!Array.isArray(data.diarios)||!data.metas_semanales)throw Error('Formato del seguimiento no compatible');
+   const parsed=data.diarios.map(d=>({
+     date:String(d.fecha||'').slice(0,10),
+     flags:Object.fromEntries(habits.map(h=>[h,d.habitos?.[h]===true]))
+   })).filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d.date));
+   if(!parsed.length)throw Error('No hay registros diarios');
+   rows=parsed;
+   // Respetar la dificultad que haya elegido el usuario, sincronizar solo las metas oficiales.
+   for(const h of habits){
+     const goal=Number(data.metas_semanales[h]);
+     if(Number.isInteger(goal)&&goal>=1&&goal<=7){
+       config[h]={base:[10,15,20].includes(Number(config[h]?.base))?Number(config[h].base):15,goal};
+     }
+   }
+   localStorage.setItem(key,JSON.stringify(config));
+   localStorage.setItem(importKey,JSON.stringify({name:'seguimiento-notion.json',text:JSON.stringify(parsed.map(d=>({Fecha:d.date,...d.flags}))),savedAt:new Date().toISOString()}));
+   settings();compute();
+   info.textContent='✓ Datos sincronizados · '+(data.ultima_actualizacion||'fecha no disponible')+' · '+rows.length+' días';
+ }catch(err){
+   info.textContent='Sin conexión automática: '+err.message+'. Se conservarán los últimos datos guardados.';
+ }finally{btn.disabled=false}
+}
+document.getElementById('rrSync').onclick=syncRemote;
+window.addEventListener('online',syncRemote);
+
 document.getElementById('rewardOverlay').classList.remove('open');
+if(location.protocol==='https:'||location.hostname==='localhost')syncRemote();
 })();
 </script>
 <div id="pwaInstall" style="display:none;position:fixed;top:12px;right:12px;z-index:99999;background:#f8f3e7;border:1px solid #a7bca7;border-radius:16px;padding:10px 13px;box-shadow:0 4px 18px #435b4b33;font:600 13px system-ui;color:#405746"><button id="pwaInstallBtn" style="background:#618b70;color:white;border:0;border-radius:12px;padding:8px 12px;cursor:pointer">Instalar Bosque Vivo</button><button id="pwaInstallClose" aria-label="Cerrar" style="border:0;background:transparent;margin-left:7px;cursor:pointer">×</button></div>
