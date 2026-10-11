@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-11T09:12:24-05:00",
+  "ultima_actualizacion": "2026-10-11T09:31:51-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -9,17 +9,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
-      "evento": "América vs Monterrey",
-      "fecha": "2026-10-10T22:00:00.000-05:00",
-      "fin": "2026-10-10T23:59:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
       ],
       "detalles": null
     },
@@ -75,6 +64,17 @@
       "check": false,
       "grupo": [
         "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
+      "evento": "América vs León",
+      "fecha": "2026-10-17T22:00:00.000-05:00",
+      "fin": "2026-10-17T23:59:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
       ],
       "detalles": null
     },
