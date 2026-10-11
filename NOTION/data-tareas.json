@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-11T09:18:00-06:00",
+  "ultima_actualizacion": "2026-10-11T09:44:00-06:00",
   "items": [
     {
       "id": "3cc01ec1-e57b-8069-8ea7-de90dbb1c480",
@@ -140,8 +140,8 @@
     {
       "id": "3ca01ec1-e57b-800b-895f-eccdb6ab087b",
       "tarea": "AC-26-766 “BODEGAS”",
-      "trabajo": "2026-11-04",
-      "trabajo_fin": "2026-11-20",
+      "trabajo": "2026-10-12",
+      "trabajo_fin": "2026-10-13",
       "fecha_limite": "2026-10-14",
       "check": false
     },
