@@ -1,12 +1,20 @@
 {
-  "ultima_actualizacion": "2026-10-12T21:15:00-06:00",
+  "ultima_actualizacion": "2026-10-12T21:50:00-06:00",
   "items": [
+    {
+      "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
+      "tarea": "OE 1150 - Campaña de cobranza",
+      "trabajo": "2026-11-03",
+      "trabajo_fin": "2026-11-20",
+      "fecha_limite": "2026-11-20",
+      "check": false
+    },
     {
       "id": "3f801ec1-e57b-8010-b415-e7fb2221e1d4",
       "tarea": "OE 1202 - Observaciones Contables",
       "trabajo": "2026-11-03",
-      "trabajo_fin": "2026-11-03",
-      "fecha_limite": "2026-10-12",
+      "trabajo_fin": "2026-11-20",
+      "fecha_limite": "2026-11-20",
       "check": false
     },
     {
