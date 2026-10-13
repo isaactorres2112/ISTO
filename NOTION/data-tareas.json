@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-13T15:22:00-06:00",
+  "ultima_actualizacion": "2026-10-13T15:56:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -204,15 +204,15 @@
     {
       "id": "3c901ec1-e57b-8046-b87c-d77347610b71",
       "tarea": "Cierre contable",
-      "trabajo": "2026-10-12",
-      "trabajo_fin": "2026-10-15",
-      "fecha_limite": "2026-10-07",
+      "trabajo": "2026-11-03",
+      "trabajo_fin": "2026-11-13",
+      "fecha_limite": "2026-11-13",
       "check": false
     },
     {
       "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
       "tarea": "Cobranza",
-      "trabajo": "2026-10-13",
+      "trabajo": "2026-10-14",
       "trabajo_fin": "2026-10-15",
       "fecha_limite": "2026-10-15",
       "check": false
