@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-13T16:25:00-06:00",
+  "ultima_actualizacion": "2026-10-13T16:56:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -28,7 +28,7 @@
     {
       "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
       "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-13",
+      "trabajo": "2026-10-14",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -36,8 +36,8 @@
     {
       "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
       "tarea": "Eventos FIGLO",
-      "trabajo": "2026-10-13",
-      "trabajo_fin": "2026-10-14",
+      "trabajo": "2026-10-14",
+      "trabajo_fin": "2026-10-17",
       "fecha_limite": "2026-10-17",
       "check": false
     },
@@ -84,8 +84,8 @@
     {
       "id": "3ca01ec1-e57b-8000-9b1d-d6fd7321c63f",
       "tarea": "Devolución de Impuestos",
-      "trabajo": "2026-10-12",
-      "trabajo_fin": "2026-10-13",
+      "trabajo": "2026-10-19",
+      "trabajo_fin": "2026-10-21",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -100,7 +100,7 @@
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
       "tarea": "Compras DAFI",
-      "trabajo": "2026-10-12",
+      "trabajo": "2026-10-14",
       "trabajo_fin": "2026-10-14",
       "fecha_limite": "2026-10-30",
       "check": false
