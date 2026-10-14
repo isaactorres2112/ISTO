@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-14T15:48:00-06:00",
+  "ultima_actualizacion": "2026-10-14T16:22:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -28,7 +28,7 @@
     {
       "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
       "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-14",
+      "trabajo": "2026-10-19",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -100,8 +100,8 @@
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
       "tarea": "Compras DAFI",
-      "trabajo": "2026-10-14",
-      "trabajo_fin": "2026-10-14",
+      "trabajo": "2026-10-15",
+      "trabajo_fin": "2026-10-15",
       "fecha_limite": "2026-10-30",
       "check": false
     },
