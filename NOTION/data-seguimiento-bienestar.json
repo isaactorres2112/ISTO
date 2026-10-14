@@ -6,43 +6,43 @@
     "Trabajo",
     "Amistad"
   ],
-  "ultima_actualizacion": "2026-10-14T00:11:00-06:00",
+  "ultima_actualizacion": "2026-10-14T00:59:00-06:00",
   "global": {
-    "bienestar": 63.0,
+    "bienestar": 64.7,
     "dias_registrados": 30,
     "circulos": {
-      "Yo": 66.3,
-      "Pareja": 66.3,
-      "Familia": 65.0,
-      "Trabajo": 65.0,
-      "Amistad": 66.0
+      "Yo": 66.4,
+      "Pareja": 66.4,
+      "Familia": 65.3,
+      "Trabajo": 65.2,
+      "Amistad": 67.5
     }
   },
   "tendencia_semanal": {
     "Yo": {
-      "actual": 75.0,
+      "actual": 72.5,
       "anterior": 66.4,
-      "cambio": 8.6
+      "cambio": 6.1
     },
     "Pareja": {
-      "actual": 75.0,
+      "actual": 72.5,
       "anterior": 66.4,
-      "cambio": 8.6
+      "cambio": 6.1
     },
     "Familia": {
-      "actual": null,
+      "actual": 70.0,
       "anterior": 66.0,
-      "cambio": null
+      "cambio": 4.0
     },
     "Trabajo": {
-      "actual": 75.0,
+      "actual": 72.5,
       "anterior": 66.4,
-      "cambio": 8.6
+      "cambio": 6.1
     },
     "Amistad": {
-      "actual": null,
+      "actual": 75.0,
       "anterior": 60.0,
-      "cambio": null
+      "cambio": 15.0
     }
   },
   "diarios": [
@@ -308,13 +308,19 @@
       "circulos": [
         "Yo",
         "Pareja",
-        "Trabajo"
+        "Trabajo",
+        "Amistad"
       ]
     },
     {
       "fecha": "2026-10-13",
-      "bienestar": 20.0,
-      "circulos": []
+      "bienestar": 70.0,
+      "circulos": [
+        "Yo",
+        "Pareja",
+        "Trabajo",
+        "Familia"
+      ]
     },
     {
       "fecha": "2026-10-14",
