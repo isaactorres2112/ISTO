@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-13T23:58:00-06:00",
+  "ultima_actualizacion": "2026-10-14T00:38:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -158,7 +158,7 @@
       "tarea": "Revisión contable",
       "trabajo": "2026-10-12",
       "trabajo_fin": "2026-10-16",
-      "fecha_limite": "2026-10-16",
+      "fecha_limite": "2026-10-15",
       "check": false
     },
     {
