@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-15T12:36:00-06:00",
+  "ultima_actualizacion": "2026-10-15T13:17:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -68,8 +68,8 @@
     {
       "id": "3ca01ec1-e57b-80b9-a154-c66bc6274ba5",
       "tarea": "Oficinas Regionales",
-      "trabajo": "2026-10-15",
-      "trabajo_fin": "2026-10-23",
+      "trabajo": "2026-10-26",
+      "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -95,7 +95,7 @@
       "trabajo": "2026-10-15",
       "trabajo_fin": "2026-10-16",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
