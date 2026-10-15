@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-15T09:30:00-06:00",
+  "ultima_actualizacion": "2026-10-15T10:12:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -156,8 +156,8 @@
     {
       "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
       "tarea": "Revisión contable",
-      "trabajo": "2026-10-12",
-      "trabajo_fin": "2026-10-16",
+      "trabajo": "2026-10-13",
+      "trabajo_fin": "2026-10-15",
       "fecha_limite": "2026-10-15",
       "check": false
     },
@@ -212,9 +212,9 @@
     {
       "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
       "tarea": "Cobranza",
-      "trabajo": "2026-10-15",
-      "trabajo_fin": "2026-10-15",
-      "fecha_limite": "2026-10-15",
+      "trabajo": "2026-10-27",
+      "trabajo_fin": "2026-10-30",
+      "fecha_limite": "2026-10-30",
       "check": false
     },
     {
