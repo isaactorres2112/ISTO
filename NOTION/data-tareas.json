@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-16T23:37:00-06:00",
+  "ultima_actualizacion": "2026-10-17T03:42:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -36,7 +36,7 @@
     {
       "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
       "tarea": "Eventos FIGLO",
-      "trabajo": "2026-10-14",
+      "trabajo": "2026-10-17",
       "trabajo_fin": "2026-10-17",
       "fecha_limite": "2026-10-17",
       "check": false
