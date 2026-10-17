@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-16T19:39:57-05:00",
+  "ultima_actualizacion": "2026-10-17T00:00:28-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -16,17 +16,6 @@
       "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
       "evento": "Finanzas personales",
       "fecha": "2026-10-11T13:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "eda01ec1-e57b-8316-9c32-0162c743f674",
-      "evento": "Viernes de valores",
-      "fecha": "2026-10-16T07:30:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
@@ -141,6 +130,17 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "eda01ec1-e57b-8316-9c32-0162c743f674",
+      "evento": "Viernes de valores",
+      "fecha": "2026-10-30T07:30:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
       ],
       "detalles": null
     },
