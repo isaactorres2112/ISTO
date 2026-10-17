@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-16T19:11:00-06:00",
+  "ultima_actualizacion": "2026-10-16T23:05:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -52,7 +52,7 @@
     {
       "id": "3ca01ec1-e57b-8029-9eaa-d2582ecdd655",
       "tarea": "Actas de Honorarios",
-      "trabajo": "2026-10-16",
+      "trabajo": "2026-10-19",
       "trabajo_fin": "2026-10-28",
       "fecha_limite": "2026-10-29",
       "check": false
@@ -100,8 +100,8 @@
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
       "tarea": "Compras DAFI",
-      "trabajo": "2026-10-15",
-      "trabajo_fin": "2026-10-15",
+      "trabajo": "2026-10-22",
+      "trabajo_fin": "2026-10-23",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -252,7 +252,7 @@
     {
       "id": "3c701ec1-e57b-800a-a4c1-c3f2d1bb7998",
       "tarea": "Presupuesto DAFI",
-      "trabajo": "2026-10-15",
+      "trabajo": "2026-10-19",
       "trabajo_fin": "2026-10-20",
       "fecha_limite": "2026-10-20",
       "check": false
@@ -260,7 +260,7 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-16",
+      "trabajo": "2026-10-22",
       "trabajo_fin": null,
       "fecha_limite": "2026-10-30",
       "check": false
