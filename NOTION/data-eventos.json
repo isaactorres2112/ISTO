@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-18T16:53:56-05:00",
+  "ultima_actualizacion": "2026-10-18T18:56:20-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -24,28 +24,6 @@
       "detalles": null
     },
     {
-      "id": "c6a01ec1-e57b-8387-bab6-010ff4321188",
-      "evento": "Cumple Miguel Rodriguez",
-      "fecha": "2026-10-17T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "3f601ec1-e57b-8062-9f09-deb7958ba030",
-      "evento": "Evento de JR",
-      "fecha": "2026-10-17T10:00:00.000-05:00",
-      "fin": "2026-10-17T18:00:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
-      ],
-      "detalles": null
-    },
-    {
       "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
       "evento": "Despensa",
       "fecha": "2026-10-17T10:00:00.000-05:00",
@@ -53,17 +31,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
-      "evento": "América vs León",
-      "fecha": "2026-10-17T20:00:00.000-05:00",
-      "fin": "2026-10-17T21:59:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
       ],
       "detalles": null
     },
@@ -86,6 +53,17 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
+      "evento": "América vs Atlas",
+      "fecha": "2026-10-21T20:00:00.000-05:00",
+      "fin": "2026-10-21T21:59:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
       ],
       "detalles": null
     },
@@ -1164,6 +1142,28 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "c6a01ec1-e57b-8387-bab6-010ff4321188",
+      "evento": "Cumple Miguel Rodriguez",
+      "fecha": "2027-10-17T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "3f601ec1-e57b-8062-9f09-deb7958ba030",
+      "evento": "Evento de JR",
+      "fecha": "2027-10-23T10:00:00.000-05:00",
+      "fin": "2027-10-23T18:00:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
       ],
       "detalles": null
     }
