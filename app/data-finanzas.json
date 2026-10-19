@@ -3,7 +3,7 @@
   "disponible": 35567,
   "gasto_hoy": 115,
   "gasto_mes": 22686.69,
-  "ingresos_mes": 0.12,
+  "ingresos_mes": 14640.58,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Mixta · Deudor / acreedor",
-      "saldo": 0
+      "tipo": "Activo · Cuenta por cobrar neta",
+      "saldo": 2580.61
     },
     {
       "nombre": "TC Mercado Libre",
