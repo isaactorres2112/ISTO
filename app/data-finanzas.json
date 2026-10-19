@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Mixta · Deudor / acreedor",
-      "saldo": 0
+      "tipo": "Acreedor · Viáticos por comprobar",
+      "saldo": -3364.69
     },
     {
       "nombre": "TC Mercado Libre",
