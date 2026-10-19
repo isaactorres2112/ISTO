@@ -128,3 +128,42 @@
 #habitGeneral .habit-panel.habit-weekly-panel:last-child{grid-column:1;grid-row:2}
 #habitGeneral .habit-panel.habit-ranking-panel{grid-column:1;grid-row:3}
 }
+
+/* ISTO 2.1 · Ánimo: vistas general y por mes */
+#moodView .page-title{margin-bottom:14px}
+#moodView .mood-layout{gap:12px}
+#moodView .habit-panel{padding:17px 19px}
+#moodView .habit-period{font-size:11px;color:#d2c9f9;line-height:1.45;margin:6px 0}
+#moodView .habit-subtitle{margin:5px 0 9px;font-size:10px;line-height:1.4}
+#moodView .habit-overview{gap:15px;margin-top:12px}
+#moodView .habit-overview .pulse-ring{width:116px;height:116px}
+#moodView .habit-kpis{gap:10px 13px}
+#moodView .habit-kpis>div{gap:3px}
+#moodView .habit-kpis small{font-size:10px}
+#moodView .habit-kpis strong{font-size:19px}
+#moodView .habit-change{padding:9px 11px;margin-top:7px;gap:8px}
+#moodView .habit-change small{font-size:10px}
+#moodView .habit-bar-track em{width:0;border-left:2px dashed rgba(255,255,255,.85);background:none;top:-3px;height:12px}
+#moodView .habit-bar-row{margin:6px 0}
+#moodView .habit-bar-label{font-size:11px;margin-bottom:5px}
+#moodView .habit-bar-track{height:6px}
+#moodGeneral{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+#moodGeneral .habit-panel.mood-general-panel{grid-column:1;grid-row:1}
+#moodGeneral .habit-panel.mood-weekly-panel{grid-column:2;grid-row:1}
+#moodGeneral .habit-panel.mood-ranking-panel{grid-column:1/-1;grid-row:2}
+#moodGeneral .rank-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 24px;margin-top:8px}
+#moodMonthly .habit-panel.mood-detail-panel{grid-column:1/-1}
+#moodMonthly .habit-current-month{font-size:13px;color:#e2d7ff;text-transform:capitalize}
+#moodMonthly .habit-line-chart svg{max-height:250px}
+#moodMonthly .habit-history-stats{margin-top:6px}
+@media(max-width:760px){
+#moodGeneral,#moodMonthly{grid-template-columns:1fr}
+#moodGeneral .habit-panel.mood-general-panel{grid-column:1;grid-row:1}
+#moodGeneral .habit-panel.mood-weekly-panel{grid-column:1;grid-row:2}
+#moodGeneral .habit-panel.mood-ranking-panel{grid-column:1;grid-row:3}
+#moodMonthly .habit-panel.mood-detail-panel{grid-column:1}
+#moodView .habit-panel{padding:15px}
+#moodView .habit-overview .pulse-ring{width:108px;height:108px}
+#moodView .habit-kpis strong{font-size:17px}
+}
+@media(max-width:480px){#moodGeneral .rank-list{grid-template-columns:1fr}}
