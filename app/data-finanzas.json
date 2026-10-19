@@ -2,8 +2,8 @@
   "actualizado": "18/10/2026 22:29",
   "disponible": 35682,
   "gasto_hoy": 63,
-  "gasto_mes": 21138.21,
-  "ingresos_mes": 0.12,
+  "gasto_mes": 17071.69,
+  "ingresos_mes": 14640.58,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -27,16 +27,23 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Mixta · Deudor / acreedor",
-      "saldo": 0
+      "tipo": "Activo · Cuenta por cobrar neta",
+      "saldo": 2580.61
     },
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 893.95
+      "saldo": 6484.83
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-18",
+      "concepto": "Alimentos Rappi",
+      "nombre": "Rappi",
+      "importe": 200.5,
+      "id": ""
+    },
     {
       "fecha": "2026-10-18",
       "concepto": "Compra de abarrotes",
@@ -45,10 +52,59 @@
       "id": ""
     },
     {
+      "fecha": "2026-10-17",
+      "concepto": "Uber transporte",
+      "nombre": "Uber",
+      "importe": 39.95,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Farmacia del Ahorro gasto personal",
+      "nombre": "Farmacia del Ahorro",
+      "importe": 114,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Comida empleados a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 4854,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Alimentos Uber Eats",
+      "nombre": "Uber Eats",
+      "importe": 217.76,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Compra papelería a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 241,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Alimentos Uber Eats",
+      "nombre": "Uber Eats",
+      "importe": 197.23,
+      "id": ""
+    },
+    {
       "fecha": "2026-10-16",
       "concepto": "Viáticos por comprobar",
       "nombre": "DAFI",
       "importe": 3500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Compra Fligo a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 330.4,
       "id": ""
     },
     {
@@ -85,62 +141,6 @@
       "nombre": "Banorte Nómina → CETES Directo",
       "importe": 5000,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-14",
-      "concepto": "Nómina",
-      "nombre": "DAFI",
-      "importe": 14640.46,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-12",
-      "concepto": "Pastel de regalo para Paty",
-      "nombre": "Paty",
-      "importe": 300,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Compra de alimentos",
-      "nombre": "Punta de Mar",
-      "importe": 295,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Recarga de teléfono",
-      "nombre": "Telefonía móvil",
-      "importe": 100,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Flores para regalo de Paty",
-      "nombre": "Florería Carlos Olivas",
-      "importe": 1648.14,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Uber",
-      "nombre": "Uber",
-      "importe": 51.44,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Uber",
-      "nombre": "Uber",
-      "importe": 50,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-10",
-      "concepto": "Corte de pelo",
-      "nombre": "Élite Barber",
-      "importe": 200,
-      "id": ""
     }
   ],
   "categorias": [
@@ -149,12 +149,8 @@
       "importe": 7500
     },
     {
-      "nombre": "CETES Directo",
-      "importe": 5500
-    },
-    {
       "nombre": "Alimentos",
-      "importe": 3674.68
+      "importe": 4695.21
     },
     {
       "nombre": "Regalos",
@@ -163,6 +159,10 @@
     {
       "nombre": "Servicios",
       "importe": 975
+    },
+    {
+      "nombre": "Suscripciones",
+      "importe": 658
     }
   ]
 }
