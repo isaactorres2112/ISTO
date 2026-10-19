@@ -1,9 +1,9 @@
 {
-  "actualizado": "18/10/2026 22:39",
-  "disponible": 35682,
+  "actualizado": "19/10/2026 00:24",
+  "disponible": 6119.23,
   "gasto_hoy": 263.5,
-  "gasto_mes": 22571.69,
-  "ingresos_mes": 0.12,
+  "gasto_mes": 17071.69,
+  "ingresos_mes": 14640.58,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Mixta · Deudor / acreedor",
-      "saldo": 0
+      "tipo": "Activo · Cuenta por cobrar neta",
+      "saldo": 2580.61
     },
     {
       "nombre": "TC Mercado Libre",
@@ -149,10 +149,6 @@
       "importe": 7500
     },
     {
-      "nombre": "CETES Directo",
-      "importe": 5500
-    },
-    {
       "nombre": "Alimentos",
       "importe": 4695.21
     },
@@ -163,6 +159,10 @@
     {
       "nombre": "Servicios",
       "importe": 975
+    },
+    {
+      "nombre": "Suscripciones",
+      "importe": 658
     }
   ]
 }
