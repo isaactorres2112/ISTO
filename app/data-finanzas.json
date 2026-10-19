@@ -1,5 +1,5 @@
 {
-  "actualizado": "18/10/2026 20:54",
+  "actualizado": "18/10/2026 21:04",
   "disponible": 43163.35,
   "gasto_hoy": 0,
   "gasto_mes": 20480.21,
@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Acreedor · Viáticos por comprobar",
-      "saldo": -3364.69
+      "tipo": "Mixta · Deudor / acreedor",
+      "saldo": 0
     },
     {
       "nombre": "TC Mercado Libre",
