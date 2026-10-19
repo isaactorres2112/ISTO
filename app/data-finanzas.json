@@ -6,19 +6,14 @@
   "ingresos_mes": 0.12,
   "cuentas": [
     {
-      "nombre": "TC Mercado Libre",
-      "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 5929.4
+      "nombre": "Efectivo",
+      "tipo": "Activo · Efectivo",
+      "saldo": 744
     },
     {
       "nombre": "Banorte Nómina",
       "tipo": "Activo · Bancos",
       "saldo": 4640.46
-    },
-    {
-      "nombre": "Efectivo",
-      "tipo": "Activo · Efectivo",
-      "saldo": 744
     },
     {
       "nombre": "Mercado Pago",
@@ -29,6 +24,16 @@
       "nombre": "CETES Directo",
       "tipo": "Activo · Inversiones",
       "saldo": 29562.77
+    },
+    {
+      "nombre": "DAFI · saldo neto",
+      "tipo": "Acreedor · Viáticos por comprobar",
+      "saldo": -3364.69
+    },
+    {
+      "nombre": "TC Mercado Libre",
+      "tipo": "Pasivo · Tarjeta de crédito",
+      "saldo": 5929.4
     }
   ],
   "movimientos": [
