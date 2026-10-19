@@ -1,9 +1,9 @@
 {
-  "actualizado": "18/10/2026 22:29",
+  "actualizado": "18/10/2026 22:39",
   "disponible": 35682,
-  "gasto_hoy": 63,
-  "gasto_mes": 17071.69,
-  "ingresos_mes": 14640.58,
+  "gasto_hoy": 263.5,
+  "gasto_mes": 22571.69,
+  "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Activo · Cuenta por cobrar neta",
-      "saldo": 2580.61
+      "tipo": "Mixta · Deudor / acreedor",
+      "saldo": 0
     },
     {
       "nombre": "TC Mercado Libre",
@@ -53,16 +53,9 @@
     },
     {
       "fecha": "2026-10-17",
-      "concepto": "Uber transporte",
-      "nombre": "Uber",
-      "importe": 39.95,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Farmacia del Ahorro gasto personal",
-      "nombre": "Farmacia del Ahorro",
-      "importe": 114,
+      "concepto": "Alimentos Uber Eats",
+      "nombre": "Uber Eats",
+      "importe": 217.76,
       "id": ""
     },
     {
@@ -74,16 +67,16 @@
     },
     {
       "fecha": "2026-10-17",
-      "concepto": "Alimentos Uber Eats",
-      "nombre": "Uber Eats",
-      "importe": 217.76,
+      "concepto": "Farmacia del Ahorro gasto personal",
+      "nombre": "Farmacia del Ahorro",
+      "importe": 114,
       "id": ""
     },
     {
-      "fecha": "2026-10-16",
-      "concepto": "Compra papelería a cargo de DAFI",
-      "nombre": "DAFI",
-      "importe": 241,
+      "fecha": "2026-10-17",
+      "concepto": "Uber transporte",
+      "nombre": "Uber",
+      "importe": 39.95,
       "id": ""
     },
     {
@@ -91,6 +84,13 @@
       "concepto": "Alimentos Uber Eats",
       "nombre": "Uber Eats",
       "importe": 197.23,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Compra papelería a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 241,
       "id": ""
     },
     {
@@ -149,6 +149,10 @@
       "importe": 7500
     },
     {
+      "nombre": "CETES Directo",
+      "importe": 5500
+    },
+    {
       "nombre": "Alimentos",
       "importe": 4695.21
     },
@@ -159,10 +163,6 @@
     {
       "nombre": "Servicios",
       "importe": 975
-    },
-    {
-      "nombre": "Suscripciones",
-      "importe": 658
     }
   ]
 }
