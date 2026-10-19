@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-19T11:38:43-05:00",
+  "ultima_actualizacion": "2026-10-19T16:15:16-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -31,17 +31,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "b6d01ec1-e57b-834c-87b3-81b2f8ed0dc8",
-      "evento": "Cumple Valeria Rodriguez",
-      "fecha": "2026-10-19T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
       ],
       "detalles": null
     },
@@ -1149,6 +1138,17 @@
       "id": "c6a01ec1-e57b-8387-bab6-010ff4321188",
       "evento": "Cumple Miguel Rodriguez",
       "fecha": "2027-10-17T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "b6d01ec1-e57b-834c-87b3-81b2f8ed0dc8",
+      "evento": "Cumple Valeria Rodriguez",
+      "fecha": "2027-10-19T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
