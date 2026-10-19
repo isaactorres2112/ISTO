@@ -33,3 +33,35 @@
 /* Agenda · tarjetas unificadas con el sistema visual ISTO */
 #agendaView .event-card{background:rgba(20,19,17,.46);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 38px rgba(0,0,0,.20);backdrop-filter:blur(22px) saturate(120%);-webkit-backdrop-filter:blur(22px) saturate(120%);border-radius:var(--radius);padding:var(--pad)}
 #agendaView .date-tile{background:rgba(216,189,122,.10);border-color:rgba(216,189,122,.30)}
+
+/* Constancia · vistas general y por mes */
+#habitsView .page-title{margin-bottom:14px}
+.habit-tabs{display:flex;gap:7px;padding:5px;border:1px solid var(--line);border-radius:15px;background:rgba(8,13,28,.6);margin-bottom:16px;max-width:390px}
+.habit-tabs button{flex:1;border:0;border-radius:11px;padding:12px 15px;color:var(--text);background:transparent;cursor:pointer;font-weight:600}
+.habit-tabs button.active{background:linear-gradient(115deg,#7856e9,#586eea);box-shadow:0 4px 16px #534cc455}
+.habit-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.habit-panel{padding:20px;min-width:0;background:linear-gradient(130deg,rgba(16,28,52,.83),rgba(12,18,35,.75));border-color:rgba(130,151,226,.22)}
+.habit-panel .eyebrow{font-size:16px;letter-spacing:0;text-transform:none;color:#f3f4ff;font-weight:700}
+.habit-panel .muted{font-size:12px;line-height:1.5}
+#habitGeneral .habit-panel:last-child,#habitMonthly .habit-panel:nth-child(3){grid-column:1/-1}
+.habit-overview{display:flex;align-items:center;gap:24px;margin-top:17px}
+.habit-overview .pulse-ring{flex:none}
+.habit-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;flex:1}
+.habit-kpis>div{display:grid;gap:5px}
+.habit-kpis small{color:var(--muted);font-size:11px}
+.habit-kpis strong{font-size:22px}
+.habit-positive{color:#55e9aa!important}.habit-negative{color:#ff708c!important}
+.habit-change{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;margin-top:10px;background:rgba(20,32,60,.45)}
+.habit-change>div{display:grid;gap:5px}.habit-change small{color:var(--muted)}.habit-change>b{white-space:nowrap}
+.habit-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.habit-panel select{max-width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.18);border-radius:11px;background:#17233d;color:#fff;cursor:pointer}
+.habit-month-bars{height:230px;display:flex;align-items:end;justify-content:space-around;gap:9px;padding:15px 2px 0}
+.habit-month-col{flex:1;min-width:0;max-width:80px;display:flex;align-items:center;flex-direction:column;gap:5px;font-size:11px}
+.habit-month-col strong{font-size:12px}.habit-month-col small{color:var(--muted)}
+.habit-month-bar{width:100%;height:165px;display:flex;align-items:end;position:relative;border-bottom:1px solid rgba(255,255,255,.3)}
+.habit-month-bar i{display:block;width:100%;background:linear-gradient(0deg,#586eea,#8d65f8);border-radius:5px 5px 0 0;min-height:2px}
+.habit-month-bar em{position:absolute;left:0;right:0;border-top:2px dashed rgba(255,255,255,.7)}
+.habit-line-chart svg{width:100%;height:auto;display:block;margin-top:14px;overflow:visible}
+.habit-history-stats{margin-top:12px;color:#d7d4ff;font-size:13px}
+#habitGeneral .habit-bar-track em{width:0;border-left:2px dashed rgba(255,255,255,.85);background:none}
+@media(max-width:680px){.habit-layout{grid-template-columns:1fr}.habit-panel,#habitGeneral .habit-panel:last-child,#habitMonthly .habit-panel:nth-child(3){grid-column:1}.habit-overview{gap:15px}.habit-kpis{gap:11px}.habit-kpis strong{font-size:17px}.habit-panel{padding:16px}.habit-overview .pulse-ring{width:120px;height:120px}.habit-month-bars{height:200px}.habit-month-bar{height:135px}}
