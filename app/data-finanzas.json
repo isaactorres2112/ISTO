@@ -2,7 +2,7 @@
   "actualizado": "18/10/2026 21:09",
   "disponible": 43163.35,
   "gasto_hoy": 0,
-  "gasto_mes": 20480.21,
+  "gasto_mes": 14980.21,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -63,14 +63,16 @@
       "concepto": "Traspaso a Mercado Pago",
       "nombre": "Banorte Nómina → Mercado Pago",
       "importe": 7000,
-      "id": ""
+      "id": "",
+      "tipo": "Traspaso"
     },
     {
       "fecha": "2026-10-15",
       "concepto": "Traspaso a CETES Directo",
       "nombre": "Banorte Nómina → CETES Directo",
       "importe": 5000,
-      "id": ""
+      "id": "",
+      "tipo": "Traspaso"
     },
     {
       "fecha": "2026-10-14",
@@ -147,10 +149,6 @@
     {
       "nombre": "Vivienda",
       "importe": 7500
-    },
-    {
-      "nombre": "CETES Directo",
-      "importe": 5500
     },
     {
       "nombre": "Alimentos",
