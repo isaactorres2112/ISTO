@@ -1,14 +1,14 @@
 {
-  "actualizado": "19/10/2026 06:20",
-  "disponible": 35682,
-  "gasto_hoy": 0,
-  "gasto_mes": 22571.69,
+  "actualizado": "19/10/2026 06:49",
+  "disponible": 35567,
+  "gasto_hoy": 115,
+  "gasto_mes": 22686.69,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 744
+      "saldo": 629
     },
     {
       "nombre": "Banorte Nómina",
@@ -37,6 +37,13 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Café aeropuerto",
+      "nombre": "Café aeropuerto",
+      "importe": 115,
+      "id": ""
+    },
     {
       "fecha": "2026-10-18",
       "concepto": "Alimentos Rappi",
@@ -134,13 +141,6 @@
       "nombre": "Banorte Nómina → Mercado Pago",
       "importe": 7000,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Traspaso a CETES Directo",
-      "nombre": "Banorte Nómina → CETES Directo",
-      "importe": 5000,
-      "id": ""
     }
   ],
   "categorias": [
@@ -154,7 +154,7 @@
     },
     {
       "nombre": "Alimentos",
-      "importe": 4695.21
+      "importe": 4810.21
     },
     {
       "nombre": "Regalos",
