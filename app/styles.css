@@ -98,3 +98,23 @@
 #habitGeneral .habit-kpis strong{font-size:17px}
 }
 @media(max-width:480px){#habitGeneral .rank-list{grid-template-columns:1fr}#habitGeneral .habit-bar-row{margin:4px 0}}
+
+/* ISTO 2.1 · Hábitos / vista por mes */
+#habitMonthly{gap:12px}
+#habitMonthly .habit-panel{padding:17px 19px}
+#habitMonthly .habit-panel:nth-child(3){grid-column:1/-1}
+#habitMonthly .habit-panel-head{align-items:center}
+#habitMonthly .habit-current-month{font-size:13px;font-weight:700;color:#e2d7ff;text-transform:capitalize}
+#habitMonthly .habit-overview{gap:17px;margin-top:13px}
+#habitMonthly .habit-overview .pulse-ring{width:118px;height:118px}
+#habitMonthly .habit-kpis{gap:10px 13px}
+#habitMonthly .habit-kpis>div{gap:3px}
+#habitMonthly .habit-kpis small{font-size:10px}
+#habitMonthly .habit-kpis strong{font-size:19px}
+#habitMonthly #habitMonthNote{font-size:10px;margin-top:9px}
+#habitMonthly .habit-overall-chart svg{margin-top:9px}
+#habitMonthly .habit-line-chart svg{max-height:250px}
+#habitMonthly .habit-history-stats{margin-top:6px}
+#habitMonthly .habit-period{font-size:11px;color:#d2c9f9;margin:6px 0;line-height:1.45}
+#habitMonthly .habit-change{padding:10px 12px;margin-top:7px}
+@media(max-width:760px){#habitMonthly{grid-template-columns:1fr}#habitMonthly .habit-panel,#habitMonthly .habit-panel:nth-child(3){grid-column:1}#habitMonthly .habit-panel{padding:15px}#habitMonthly .habit-overview .pulse-ring{width:108px;height:108px}#habitMonthly .habit-kpis strong{font-size:17px}}
