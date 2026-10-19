@@ -1,9 +1,9 @@
 {
-  "actualizado": "18/10/2026 21:34",
-  "disponible": 6119.23,
-  "gasto_hoy": 0,
-  "gasto_mes": 15638.21,
-  "ingresos_mes": 14640.58,
+  "actualizado": "18/10/2026 22:29",
+  "disponible": 35682,
+  "gasto_hoy": 63,
+  "gasto_mes": 21138.21,
+  "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -32,8 +32,8 @@
     },
     {
       "nombre": "TC Mercado Libre",
-      "tipo": "Activo · Saldo a favor en tarjeta",
-      "saldo": -893.95
+      "tipo": "Pasivo · Tarjeta de crédito",
+      "saldo": 893.95
     }
   ],
   "movimientos": [
@@ -147,6 +147,10 @@
     {
       "nombre": "Vivienda",
       "importe": 7500
+    },
+    {
+      "nombre": "CETES Directo",
+      "importe": 5500
     },
     {
       "nombre": "Alimentos",
