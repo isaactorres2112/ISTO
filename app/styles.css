@@ -167,3 +167,54 @@
 #moodView .habit-kpis strong{font-size:17px}
 }
 @media(max-width:480px){#moodGeneral .rank-list{grid-template-columns:1fr}}
+
+/* ISTO 2.1 · Inicio ejecutivo */
+#homeView .home-top{align-items:flex-start;gap:16px}
+#homeView .home-identity{display:grid;gap:6px;padding-top:3px}
+#homeView .home-identity>div{display:flex;align-items:baseline;gap:12px}
+#homeView .home-version{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:.04em}
+#homeView .home-updated{font-size:10px;color:var(--muted);letter-spacing:.01em}
+#homeView .welcome{margin:13px 0 15px}
+#homeView .welcome h1{font-size:clamp(31px,4.4vw,49px)}
+#homeView .welcome blockquote{font-size:14px;margin-top:9px}
+#homeView .home-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+#homeView .home-pulse{grid-column:1/-1;grid-template-columns:1fr 1fr;text-align:left;padding:14px;gap:12px}
+#homeView .home-wellness{display:block;min-width:0;padding:5px 10px}
+#homeView .home-wellness+.home-wellness{border-left:1px solid var(--line)}
+#homeView .home-wellness-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+#homeView .home-go{border:0;background:transparent;color:var(--gold);font-size:10px;cursor:pointer;padding:5px}
+#homeView .home-wellness-body{display:flex;align-items:center;gap:17px}
+#homeView .home-ring{width:92px;height:92px;flex:0 0 92px}
+#homeView .home-wellness-stats{display:grid;grid-template-columns:1fr;gap:7px;min-width:0}
+#homeView .home-wellness-stats>div{display:grid;gap:2px}
+#homeView .home-wellness-stats small{color:var(--muted);font-size:10px}
+#homeView .home-wellness-stats strong{font-size:15px;color:var(--text);font-weight:650;white-space:nowrap}
+#homeView .home-wellness-stats strong.habit-positive{color:#a6e3b7}
+#homeView .home-wellness-stats strong.habit-negative{color:#f4a4a4}
+#homeView .home-events,#homeView .home-tasks{min-height:130px}
+#homeView .home-events{padding:15px}
+#homeView .panel-head{margin-bottom:10px}
+#homeView .home-tasks summary{padding:14px 16px}
+#homeView .home-tasks .read-list{padding:0 16px 14px}
+#homeView .read-item,#homeView .event-card,#homeView .task-card{padding:9px 11px}
+#homeView .home-idea{grid-column:1/-1;min-height:165px}
+#homeView .home-idea-image{height:165px}
+#homeView .home-idea-copy{display:flex;flex-direction:column;align-items:flex-start;gap:7px;bottom:14px}
+#homeView .home-idea-actions{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px}
+#homeView .home-idea-notion{display:inline-flex;align-items:center;border:1px solid rgba(216,189,122,.55);border-radius:9px;padding:7px 10px;background:rgba(15,13,10,.75);color:#f4d58c;font-size:11px;text-decoration:none;white-space:nowrap;position:relative;z-index:3}
+#homeView .home-idea-notion:hover{background:rgba(216,189,122,.2)}
+@media(max-width:760px){
+#homeView .home-summary{grid-template-columns:1fr}
+#homeView .home-pulse,#homeView .home-idea{grid-column:1}
+#homeView .home-pulse{grid-template-columns:1fr 1fr}
+#homeView .home-wellness-body{flex-direction:column;align-items:flex-start;gap:10px}
+#homeView .home-wellness-stats strong{font-size:14px}
+}
+@media(max-width:480px){
+#homeView .home-pulse{grid-template-columns:1fr}
+#homeView .home-wellness+.home-wellness{border-left:0;border-top:1px solid var(--line);padding-top:14px}
+#homeView .home-wellness-body{flex-direction:row;align-items:center}
+#homeView .home-updated{font-size:9px}
+#homeView .countdown{min-width:112px;padding:9px}
+#homeView .countdown strong{font-size:26px}
+}
