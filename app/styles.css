@@ -377,3 +377,10 @@
 #financeView .finance-movement-details strong{font-size:10px;font-weight:500;text-align:right}
 #financeView .finance-updated{font-size:10px;color:var(--muted);text-align:center;margin:6px 0 10px}
 @media(max-width:480px){#financeView .finance-overview{padding:17px}#financeView .finance-overview-pair strong{font-size:15px}#financeView .finance-metrics strong{font-size:19px}#financeView .finance-panel{padding:15px}#financeView .finance-movement summary{gap:8px}}
+
+#financeView .finance-movement-flat{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+#financeView .finance-movement-flat:last-child{border-bottom:0}
+#financeView .finance-movement-flat .finance-movement-main{min-width:0;flex:1;display:grid;gap:3px}
+#financeView .finance-movement-flat .finance-movement-main strong{font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+#financeView .finance-movement-flat .finance-movement-main small{font-size:10px;color:var(--muted);line-height:1.35}
+#financeView .finance-movement-flat>b{flex-shrink:0;font-size:12px;white-space:nowrap}
