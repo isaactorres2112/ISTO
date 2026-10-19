@@ -1,9 +1,9 @@
 {
   "actualizado": "18/10/2026 21:34",
-  "disponible": 43163.35,
+  "disponible": 6119.23,
   "gasto_hoy": 0,
-  "gasto_mes": 20480.21,
-  "ingresos_mes": 0.12,
+  "gasto_mes": 15638.21,
+  "ingresos_mes": 14640.58,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -18,7 +18,7 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Bancos",
-      "saldo": 8216.12
+      "saldo": 734.77
     },
     {
       "nombre": "CETES Directo",
@@ -32,16 +32,30 @@
     },
     {
       "nombre": "TC Mercado Libre",
-      "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 5929.4
+      "tipo": "Activo · Saldo a favor en tarjeta",
+      "saldo": -893.95
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-18",
+      "concepto": "Compra de abarrotes",
+      "nombre": "Tienda de abarrotes",
+      "importe": 63,
+      "id": ""
+    },
     {
       "fecha": "2026-10-16",
       "concepto": "Viáticos por comprobar",
       "nombre": "DAFI",
       "importe": 3500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Pago de TC Mercado Libre",
+      "nombre": "Mercado Pago",
+      "importe": 6823.35,
       "id": ""
     },
     {
@@ -80,6 +94,20 @@
       "id": ""
     },
     {
+      "fecha": "2026-10-12",
+      "concepto": "Pastel de regalo para Paty",
+      "nombre": "Paty",
+      "importe": 300,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-10",
+      "concepto": "Compra de alimentos",
+      "nombre": "Punta de Mar",
+      "importe": 295,
+      "id": ""
+    },
+    {
       "fecha": "2026-10-10",
       "concepto": "Recarga de teléfono",
       "nombre": "Telefonía móvil",
@@ -113,34 +141,6 @@
       "nombre": "Élite Barber",
       "importe": 200,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-09",
-      "concepto": "Comida",
-      "nombre": "McDonald's · Uber Eats",
-      "importe": 233,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-09",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicolle",
-      "importe": 100,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-08",
-      "concepto": "Arreglo de pantalones",
-      "nombre": "Sastre",
-      "importe": 300,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-08",
-      "concepto": "Comida",
-      "nombre": "Cinépolis · Uber Eats",
-      "importe": 165.2,
-      "id": ""
     }
   ],
   "categorias": [
@@ -149,16 +149,12 @@
       "importe": 7500
     },
     {
-      "nombre": "CETES Directo",
-      "importe": 5500
-    },
-    {
       "nombre": "Alimentos",
-      "importe": 3316.68
+      "importe": 3674.68
     },
     {
       "nombre": "Regalos",
-      "importe": 2148.14
+      "importe": 2448.14
     },
     {
       "nombre": "Servicios",
