@@ -325,3 +325,55 @@
 #ideasView .idea-card-info small{font-size:10px;line-height:1.3}
 #ideasView .idea-section-head{margin-top:3px}
 @media(max-width:480px){#ideasView .idea-grid{gap:8px}#ideasView .idea-card{min-height:76px;gap:10px;padding:6px}#ideasView .idea-card-image{flex-basis:64px;width:64px;height:64px}#ideasView .idea-card-info{padding:3px 5px 3px 0}#ideasView .idea-card-info strong{font-size:12px}}
+
+/* ISTO 2.1 · Finanzas */
+#financeView{max-width:860px;margin:0 auto}
+#financeView .finance-stack{display:grid;gap:12px}
+#financeView .finance-overview{padding:20px;border-radius:19px}
+#financeView .finance-overview>.eyebrow{display:block;font-size:10px}
+#financeView .finance-overview>strong{display:block;margin:9px 0 4px;font:500 clamp(31px,6vw,42px)/1.1 Georgia,serif;color:var(--gold);overflow-wrap:anywhere}
+#financeView .finance-overview>small{font-size:10px;color:var(--muted)}
+#financeView .finance-overview-divider{height:1px;background:var(--line);margin:20px 0 15px}
+#financeView .finance-overview-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#financeView .finance-overview-pair>div{display:grid;gap:8px;min-width:0}
+#financeView .finance-overview-pair span,#financeView .finance-metrics span{font-size:10px;color:var(--muted)}
+#financeView .finance-overview-pair strong{font-size:17px;font-weight:600;color:var(--text);overflow-wrap:anywhere}
+#financeView #financeIncome{color:#7fd7a5}
+#financeView #financeExpenses{color:#f48a8a}
+#financeView .finance-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#financeView .finance-metrics>section{padding:16px;border-radius:16px;display:grid;gap:9px}
+#financeView .finance-metrics strong{font:500 22px/1.15 Georgia,serif;overflow-wrap:anywhere}
+#financeView .positive{color:#7fd7a5!important}
+#financeView .negative{color:#ff7474!important}
+#financeView .finance-panel{padding:18px;border-radius:18px}
+#financeView .finance-panel .chart-head{margin-bottom:14px}
+#financeView .finance-panel .eyebrow{font-size:13px;letter-spacing:.04em;text-transform:none;color:var(--text);font-weight:600}
+#financeView .finance-panel .chart-head small{font-size:10px}
+#financeView .finance-row{padding:13px 0;gap:10px}
+#financeView .finance-row strong{font-size:12px}
+#financeView .finance-row small{font-size:10px;line-height:1.4}
+#financeView .finance-row>b{font-size:13px;white-space:nowrap}
+#financeView .finance-category{padding:10px 0}
+#financeView .finance-category-label{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px}
+#financeView .finance-category-label strong{font-size:12px;font-weight:500}
+#financeView .finance-category-label b{font-size:12px;font-weight:600}
+#financeView .finance-bar-track{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+#financeView .finance-bar-track span{display:block;height:100%;border-radius:99px;background:var(--gold)}
+#financeView .finance-movement{border-bottom:1px solid var(--line)}
+#financeView .finance-movement:last-child{border-bottom:0}
+#financeView .finance-movement summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 0}
+#financeView .finance-movement summary::-webkit-details-marker{display:none}
+#financeView .finance-movement-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:0 0 34px;background:rgba(216,189,122,.10);color:var(--gold);font-size:17px}
+#financeView .finance-movement-icon.income{color:#7fd7a5;background:rgba(127,215,165,.10)}
+#financeView .finance-movement-main{min-width:0;flex:1;display:grid;gap:4px}
+#financeView .finance-movement-main strong{font-size:11px;line-height:1.3;font-weight:600;overflow-wrap:anywhere}
+#financeView .finance-movement-main small{font-size:10px;color:var(--muted)}
+#financeView .finance-movement summary>b{font-size:12px;white-space:nowrap}
+#financeView .finance-movement-chevron{font-size:16px;color:var(--muted);transition:transform .2s}
+#financeView .finance-movement[open] .finance-movement-chevron{transform:rotate(180deg)}
+#financeView .finance-movement-details{padding:0 4px 13px 44px;display:grid;gap:8px}
+#financeView .finance-movement-details>div{display:flex;justify-content:space-between;gap:12px}
+#financeView .finance-movement-details span{font-size:10px;color:var(--muted)}
+#financeView .finance-movement-details strong{font-size:10px;font-weight:500;text-align:right}
+#financeView .finance-updated{font-size:10px;color:var(--muted);text-align:center;margin:6px 0 10px}
+@media(max-width:480px){#financeView .finance-overview{padding:17px}#financeView .finance-overview-pair strong{font-size:15px}#financeView .finance-metrics strong{font-size:19px}#financeView .finance-panel{padding:15px}#financeView .finance-movement summary{gap:8px}}
