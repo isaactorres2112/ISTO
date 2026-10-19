@@ -280,3 +280,38 @@
 #agendaView .agenda-entry summary{padding:10px}
 #agendaView .agenda-entry-more{padding-left:48px}
 }
+
+/* ISTO 2.1 · Ideas mobile-first */
+#ideasView{max-width:860px;margin:0 auto}
+#ideasView .idea-search-wrap{display:flex;align-items:center;gap:10px;padding:0 14px;margin-bottom:12px;border-radius:15px}
+#ideasView .idea-search-wrap>span{font-size:25px;color:var(--gold)}
+#ideasView .idea-search{border:0;box-shadow:none;background:transparent;margin:0;padding:15px 0;min-width:0;font-size:13px}
+#ideasView .idea-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0;margin:0 0 22px}
+#ideasView .idea-stats>div{padding:15px 6px;border:1px solid var(--line);border-radius:14px;text-align:center}
+#ideasView .idea-stats strong{font-size:25px}
+#ideasView .idea-stats span{display:block;margin-top:6px;font-size:9px;line-height:1.3;text-transform:none;letter-spacing:0}
+#ideasView .idea-section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 2px 11px}
+#ideasView .idea-section-head>span{font-family:Georgia,serif;font-size:20px}
+#ideasView .idea-section-head small{font-size:10px;color:var(--muted)}
+#ideasView .idea-feature{display:block;position:relative;margin-bottom:24px;border-radius:17px;overflow:hidden}
+#ideasView .idea-feature-image{height:170px;background-size:cover;background-position:center;cursor:pointer;background-color:rgba(255,255,255,.045)}
+#ideasView .idea-feature-copy{padding:14px 16px 16px;display:flex;flex-direction:column;gap:12px}
+#ideasView .idea-feature-copy strong{font-size:21px;line-height:1.2;margin:0;cursor:pointer}
+#ideasView .idea-feature-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#ideasView .idea-feature-actions button{border:0;background:none;padding:7px 0;color:var(--text);font-size:11px;cursor:pointer}
+#ideasView .idea-feature-actions a,#ideasView .idea-modal-notion a{font-size:11px;color:#f5d895;text-decoration:none}
+#ideasView .idea-filter-bar{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;margin-bottom:16px;padding:2px 0}
+#ideasView .idea-filter-bar button{white-space:nowrap;flex:0 0 auto;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--text);border-radius:999px;padding:10px 13px;font-size:11px;cursor:pointer}
+#ideasView .idea-filter-bar button.active-filter{background:rgba(216,189,122,.18);border-color:rgba(216,189,122,.55);color:#f6dca0}
+#ideasView .idea-type-label{display:block;font-size:11px;font-weight:600;margin-bottom:8px}
+#ideasView .idea-type-select{display:block;width:100%;max-width:100%;padding:13px 14px;margin-bottom:18px;border:1px solid var(--line);border-radius:13px;background-color:#22211f;color:var(--text);font-size:12px;outline:none}
+#ideasView .idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+#ideasView .idea-card{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;min-height:0;padding:0;border:1px solid var(--line);border-radius:15px;overflow:hidden;text-align:left;color:var(--text);font:inherit;cursor:pointer}
+#ideasView .idea-card-image{display:block;height:122px;width:100%;background-size:cover;background-position:center}
+#ideasView .idea-image-empty{display:grid;place-items:center;background:rgba(216,189,122,.08);color:var(--gold);font-size:27px}
+#ideasView .idea-card-info{display:flex;flex-direction:column;gap:9px;padding:12px;min-width:0}
+#ideasView .idea-card-info strong{font-size:14px;line-height:1.35;font-weight:500;overflow-wrap:anywhere}
+#ideasView .idea-card-info small{display:block;margin:0;font-size:9px;line-height:1.35;color:var(--muted);overflow-wrap:anywhere}
+#ideasView .idea-no-results{grid-column:1/-1;font-size:12px;padding:12px 0}
+.idea-modal-notion{padding-top:14px;border-top:1px solid var(--line)}
+@media(max-width:480px){#ideasView .idea-stats{gap:6px}#ideasView .idea-stats>div{padding:12px 3px}#ideasView .idea-stats strong{font-size:22px}#ideasView .idea-stats span{font-size:8px}#ideasView .idea-grid{gap:9px}#ideasView .idea-card-image{height:105px}#ideasView .idea-card-info{padding:10px}#ideasView .idea-card-info strong{font-size:13px}#ideasView .idea-feature-image{height:155px}}
