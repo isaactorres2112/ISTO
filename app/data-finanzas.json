@@ -1,8 +1,8 @@
 {
-  "actualizado": "11/10/2026 00:04",
-  "disponible": 26522.89,
+  "actualizado": "18/10/2026 20:54",
+  "disponible": 43163.35,
   "gasto_hoy": 0,
-  "gasto_mes": 13980.21,
+  "gasto_mes": 20480.21,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -13,7 +13,7 @@
     {
       "nombre": "Banorte Nómina",
       "tipo": "Activo · Bancos",
-      "saldo": 0
+      "saldo": 4640.46
     },
     {
       "nombre": "Efectivo",
@@ -23,15 +23,57 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Bancos",
-      "saldo": 1216.12
+      "saldo": 8216.12
     },
     {
       "nombre": "CETES Directo",
       "tipo": "Activo · Inversiones",
-      "saldo": 24562.77
+      "saldo": 29562.77
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Viáticos por comprobar",
+      "nombre": "DAFI",
+      "importe": 3500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Regalo para Paty",
+      "nombre": "Lupita",
+      "importe": 500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Despensa",
+      "nombre": "Paty",
+      "importe": 1000,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Traspaso a Mercado Pago",
+      "nombre": "Banorte Nómina → Mercado Pago",
+      "importe": 7000,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Traspaso a CETES Directo",
+      "nombre": "Banorte Nómina → CETES Directo",
+      "importe": 5000,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-14",
+      "concepto": "Nómina",
+      "nombre": "DAFI",
+      "importe": 14640.46,
+      "id": ""
+    },
     {
       "fecha": "2026-10-10",
       "concepto": "Recarga de teléfono",
@@ -94,48 +136,6 @@
       "nombre": "Cinépolis · Uber Eats",
       "importe": 165.2,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-08",
-      "concepto": "Garrafón de agua",
-      "nombre": "Oxxo",
-      "importe": 55.5,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-08",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicolle",
-      "importe": 100,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-08",
-      "concepto": "Lavandería",
-      "nombre": "Lavandería Val",
-      "importe": 50,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-07",
-      "concepto": "Comida",
-      "nombre": "Fonda Nicole",
-      "importe": 75,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-07",
-      "concepto": "Traspaso entre cuentas",
-      "nombre": "Banorte Nómina → CETES Directo",
-      "importe": 500,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-07",
-      "concepto": "Traspaso entre cuentas",
-      "nombre": "Mercado Pago → Banorte Nómina",
-      "importe": 500,
-      "id": ""
     }
   ],
   "categorias": [
@@ -144,20 +144,20 @@
       "importe": 7500
     },
     {
+      "nombre": "CETES Directo",
+      "importe": 5500
+    },
+    {
       "nombre": "Alimentos",
-      "importe": 2316.68
+      "importe": 3316.68
     },
     {
       "nombre": "Regalos",
-      "importe": 1648.14
+      "importe": 2148.14
     },
     {
       "nombre": "Servicios",
       "importe": 975
-    },
-    {
-      "nombre": "CETES Directo",
-      "importe": 500
     }
   ]
 }
