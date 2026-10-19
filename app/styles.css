@@ -218,3 +218,65 @@
 #homeView .countdown{min-width:112px;padding:9px}
 #homeView .countdown strong{font-size:26px}
 }
+
+/* ISTO 2.1 · Agenda diseñada primero para móvil */
+#agendaView{max-width:860px;margin:0 auto}
+#agendaView .agenda-title{margin-bottom:15px}
+#agendaView .agenda-today-btn{border:1px solid rgba(216,189,122,.48);border-radius:999px;padding:9px 15px;background:rgba(216,189,122,.12);color:#f5d895;font-size:11px;font-weight:650;cursor:pointer}
+#agendaView .agenda-week-panel{padding:16px;margin-bottom:20px}
+#agendaView .agenda-week-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+#agendaView .agenda-week-top>div:first-child{display:grid;gap:4px}
+#agendaView .agenda-week-top strong{font-family:Georgia,serif;font-size:20px;font-weight:500}
+#agendaView .agenda-week-controls{display:flex;gap:8px}
+#agendaView .agenda-week-controls button{width:37px;height:37px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);border-radius:11px;font-size:26px;line-height:1;cursor:pointer}
+#agendaView .agenda-week-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}
+#agendaView .agenda-day-btn{min-width:0;min-height:72px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.045);color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+#agendaView .agenda-day-btn span{font-size:10px;color:var(--muted)}
+#agendaView .agenda-day-btn strong{font-size:17px;font-weight:650}
+#agendaView .agenda-day-btn i{height:5px;width:5px;border-radius:50%;background:transparent}
+#agendaView .agenda-day-btn i.has-activity{background:var(--gold)}
+#agendaView .agenda-day-btn.is-today:not(.selected){border-color:rgba(216,189,122,.6)}
+#agendaView .agenda-day-btn.selected{background:rgba(216,189,122,.18);border-color:var(--gold)}
+#agendaView .agenda-day-btn.selected span,#agendaView .agenda-day-btn.selected strong{color:#f6dca0}
+#agendaView .agenda-day-heading{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:0 3px 12px}
+#agendaView .agenda-day-heading h2{font-family:Georgia,serif;font-size:24px;font-weight:500;margin:4px 0 0}
+#agendaView .agenda-count{font-size:10px;color:var(--muted);white-space:nowrap;padding-bottom:4px}
+#agendaView .agenda-day-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:14px}
+#agendaView .agenda-day-panel{padding:15px}
+#agendaView .agenda-section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+#agendaView .agenda-section-title>span{font-family:Georgia,serif;font-size:19px}
+#agendaView .agenda-section-title small,#agendaView .agenda-backlog summary b{font-size:11px;color:var(--gold);background:rgba(216,189,122,.13);padding:5px 9px;border-radius:999px}
+#agendaView .agenda-item-list{display:grid;gap:8px}
+#agendaView .agenda-entry{border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.035);overflow:hidden}
+#agendaView .agenda-entry summary{display:flex;align-items:center;gap:11px;padding:11px 12px;cursor:pointer;list-style:none;min-height:59px}
+#agendaView .agenda-entry summary::-webkit-details-marker,#agendaView .agenda-backlog summary::-webkit-details-marker{display:none}
+#agendaView .agenda-entry-mark{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:9px;background:rgba(216,189,122,.13);color:var(--gold);font-size:12px}
+#agendaView .agenda-entry-task .agenda-entry-mark{background:rgba(161,178,245,.12);color:#c0c8f5}
+#agendaView .agenda-entry-main{display:grid;gap:5px;min-width:0;flex:1}
+#agendaView .agenda-entry-main strong{font-size:12px;font-weight:650;overflow-wrap:anywhere}
+#agendaView .agenda-entry-main small{font-size:10px;color:var(--muted)}
+#agendaView .agenda-entry-arrow{font-size:17px;color:var(--muted);transition:transform .2s}
+#agendaView .agenda-entry[open] .agenda-entry-arrow{transform:rotate(180deg)}
+#agendaView .agenda-entry-more{padding:0 13px 12px 51px;font-size:11px;line-height:1.5}
+#agendaView .agenda-entry-more p{margin:3px 0 9px}
+#agendaView .agenda-entry-more a{color:#f5d895;text-decoration:none;font-size:11px;font-weight:650}
+#agendaView .agenda-empty{color:var(--muted);font-size:11px;margin:5px 2px;padding:8px 0}
+#agendaView .agenda-backlog{overflow:hidden;margin-top:14px}
+#agendaView .agenda-backlog>summary{display:flex;align-items:center;gap:11px;cursor:pointer;padding:16px;list-style:none}
+#agendaView .agenda-backlog>summary>span:first-child{font-family:Georgia,serif;font-size:18px;flex:1}
+#agendaView .agenda-chevron{font-size:19px;color:var(--muted);transition:transform .2s}
+#agendaView .agenda-backlog[open] .agenda-chevron{transform:rotate(180deg)}
+#agendaView .agenda-backlog-content{padding:0 16px 16px;display:grid;gap:18px}
+#agendaView .agenda-backlog-group>strong{display:block;font-size:11px;color:var(--muted);margin-bottom:9px}
+@media(min-width:760px){#agendaView .agenda-day-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){
+#agendaView .agenda-week-panel{padding:12px}
+#agendaView .agenda-week-top strong{font-size:18px}
+#agendaView .agenda-week-strip{gap:4px}
+#agendaView .agenda-day-btn{min-height:66px;border-radius:11px;gap:5px}
+#agendaView .agenda-day-btn strong{font-size:16px}
+#agendaView .agenda-day-heading h2{font-size:21px}
+#agendaView .agenda-day-panel{padding:12px}
+#agendaView .agenda-entry summary{padding:10px}
+#agendaView .agenda-entry-more{padding-left:48px}
+}
