@@ -65,3 +65,36 @@
 .habit-history-stats{margin-top:12px;color:#d7d4ff;font-size:13px}
 #habitGeneral .habit-bar-track em{width:0;border-left:2px dashed rgba(255,255,255,.85);background:none}
 @media(max-width:680px){.habit-layout{grid-template-columns:1fr}.habit-panel,#habitGeneral .habit-panel:last-child,#habitMonthly .habit-panel:nth-child(3){grid-column:1}.habit-overview{gap:15px}.habit-kpis{gap:11px}.habit-kpis strong{font-size:17px}.habit-panel{padding:16px}.habit-overview .pulse-ring{width:120px;height:120px}.habit-month-bars{height:200px}.habit-month-bar{height:135px}}
+
+/* ISTO 2.1 · Hábitos / vista general compacta */
+#habitGeneral{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px}
+#habitGeneral .habit-general-panel{grid-column:1;grid-row:1}
+#habitGeneral .habit-weekly-panel{grid-column:2;grid-row:1}
+#habitGeneral .habit-ranking-panel{grid-column:1/-1;grid-row:2}
+#habitGeneral .habit-panel{padding:17px 19px}
+#habitGeneral .habit-period{font-size:11px;color:#d2c9f9;line-height:1.45;margin:6px 0 0}
+#habitGeneral .habit-subtitle{margin:5px 0 9px;font-size:10px;line-height:1.4}
+#habitGeneral .habit-overview{gap:15px;margin-top:12px}
+#habitGeneral .habit-overview .pulse-ring{width:116px;height:116px}
+#habitGeneral .habit-kpis{gap:10px 13px}
+#habitGeneral .habit-kpis>div{gap:3px}
+#habitGeneral .habit-kpis small{font-size:10px;line-height:1.25}
+#habitGeneral .habit-kpis strong{font-size:19px}
+#habitGeneral .rank-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:1px;margin-top:8px}
+#habitGeneral .habit-bar-row{margin:6px 0}
+#habitGeneral .habit-bar-label{font-size:11px;margin-bottom:5px}
+#habitGeneral .habit-bar-label strong{font-size:11px}
+#habitGeneral .habit-bar-track{height:6px}
+#habitGeneral .habit-bar-track em{top:-3px;height:12px}
+#habitGeneral .habit-change{padding:9px 11px;margin-top:7px;gap:8px}
+#habitGeneral .habit-change>div{gap:3px}
+#habitGeneral .habit-change strong,#habitGeneral .habit-change>b{font-size:12px}
+#habitGeneral .habit-change small{font-size:10px}
+@media(max-width:760px){
+#habitGeneral{grid-template-columns:1fr}
+#habitGeneral .habit-general-panel,#habitGeneral .habit-weekly-panel,#habitGeneral .habit-ranking-panel{grid-column:1;grid-row:auto}
+#habitGeneral .habit-panel{padding:15px}
+#habitGeneral .habit-overview .pulse-ring{width:108px;height:108px}
+#habitGeneral .habit-kpis strong{font-size:17px}
+}
+@media(max-width:480px){#habitGeneral .rank-list{grid-template-columns:1fr}#habitGeneral .habit-bar-row{margin:4px 0}}
