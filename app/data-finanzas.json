@@ -2,7 +2,7 @@
   "actualizado": "19/10/2026 06:04",
   "disponible": 35682,
   "gasto_hoy": 0,
-  "gasto_mes": 22571.69,
+  "gasto_mes": 17071.69,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -112,7 +112,8 @@
       "concepto": "Pago de TC Mercado Libre",
       "nombre": "Mercado Pago",
       "importe": 6823.35,
-      "id": ""
+      "id": "",
+      "tipo": "transfer"
     },
     {
       "fecha": "2026-10-15",
@@ -133,24 +134,22 @@
       "concepto": "Traspaso a Mercado Pago",
       "nombre": "Banorte Nómina → Mercado Pago",
       "importe": 7000,
-      "id": ""
+      "id": "",
+      "tipo": "transfer"
     },
     {
       "fecha": "2026-10-15",
       "concepto": "Traspaso a CETES Directo",
       "nombre": "Banorte Nómina → CETES Directo",
       "importe": 5000,
-      "id": ""
+      "id": "",
+      "tipo": "transfer"
     }
   ],
   "categorias": [
     {
       "nombre": "Vivienda",
       "importe": 7500
-    },
-    {
-      "nombre": "CETES Directo",
-      "importe": 5500
     },
     {
       "nombre": "Alimentos",
