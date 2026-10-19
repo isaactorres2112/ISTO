@@ -118,3 +118,13 @@
 #habitMonthly .habit-period{font-size:11px;color:#d2c9f9;margin:6px 0;line-height:1.45}
 #habitMonthly .habit-change{padding:10px 12px;margin-top:7px}
 @media(max-width:760px){#habitMonthly{grid-template-columns:1fr}#habitMonthly .habit-panel,#habitMonthly .habit-panel:nth-child(3){grid-column:1}#habitMonthly .habit-panel{padding:15px}#habitMonthly .habit-overview .pulse-ring{width:108px;height:108px}#habitMonthly .habit-kpis strong{font-size:17px}}
+
+/* Corrección: regla antigua :last-child expandía Tendencias y tapaba Cumplimiento general */
+#habitGeneral .habit-panel.habit-general-panel{grid-column:1;grid-row:1}
+#habitGeneral .habit-panel.habit-weekly-panel:last-child{grid-column:2;grid-row:1}
+#habitGeneral .habit-panel.habit-ranking-panel{grid-column:1/-1;grid-row:2}
+@media(max-width:760px){
+#habitGeneral .habit-panel.habit-general-panel{grid-column:1;grid-row:1}
+#habitGeneral .habit-panel.habit-weekly-panel:last-child{grid-column:1;grid-row:2}
+#habitGeneral .habit-panel.habit-ranking-panel{grid-column:1;grid-row:3}
+}
