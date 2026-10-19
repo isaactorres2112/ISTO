@@ -1,14 +1,14 @@
 {
-  "actualizado": "19/10/2026 22:56 UTC",
-  "disponible": 38147.61,
-  "gasto_hoy": 115.0,
-  "gasto_mes": 17186.69,
-  "ingresos_mes": 14640.58,
+  "actualizado": "19/10/2026 15:59",
+  "disponible": 35567,
+  "gasto_hoy": 115,
+  "gasto_mes": 22686.69,
+  "ingresos_mes": 0.12,
   "cuentas": [
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 629.0
+      "saldo": 629
     },
     {
       "nombre": "Banorte Nómina",
@@ -27,8 +27,8 @@
     },
     {
       "nombre": "DAFI · saldo neto",
-      "tipo": "Activo · Cuenta por cobrar neta",
-      "saldo": 2580.61
+      "tipo": "Mixta · Deudor / acreedor",
+      "saldo": 0
     },
     {
       "nombre": "TC Mercado Libre",
@@ -41,87 +41,116 @@
       "fecha": "2026-10-19",
       "concepto": "Café aeropuerto",
       "nombre": "Café aeropuerto",
-      "importe": 115.0,
-      "tipo": "expense",
-      "id": "58"
+      "importe": 115,
+      "id": ""
     },
     {
       "fecha": "2026-10-18",
       "concepto": "Alimentos Rappi",
       "nombre": "Rappi",
       "importe": 200.5,
-      "tipo": "expense",
-      "id": "57"
+      "id": ""
     },
     {
       "fecha": "2026-10-18",
       "concepto": "Compra de abarrotes",
       "nombre": "Tienda de abarrotes",
-      "importe": 63.0,
-      "tipo": "expense",
-      "id": "42"
+      "importe": 63,
+      "id": ""
     },
     {
       "fecha": "2026-10-17",
       "concepto": "Alimentos Uber Eats",
       "nombre": "Uber Eats",
       "importe": 217.76,
-      "tipo": "expense",
-      "id": "56"
+      "id": ""
     },
     {
       "fecha": "2026-10-17",
       "concepto": "Comida empleados a cargo de DAFI",
       "nombre": "DAFI",
-      "importe": 4854.0,
-      "tipo": "expense",
-      "id": "55"
+      "importe": 4854,
+      "id": ""
     },
     {
       "fecha": "2026-10-17",
       "concepto": "Farmacia del Ahorro gasto personal",
       "nombre": "Farmacia del Ahorro",
-      "importe": 114.0,
-      "tipo": "expense",
-      "id": "54"
+      "importe": 114,
+      "id": ""
     },
     {
       "fecha": "2026-10-17",
       "concepto": "Uber transporte",
       "nombre": "Uber",
       "importe": 39.95,
-      "tipo": "expense",
-      "id": "53"
+      "id": ""
     },
     {
       "fecha": "2026-10-16",
       "concepto": "Alimentos Uber Eats",
       "nombre": "Uber Eats",
       "importe": 197.23,
-      "tipo": "expense",
-      "id": "52"
+      "id": ""
     },
     {
       "fecha": "2026-10-16",
       "concepto": "Compra papelería a cargo de DAFI",
       "nombre": "DAFI",
-      "importe": 241.0,
-      "tipo": "expense",
-      "id": "51"
+      "importe": 241,
+      "id": ""
     },
     {
       "fecha": "2026-10-16",
       "concepto": "Viáticos por comprobar",
       "nombre": "DAFI",
-      "importe": 3500.0,
-      "tipo": "expense",
-      "id": "38"
+      "importe": 3500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Compra Fligo a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 330.4,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Pago de TC Mercado Libre",
+      "nombre": "Mercado Pago",
+      "importe": 6823.35,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Regalo para Paty",
+      "nombre": "Lupita",
+      "importe": 500,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Despensa",
+      "nombre": "Paty",
+      "importe": 1000,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-15",
+      "concepto": "Traspaso a Mercado Pago",
+      "nombre": "Banorte Nómina → Mercado Pago",
+      "importe": 7000,
+      "id": ""
     }
   ],
   "categorias": [
     {
       "nombre": "Vivienda",
-      "importe": 7500.0
+      "importe": 7500
+    },
+    {
+      "nombre": "CETES Directo",
+      "importe": 5500
     },
     {
       "nombre": "Alimentos",
@@ -133,11 +162,7 @@
     },
     {
       "nombre": "Servicios",
-      "importe": 975.0
-    },
-    {
-      "nombre": "Suscripciones",
-      "importe": 658.0
+      "importe": 975
     }
   ]
 }
