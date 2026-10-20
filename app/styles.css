@@ -384,3 +384,8 @@
 #financeView .finance-movement-flat .finance-movement-main strong{font-size:11px;line-height:1.35;overflow-wrap:anywhere}
 #financeView .finance-movement-flat .finance-movement-main small{font-size:10px;color:var(--muted);line-height:1.35}
 #financeView .finance-movement-flat>b{flex-shrink:0;font-size:12px;white-space:nowrap}
+
+/* Agenda: filas compactas sin desplegables, optimizadas para móvil */
+#agendaView .agenda-entry-flat{display:flex;align-items:center;gap:11px;padding:11px 12px;min-height:54px}
+#agendaView .agenda-entry-flat .agenda-entry-main{gap:4px}
+#agendaView .agenda-entry-flat .agenda-entry-main strong{line-height:1.35}
