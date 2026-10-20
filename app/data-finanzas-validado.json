@@ -1,5 +1,5 @@
 {
-  "actualizado": "20/10/2026 11:29 UTC",
+  "actualizado": "20/10/2026 19:36 UTC",
   "disponible": 35567.0,
   "gasto_hoy": 0.0,
   "gasto_mes": 17186.69,
@@ -28,15 +28,47 @@
     {
       "nombre": "DAFI · saldo neto",
       "tipo": "Activo · Cuenta por cobrar neta",
-      "saldo": 2580.61
+      "saldo": 3704.06
     },
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 6484.83
+      "saldo": 7608.28
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Uber Eats · viáticos DAFI",
+      "nombre": "Uber Eats",
+      "importe": 381.51,
+      "tipo": "expense",
+      "id": "62"
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Taxis amarillos · viáticos DAFI",
+      "nombre": "Taxis amarillos",
+      "importe": 340.0,
+      "tipo": "expense",
+      "id": "61"
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Alimentos · viáticos DAFI",
+      "nombre": "Alimentos",
+      "importe": 352.0,
+      "tipo": "expense",
+      "id": "60"
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Uber transporte · viáticos DAFI",
+      "nombre": "Uber",
+      "importe": 49.94,
+      "tipo": "expense",
+      "id": "59"
+    },
     {
       "fecha": "2026-10-19",
       "concepto": "Café aeropuerto",
@@ -84,38 +116,6 @@
       "importe": 114.0,
       "tipo": "expense",
       "id": "54"
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Uber transporte",
-      "nombre": "Uber",
-      "importe": 39.95,
-      "tipo": "expense",
-      "id": "53"
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Alimentos Uber Eats",
-      "nombre": "Uber Eats",
-      "importe": 197.23,
-      "tipo": "expense",
-      "id": "52"
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Compra papelería a cargo de DAFI",
-      "nombre": "DAFI",
-      "importe": 241.0,
-      "tipo": "expense",
-      "id": "51"
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Viáticos por comprobar",
-      "nombre": "DAFI",
-      "importe": 3500.0,
-      "tipo": "expense",
-      "id": "38"
     }
   ],
   "categorias": [
