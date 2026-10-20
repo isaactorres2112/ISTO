@@ -1,14 +1,14 @@
 {
-  "actualizado": "20/10/2026 01:25 UTC",
-  "disponible": 35567,
-  "gasto_hoy": 0,
+  "actualizado": "20/10/2026 06:10 UTC",
+  "disponible": 35567.0,
+  "gasto_hoy": 0.0,
   "gasto_mes": 17186.69,
   "ingresos_mes": 14640.58,
   "cuentas": [
     {
       "nombre": "Efectivo",
       "tipo": "Activo · Efectivo",
-      "saldo": 629
+      "saldo": 629.0
     },
     {
       "nombre": "Banorte Nómina",
@@ -41,7 +41,7 @@
       "fecha": "2026-10-19",
       "concepto": "Café aeropuerto",
       "nombre": "Café aeropuerto",
-      "importe": 115,
+      "importe": 115.0,
       "tipo": "expense",
       "id": "58"
     },
@@ -57,7 +57,7 @@
       "fecha": "2026-10-18",
       "concepto": "Compra de abarrotes",
       "nombre": "Tienda de abarrotes",
-      "importe": 63,
+      "importe": 63.0,
       "tipo": "expense",
       "id": "42"
     },
@@ -73,7 +73,7 @@
       "fecha": "2026-10-17",
       "concepto": "Comida empleados a cargo de DAFI",
       "nombre": "DAFI",
-      "importe": 4854,
+      "importe": 4854.0,
       "tipo": "expense",
       "id": "55"
     },
@@ -81,7 +81,7 @@
       "fecha": "2026-10-17",
       "concepto": "Farmacia del Ahorro gasto personal",
       "nombre": "Farmacia del Ahorro",
-      "importe": 114,
+      "importe": 114.0,
       "tipo": "expense",
       "id": "54"
     },
@@ -105,7 +105,7 @@
       "fecha": "2026-10-16",
       "concepto": "Compra papelería a cargo de DAFI",
       "nombre": "DAFI",
-      "importe": 241,
+      "importe": 241.0,
       "tipo": "expense",
       "id": "51"
     },
@@ -113,7 +113,7 @@
       "fecha": "2026-10-16",
       "concepto": "Viáticos por comprobar",
       "nombre": "DAFI",
-      "importe": 3500,
+      "importe": 3500.0,
       "tipo": "expense",
       "id": "38"
     }
@@ -121,7 +121,7 @@
   "categorias": [
     {
       "nombre": "Vivienda",
-      "importe": 7500
+      "importe": 7500.0
     },
     {
       "nombre": "Alimentos",
@@ -133,11 +133,11 @@
     },
     {
       "nombre": "Servicios",
-      "importe": 975
+      "importe": 975.0
     },
     {
       "nombre": "Suscripciones",
-      "importe": 658
+      "importe": 658.0
     }
   ]
 }
