@@ -1,0 +1,143 @@
+{
+  "actualizado": "20/10/2026 01:25 UTC",
+  "disponible": 35567,
+  "gasto_hoy": 0,
+  "gasto_mes": 17186.69,
+  "ingresos_mes": 14640.58,
+  "cuentas": [
+    {
+      "nombre": "Efectivo",
+      "tipo": "Activo · Efectivo",
+      "saldo": 629
+    },
+    {
+      "nombre": "Banorte Nómina",
+      "tipo": "Activo · Bancos",
+      "saldo": 4640.46
+    },
+    {
+      "nombre": "Mercado Pago",
+      "tipo": "Activo · Bancos",
+      "saldo": 734.77
+    },
+    {
+      "nombre": "CETES Directo",
+      "tipo": "Activo · Inversiones",
+      "saldo": 29562.77
+    },
+    {
+      "nombre": "DAFI · saldo neto",
+      "tipo": "Activo · Cuenta por cobrar neta",
+      "saldo": 2580.61
+    },
+    {
+      "nombre": "TC Mercado Libre",
+      "tipo": "Pasivo · Tarjeta de crédito",
+      "saldo": 6484.83
+    }
+  ],
+  "movimientos": [
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Café aeropuerto",
+      "nombre": "Café aeropuerto",
+      "importe": 115,
+      "tipo": "expense",
+      "id": "58"
+    },
+    {
+      "fecha": "2026-10-18",
+      "concepto": "Alimentos Rappi",
+      "nombre": "Rappi",
+      "importe": 200.5,
+      "tipo": "expense",
+      "id": "57"
+    },
+    {
+      "fecha": "2026-10-18",
+      "concepto": "Compra de abarrotes",
+      "nombre": "Tienda de abarrotes",
+      "importe": 63,
+      "tipo": "expense",
+      "id": "42"
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Alimentos Uber Eats",
+      "nombre": "Uber Eats",
+      "importe": 217.76,
+      "tipo": "expense",
+      "id": "56"
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Comida empleados a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 4854,
+      "tipo": "expense",
+      "id": "55"
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Farmacia del Ahorro gasto personal",
+      "nombre": "Farmacia del Ahorro",
+      "importe": 114,
+      "tipo": "expense",
+      "id": "54"
+    },
+    {
+      "fecha": "2026-10-17",
+      "concepto": "Uber transporte",
+      "nombre": "Uber",
+      "importe": 39.95,
+      "tipo": "expense",
+      "id": "53"
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Alimentos Uber Eats",
+      "nombre": "Uber Eats",
+      "importe": 197.23,
+      "tipo": "expense",
+      "id": "52"
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Compra papelería a cargo de DAFI",
+      "nombre": "DAFI",
+      "importe": 241,
+      "tipo": "expense",
+      "id": "51"
+    },
+    {
+      "fecha": "2026-10-16",
+      "concepto": "Viáticos por comprobar",
+      "nombre": "DAFI",
+      "importe": 3500,
+      "tipo": "expense",
+      "id": "38"
+    }
+  ],
+  "categorias": [
+    {
+      "nombre": "Vivienda",
+      "importe": 7500
+    },
+    {
+      "nombre": "Alimentos",
+      "importe": 4810.21
+    },
+    {
+      "nombre": "Regalos",
+      "importe": 2448.14
+    },
+    {
+      "nombre": "Servicios",
+      "importe": 975
+    },
+    {
+      "nombre": "Suscripciones",
+      "importe": 658
+    }
+  ]
+}
