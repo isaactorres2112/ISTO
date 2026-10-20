@@ -1,6 +1,7 @@
 import os, json, re
 from decimal import Decimal
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from collections import defaultdict
 from google.oauth2 import service_account
@@ -48,7 +49,7 @@ def main():
     income=sum((cred[n]-deb[n] for n in ["Ingresos por nómina","Otros ingresos"]),Decimal(0))
     expense=sum((net(n) for n in expenses),Decimal(0))
     categories=sorted(({"nombre":n,"importe":num(net(n))} for n in expenses if net(n)>0),key=lambda x:x["importe"],reverse=True)
-    today=datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    data={"actualizado":datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC"),"disponible":num(sum((Decimal(str(a["saldo"])) for a in accounts[:-1]),Decimal(0))),"gasto_hoy":num(sum((Decimal(str(m["importe"])) for m in movements if m["fecha"]==today and m["tipo"]=="expense"),Decimal(0))),"gasto_mes":num(expense),"ingresos_mes":num(income),"cuentas":accounts,"movimientos":movements[:10],"categorias":categories[:5]}
-    Path("app/data-finanzas.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    today=datetime.now(ZoneInfo("America/Mexico_City")).strftime("%Y-%m-%d")
+    data={"actualizado":datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC"),"disponible":num(sum((Decimal(str(a["saldo"])) for a in accounts[:4]),Decimal(0))),"gasto_hoy":num(sum((Decimal(str(m["importe"])) for m in movements if m["fecha"]==today and m["tipo"]=="expense"),Decimal(0))),"gasto_mes":num(expense),"ingresos_mes":num(income),"cuentas":accounts,"movimientos":movements[:10],"categorias":categories[:5]}
+    Path("app/data-finanzas-validado.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 if __name__=="__main__": main()
