@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-19T23:23:00-06:00",
+  "ultima_actualizacion": "2026-10-20T04:18:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -146,14 +146,6 @@
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-800b-895f-eccdb6ab087b",
-      "tarea": "AC-26-766 “BODEGAS”",
-      "trabajo": "2026-10-12",
-      "trabajo_fin": "2026-10-13",
-      "fecha_limite": "2026-10-14",
-      "check": true
-    },
-    {
       "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
       "tarea": "Revisión contable",
       "trabajo": "2026-10-13",
@@ -186,14 +178,6 @@
       "check": false
     },
     {
-      "id": "3c901ec1-e57b-804c-a1c9-fcc80d3bbb1a",
-      "tarea": "Compra de escritorios",
-      "trabajo": "2026-08-03",
-      "trabajo_fin": "2026-08-05",
-      "fecha_limite": "2026-08-05",
-      "check": true
-    },
-    {
       "id": "3c901ec1-e57b-80c5-b9f6-f05e99f53694",
       "tarea": "Reparto de utilidades",
       "trabajo": "2027-01-11",
@@ -223,14 +207,6 @@
       "trabajo": "2026-10-03",
       "trabajo_fin": null,
       "fecha_limite": "2026-10-03",
-      "check": true
-    },
-    {
-      "id": "3c801ec1-e57b-8023-8b5f-cd135ccc1abf",
-      "tarea": "Capacitación Tesorero",
-      "trabajo": "2026-09-28",
-      "trabajo_fin": "2026-09-28",
-      "fecha_limite": "2026-09-30",
       "check": true
     },
     {
