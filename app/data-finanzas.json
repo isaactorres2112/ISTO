@@ -1,8 +1,8 @@
 {
-  "actualizado": "20/10/2026 00:04",
+  "actualizado": "20/10/2026 08:44",
   "disponible": 35567,
   "gasto_hoy": 0,
-  "gasto_mes": 22686.69,
+  "gasto_mes": 23810.14,
   "ingresos_mes": 0.12,
   "cuentas": [
     {
@@ -33,10 +33,38 @@
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 6484.83
+      "saldo": 7608.28
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Uber Eats · viáticos DAFI",
+      "nombre": "Uber Eats",
+      "importe": 381.51,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Taxis amarillos · viáticos DAFI",
+      "nombre": "Taxis amarillos",
+      "importe": 340,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Alimentos · viáticos DAFI",
+      "nombre": "Alimentos",
+      "importe": 352,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-19",
+      "concepto": "Uber transporte · viáticos DAFI",
+      "nombre": "Uber",
+      "importe": 49.94,
+      "id": ""
+    },
     {
       "fecha": "2026-10-19",
       "concepto": "Café aeropuerto",
@@ -113,34 +141,6 @@
       "nombre": "DAFI",
       "importe": 330.4,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Pago de TC Mercado Libre",
-      "nombre": "Mercado Pago",
-      "importe": 6823.35,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Regalo para Paty",
-      "nombre": "Lupita",
-      "importe": 500,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Despensa",
-      "nombre": "Paty",
-      "importe": 1000,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Traspaso a Mercado Pago",
-      "nombre": "Banorte Nómina → Mercado Pago",
-      "importe": 7000,
-      "id": ""
     }
   ],
   "categorias": [
@@ -161,8 +161,8 @@
       "importe": 2448.14
     },
     {
-      "nombre": "Servicios",
-      "importe": 975
+      "nombre": "Viáticos por comprobar",
+      "importe": 1123.45
     }
   ]
 }
