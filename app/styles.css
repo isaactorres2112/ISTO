@@ -389,3 +389,22 @@
 #agendaView .agenda-entry-flat{display:flex;align-items:center;gap:11px;padding:11px 12px;min-height:54px}
 #agendaView .agenda-entry-flat .agenda-entry-main{gap:4px}
 #agendaView .agenda-entry-flat .agenda-entry-main strong{line-height:1.35}
+
+/* ISTO 2.1 · Identidad visual unificada: Hábitos y Ánimo */
+#habitsView,#moodView{max-width:860px;margin:0 auto}
+#habitsView .habit-tabs,#moodView .habit-tabs{background:rgba(20,19,17,.44);border-color:var(--line);border-radius:15px;max-width:390px}
+#habitsView .habit-tabs button,#moodView .habit-tabs button{font-size:11px;font-weight:600;border-radius:11px;transition:background .18s,color .18s}
+#habitsView .habit-tabs button.active,#moodView .habit-tabs button.active{background:rgba(216,189,122,.18);border:1px solid rgba(216,189,122,.42);box-shadow:none;color:#f5d895}
+#habitsView .habit-panel,#moodView .habit-panel{background:var(--glass);border:1px solid var(--line);box-shadow:0 14px 38px rgba(0,0,0,.18);border-radius:18px;backdrop-filter:blur(22px) saturate(120%);-webkit-backdrop-filter:blur(22px) saturate(120%)}
+#habitsView .habit-panel .eyebrow,#moodView .habit-panel .eyebrow{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:none;color:var(--text)}
+#habitsView .habit-period,#moodView .habit-period,#habitsView .habit-current-month,#moodView .habit-current-month,#habitsView .habit-history-stats,#moodView .habit-history-stats{color:var(--muted)}
+#habitsView .habit-current-month,#moodView .habit-current-month{font-size:12px;font-weight:600}
+#habitsView .habit-kpis strong,#moodView .habit-kpis strong{font-family:Georgia,serif;font-weight:500;color:var(--gold)}
+#habitsView .habit-change,#moodView .habit-change{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:13px}
+#habitsView .habit-panel select,#moodView .habit-panel select{background:#22211f;color:var(--text);border:1px solid var(--line);border-radius:13px;font-size:12px}
+#habitsView .habit-month-bar i,#moodView .habit-month-bar i{background:linear-gradient(0deg,#ad8c4c,var(--gold))}
+#habitsView .habit-bar-track i,#moodView .habit-bar-track i{background:var(--gold)}
+#habitsView .habit-bar-label strong,#moodView .habit-bar-label strong{color:var(--gold)}
+#habitsView .habit-positive,#moodView .habit-positive{color:#7fd7a5!important}
+#habitsView .habit-negative,#moodView .habit-negative{color:#f48a8a!important}
+@media(max-width:480px){#habitsView .habit-panel,#moodView .habit-panel{padding:15px;border-radius:16px}#habitsView .habit-panel .eyebrow,#moodView .habit-panel .eyebrow{font-size:12px}#habitsView .habit-tabs button,#moodView .habit-tabs button{padding:11px 9px}}
