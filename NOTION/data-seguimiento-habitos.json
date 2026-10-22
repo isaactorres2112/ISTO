@@ -23,10 +23,10 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-21T19:56:00-06:00",
-  "ultimo_dia_evaluado": "2026-10-21",
+  "ultima_actualizacion": "2026-10-22T01:26:00-06:00",
+  "ultimo_dia_evaluado": "2026-10-22",
   "hoy": {
-    "fecha": "2026-10-21",
+    "fecha": "2026-10-22",
     "cumplidos": 0,
     "total": 10,
     "porcentaje": 0,
@@ -44,31 +44,31 @@
     }
   },
   "global": {
-    "cumplimiento": 49.3,
-    "cumplidos": 146,
-    "posibles": 284,
-    "dias_registrados": 37,
+    "cumplimiento": 48.5,
+    "cumplidos": 147,
+    "posibles": 292,
+    "dias_registrados": 38,
     "habitos": {
-      "Dormir": 40.5,
-      "Salud": 78.4,
+      "Dormir": 39.5,
+      "Salud": 78.9,
       "Ejercicio": 0.0,
-      "Orar": 4.3,
+      "Orar": 4.2,
       "Ahorrar": 100,
       "Leer": 0.0,
-      "Agua": 28.6,
-      "Uñas": 89.2,
-      "Tocarse": 57.6,
-      "Animo": 94.6
+      "Agua": 27.6,
+      "Uñas": 86.8,
+      "Tocarse": 55.9,
+      "Animo": 92.1
     },
     "detalle": {
       "Dormir": {
         "realizadas": 15,
-        "esperadas": 37,
+        "esperadas": 38,
         "meta_semanal": 7
       },
       "Salud": {
-        "realizadas": 29,
-        "esperadas": 37,
+        "realizadas": 30,
+        "esperadas": 38,
         "meta_semanal": 7
       },
       "Ejercicio": {
@@ -78,7 +78,7 @@
       },
       "Orar": {
         "realizadas": 1,
-        "esperadas": 23,
+        "esperadas": 24,
         "meta_semanal": 4
       },
       "Ahorrar": {
@@ -88,27 +88,27 @@
       },
       "Leer": {
         "realizadas": 0,
-        "esperadas": 28,
+        "esperadas": 29,
         "meta_semanal": 5
       },
       "Agua": {
         "realizadas": 8,
-        "esperadas": 28,
+        "esperadas": 29,
         "meta_semanal": 5
       },
       "Uñas": {
         "realizadas": 33,
-        "esperadas": 37,
+        "esperadas": 38,
         "meta_semanal": 7
       },
       "Tocarse": {
         "realizadas": 19,
-        "esperadas": 33,
+        "esperadas": 34,
         "meta_semanal": 6
       },
       "Animo": {
         "realizadas": 35,
-        "esperadas": 37,
+        "esperadas": 38,
         "meta_semanal": 7
       }
     }
@@ -120,9 +120,9 @@
       "cambio": -42.9
     },
     "Salud": {
-      "actual": 33.3,
+      "actual": 50.0,
       "anterior": 85.7,
-      "cambio": -52.4
+      "cambio": -35.7
     },
     "Ejercicio": {
       "actual": 0.0,
@@ -135,9 +135,9 @@
       "cambio": 0.0
     },
     "Ahorrar": {
-      "actual": 33.3,
+      "actual": 25.0,
       "anterior": 14.3,
-      "cambio": 19.0
+      "cambio": 10.7
     },
     "Leer": {
       "actual": 0.0,
@@ -150,9 +150,9 @@
       "cambio": -42.9
     },
     "Uñas": {
-      "actual": 66.7,
+      "actual": 50.0,
       "anterior": 85.7,
-      "cambio": -19.0
+      "cambio": -35.7
     },
     "Tocarse": {
       "actual": 0.0,
@@ -160,9 +160,9 @@
       "cambio": -42.9
     },
     "Animo": {
-      "actual": 66.7,
+      "actual": 50.0,
       "anterior": 100.0,
-      "cambio": -33.3
+      "cambio": -50.0
     }
   },
   "diarios": [
@@ -782,6 +782,23 @@
       "fecha": "2026-10-21",
       "habitos": {
         "Dormir": false,
+        "Salud": true,
+        "Ejercicio": false,
+        "Orar": false,
+        "Ahorrar": false,
+        "Leer": false,
+        "Agua": false,
+        "Uñas": false,
+        "Tocarse": false,
+        "Animo": false
+      },
+      "cumplidos": 1,
+      "total": 10
+    },
+    {
+      "fecha": "2026-10-22",
+      "habitos": {
+        "Dormir": false,
         "Salud": false,
         "Ejercicio": false,
         "Orar": false,
@@ -892,7 +909,7 @@
       "anio": 2026,
       "habitos": {
         "Dormir": 25.0,
-        "Salud": 60.7,
+        "Salud": 64.3,
         "Ejercicio": 0.0,
         "Orar": 0.0,
         "Ahorrar": 75.0,
@@ -906,70 +923,70 @@
         "Dormir": {
           "realizadas": 7,
           "esperadas": 28,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 7
         },
         "Salud": {
-          "realizadas": 17,
+          "realizadas": 18,
           "esperadas": 28,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 7
         },
         "Ejercicio": {
           "realizadas": 0,
           "esperadas": 12,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 3
         },
         "Orar": {
           "realizadas": 0,
           "esperadas": 16,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 4
         },
         "Ahorrar": {
           "realizadas": 3,
           "esperadas": 4,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 1
         },
         "Leer": {
           "realizadas": 0,
           "esperadas": 20,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 5
         },
         "Agua": {
           "realizadas": 3,
           "esperadas": 20,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 5
         },
         "Uñas": {
           "realizadas": 18,
           "esperadas": 28,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 7
         },
         "Tocarse": {
           "realizadas": 9,
           "esperadas": 24,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 6
         },
         "Animo": {
           "realizadas": 20,
           "esperadas": 28,
-          "dias_evaluados": 20,
+          "dias_evaluados": 21,
           "semanas_evaluadas": 4,
           "meta_semanal": 7
         }
