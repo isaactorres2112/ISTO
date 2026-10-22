@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-21T18:19:41-05:00",
+  "ultima_actualizacion": "2026-10-21T20:41:49-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -9,39 +9,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
-      "evento": "Despensa",
-      "fecha": "2026-10-17T10:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "04301ec1-e57b-8245-b417-013b1a3bba7e",
-      "evento": "Cumple Ivon Llanos",
-      "fecha": "2026-10-20T08:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Cumpleaños"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
-      "evento": "América vs Atlas",
-      "fecha": "2026-10-21T20:00:00.000-05:00",
-      "fin": "2026-10-21T21:59:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
       ],
       "detalles": null
     },
@@ -68,6 +35,17 @@
       "detalles": null
     },
     {
+      "id": "4ea01ec1-e57b-8360-9512-019ff6946bbc",
+      "evento": "Despensa",
+      "fecha": "2026-10-24T10:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
       "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
       "evento": "Finanzas personales",
       "fecha": "2026-10-25T13:00:00.000-05:00",
@@ -75,6 +53,17 @@
       "check": false,
       "grupo": [
         "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
+      "evento": "América vs Pachuca",
+      "fecha": "2026-10-25T20:00:00.000-05:00",
+      "fin": "2026-10-25T21:59:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
       ],
       "detalles": null
     },
@@ -1149,6 +1138,17 @@
       "id": "b6d01ec1-e57b-834c-87b3-81b2f8ed0dc8",
       "evento": "Cumple Valeria Rodriguez",
       "fecha": "2027-10-19T08:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "04301ec1-e57b-8245-b417-013b1a3bba7e",
+      "evento": "Cumple Ivon Llanos",
+      "fecha": "2027-10-20T08:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
