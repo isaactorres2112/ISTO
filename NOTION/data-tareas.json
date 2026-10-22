@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-21T19:42:00-06:00",
+  "ultima_actualizacion": "2026-10-22T00:37:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -52,9 +52,9 @@
     {
       "id": "3ca01ec1-e57b-8029-9eaa-d2582ecdd655",
       "tarea": "Actas de Honorarios",
-      "trabajo": "2026-10-19",
-      "trabajo_fin": "2026-10-28",
-      "fecha_limite": "2026-10-29",
+      "trabajo": "2026-11-09",
+      "trabajo_fin": "2026-11-13",
+      "fecha_limite": "2026-11-27",
       "check": false
     },
     {
