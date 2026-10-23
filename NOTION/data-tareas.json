@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-23T08:15:00-06:00",
+  "ultima_actualizacion": "2026-10-23T12:37:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -36,7 +36,7 @@
     {
       "id": "3ca01ec1-e57b-80ca-b7d8-c8d9b8154ace",
       "tarea": "Evento de JR",
-      "trabajo": "2026-10-23",
+      "trabajo": "2026-10-26",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -60,8 +60,8 @@
     {
       "id": "3ca01ec1-e57b-80aa-ac12-c533b2f31ba6",
       "tarea": "PIPC",
-      "trabajo": "2026-10-19",
-      "trabajo_fin": "2026-10-23",
+      "trabajo": "2026-11-23",
+      "trabajo_fin": "2026-11-27",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -76,8 +76,8 @@
     {
       "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
       "tarea": "Inventarios",
-      "trabajo": "2026-10-22",
-      "trabajo_fin": "2026-10-23",
+      "trabajo": "2026-10-28",
+      "trabajo_fin": "2026-10-29",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -231,7 +231,7 @@
       "trabajo": "2026-10-19",
       "trabajo_fin": "2026-10-20",
       "fecha_limite": "2026-10-20",
-      "check": false
+      "check": true
     },
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
