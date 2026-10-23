@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-22T17:54:00-06:00",
+  "ultima_actualizacion": "2026-10-22T21:52:00-06:00",
   "items": [
     {
       "id": "3f801ec1-e57b-808d-af77-f84a435a70d7",
@@ -34,11 +34,11 @@
       "check": false
     },
     {
-      "id": "3ca01ec1-e57b-8038-a8d6-cee3448a4640",
-      "tarea": "Eventos FIGLO",
-      "trabajo": "2026-10-17",
-      "trabajo_fin": "2026-10-17",
-      "fecha_limite": "2026-10-17",
+      "id": "3ca01ec1-e57b-80ca-b7d8-c8d9b8154ace",
+      "tarea": "Evento de JR",
+      "trabajo": "2026-10-23",
+      "trabajo_fin": "2026-10-30",
+      "fecha_limite": "2026-10-30",
       "check": false
     },
     {
