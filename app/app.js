@@ -40,8 +40,8 @@ function renderHabitViews(){
  const bestLabel=best?habitFmt(best.value)+' · '+habitMonthName(best.month):'—';
  const deltaLabel=delta===null?'—':habitDelta(delta);
  $('#habitCutoff').textContent='Datos hasta '+habitDateLabel(today);
- $('#homeHabitPct').textContent=habitFmt(thisPct);$('#homeHabitRing').style.setProperty('--pct',thisPct||0);$('#homeHabitDiff').textContent=best?habitFmt(best.value):'—';$('#homeHabitOnGoal').textContent=deltaLabel;
- $('#homeHabitTrend').textContent=thisRows.length?thisRows.length+' días evaluados':'Sin registros';
+ $('#homeHabitPct').textContent=habitFmt(thisPct);$('#homeHabitRing').style.setProperty('--pct',thisPct||0);$('#homeHabitDiff').textContent=thisPct===null?'—':habitDelta(thisPct-70);$('#homeHabitOnGoal').textContent=deltaLabel;
+ 
  $('#habitCurrentMonth').textContent=habitMonthName(current);$('#habitMonthPct').textContent=habitFmt(thisPct);$('#habitMonthRing').style.setProperty('--pct',thisPct||0);
  $('#habitMonthOnGoal').textContent=deltaLabel;
 
@@ -82,7 +82,7 @@ const thisRows=byMonth(current),currentAvg=moodAverage(thisRows),previous=series
 const delta=currentAvg!==null&&previous?currentAvg-previous.value:null;
 $('#moodCutoff').textContent='Datos hasta '+habitDateLabel(today);
 $('#moodCurrentMonth').textContent=habitMonthName(current);$('#moodMonthPct').textContent=moodDisplay(currentAvg);$('#moodMonthRing').style.setProperty('--pct',currentAvg||0);$('#moodMonthDiff').textContent=delta===null?'—':habitDelta(delta);
-$('#homeMoodPct').textContent=moodDisplay(currentAvg);$('#homeMoodRing').style.setProperty('--pct',currentAvg||0);$('#homeMoodDiff').textContent=delta===null?'—':habitDelta(delta);$('#homeMoodOnGoal').textContent=thisRows.length+' días evaluados';
+$('#homeMoodPct').textContent=moodDisplay(currentAvg);$('#homeMoodRing').style.setProperty('--pct',currentAvg||0);$('#homeMoodDiff').textContent=currentAvg===null?'—':habitDelta(currentAvg-70);$('#homeMoodOnGoal').textContent=delta===null?'—':habitDelta(delta);
 const currentStart=habitDateShift(today,-6),previousEnd=habitDateShift(currentStart,-1),previousStart=habitDateShift(previousEnd,-6);
 homeWeeklyTrend('#homeMoodTrend',moodAverage(rows.filter(r=>r.fecha>=previousStart&&r.fecha<=previousEnd)),moodAverage(rows.filter(r=>r.fecha>=currentStart&&r.fecha<=today)));
 habitLineChart('#moodMonthChart',series,'Evolución mensual del bienestar general');
