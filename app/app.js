@@ -21,8 +21,7 @@ function habitLineChart(id,entries,label='Evolución mensual del hábito'){const
 const w=700,h=225,left=38,right=30,top=28,bottom=51,step=entries.length>1?(w-left-right)/(entries.length-1):0;
 const points=entries.map((e,i)=>({x:entries.length===1?(left+w-right)/2:left+i*step,y:top+(100-e.value)/100*(h-top-bottom),...e}));
 const line=points.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
-const targetY=top+(100-70)/100*(h-top-bottom);
-el.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+label+'">'+[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="12">'+v+'%</text>'}).join('')+'<line x1="'+left+'" x2="'+(w-right)+'" y1="'+targetY+'" y2="'+targetY+'" stroke="#d8bd7a" stroke-width="2.8" stroke-dasharray="9 5"/><text x="'+(w-right)+'" y="'+(targetY-7)+'" text-anchor="end" fill="#d8bd7a" font-size="12" font-weight="700">Meta 70%</text><path d="'+line+'" fill="none" stroke="#d8bd7a" stroke-width="3.5"/>'+points.map(p=>'<circle cx="'+p.x+'" cy="'+p.y+'" r="5.5" fill="#d8bd7a" stroke="#fff" stroke-width="1.2"/><text x="'+p.x+'" y="'+(p.y-14)+'" fill="#fff" text-anchor="middle" font-size="13" font-weight="700">'+Math.round(p.value)+'%</text><text x="'+p.x+'" y="'+(h-16)+'" fill="#f7f4ec" text-anchor="middle" font-size="12">'+new Intl.DateTimeFormat('es-MX',{month:'short'}).format(new Date(p.month+'-01T12:00:00')).replace('.','')+'</text>').join('')+'</svg>'}
+el.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+label+'">'+[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="12">'+v+'%</text>'}).join('')).join('')+'</svg>'}
 function homeWeeklyTrend(id,previous,current){const el=$(id);if(!el)return;if(previous===null||current===null){el.textContent='Sin comparación';return}const delta=current-previous;el.textContent=(delta>0?'↑ +':delta<0?'↓ ':'→ ')+delta.toFixed(1)+' pp';el.classList.toggle('habit-positive',delta>=0);el.classList.toggle('habit-negative',delta<0)}
 function renderHabitViews(){
  const d=habitDataset;if(!d)return;const habits=d.habitos||[],today=dateKey(now),current=today.slice(0,7);
@@ -37,22 +36,29 @@ function renderHabitViews(){
  const bestLabel=best?habitFmt(best.value)+' · '+habitMonthName(best.month):'—';
  const deltaLabel=delta===null?'—':habitDelta(delta);
  $('#habitCutoff').textContent='Datos hasta '+habitDateLabel(today);
- $('#homeHabitDiff').textContent=best?habitFmt(best.value):'—';$('#homeHabitOnGoal').textContent=deltaLabel;
+ $('#homeHabitPct').textContent=habitFmt(thisPct);$('#homeHabitRing').style.setProperty('--pct',thisPct||0);$('#homeHabitDiff').textContent=best?habitFmt(best.value):'—';$('#homeHabitOnGoal').textContent=deltaLabel;
  $('#homeHabitTrend').textContent=thisRows.length?thisRows.length+' días evaluados':'Sin registros';
- const leaders=habits.map(h=>{const values=series.map(x=>({month:x.month,value:percent(h,byMonth(x.month))})).filter(x=>x.value!==null);return {h,best:values.reduce((a,x)=>!a||x.value>a.value?x:a,null),current:percent(h,thisRows)}}).sort((a,b)=>(b.current||0)-(a.current||0));
  $('#habitCurrentMonth').textContent=habitMonthName(current);$('#habitMonthPct').textContent=habitFmt(thisPct);$('#habitMonthRing').style.setProperty('--pct',thisPct||0);
- $('#habitMonthDiff').textContent=bestLabel;$('#habitMonthOnGoal').textContent=deltaLabel;$('#habitMonthDays').textContent=thisRows.length;
- $('#habitMonthNote').textContent='Mes en curso · solo días registrados hasta hoy. Los meses anteriores conservan sus periodos registrados (septiembre inicia el día 15).';
+ $('#habitMonthOnGoal').textContent=deltaLabel;
+
  habitLineChart('#habitMonthBars',series,'Evolución mensual de frecuencia');
  if(!habitSelectedName||!habits.includes(habitSelectedName))habitSelectedName=habits[0]||'';
  const sel=$('#habitHistorySelect');sel.innerHTML=habits.map(h=>'<option value="'+h+'">'+habitLabel(h)+'</option>').join('');sel.value=habitSelectedName;
  const history=series.map(x=>({month:x.month,value:percent(habitSelectedName,byMonth(x.month))})).filter(x=>x.value!==null);
- habitLineChart('#habitHistoryChart',history);const hb=history.reduce((a,x)=>!a||x.value>a.value?x:a,null);
- $('#habitHistoryStats').textContent='Mes actual: '+habitFmt(percent(habitSelectedName,thisRows))+' · Mejor mes: '+(hb?habitFmt(hb.value)+' ('+habitMonthName(hb.month)+')':'—');
- $('#habitMonthlyPeriod').textContent=previous?'Comparación: '+habitMonthName(previous.month)+' vs. '+habitMonthName(current):'Sin mes anterior';
- const previousRows=previous?byMonth(previous.month):[];
- const changes=habits.map(h=>({h,a:percent(h,previousRows),b:percent(h,thisRows)})).filter(x=>x.a!==null&&x.b!==null).map(x=>({...x,d:x.b-x.a})).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d)).slice(0,3);
- $('#habitMonthChanges').innerHTML=changes.length?changes.map(x=>'<div class="habit-change"><div><strong>'+habitLabel(x.h)+'</strong><small>'+habitFmt(x.a)+' → '+habitFmt(x.b)+'</small></div><b class="'+(x.d>=0?'habit-positive':'habit-negative')+'">'+habitDelta(x.d)+'</b></div>').join(''):'<p class="muted">Sin meses suficientes para comparar.</p>';
+ habitLineChart('#habitHistoryChart',history);
+ const priorRows=previous?byMonth(previous.month):[];
+ const trends=habits.map(h=>{const a=percent(h,priorRows),b=percent(h,thisRows);const history=series.map(x=>({month:x.month,value:percent(h,byMonth(x.month))})).filter(x=>x.value!==null);const best=history.reduce((p,x)=>!p||x.value>p.value?x:p,null);return {h,a,b,best,delta:a!==null&&b!==null?b-a:null}}).filter(x=>x.b!==null);
+ const rising=trends.filter(x=>x.delta!==null&&x.delta>0).sort((a,b)=>b.delta-a.delta)[0];
+ const falling=trends.filter(x=>x.delta!==null&&x.delta<0).sort((a,b)=>a.delta-b.delta)[0];
+ const leading=trends.slice().sort((a,b)=>b.b-a.b)[0];
+ const record=trends.filter(x=>x.best&&x.best.month===current&&x.b>0).sort((a,b)=>b.b-a.b)[0];
+ const items=[];
+ if(rising)items.push({title:'Mayor avance · '+habitLabel(rising.h),detail:habitFmt(rising.a)+' → '+habitFmt(rising.b),delta:rising.delta});
+ if(falling)items.push({title:'Mayor retroceso · '+habitLabel(falling.h),detail:habitFmt(falling.a)+' → '+habitFmt(falling.b),delta:falling.delta});
+ if(record)items.push({title:'Mejor registro · '+habitLabel(record.h),detail:'Frecuencia más alta: '+habitFmt(record.b),delta:null});
+ if(leading&&!items.some(x=>x.title.endsWith(habitLabel(leading.h))))items.push({title:'Más constante · '+habitLabel(leading.h),detail:'Frecuencia actual: '+habitFmt(leading.b),delta:null});
+ $('#habitMonthlyPeriod').textContent=previous?'Comparación: '+habitMonthName(previous.month)+' vs. '+habitMonthName(current):'Tendencias de '+habitMonthName(current);
+ $('#habitMonthChanges').innerHTML=items.length?items.slice(0,4).map(x=>'<div class="habit-change"><div><strong>'+x.title+'</strong><small>'+x.detail+'</small></div><b class="'+(x.delta===null?'':x.delta>=0?'habit-positive':'habit-negative')+'">'+(x.delta===null?'':habitDelta(x.delta))+'</b></div>').join(''):'<p class="muted">Aún no hay datos suficientes para identificar tendencias.</p>';
 }
 $('#habitHistorySelect').addEventListener('change',e=>{habitSelectedName=e.target.value;renderHabitViews()});
 async function loadHabits(){try{let data=null,lastError=null;const sources=['./NOTION/data-seguimiento-habitos.json','https://raw.githubusercontent.com/isaactorres2112/ISTO/main/NOTION/data-seguimiento-habitos.json'];for(const source of sources){try{const r=await fetch(source+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' en '+source);const candidate=await r.json();if(!Array.isArray(candidate.diarios)||!Array.isArray(candidate.habitos))throw Error('Datos de hábitos incompletos');data=candidate;break}catch(err){lastError=err;console.warn('Fuente de hábitos no disponible:',err)}}if(!data)throw lastError||Error('No se encontraron datos de hábitos');habitDataset=data;renderHabitViews();stamp(habitDataset.ultima_actualizacion||habitDataset.actualizado)}catch(e){console.error('Constancia:',e);$('#habitMonthPct').textContent='—';$('#habitGeneralPeriod').textContent='No fue posible cargar los datos. Intenta actualizar la página.';$('#habitMonthNote').textContent='No fue posible cargar los datos. Intenta actualizar la página.';$('#habitRanking').innerHTML='<p class="muted">No hay datos disponibles temporalmente.</p>';$('#habitMonthBars').innerHTML='<p class="muted">No hay datos disponibles temporalmente.</p>'}}
