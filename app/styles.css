@@ -438,3 +438,7 @@
 /* Hábitos: gráfica mensual ampliada y mejor marca */
 #habitMonthBars svg{max-height:none!important;min-height:230px}
 #habitHistoryBest{margin:10px 0 0;font-size:13px;font-weight:600}
+
+/* Constancia: misma distribución de paneles que Ánimo */
+#habitsView .habit-layout{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+@media(max-width:720px){#habitsView .habit-layout{grid-template-columns:minmax(0,1fr)}}
