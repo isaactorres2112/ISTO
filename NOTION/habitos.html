@@ -2,50 +2,38 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CONSTANCIA · Hábitos</title>
 <style>
 :root{color-scheme:dark;--bg:#090b0c;--card:#111517;--line:#34302a;--gold:#d6ad5d;--gold2:#f0cc78;--text:#f4f2ed;--muted:#aaa8a2;--red:#f05a62}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#101719 0,#090b0c 42%);color:var(--text);font:15px/1.5 "Segoe UI",Arial,sans-serif}main{max-width:1180px;margin:auto;padding:38px 30px}.hero{text-align:center;position:relative;margin-bottom:26px}.hero h1{font-size:clamp(36px,5vw,58px);font-weight:300;letter-spacing:9px;margin:0}.hero p{margin:2px 0;color:var(--gold);letter-spacing:3px}.updated{position:absolute;right:0;top:0;color:var(--muted);font-size:10px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.card{background:linear-gradient(145deg,#14191b,#0e1112);border:1px solid #4b402b;border-radius:16px;padding:25px;box-shadow:0 18px 50px #0004}.stat{text-align:center;min-height:190px;display:grid;place-content:center}.label{font-size:17px;font-weight:650}.stat strong{display:block;font-size:54px;line-height:1.1;margin:14px 0}.stat .negative{color:var(--red)}.muted{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1.45fr .9fr;gap:18px}.side{display:grid;gap:18px}.heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}h2{font-size:20px;margin:0}.tag{font-size:11px;color:var(--gold);border:1px solid #57472c;border-radius:20px;padding:5px 10px}.barrow{display:grid;grid-template-columns:92px 1fr 48px;gap:14px;align-items:center;margin:15px 0}.track{height:10px;background:#292d2e;border-radius:2px;position:relative}.bar{height:100%;display:block;background:linear-gradient(90deg,#bd8f37,var(--gold2));border-radius:2px}.goalmark{position:absolute;left:70%;top:-5px;bottom:-5px;border-left:1px dashed #eee0bd}.barrow b{text-align:right}.ringwrap{display:grid;place-items:center;padding:8px 0 4px}.ring{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--gold) 0deg,#303537 0deg)}.ringinner{width:145px;height:145px;background:#111517;border-radius:50%;display:grid;place-content:center;text-align:center}.ringinner strong{font-size:34px;line-height:1}.ringinner span{margin-top:7px;font-size:10px}.trend{min-height:145px}.trend p{font-size:17px;line-height:1.65;margin:18px 0 0}.trend strong{color:var(--gold2)}#status{text-align:center;color:var(--gold);padding:35px}footer{margin-top:22px;text-align:center;color:var(--muted);font-size:11px;letter-spacing:1px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#101719 0,#090b0c 42%);color:var(--text);font:15px/1.5 "Segoe UI",Arial,sans-serif}main{max-width:1180px;margin:auto;padding:38px 30px}.hero{text-align:center;position:relative;margin-bottom:26px}.hero h1{font-size:clamp(36px,5vw,58px);font-weight:300;letter-spacing:9px;margin:0}.hero p{margin:2px 0;color:var(--gold);letter-spacing:3px}.updated{position:absolute;right:0;top:0;color:var(--muted);font-size:10px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.card{background:linear-gradient(145deg,#14191b,#0e1112);border:1px solid #4b402b;border-radius:16px;padding:25px;box-shadow:0 18px 50px #0004}.stat{text-align:center;min-height:190px;display:grid;place-content:center}.label{font-size:17px;font-weight:650}.stat strong{display:block;font-size:54px;line-height:1.1;margin:14px 0}.stat .negative{color:var(--red)}.muted{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1.45fr .9fr;gap:18px}.side{display:grid;gap:18px}.heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}h2{font-size:20px;margin:0}.tag{font-size:11px;color:var(--gold);border:1px solid #57472c;border-radius:20px;padding:5px 10px}.barrow{display:grid;grid-template-columns:92px 1fr 48px;gap:14px;align-items:center;margin:15px 0}.track{height:10px;background:#292d2e;border-radius:2px;position:relative}.bar{height:100%;display:block;background:linear-gradient(90deg,#bd8f37,var(--gold2));border-radius:2px}.barrow b{text-align:right}.ringwrap{display:grid;place-items:center;padding:8px 0 4px}.ring{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--gold) 0deg,#303537 0deg)}.ringinner{width:145px;height:145px;background:#111517;border-radius:50%;display:grid;place-content:center;text-align:center}.ringinner strong{font-size:34px;line-height:1}.ringinner span{margin-top:7px;font-size:10px}.trend{min-height:145px}.trend p{font-size:17px;line-height:1.65;margin:18px 0 0}.trend strong{color:var(--gold2)}#status{text-align:center;color:var(--gold);padding:35px}footer{margin-top:22px;text-align:center;color:var(--muted);font-size:11px;letter-spacing:1px}
 @media(max-width:800px){main{padding:25px 16px}.updated{position:static;display:inline-block;margin:8px 4px 0}.grid,.stats{grid-template-columns:1fr}.hero h1{letter-spacing:5px}.barrow{grid-template-columns:75px 1fr 45px;gap:9px}.card{padding:19px}}
 </style></head><body><main>
 <header class="hero"><h1>CONSTANCIA</h1><p>Tus hábitos, tu mejor versión</p><div class="updated" id="updated">Última actualización · —</div></header>
 <div id="status">Cargando tus hábitos…</div>
 <div id="dashboard" hidden>
-<section class="stats">
- <div class="card stat"><div class="label">Cumplimiento general</div><strong id="general">—</strong><div class="muted" id="generalDetail">Todos los registros, incluido hoy</div></div>
- <div class="card stat"><div class="label">Diferencia vs meta</div><strong id="gap">—</strong><div class="muted">Meta de referencia · 70%</div></div>
-</section>
-<div class="grid">
- <section class="card"><div class="heading"><h2>Así van tus hábitos</h2><span class="tag">Meta 70%</span></div><div id="bars"></div><div class="muted">Ordenados de mayor a menor · línea vertical = meta 70%</div></section>
- <div class="side">
-  <section class="card"><div class="heading"><h2>Hábitos que cumplen la meta</h2></div><div class="ringwrap"><div class="ring" id="ring"><div class="ringinner"><strong id="ringvalue">—</strong><span class="muted">cumplen la meta</span></div></div></div></section>
-  <section class="card trend"><div class="heading"><h2>Cambios relevantes</h2></div><p id="trend">—</p></section>
- </div>
-</div>
-<footer>✧ LA CONSTANCIA SE CONSTRUYE DÍA A DÍA · TODOS LOS REGISTROS INCLUYEN HOY</footer>
+<section class="stats"><div class="card stat"><div class="label">Frecuencia del mes</div><strong id="general">—</strong><div class="muted" id="generalDetail">Promedio de los diez hábitos</div></div><div class="card stat"><div class="label">Mejor mes registrado</div><strong id="best">—</strong><div class="muted" id="bestDetail">Historial visible de seis meses</div></div></section>
+<div class="grid"><section class="card"><div class="heading"><h2>Frecuencia por hábito</h2><span class="tag" id="monthLabel">Mes actual</span></div><div id="bars"></div><div class="muted">Porcentaje de días realizados · sin metas · todos los hábitos pesan igual</div></section><div class="side"><section class="card"><div class="heading"><h2>Evolución mensual</h2></div><div id="months"></div><div class="muted">Últimos cinco meses más el mes actual</div></section><section class="card trend"><div class="heading"><h2>Comparaciones</h2></div><p id="trend">—</p></section></div></div>
+<footer>✧ LA CONSTANCIA SE CONSTRUYE DÍA A DÍA · EL MES EN CURSO SOLO INCLUYE DÍAS TRANSCURRIDOS</footer>
 </div></main>
 <script>
 'use strict';
-const $=id=>document.getElementById(id),META=70,label=h=>h==='Animo'?'Ánimo':h,fmt=v=>Number(v).toLocaleString('es-MX',{maximumFractionDigits:0});
-function weekStart(ds){const d=new Date(ds+'T12:00:00'),day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return d.toISOString().slice(0,10)}
-function weeklyGeneral(diarios){
- const today=new Date(),tk=today.toISOString().slice(0,10),cur=weekStart(tk),p=new Date(cur+'T12:00:00');p.setDate(p.getDate()-7);const prev=p.toISOString().slice(0,10);
- const c=diarios.filter(x=>x.fecha>=cur&&x.fecha<=tk),a=diarios.filter(x=>x.fecha>=prev&&x.fecha<cur);
- const pct=x=>x.length?x.reduce((s,r)=>s+(r.cumplidos??Object.values(r.habitos||{}).filter(Boolean).length),0)*100/(x.length*10):null;
- return [pct(c),pct(a)];
-}
+const $=id=>document.getElementById(id),fmt=v=>Number(v).toLocaleString('es-MX',{maximumFractionDigits:1}),label=h=>h==='Animo'?'Ánimo':h;
+const monthName=k=>new Date(k+'-15T12:00:00').toLocaleDateString('es-MX',{month:'long',year:'numeric'});
 function render(d){
- const diarios=d.diarios||[],habits=d.habitos||[],g=d.global||{};
- const possible=g.posibles??diarios.length*habits.length,done=g.cumplidos??diarios.reduce((s,x)=>s+(x.cumplidos||0),0),general=Number.isFinite(Number(g.cumplimiento))?Number(g.cumplimiento):(possible?done*100/possible:0);
- $('general').textContent=fmt(general)+'%';$('generalDetail').textContent=done+' de '+possible+' cumplimientos · '+diarios.length+' días registrados';
- const gap=general-META;$('gap').textContent=(gap>0?'+':'')+fmt(gap)+' pp';$('gap').classList.toggle('negative',gap<0);
- const hp=g.habitos||Object.fromEntries(habits.map(h=>[h,diarios.length?diarios.filter(x=>x.habitos?.[h]).length*100/diarios.length:0]));
- const sorted=[...habits].sort((a,b)=>(hp[b]||0)-(hp[a]||0)||a.localeCompare(b,'es'));
- $('bars').replaceChildren();sorted.forEach(h=>{const v=hp[h]||0,r=document.createElement('div');r.className='barrow';r.innerHTML='<span>'+label(h)+'</span><span class="track"><span class="bar" style="width:'+Math.min(100,v)+'%"></span><i class="goalmark"></i></span><b>'+fmt(v)+'%</b>';$('bars').append(r)});
- const good=habits.filter(h=>(hp[h]||0)>=META).length;$('ringvalue').textContent=good+' de '+habits.length;$('ring').style.background='conic-gradient(var(--gold) '+(habits.length?good/habits.length*360:0)+'deg,#303537 0deg)';
- const prior=diarios.slice(0,-1),pctHabit=(h,rows)=>rows.length?rows.filter(x=>x.habitos?.[h]).length*100/rows.length:0;
- const changes=habits.map(h=>{const before=pctHabit(h,prior),now=pctHabit(h,diarios);return {h,before,now,v:now-before}}).filter(x=>Number.isFinite(x.v)).sort((a,b)=>Math.abs(b.v)-Math.abs(a.v));
- if(!changes.length||!prior.length)$('trend').textContent='Aún no hay registros suficientes para comparar cambios acumulados.';
- else{const x=changes[0];$('trend').innerHTML='<strong>'+label(x.h)+'</strong> es el cambio más relevante: pasó de <strong>'+fmt(x.before)+'%</strong> a <strong>'+fmt(x.now)+'%</strong> de cumplimiento acumulado.'}
- const stamp=d.ultima_actualizacion?new Date(d.ultima_actualizacion):null;$('updated').textContent='Última actualización · '+(stamp?stamp.toLocaleString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—');
+ const habits=d.habitos||[],all=d.diarios||[],today=d.ultimo_dia_evaluado||new Date().toISOString().slice(0,10),current=today.slice(0,7);
+ const groups={};all.filter(x=>x.fecha<=today).forEach(x=>(groups[x.fecha.slice(0,7)]??=[]).push(x));
+ const months=[];for(let i=5;i>=0;i--){const [y,m]=current.split('-').map(Number),date=new Date(Date.UTC(y,m-1-i,1));months.push(date.toISOString().slice(0,7))}
+ const pct=(rows,h)=>rows.length?100*rows.filter(x=>x.habitos&&x.habitos[h]===true).length/rows.length:0;
+ const average=rows=>habits.length?habits.reduce((sum,h)=>sum+pct(rows,h),0)/habits.length:0;
+ const series=months.filter(k=>groups[k]?.length).map(k=>({month:k,rows:groups[k],value:average(groups[k])}));
+ const now=series.find(x=>x.month===current),best=series.reduce((a,b)=>!a||b.value>a.value?b:a,null);
+ $('general').textContent=now?fmt(now.value)+'%':'—';$('generalDetail').textContent=now?now.rows.length+' días evaluados · '+habits.length+' hábitos':'Sin registros del mes';
+ $('best').textContent=best?fmt(best.value)+'%':'—';$('bestDetail').textContent=best?monthName(best.month):'Sin registros';
+ $('monthLabel').textContent=monthName(current);
+ $('bars').replaceChildren();if(now){[...habits].sort((a,b)=>pct(now.rows,b)-pct(now.rows,a)).forEach(h=>{const v=pct(now.rows,h),r=document.createElement('div');r.className='barrow';const name=document.createElement('span');name.textContent=label(h);const track=document.createElement('span');track.className='track';const bar=document.createElement('span');bar.className='bar';bar.style.width=v+'%';track.append(bar);const value=document.createElement('b');value.textContent=fmt(v)+'%';r.append(name,track,value);$('bars').append(r)})}
+ $('months').replaceChildren();series.forEach(x=>{const r=document.createElement('div');r.className='barrow';r.style.gridTemplateColumns='95px 1fr 52px';const name=document.createElement('span');name.textContent=monthName(x.month).split(' ')[0];const track=document.createElement('span');track.className='track';const bar=document.createElement('span');bar.className='bar';bar.style.width=x.value+'%';track.append(bar);const val=document.createElement('b');val.textContent=fmt(x.value)+'%';r.append(name,track,val);$('months').append(r)});
+ const previous=series.filter(x=>x.month<current).at(-1);
+ if(now&&previous){const delta=now.value-previous.value;$('trend').textContent='Respecto a '+monthName(previous.month)+': '+(delta>=0?'+':'')+fmt(delta)+' puntos porcentuales. '+(best?'Mejor mes visible: '+monthName(best.month)+' ('+fmt(best.value)+'%).':'')}
+ else $('trend').textContent='Se necesitan al menos dos meses registrados para comparar.';
+ const stamp=d.ultima_actualizacion?new Date(d.ultima_actualizacion):null;$('updated').textContent='Última actualización · '+(stamp?stamp.toLocaleString('es-MX'):'—');
 }
-async function load(){$('status').hidden=false;try{const r=await fetch('data-seguimiento-habitos.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(r.status);const d=await r.json();render(d);$('dashboard').hidden=false;$('status').hidden=true}catch(e){$('status').textContent='No se pudieron cargar los datos de hábitos.'}}
-load();
+async function load(){try{const r=await fetch('data-seguimiento-habitos.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(r.status);render(await r.json());$('dashboard').hidden=false;$('status').hidden=true}catch(e){$('status').textContent='No se pudieron cargar los datos de hábitos.'}}
+load();setInterval(load,300000);
 </script></body></html>
