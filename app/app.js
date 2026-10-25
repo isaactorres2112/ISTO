@@ -17,11 +17,15 @@ const habitDateShift=(key,days)=>{const dt=new Date(key+'T12:00:00');dt.setDate(
 const habitDelta=n=>(n>0?'+':'')+n.toFixed(0)+' pp';
 const habitDiff=(id,value)=>{const el=$(id);el.textContent=value===null?'—':habitDelta(value);el.classList.toggle('habit-positive',value!==null&&value>=0);el.classList.toggle('habit-negative',value!==null&&value<0)};
 function habitChangeCards(id,habits,a,b,metas){const el=$(id);if(!a.length||!b.length){el.innerHTML='<p class="muted">Todavía no hay suficientes datos para comparar ambos periodos.</p>';return}const arr=habits.map(h=>{const prev=habitPct(h,a,metas),curr=habitPct(h,b,metas);return {h,prev,curr,delta:prev===null||curr===null?null:curr-prev}}).filter(x=>x.delta!==null).sort((x,y)=>Math.abs(y.delta)-Math.abs(x.delta));el.innerHTML=arr.slice(0,3).map(x=>'<div class="habit-change"><div><strong>'+habitLabel(x.h)+'</strong><small>'+habitFmt(x.prev)+' → '+habitFmt(x.curr)+'</small></div><b class="'+(x.delta>=0?'habit-positive':'habit-negative')+'">'+habitDelta(x.delta)+'</b></div>').join('')||'<p class="muted">Sin cambios disponibles.</p>'}
-function habitLineChart(id,entries,label='Evolución mensual del hábito'){const el=$(id);if(!entries.length){el.innerHTML='<p class="muted">Sin datos suficientes.</p>';return}
-const w=700,h=225,left=38,right=30,top=28,bottom=51,step=entries.length>1?(w-left-right)/(entries.length-1):0;
-const points=entries.map((e,i)=>({x:entries.length===1?(left+w-right)/2:left+i*step,y:top+(100-e.value)/100*(h-top-bottom),...e}));
-const line=points.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
-el.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+label+'">'+[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="12">'+v+'%</text>'}).join('')).join('')+'</svg>'}
+function habitLineChart(id,entries,label='Evolución mensual'){
+ const el=$(id);if(!entries.length){el.innerHTML='<p class="muted">Sin datos suficientes.</p>';return}
+ const w=700,h=225,left=38,right=30,top=28,bottom=51,step=entries.length>1?(w-left-right)/(entries.length-1):0;
+ const points=entries.map((e,i)=>({x:entries.length===1?w/2:left+i*step,y:top+(100-e.value)/100*(h-top-bottom),...e}));
+ const line=points.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
+ const grid=[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="12">'+v+'%</text>'}).join('');
+ const dots=points.map(p=>'<circle cx="'+p.x+'" cy="'+p.y+'" r="5.5" fill="#d8bd7a" stroke="#fff" stroke-width="1.2"/><text x="'+p.x+'" y="'+(p.y-14)+'" fill="#fff" text-anchor="middle" font-size="13" font-weight="700">'+Math.round(p.value)+'%</text><text x="'+p.x+'" y="'+(h-16)+'" fill="#f7f4ec" text-anchor="middle" font-size="12">'+new Intl.DateTimeFormat('es-MX',{month:'short'}).format(new Date(p.month+'-01T12:00:00')).replace('.','')+'</text>').join('');
+ el.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+label+'">'+grid+'<path d="'+line+'" fill="none" stroke="#d8bd7a" stroke-width="3.5"/>'+dots+'</svg>';
+}
 function homeWeeklyTrend(id,previous,current){const el=$(id);if(!el)return;if(previous===null||current===null){el.textContent='Sin comparación';return}const delta=current-previous;el.textContent=(delta>0?'↑ +':delta<0?'↓ ':'→ ')+delta.toFixed(1)+' pp';el.classList.toggle('habit-positive',delta>=0);el.classList.toggle('habit-negative',delta<0)}
 function renderHabitViews(){
  const d=habitDataset;if(!d)return;const habits=d.habitos||[],today=dateKey(now),current=today.slice(0,7);
