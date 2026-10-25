@@ -449,3 +449,6 @@
 
 /* Gráfica de detalle por hábito: mayor altura y etiquetas legibles */
 #habitsView #habitHistoryChart svg{width:100%;max-height:none!important;min-height:265px}
+
+/* Ánimo: gráficas mensuales y por círculo más altas y legibles */
+#moodView #moodMonthChart svg,#moodView #moodHistoryChart svg{width:100%;max-height:none!important;min-height:265px}
