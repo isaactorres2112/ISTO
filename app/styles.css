@@ -442,3 +442,7 @@
 /* Constancia: misma distribución de paneles que Ánimo */
 #habitsView .habit-layout{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
 @media(max-width:720px){#habitsView .habit-layout{grid-template-columns:minmax(0,1fr)}}
+
+/* Hábitos: cuatro tarjetas, cada una ocupa una sola celda */
+@media(min-width:721px){#habitsView #habitMonthly>.habit-panel,#habitsView #habitMonthly>.habit-panel:nth-child(3),#habitsView #habitMonthly>.habit-panel.mood-detail-panel{grid-column:auto!important;grid-row:auto!important}}
+@media(max-width:720px){#habitsView #habitMonthly>.habit-panel{grid-column:1!important;grid-row:auto!important}}
