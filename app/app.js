@@ -19,11 +19,11 @@ const habitDiff=(id,value)=>{const el=$(id);el.textContent=value===null?'—':ha
 function habitChangeCards(id,habits,a,b,metas){const el=$(id);if(!a.length||!b.length){el.innerHTML='<p class="muted">Todavía no hay suficientes datos para comparar ambos periodos.</p>';return}const arr=habits.map(h=>{const prev=habitPct(h,a,metas),curr=habitPct(h,b,metas);return {h,prev,curr,delta:prev===null||curr===null?null:curr-prev}}).filter(x=>x.delta!==null).sort((x,y)=>Math.abs(y.delta)-Math.abs(x.delta));el.innerHTML=arr.slice(0,3).map(x=>'<div class="habit-change"><div><strong>'+habitLabel(x.h)+'</strong><small>'+habitFmt(x.prev)+' → '+habitFmt(x.curr)+'</small></div><b class="'+(x.delta>=0?'habit-positive':'habit-negative')+'">'+habitDelta(x.delta)+'</b></div>').join('')||'<p class="muted">Sin cambios disponibles.</p>'}
 function habitLineChart(id,entries,label='Evolución mensual'){
  const el=$(id);if(!entries.length){el.innerHTML='<p class="muted">Sin datos suficientes.</p>';return}
- const w=700,h=225,left=38,right=30,top=28,bottom=51,step=entries.length>1?(w-left-right)/(entries.length-1):0;
+ const large=id==='#habitMonthBars';const w=700,h=large?310:225,left=large?48:38,right=30,top=large?42:28,bottom=large?65:51,step=entries.length>1?(w-left-right)/(entries.length-1):0;
  const points=entries.map((e,i)=>({x:entries.length===1?w/2:left+i*step,y:top+(100-e.value)/100*(h-top-bottom),...e}));
  const line=points.map((p,i)=>(i?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
- const grid=[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="12">'+v+'%</text>'}).join('');
- const dots=points.map(p=>'<circle cx="'+p.x+'" cy="'+p.y+'" r="5.5" fill="#d8bd7a" stroke="#fff" stroke-width="1.2"/><text x="'+p.x+'" y="'+(p.y-14)+'" fill="#fff" text-anchor="middle" font-size="13" font-weight="700">'+Math.round(p.value)+'%</text><text x="'+p.x+'" y="'+(h-16)+'" fill="#f7f4ec" text-anchor="middle" font-size="12">'+new Intl.DateTimeFormat('es-MX',{month:'short'}).format(new Date(p.month+'-01T12:00:00')).replace('.','')+'</text>').join('');
+ const grid=[0,50,100].map(v=>{const y=top+(100-v)/100*(h-top-bottom);return '<line x1="'+left+'" x2="'+(w-right)+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.14)"/><text x="4" y="'+(y+4)+'" fill="#c6c1b6" font-size="'+(large?17:12)+'">'+v+'%</text>'}).join('');
+ const dots=points.map(p=>'<circle cx="'+p.x+'" cy="'+p.y+'" r="5.5" fill="#d8bd7a" stroke="#fff" stroke-width="1.2"/><text x="'+p.x+'" y="'+(p.y-14)+'" fill="#fff" text-anchor="middle" font-size="'+(large?19:13)+'" font-weight="700">'+Math.round(p.value)+'%</text><text x="'+p.x+'" y="'+(h-16)+'" fill="#f7f4ec" text-anchor="middle" font-size="'+(large?17:12)+'">'+new Intl.DateTimeFormat('es-MX',{month:'short'}).format(new Date(p.month+'-01T12:00:00')).replace('.','')+'</text>').join('');
  el.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+label+'">'+grid+'<path d="'+line+'" fill="none" stroke="#d8bd7a" stroke-width="3.5"/>'+dots+'</svg>';
 }
 function homeWeeklyTrend(id,previous,current){const el=$(id);if(!el)return;if(previous===null||current===null){el.textContent='Sin comparación';return}const delta=current-previous;el.textContent=(delta>0?'↑ +':delta<0?'↓ ':'→ ')+delta.toFixed(1)+' pp';el.classList.toggle('habit-positive',delta>=0);el.classList.toggle('habit-negative',delta<0)}
@@ -49,7 +49,7 @@ function renderHabitViews(){
  if(!habitSelectedName||!habits.includes(habitSelectedName))habitSelectedName=habits[0]||'';
  const sel=$('#habitHistorySelect');sel.innerHTML=habits.map(h=>'<option value="'+h+'">'+habitLabel(h)+'</option>').join('');sel.value=habitSelectedName;
  const history=series.map(x=>({month:x.month,value:percent(habitSelectedName,byMonth(x.month))})).filter(x=>x.value!==null);
- habitLineChart('#habitHistoryChart',history);
+ habitLineChart('#habitHistoryChart',history);const bestHabit=history.reduce((best,x)=>!best||x.value>best.value?x:best,null);$('#habitHistoryBest').textContent=bestHabit?'Mejor registro: '+habitMonthName(bestHabit.month)+' · '+habitFmt(bestHabit.value):'Mejor registro: —';
  const priorRows=previous?byMonth(previous.month):[];
  const trends=habits.map(h=>{const a=percent(h,priorRows),b=percent(h,thisRows);const history=series.map(x=>({month:x.month,value:percent(h,byMonth(x.month))})).filter(x=>x.value!==null);const best=history.reduce((p,x)=>!p||x.value>p.value?x:p,null);return {h,a,b,best,delta:a!==null&&b!==null?b-a:null}}).filter(x=>x.b!==null);
  const rising=trends.filter(x=>x.delta!==null&&x.delta>0).sort((a,b)=>b.delta-a.delta)[0];
