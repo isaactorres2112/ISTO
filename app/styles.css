@@ -446,3 +446,6 @@
 /* Hábitos: cuatro tarjetas, cada una ocupa una sola celda */
 @media(min-width:721px){#habitsView #habitMonthly>.habit-panel,#habitsView #habitMonthly>.habit-panel:nth-child(3),#habitsView #habitMonthly>.habit-panel.mood-detail-panel{grid-column:auto!important;grid-row:auto!important}}
 @media(max-width:720px){#habitsView #habitMonthly>.habit-panel{grid-column:1!important;grid-row:auto!important}}
+
+/* Gráfica de detalle por hábito: mayor altura y etiquetas legibles */
+#habitsView #habitHistoryChart svg{width:100%;max-height:none!important;min-height:265px}
