@@ -462,3 +462,8 @@
 .idea-content .idea-toggle-body{padding:3px 14px 13px}
 .idea-content .idea-callout{background:rgba(216,189,122,.09);border-left:3px solid #d8bd7a;padding:12px 15px;border-radius:10px;margin:12px 0}
 .idea-content blockquote{border-left:3px solid var(--line);padding-left:14px;margin:12px 0}
+
+/* Ideas como índice compacto con enlace directo a Notion */
+#ideasView .idea-index-card{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;cursor:default;min-height:94px;aspect-ratio:auto;padding:13px!important;gap:12px}
+#ideasView .idea-index-card .idea-card-info strong{font-size:13px;line-height:1.3;-webkit-line-clamp:3}
+#ideasView .idea-index-link{font-size:11px;font-weight:600;color:var(--text);text-decoration:underline;text-underline-offset:3px}
