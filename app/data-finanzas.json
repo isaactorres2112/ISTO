@@ -1,9 +1,9 @@
 {
-  "actualizado": "20/10/2026 08:44",
-  "disponible": 35567,
+  "actualizado": "25/10/2026 20:34",
+  "disponible": 35309.07,
   "gasto_hoy": 0,
-  "gasto_mes": 23810.14,
-  "ingresos_mes": 0.12,
+  "gasto_mes": 25768.07,
+  "ingresos_mes": 1200.12,
   "cuentas": [
     {
       "nombre": "Efectivo",
@@ -13,7 +13,7 @@
     {
       "nombre": "Banorte Nómina",
       "tipo": "Activo · Bancos",
-      "saldo": 4640.46
+      "saldo": 3882.53
     },
     {
       "nombre": "Mercado Pago",
@@ -23,7 +23,7 @@
     {
       "nombre": "CETES Directo",
       "tipo": "Activo · Inversiones",
-      "saldo": 29562.77
+      "saldo": 30062.77
     },
     {
       "nombre": "DAFI · saldo neto",
@@ -37,6 +37,27 @@
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-23",
+      "concepto": "Devolución de viáticos a DAFI",
+      "nombre": "DAFI",
+      "importe": 1457.93,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "Reembolso servicios médicos DAFI",
+      "nombre": "DAFI",
+      "importe": 1200,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-20",
+      "concepto": "Traspaso Banorte a CETES",
+      "nombre": "Traspaso",
+      "importe": 500,
+      "id": ""
+    },
     {
       "fecha": "2026-10-19",
       "concepto": "Uber Eats · viáticos DAFI",
@@ -120,27 +141,6 @@
       "nombre": "Uber Eats",
       "importe": 197.23,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Compra papelería a cargo de DAFI",
-      "nombre": "DAFI",
-      "importe": 241,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Viáticos por comprobar",
-      "nombre": "DAFI",
-      "importe": 3500,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-15",
-      "concepto": "Compra Fligo a cargo de DAFI",
-      "nombre": "DAFI",
-      "importe": 330.4,
-      "id": ""
     }
   ],
   "categorias": [
@@ -150,19 +150,19 @@
     },
     {
       "nombre": "CETES Directo",
-      "importe": 5500
+      "importe": 6000
     },
     {
       "nombre": "Alimentos",
       "importe": 4810.21
     },
     {
-      "nombre": "Regalos",
-      "importe": 2448.14
+      "nombre": "Viáticos por comprobar",
+      "importe": 2581.38
     },
     {
-      "nombre": "Viáticos por comprobar",
-      "importe": 1123.45
+      "nombre": "Regalos",
+      "importe": 2448.14
     }
   ]
 }
