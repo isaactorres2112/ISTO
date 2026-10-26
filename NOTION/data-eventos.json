@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-25T19:33:54-05:00",
+  "ultima_actualizacion": "2026-10-26T00:20:38-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -13,28 +13,6 @@
       "detalles": null
     },
     {
-      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
-      "evento": "Finanzas personales",
-      "fecha": "2026-10-25T13:00:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
-      "evento": "América vs Pachuca",
-      "fecha": "2026-10-25T20:00:00.000-05:00",
-      "fin": "2026-10-25T21:59:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
-      ],
-      "detalles": null
-    },
-    {
       "id": "43601ec1-e57b-83ef-8783-8178f38fdd2f",
       "evento": "Cumple Cristina Rodriguez",
       "fecha": "2026-10-27T08:00:00.000-05:00",
@@ -42,6 +20,17 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "e3a01ec1-e57b-8285-a015-018e0fc4d1d1",
+      "evento": "América vs Tijuana",
+      "fecha": "2026-10-28T22:00:00.000-05:00",
+      "fin": "2026-10-28T23:59:00.000-05:00",
+      "check": false,
+      "grupo": [
+        "Evento"
       ],
       "detalles": null
     },
@@ -126,6 +115,17 @@
       "id": "9ba01ec1-e57b-82a8-95a1-8161f7ea59f1",
       "evento": "Corte de Pelo",
       "fecha": "2026-10-31T12:00:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "83b01ec1-e57b-8349-9f2e-8114eb6d7683",
+      "evento": "Finanzas personales",
+      "fecha": "2026-11-01T13:00:00.000-05:00",
       "fin": null,
       "check": false,
       "grupo": [
