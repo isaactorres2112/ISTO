@@ -452,3 +452,13 @@
 
 /* Ánimo: gráficas mensuales y por círculo más altas y legibles */
 #moodView #moodMonthChart svg,#moodView #moodHistoryChart svg{width:100%;max-height:none!important;min-height:265px}
+
+/* Ideas: presentación tipo Notion */
+.idea-content h1,.idea-content h2,.idea-content h3,.idea-content h4{margin:18px 0 9px;line-height:1.35}
+.idea-content p,.idea-content li{line-height:1.7}
+.idea-content ul{padding-left:23px;margin:8px 0 14px}
+.idea-content .idea-toggle{border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow:hidden}
+.idea-content .idea-toggle>summary{cursor:pointer;padding:12px 14px;font-weight:600}
+.idea-content .idea-toggle-body{padding:3px 14px 13px}
+.idea-content .idea-callout{background:rgba(216,189,122,.09);border-left:3px solid #d8bd7a;padding:12px 15px;border-radius:10px;margin:12px 0}
+.idea-content blockquote{border-left:3px solid var(--line);padding-left:14px;margin:12px 0}
