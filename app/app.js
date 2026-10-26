@@ -131,7 +131,31 @@ function ideaUpdated(x){return x.ultima_edicion||x['Última edición']||x.ultima
 function ideaSafe(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function ideaValidUrl(x){const url=x?.url||x?.notion_url||'';return /^https:\/\/(?:www\.)?(?:notion\.so|notion\.site|app\.notion\.com)\//i.test(url)?url:''}
 function ideaSetImage(el,url){if(!el)return;el.style.backgroundImage=url&&/^https:\/\//i.test(url)?'url('+JSON.stringify(url)+')':''}
-function ideaOpen(x){if(!x)return;$('#ideaModalTitle').textContent=ideaName(x);$('#ideaModalMeta').textContent=[ideaState(x),...ideaTypes(x)].filter(Boolean).join(' · ');ideaSetImage($('#ideaModalImage'),x.image);const link=ideaValidUrl(x);$('#ideaModalContent').innerHTML=(x.content_html||'<p class="muted">Este tema todavía no tiene contenido en Notion.</p>')+(link?'<p class="idea-modal-notion"><a href="'+ideaSafe(link)+'" target="_blank" rel="noopener noreferrer">Editar en Notion ↗</a></p>':'');$('#ideaModal').classList.remove('hidden');document.body.classList.add('modal-open')}
+
+function ideaFormatNotion(content){
+ if(!content)return '<p class="muted">Sin contenido en Notion.</p>';
+ const wrapper=document.createElement('div');wrapper.innerHTML=content;
+ const pre=wrapper.querySelector('.idea-notion-text');if(!pre)return content;
+ const raw=pre.textContent||'';let out='',paragraph=[],list=false,awaitSummary=false;
+ const inline=s=>ideaSafe(s).replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g,'<strong>$1</strong>').replace(/&lt;i&gt;(.*?)&lt;\/i&gt;/g,'<em>$1</em>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+ const flush=()=>{if(paragraph.length){out+='<p>'+inline(paragraph.join(' '))+'</p>';paragraph=[]}};
+ const closeList=()=>{if(list){out+='</ul>';list=false}};
+ for(const line of raw.split(/\r?\n/)){const t=line.trim();
+ if(!t){flush();closeList();continue}
+ if(/^<toggle\b/.test(t)){flush();closeList();out+='<details class="idea-toggle"><summary>';awaitSummary=true;continue}
+ if(t==='</toggle>'){flush();closeList();if(awaitSummary){out+='Ver contenido</summary>';awaitSummary=false}out+='</div></details>';continue}
+ if(awaitSummary){out+=inline(t)+'</summary><div class="idea-toggle-body">';awaitSummary=false;continue}
+ if(/^<callout\b/.test(t)){flush();closeList();out+='<aside class="idea-callout">';continue}
+ if(t==='</callout>'){flush();closeList();out+='</aside>';continue}
+ if(/^#{1,6}\s/.test(t)){flush();closeList();const n=Math.min(5,t.match(/^#+/)[0].length);out+='<h'+n+'>'+inline(t.replace(/^#{1,6}\s+/,''))+'</h'+n+'>';continue}
+ if(/^[-*]\s+/.test(t)){flush();if(!list){out+='<ul>';list=true}out+='<li>'+inline(t.slice(2))+'</li>';continue}
+ if(/^>\s?/.test(t)){flush();closeList();out+='<blockquote>'+inline(t.replace(/^>\s?/,''))+'</blockquote>';continue}
+ paragraph.push(t);
+ }
+ flush();closeList();return out;
+}
+
+function ideaOpen(x){if(!x)return;$('#ideaModalTitle').textContent=ideaName(x);$('#ideaModalMeta').textContent=[ideaState(x),...ideaTypes(x)].filter(Boolean).join(' · ');ideaSetImage($('#ideaModalImage'),x.image);const link=ideaValidUrl(x);$('#ideaModalContent').innerHTML=ideaFormatNotion(x.content_html)+(link?'<p class="idea-modal-notion"><a href="'+ideaSafe(link)+'" target="_blank" rel="noopener noreferrer">Editar en Notion ↗</a></p>':'');$('#ideaModal').classList.remove('hidden');document.body.classList.add('modal-open')}
 function renderIdeas(items){ideaData=items;const sorted=items.slice().sort((a,b)=>{const da=Date.parse(ideaUpdated(a)),db=Date.parse(ideaUpdated(b));return (Number.isFinite(da)?da:Infinity)-(Number.isFinite(db)?db:Infinity)});const seed=dayIndex%Math.max(1,sorted.length),daily=sorted.length?sorted[seed]:null;if($('#homeIdeaTitle'))$('#homeIdeaTitle').textContent=daily?ideaName(daily):'Sin temas';ideaSetImage($('#homeIdeaImage'),daily?.image);const homeNotion=$('#homeIdeaNotion'),url=ideaValidUrl(daily);for(const link of [homeNotion])if(link){link.classList.toggle('hidden',!url);if(url)link.href=url;else link.removeAttribute('href');link.onclick=e=>e.stopPropagation()}const types=[...new Set(items.flatMap(ideaTypes))].sort((a,b)=>a.localeCompare(b,'es'));const select=$('#ideaTypeFilter');if(ideaFilterType&&!types.includes(ideaFilterType))ideaFilterType='';select.innerHTML='<option value="">Todos los temas</option>'+types.map(t=>'<option value="'+ideaSafe(t)+'">'+ideaSafe(t)+'</option>').join('');select.value=ideaFilterType;
 const draw=()=>{const visible=sorted.filter(x=>ideaFilterState==='all'||(ideaFilterState==='desarrollo'?/desarrollo/i.test(ideaState(x)):/revis/i.test(ideaState(x)))).filter(x=>!ideaFilterType||ideaTypes(x).includes(ideaFilterType)).filter(x=>(ideaName(x)+' '+ideaTypes(x).join(' ')).toLocaleLowerCase('es').includes(ideaFilterSearch.toLocaleLowerCase('es')));$('#ideaVisibleCount').textContent=visible.length+' ideas';$('#ideaGrid').innerHTML=visible.map((x,i)=>'<button type="button" class="glass idea-card" data-idea="'+i+'">'+'<span class="idea-card-info"><strong>'+ideaSafe(ideaName(x))+'</strong><small>'+ideaSafe(ideaTypes(x).join(' · ')||'Sin clasificar')+'</small></span></button>').join('')||'<p class="muted idea-no-results">No hay ideas que coincidan con los filtros.</p>';$('#ideaGrid').querySelectorAll('[data-idea]').forEach(el=>el.onclick=()=>ideaOpen(visible[Number(el.dataset.idea)]));document.querySelectorAll('[data-idea-filter]').forEach(el=>{const active=el.dataset.ideaFilter===ideaFilterState;el.classList.toggle('active-filter',active);el.setAttribute('aria-pressed',String(active))})};draw();$('#ideaSearch').value=ideaFilterSearch;$('#ideaSearch').oninput=e=>{ideaFilterSearch=e.target.value;draw()};select.onchange=e=>{ideaFilterType=e.target.value;draw()};document.querySelectorAll('[data-idea-filter]').forEach(el=>el.onclick=()=>{ideaFilterState=el.dataset.ideaFilter;draw()});if($('#homeIdeaCard'))$('#homeIdeaCard').onclick=()=>ideaOpen(daily);document.querySelectorAll('[data-close-idea]').forEach(el=>el.onclick=()=>{$('#ideaModal').classList.add('hidden');document.body.classList.remove('modal-open')})}
 async function loadIdeas(){try{const r=await fetch('https://raw.githubusercontent.com/isaactorres2112/ISTO/main/NOTION/data-ideas.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('Error cargando ideas');const d=await r.json();renderIdeas(d.items||d.ideas||[]);stamp(d.ultima_actualizacion||d.actualizado)}catch(e){console.error('Ideas:',e);$('#ideaGrid').innerHTML='<p class="muted">Esperando sincronización con Notion</p>'}}
