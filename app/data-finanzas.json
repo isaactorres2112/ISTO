@@ -1,8 +1,8 @@
 {
-  "actualizado": "25/10/2026 20:39",
+  "actualizado": "25/10/2026 20:49",
   "disponible": 35109.07,
-  "gasto_hoy": 0,
-  "gasto_mes": 25968.07,
+  "gasto_hoy": 356.83,
+  "gasto_mes": 29507.26,
   "ingresos_mes": 1200.12,
   "cuentas": [
     {
@@ -33,15 +33,92 @@
     {
       "nombre": "TC Mercado Libre",
       "tipo": "Pasivo · Tarjeta de crédito",
-      "saldo": 7608.28
+      "saldo": 12219.86
     }
   ],
   "movimientos": [
+    {
+      "fecha": "2026-10-25",
+      "concepto": "HBO suscripción",
+      "nombre": "HBO",
+      "importe": 119,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-25",
+      "concepto": "Rappi despensa",
+      "nombre": "Rappi",
+      "importe": 237.83,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-24",
+      "concepto": "Uber Eats despensa",
+      "nombre": "Uber Eats",
+      "importe": 306.08,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-24",
+      "concepto": "Rappi despensa",
+      "nombre": "Rappi",
+      "importe": 446.48,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-23",
+      "concepto": "Uber Eats alimentos",
+      "nombre": "Uber Eats",
+      "importe": 169.06,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-23",
+      "concepto": "Uber transporte",
+      "nombre": "Uber",
+      "importe": 39.94,
+      "id": ""
+    },
     {
       "fecha": "2026-10-23",
       "concepto": "Devolución de viáticos a DAFI",
       "nombre": "DAFI",
       "importe": 1457.93,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "Uber Eats alimentos",
+      "nombre": "Uber Eats",
+      "importe": 173.81,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "Marilu · a cargo de DAFI",
+      "nombre": "Marilu",
+      "importe": 480,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "Farmacia YZA medicamentos",
+      "nombre": "Farmacia YZA",
+      "importe": 237.18,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "Top Mart · a cargo de DAFI",
+      "nombre": "Top Mart",
+      "importe": 262.39,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-22",
+      "concepto": "PalChow · a cargo de DAFI",
+      "nombre": "PalChow",
+      "importe": 330,
       "id": ""
     },
     {
@@ -53,93 +130,16 @@
     },
     {
       "fecha": "2026-10-21",
-      "concepto": "Regalo a Paty",
-      "nombre": "Paty",
-      "importe": 200,
+      "concepto": "Carls Jr alimentos · viáticos DAFI",
+      "nombre": "Carls Jr",
+      "importe": 374.9,
       "id": ""
     },
     {
-      "fecha": "2026-10-20",
-      "concepto": "Traspaso Banorte a CETES",
-      "nombre": "Traspaso",
-      "importe": 500,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-19",
-      "concepto": "Uber Eats · viáticos DAFI",
-      "nombre": "Uber Eats",
-      "importe": 381.51,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-19",
-      "concepto": "Taxis amarillos · viáticos DAFI",
-      "nombre": "Taxis amarillos",
-      "importe": 340,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-19",
-      "concepto": "Alimentos · viáticos DAFI",
-      "nombre": "Alimentos",
-      "importe": 352,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-19",
-      "concepto": "Uber transporte · viáticos DAFI",
-      "nombre": "Uber",
-      "importe": 49.94,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-19",
-      "concepto": "Café aeropuerto",
-      "nombre": "Café aeropuerto",
-      "importe": 115,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-18",
-      "concepto": "Alimentos Rappi",
-      "nombre": "Rappi",
-      "importe": 200.5,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-18",
-      "concepto": "Compra de abarrotes",
-      "nombre": "Tienda de abarrotes",
-      "importe": 63,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Alimentos Uber Eats",
-      "nombre": "Uber Eats",
-      "importe": 217.76,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Comida empleados a cargo de DAFI",
-      "nombre": "DAFI",
-      "importe": 4854,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Farmacia del Ahorro gasto personal",
-      "nombre": "Farmacia del Ahorro",
-      "importe": 114,
-      "id": ""
-    },
-    {
-      "fecha": "2026-10-17",
-      "concepto": "Uber transporte",
-      "nombre": "Uber",
-      "importe": 39.95,
+      "fecha": "2026-10-21",
+      "concepto": "CityTaxy transporte · viáticos DAFI",
+      "nombre": "CityTaxy",
+      "importe": 150,
       "id": ""
     }
   ],
@@ -149,20 +149,20 @@
       "importe": 7500
     },
     {
+      "nombre": "Alimentos",
+      "importe": 6715.47
+    },
+    {
       "nombre": "CETES Directo",
       "importe": 6000
     },
     {
-      "nombre": "Alimentos",
-      "importe": 4810.21
+      "nombre": "Viáticos por comprobar",
+      "importe": 3819.19
     },
     {
       "nombre": "Regalos",
       "importe": 2648.14
-    },
-    {
-      "nombre": "Viáticos por comprobar",
-      "importe": 2581.38
     }
   ]
 }
