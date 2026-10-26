@@ -1,8 +1,8 @@
 {
-  "actualizado": "25/10/2026 20:34",
-  "disponible": 35309.07,
+  "actualizado": "25/10/2026 20:39",
+  "disponible": 35109.07,
   "gasto_hoy": 0,
-  "gasto_mes": 25768.07,
+  "gasto_mes": 25968.07,
   "ingresos_mes": 1200.12,
   "cuentas": [
     {
@@ -18,7 +18,7 @@
     {
       "nombre": "Mercado Pago",
       "tipo": "Activo · Bancos",
-      "saldo": 734.77
+      "saldo": 534.77
     },
     {
       "nombre": "CETES Directo",
@@ -49,6 +49,13 @@
       "concepto": "Reembolso servicios médicos DAFI",
       "nombre": "DAFI",
       "importe": 1200,
+      "id": ""
+    },
+    {
+      "fecha": "2026-10-21",
+      "concepto": "Regalo a Paty",
+      "nombre": "Paty",
+      "importe": 200,
       "id": ""
     },
     {
@@ -134,13 +141,6 @@
       "nombre": "Uber",
       "importe": 39.95,
       "id": ""
-    },
-    {
-      "fecha": "2026-10-16",
-      "concepto": "Alimentos Uber Eats",
-      "nombre": "Uber Eats",
-      "importe": 197.23,
-      "id": ""
     }
   ],
   "categorias": [
@@ -157,12 +157,12 @@
       "importe": 4810.21
     },
     {
-      "nombre": "Viáticos por comprobar",
-      "importe": 2581.38
+      "nombre": "Regalos",
+      "importe": 2648.14
     },
     {
-      "nombre": "Regalos",
-      "importe": 2448.14
+      "nombre": "Viáticos por comprobar",
+      "importe": 2581.38
     }
   ]
 }
