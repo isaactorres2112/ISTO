@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-26T15:53:00-06:00",
+  "ultima_actualizacion": "2026-10-26T19:15:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -36,7 +36,7 @@
     {
       "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
       "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-19",
+      "trabajo": "2026-10-27",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -47,7 +47,7 @@
       "trabajo": "2026-10-26",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3ca01ec1-e57b-80b4-b325-c70b1c912d2e",
@@ -108,8 +108,8 @@
     {
       "id": "3ca01ec1-e57b-8099-999c-c707b29106a7",
       "tarea": "Compras DAFI",
-      "trabajo": "2026-10-22",
-      "trabajo_fin": "2026-10-23",
+      "trabajo": "2026-10-28",
+      "trabajo_fin": "2026-10-29",
       "fecha_limite": "2026-10-30",
       "check": false
     },
@@ -244,7 +244,7 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-26",
+      "trabajo": "2026-10-27",
       "trabajo_fin": null,
       "fecha_limite": "2026-10-30",
       "check": false
