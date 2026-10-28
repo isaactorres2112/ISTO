@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-28T13:46:00-06:00",
+  "ultima_actualizacion": "2026-10-28T17:55:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -204,7 +204,7 @@
     {
       "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
       "tarea": "Cobranza",
-      "trabajo": "2026-10-28",
+      "trabajo": "2026-10-29",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -244,7 +244,7 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-28",
+      "trabajo": "2026-10-29",
       "trabajo_fin": null,
       "fecha_limite": "2026-10-30",
       "check": false
