@@ -23,19 +23,19 @@
     "Tocarse": 6,
     "Animo": 7
   },
-  "ultima_actualizacion": "2026-10-28T02:07:00-06:00",
+  "ultima_actualizacion": "2026-10-28T09:08:00-06:00",
   "ultimo_dia_evaluado": "2026-10-28",
   "hoy": {
     "fecha": "2026-10-28",
-    "cumplidos": 3,
+    "cumplidos": 5,
     "total": 10,
-    "porcentaje": 30,
+    "porcentaje": 50,
     "habitos": {
       "Dormir": false,
-      "Salud": false,
+      "Salud": true,
       "Ejercicio": false,
       "Orar": false,
-      "Ahorrar": false,
+      "Ahorrar": true,
       "Leer": false,
       "Agua": false,
       "Uñas": true,
@@ -44,13 +44,13 @@
     }
   },
   "global": {
-    "cumplimiento": 51.0,
-    "cumplidos": 196,
+    "cumplimiento": 51.2,
+    "cumplidos": 198,
     "posibles": 336,
     "dias_registrados": 44,
     "habitos": {
       "Dormir": 43.2,
-      "Salud": 81.8,
+      "Salud": 84.1,
       "Ejercicio": 4.8,
       "Orar": 3.7,
       "Ahorrar": 100,
@@ -67,7 +67,7 @@
         "meta_semanal": 7
       },
       "Salud": {
-        "realizadas": 36,
+        "realizadas": 37,
         "esperadas": 44,
         "meta_semanal": 7
       },
@@ -82,7 +82,7 @@
         "meta_semanal": 4
       },
       "Ahorrar": {
-        "realizadas": 24,
+        "realizadas": 25,
         "esperadas": 7,
         "meta_semanal": 1
       },
@@ -120,9 +120,9 @@
       "cambio": -9.6
     },
     "Salud": {
-      "actual": 66.7,
+      "actual": 100.0,
       "anterior": 85.7,
-      "cambio": -19.0
+      "cambio": 14.3
     },
     "Ejercicio": {
       "actual": 33.3,
@@ -135,9 +135,9 @@
       "cambio": 0.0
     },
     "Ahorrar": {
-      "actual": 66.7,
+      "actual": 100.0,
       "anterior": 57.1,
-      "cambio": 9.6
+      "cambio": 42.9
     },
     "Leer": {
       "actual": 0.0,
@@ -901,17 +901,17 @@
       "fecha": "2026-10-28",
       "habitos": {
         "Dormir": false,
-        "Salud": false,
+        "Salud": true,
         "Ejercicio": false,
         "Orar": false,
-        "Ahorrar": false,
+        "Ahorrar": true,
         "Leer": false,
         "Agua": false,
         "Uñas": true,
         "Tocarse": true,
         "Animo": true
       },
-      "cumplidos": 3,
+      "cumplidos": 5,
       "total": 10
     }
   ],
