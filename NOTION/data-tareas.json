@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-29T05:21:00-06:00",
+  "ultima_actualizacion": "2026-10-29T11:29:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -111,7 +111,7 @@
       "trabajo": "2026-10-28",
       "trabajo_fin": "2026-10-29",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3ca01ec1-e57b-8011-b9ad-f690f502c113",
