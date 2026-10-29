@@ -6,10 +6,10 @@
     "Trabajo",
     "Amistad"
   ],
-  "ultima_actualizacion": "2026-10-28T22:52:00-06:00",
+  "ultima_actualizacion": "2026-10-29T05:20:00-06:00",
   "global": {
-    "bienestar": 64.5,
-    "dias_registrados": 44,
+    "bienestar": 63.6,
+    "dias_registrados": 45,
     "circulos": {
       "Yo": 65.7,
       "Pareja": 66.1,
@@ -452,6 +452,11 @@
     },
     {
       "fecha": "2026-10-28",
+      "bienestar": 20.0,
+      "circulos": []
+    },
+    {
+      "fecha": "2026-10-29",
       "bienestar": 20.0,
       "circulos": []
     }
