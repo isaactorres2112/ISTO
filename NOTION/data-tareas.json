@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-29T19:49:00-06:00",
+  "ultima_actualizacion": "2026-10-30T02:15:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -84,8 +84,8 @@
     {
       "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
       "tarea": "Inventarios",
-      "trabajo": "2026-10-29",
-      "trabajo_fin": "2026-10-29",
+      "trabajo": "2026-10-30",
+      "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
     },
