@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-30T09:34:35-05:00",
+  "ultima_actualizacion": "2026-10-30T14:43:09-05:00",
   "items": [
     {
       "id": "37201ec1-e57b-83e7-b1fe-01913eaab698",
@@ -9,28 +9,6 @@
       "check": false,
       "grupo": [
         "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "eda01ec1-e57b-8316-9c32-0162c743f674",
-      "evento": "Viernes de valores",
-      "fecha": "2026-10-30T07:30:00.000-05:00",
-      "fin": null,
-      "check": false,
-      "grupo": [
-        "Recordatorio"
-      ],
-      "detalles": null
-    },
-    {
-      "id": "3f601ec1-e57b-8059-8563-d93a1be26519",
-      "evento": "Evento de Disfraces",
-      "fecha": "2026-10-30T14:00:00.000-05:00",
-      "fin": "2026-10-30T17:00:00.000-05:00",
-      "check": false,
-      "grupo": [
-        "Evento"
       ],
       "detalles": null
     },
@@ -163,6 +141,17 @@
       "check": false,
       "grupo": [
         "Cumpleaños"
+      ],
+      "detalles": null
+    },
+    {
+      "id": "eda01ec1-e57b-8316-9c32-0162c743f674",
+      "evento": "Viernes de valores",
+      "fecha": "2026-11-13T07:30:00.000-05:00",
+      "fin": null,
+      "check": false,
+      "grupo": [
+        "Recordatorio"
       ],
       "detalles": null
     },
