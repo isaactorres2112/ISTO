@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-30T09:11:00-06:00",
+  "ultima_actualizacion": "2026-10-30T13:56:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -87,7 +87,7 @@
       "trabajo": "2026-10-30",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3ca01ec1-e57b-8000-9b1d-d6fd7321c63f",
@@ -207,7 +207,7 @@
       "trabajo": "2026-10-30",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3c801ec1-e57b-80eb-ab18-c60b2a287bac",
@@ -231,7 +231,7 @@
       "trabajo": "2026-10-30",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
-      "check": false
+      "check": true
     },
     {
       "id": "3c701ec1-e57b-800a-a4c1-c3f2d1bb7998",
