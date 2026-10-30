@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-10-29T15:57:00-06:00",
+  "ultima_actualizacion": "2026-10-29T19:49:00-06:00",
   "items": [
     {
       "id": "40501ec1-e57b-806d-afa7-f3791ec94982",
@@ -36,9 +36,9 @@
     {
       "id": "3ca01ec1-e57b-801a-a281-f0e840b2bd42",
       "tarea": "Eventos DAFI",
-      "trabajo": "2026-10-28",
-      "trabajo_fin": "2026-10-30",
-      "fecha_limite": "2026-10-30",
+      "trabajo": "2026-11-09",
+      "trabajo_fin": "2026-11-27",
+      "fecha_limite": "2026-11-27",
       "check": false
     },
     {
@@ -84,7 +84,7 @@
     {
       "id": "3ca01ec1-e57b-8061-a67c-ff53024027ef",
       "tarea": "Inventarios",
-      "trabajo": "2026-10-28",
+      "trabajo": "2026-10-29",
       "trabajo_fin": "2026-10-29",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -156,17 +156,17 @@
     {
       "id": "3ca01ec1-e57b-8033-a40f-dfd7c32da014",
       "tarea": "Revisión contable",
-      "trabajo": "2026-10-13",
-      "trabajo_fin": "2026-10-15",
-      "fecha_limite": "2026-10-15",
+      "trabajo": "2026-11-11",
+      "trabajo_fin": "2026-11-12",
+      "fecha_limite": "2026-11-13",
       "check": false
     },
     {
       "id": "3ca01ec1-e57b-80e1-b320-f442c98ff873",
       "tarea": "Reunión cuatrimestral",
-      "trabajo": "2026-10-08",
-      "trabajo_fin": "2026-10-14",
-      "fecha_limite": "2026-10-15",
+      "trabajo": "2026-11-11",
+      "trabajo_fin": "2026-11-12",
+      "fecha_limite": "2026-11-13",
       "check": false
     },
     {
@@ -204,7 +204,7 @@
     {
       "id": "3c801ec1-e57b-80e7-b54f-f061080cb97f",
       "tarea": "Cobranza",
-      "trabajo": "2026-10-29",
+      "trabajo": "2026-10-30",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -228,7 +228,7 @@
     {
       "id": "3c801ec1-e57b-8097-a284-e428d293ccd8",
       "tarea": "Presupuesto FIGLO",
-      "trabajo": "2026-10-28",
+      "trabajo": "2026-10-30",
       "trabajo_fin": "2026-10-30",
       "fecha_limite": "2026-10-30",
       "check": false
@@ -244,7 +244,7 @@
     {
       "id": "3c701ec1-e57b-808d-8988-fb0617d422e6",
       "tarea": "Tareas Subgerente",
-      "trabajo": "2026-10-29",
+      "trabajo": "2026-10-30",
       "trabajo_fin": null,
       "fecha_limite": "2026-10-30",
       "check": false
