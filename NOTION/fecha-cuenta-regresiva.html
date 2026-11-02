@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISTO · Fecha y cuenta regresiva</title>
+  <title>ISTO · Fecha y días transcurridos</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -22,17 +22,23 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; width: 100%; height: 100%; background: var(--bg); }
     body {
-      min-height: 220px;
-      display: grid;
-      place-items: center;
+      min-height: 0;
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
     }
     .widget {
-      width: min(100%, 900px);
-      padding: 24px 28px;
+      width: 100%;
+      max-width: none;
+      padding: 14px 20px;
       text-align: center;
     }
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 16px;
+    }
+    .date-panel, .countdown { min-width: 0; }
     .weekday {
       margin: 0 0 7px;
       font-size: clamp(12px, 2vw, 15px);
@@ -42,15 +48,15 @@
     }
     .date {
       margin: 0;
-      font-size: clamp(22px, 4.8vw, 40px);
+      font-size: clamp(20px, 3.6vw, 34px);
       line-height: 1.05;
       font-weight: 720;
       letter-spacing: -0.045em;
     }
     .year {
       display: inline-block;
-      margin-top: 12px;
-      padding-top: 10px;
+      margin-top: 7px;
+      padding-top: 7px;
       min-width: 72px;
       border-top: 1px solid var(--line);
       font-size: clamp(12px, 2vw, 15px);
@@ -59,13 +65,13 @@
       color: var(--muted);
     }
     .countdown {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
+      margin: 0;
+      padding: 8px 0 8px 16px;
+      border-left: 1px solid var(--line);
     }
     .countdown-number {
       margin: 0;
-      font-size: clamp(24px, 5vw, 42px);
+      font-size: clamp(30px, 5vw, 44px);
       line-height: 1;
       font-weight: 720;
       letter-spacing: -0.035em;
@@ -79,15 +85,15 @@
       text-transform: uppercase;
     }
     .stoic {
-      margin-top: 20px;
-      padding-top: 16px;
+      margin-top: 12px;
+      padding-top: 12px;
       border-top: 1px solid var(--line);
     }
     .quote {
       margin: 0 auto;
       max-width: 680px;
-      font-size: clamp(18px, 2.8vw, 22px);
-      line-height: 1.55;
+      font-size: clamp(14px, 2vw, 18px);
+      line-height: 1.4;
       font-style: italic;
     }
     .author {
@@ -98,18 +104,28 @@
       color: var(--muted);
       text-transform: uppercase;
     }
+    @media (max-width: 420px) {
+      .widget { padding: 12px 10px; }
+      .top { gap: 8px; }
+      .countdown { padding-left: 8px; }
+      .weekday { letter-spacing: .1em; }
+      .countdown-label { letter-spacing: .05em; }
+    }
   </style>
 </head>
 <body>
-  <main class="widget" aria-label="Fecha de hoy y cuenta regresiva">
-    <p class="weekday" id="weekday"></p>
-    <h1 class="date" id="date"></h1>
-    <span class="year" id="year"></span>
-
-    <section class="countdown" aria-label="Días restantes al 2 de febrero de 2027">
-      <p class="countdown-number" id="daysLeft"></p>
-      <p class="countdown-label" id="countdownLabel">días para el 2 de febrero de 2027</p>
-    </section>
+  <main class="widget" aria-label="Fecha de hoy y días transcurridos desde el 1 de noviembre de 2026">
+    <div class="top">
+      <div class="date-panel">
+        <p class="weekday" id="weekday"></p>
+        <h1 class="date" id="date"></h1>
+        <span class="year" id="year"></span>
+      </div>
+      <section class="countdown" aria-label="Días transcurridos desde el 1 de noviembre de 2026">
+        <p class="countdown-number" id="daysLeft"></p>
+        <p class="countdown-label" id="countdownLabel">días desde el 1 de noviembre de 2026</p>
+      </section>
+    </div>
 
     <section class="stoic" aria-label="Frase estoica del día">
       <p class="quote" id="quote"></p>
@@ -147,13 +163,13 @@
       year.textContent = String(now.getFullYear());
 
       const todayUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-      const targetUTC = Date.UTC(2027, 1, 2);
-      const remaining = Math.max(0, Math.ceil((targetUTC - todayUTC) / 86400000));
+      const startUTC = Date.UTC(2026, 10, 1);
+      const elapsed = Math.max(0, Math.floor((todayUTC - startUTC) / 86400000));
 
-      daysLeft.textContent = remaining;
-      countdownLabel.textContent = remaining === 1
-        ? 'día para el 2 de febrero de 2027'
-        : 'días para el 2 de febrero de 2027';
+      daysLeft.textContent = elapsed;
+      countdownLabel.textContent = elapsed === 1
+        ? 'día desde el 1 de noviembre de 2026'
+        : 'días desde el 1 de noviembre de 2026';
 
       const startOfYear = new Date(now.getFullYear(), 0, 0);
       const dayOfYear = Math.floor((now - startOfYear) / 86400000);
@@ -161,7 +177,7 @@
       quote.textContent = `“${dailyQuote[0]}”`;
       author.textContent = `— ${dailyQuote[1]}`;
 
-      document.title = `${dayName} ${day} de ${month} · ${remaining} días restantes`;
+      document.title = `${dayName} ${day} de ${month} · ${elapsed} días transcurridos`;
     }
 
     renderWidget();
