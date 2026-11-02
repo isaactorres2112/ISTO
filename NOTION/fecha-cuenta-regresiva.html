@@ -34,11 +34,12 @@
     }
     .top {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, .85fr) minmax(0, 1.5fr);
       align-items: center;
-      gap: 16px;
+      gap: 0;
     }
-    .date-panel, .countdown { min-width: 0; }
+    .date-panel, .countdown, .stoic { min-width: 0; padding: 8px 16px; }
+    .countdown, .stoic { border-left: 1px solid var(--line); }
     .weekday {
       margin: 0 0 7px;
       font-size: clamp(12px, 2vw, 15px);
@@ -64,11 +65,7 @@
       letter-spacing: .16em;
       color: var(--muted);
     }
-    .countdown {
-      margin: 0;
-      padding: 8px 0 8px 16px;
-      border-left: 1px solid var(--line);
-    }
+    .countdown { margin: 0; }
     .countdown-number {
       margin: 0;
       font-size: clamp(30px, 5vw, 44px);
@@ -84,15 +81,11 @@
       color: var(--muted);
       text-transform: uppercase;
     }
-    .stoic {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-    }
+    .stoic { margin: 0; }
     .quote {
       margin: 0 auto;
       max-width: 680px;
-      font-size: clamp(14px, 2vw, 18px);
+      font-size: clamp(13px, 1.65vw, 17px);
       line-height: 1.4;
       font-style: italic;
     }
@@ -104,10 +97,11 @@
       color: var(--muted);
       text-transform: uppercase;
     }
-    @media (max-width: 420px) {
-      .widget { padding: 12px 10px; }
-      .top { gap: 8px; }
-      .countdown { padding-left: 8px; }
+    @media (max-width: 620px) {
+      .widget { padding: 10px 8px; }
+      .top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .date-panel, .countdown, .stoic { padding: 8px; }
+      .stoic { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); padding-top: 12px; }
       .weekday { letter-spacing: .1em; }
       .countdown-label { letter-spacing: .05em; }
     }
@@ -125,12 +119,11 @@
         <p class="countdown-number" id="daysLeft"></p>
         <p class="countdown-label" id="countdownLabel">días desde el 1 de noviembre de 2026</p>
       </section>
+      <section class="stoic" aria-label="Frase estoica del día">
+        <p class="quote" id="quote"></p>
+        <p class="author" id="author"></p>
+      </section>
     </div>
-
-    <section class="stoic" aria-label="Frase estoica del día">
-      <p class="quote" id="quote"></p>
-      <p class="author" id="author"></p>
-    </section>
   </main>
 
   <script>
