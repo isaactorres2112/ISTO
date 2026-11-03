@@ -34,7 +34,7 @@
     }
     .top {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, .85fr) minmax(0, 1.5fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, .8fr) minmax(0, 1.65fr);
       align-items: center;
       gap: 0;
     }
@@ -49,7 +49,7 @@
     }
     .date {
       margin: 0;
-      font-size: clamp(20px, 3.6vw, 34px);
+      font-size: clamp(24px, 3.3vw, 34px);
       line-height: 1.05;
       font-weight: 720;
       letter-spacing: -0.045em;
@@ -68,7 +68,7 @@
     .countdown { margin: 0; }
     .countdown-number {
       margin: 0;
-      font-size: clamp(30px, 5vw, 44px);
+      font-size: clamp(34px, 4.3vw, 44px);
       line-height: 1;
       font-weight: 720;
       letter-spacing: -0.035em;
@@ -85,13 +85,13 @@
     .quote {
       margin: 0 auto;
       max-width: 680px;
-      font-size: clamp(13px, 1.65vw, 17px);
-      line-height: 1.4;
+      font-size: clamp(18px, 2.1vw, 23px);
+      line-height: 1.32;
       font-style: italic;
     }
     .author {
       margin: 7px 0 0;
-      font-size: clamp(10px, 1.6vw, 12px);
+      font-size: clamp(12px, 1.5vw, 14px);
       font-weight: 650;
       letter-spacing: .12em;
       color: var(--muted);
@@ -103,21 +103,23 @@
       .date-panel, .countdown, .stoic { padding: 8px; }
       .stoic { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); padding-top: 12px; }
       .weekday { letter-spacing: .1em; }
+      .quote { font-size: clamp(17px, 4vw, 21px); }
+      .author { font-size: 12px; }
       .countdown-label { letter-spacing: .05em; }
     }
   </style>
 </head>
 <body>
-  <main class="widget" aria-label="Fecha de hoy y días transcurridos desde el 1 de noviembre de 2026">
+  <main class="widget" aria-label="Fecha de hoy y días transcurridos desde el 2 de noviembre de 2026">
     <div class="top">
       <div class="date-panel">
         <p class="weekday" id="weekday"></p>
         <h1 class="date" id="date"></h1>
         <span class="year" id="year"></span>
       </div>
-      <section class="countdown" aria-label="Días transcurridos desde el 1 de noviembre de 2026">
+      <section class="countdown" aria-label="Días transcurridos desde el 2 de noviembre de 2026">
         <p class="countdown-number" id="daysLeft"></p>
-        <p class="countdown-label" id="countdownLabel">días desde el 1 de noviembre de 2026</p>
+        <p class="countdown-label" id="countdownLabel">días desde el 2 de noviembre de 2026</p>
       </section>
       <section class="stoic" aria-label="Frase estoica del día">
         <p class="quote" id="quote"></p>
@@ -156,13 +158,13 @@
       year.textContent = String(now.getFullYear());
 
       const todayUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-      const startUTC = Date.UTC(2026, 10, 1);
-      const elapsed = Math.max(0, Math.floor((todayUTC - startUTC) / 86400000));
+      const startUTC = Date.UTC(2026, 10, 2);
+      const elapsed = Math.max(0, Math.floor((todayUTC - startUTC) / 86400000) + 1);
 
       daysLeft.textContent = elapsed;
       countdownLabel.textContent = elapsed === 1
-        ? 'día desde el 1 de noviembre de 2026'
-        : 'días desde el 1 de noviembre de 2026';
+        ? 'día desde el 2 de noviembre de 2026'
+        : 'días desde el 2 de noviembre de 2026';
 
       const startOfYear = new Date(now.getFullYear(), 0, 0);
       const dayOfYear = Math.floor((now - startOfYear) / 86400000);
