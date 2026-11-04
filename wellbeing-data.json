@@ -1,4 +1,24 @@
 {
-  "updatedAt": null,
-  "weeks": []
+  "updatedAt": "2026-11-04T05:58:52.362Z",
+  "weeks": [
+    {
+      "label": "S1",
+      "start": "2026-11-02",
+      "daysElapsed": 2,
+      "values": {
+        "Yo": 70,
+        "Pareja": 70,
+        "Trabajo": 70,
+        "Familia": 72,
+        "Amigos": null
+      },
+      "counts": {
+        "Yo": 2,
+        "Pareja": 2,
+        "Familia": 1,
+        "Amigos": 0,
+        "Trabajo": 2
+      }
+    }
+  ]
 }
