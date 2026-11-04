@@ -1,4 +1,23 @@
 {
-  "updatedAt": null,
-  "weeks": []
+  "updatedAt": "2026-11-04T05:55:04.710Z",
+  "weeks": [
+    {
+      "label": "S1",
+      "start": "2026-11-02",
+      "daysElapsed": 2,
+      "values": {
+        "Dormir": 100,
+        "Salud": 100,
+        "Ejercicio": 50,
+        "Orar": 0,
+        "Ahorrar": 50,
+        "Leer": 0,
+        "Agua": 100,
+        "Uñas": 100,
+        "Tocarse": 50,
+        "Bienestar": 100,
+        "Promedio general": 65
+      }
+    }
+  ]
 }
