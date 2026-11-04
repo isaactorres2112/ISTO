@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T05:58:52.362Z",
+  "updatedAt": "2026-11-04T06:02:01.463Z",
   "weeks": [
     {
       "label": "S1",
@@ -10,14 +10,16 @@
         "Pareja": 70,
         "Trabajo": 70,
         "Familia": 72,
-        "Amigos": null
+        "Amigos": null,
+        "Promedio general": 70
       },
       "counts": {
         "Yo": 2,
         "Pareja": 2,
         "Familia": 1,
         "Amigos": 0,
-        "Trabajo": 2
+        "Trabajo": 2,
+        "Promedio general": 2
       }
     }
   ]
