@@ -1,4 +1,4 @@
-const CIRCLES=['Yo','Pareja','Familia','Amigos','Trabajo'];
+const CIRCLES=['Promedio general','Yo','Pareja','Familia','Amigos','Trabajo'];
 const select=document.querySelector('#circle'),svg=document.querySelector('#chart'),best=document.querySelector('#best'),status=document.querySelector('#status'),refresh=document.querySelector('#refresh');
 let snapshot={weeks:[],updatedAt:null};
 CIRCLES.forEach(name=>select.add(new Option(name,name)));
