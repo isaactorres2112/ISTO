@@ -31,18 +31,21 @@ const start=dateOnly(sorted[0]),last=dateOnly(monday(today)),weeks=[],wellbeingW
 for(let d=new Date(start),index=1;d<=last;d.setUTCDate(d.getUTCDate()+7),index++){
  const key=d.toISOString().slice(0,10),days=buckets.get(key)||new Map();
  const elapsed=Math.min(7,Math.max(0,Math.round((dateOnly(today)-d)/86400000)));
- const values={},wellbeingValues={},sampleCounts={};
+ const values={},wellbeingValues={},sampleCounts={},allWellbeing=[];
  for(const [date,p] of days){
   const names=(p['Círculos']?.multi_select||[]).map(x=>x.name);
   const scores=wellbeingFields.map(h=>p[h]?.number).filter(v=>Number.isFinite(v)&&v>=1&&v<=5);
   if(!scores.length)continue;
   const dailyPct=scores.reduce((a,b)=>a+b,0)/scores.length/5*100;
+  allWellbeing.push(dailyPct);
   for(const name of circles)if(names.includes(name)){
    if(!wellbeingValues[name])wellbeingValues[name]=[];
    wellbeingValues[name].push(dailyPct);
   }
  }
  for(const name of circles){const a=wellbeingValues[name]||[];sampleCounts[name]=a.length;wellbeingValues[name]=a.length?Math.round(a.reduce((s,v)=>s+v,0)/a.length):null;}
+ wellbeingValues['Promedio general']=allWellbeing.length?Math.round(allWellbeing.reduce((s,v)=>s+v,0)/allWellbeing.length):null;
+ sampleCounts['Promedio general']=allWellbeing.length;
  wellbeingWeeks.push({label:'S'+index,start:key,daysElapsed:elapsed,values:wellbeingValues,counts:sampleCounts});
  for(const h of habits){const successes=[...days.values()].filter(p=>p[h]?.checkbox===true).length;values[h]=elapsed?Math.round(100*successes/elapsed):null}
  values['Promedio general']=elapsed?Math.round(habits.reduce((s,h)=>s+values[h],0)/habits.length):null;
