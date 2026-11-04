@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seguimiento de hábitos</title><link rel="stylesheet" href="./style.css"></head>
+<body><main class="widget">
+<header><div class="brand"><span class="brand-icon">▥</span><div><h1>Seguimiento de hábitos</h1><p>Cumplimiento semanal</p></div></div><button id="refresh" type="button" title="Consultar el último archivo sincronizado">↻ Actualizar</button></header>
+<label class="sr-only" for="habit">Seleccionar hábito</label><select id="habit"></select>
+<div class="chart-area"><svg id="chart" viewBox="0 0 660 220" role="img" aria-label="Porcentajes de cumplimiento por semana"></svg></div>
+<div class="best"><span>🏆 &nbsp; Mejor semana</span><strong id="best">Sin datos</strong></div>
+<footer><span id="status">Esperando primera sincronización</span><span>Meta: 7 días · Hoy excluido</span></footer>
+</main><script src="./script.js"></script></body></html>
