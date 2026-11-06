@@ -1,6 +1,8 @@
 name: Actualizar hábitos desde Notion
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *' # 05:00 America/Cancun (UTC-5, sin horario de verano)
 permissions:
   contents: write
 jobs:
