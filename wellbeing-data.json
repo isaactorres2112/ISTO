@@ -1,25 +1,46 @@
 {
-  "updatedAt": "2026-11-08T16:24:59.785Z",
+  "updatedAt": "2026-11-09T20:14:27.127Z",
   "weeks": [
     {
       "label": "S1",
       "start": "2026-11-02",
-      "daysElapsed": 6,
+      "daysElapsed": 7,
       "values": {
-        "Yo": 69,
-        "Pareja": 69,
-        "Trabajo": 69,
+        "Yo": 66,
+        "Pareja": 66,
+        "Trabajo": 66,
         "Familia": 72,
         "Amigos": null,
-        "Promedio general": 67
+        "Promedio general": 66
       },
       "counts": {
-        "Yo": 3,
-        "Pareja": 3,
+        "Yo": 5,
+        "Pareja": 5,
         "Familia": 1,
         "Amigos": 0,
-        "Trabajo": 3,
-        "Promedio general": 6
+        "Trabajo": 5,
+        "Promedio general": 7
+      }
+    },
+    {
+      "label": "S2",
+      "start": "2026-11-09",
+      "daysElapsed": 0,
+      "values": {
+        "Yo": null,
+        "Pareja": null,
+        "Familia": null,
+        "Amigos": null,
+        "Trabajo": null,
+        "Promedio general": null
+      },
+      "counts": {
+        "Yo": 0,
+        "Pareja": 0,
+        "Familia": 0,
+        "Amigos": 0,
+        "Trabajo": 0,
+        "Promedio general": 0
       }
     }
   ]

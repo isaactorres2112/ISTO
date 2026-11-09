@@ -1,22 +1,40 @@
 {
-  "updatedAt": "2026-11-08T16:24:59.785Z",
+  "updatedAt": "2026-11-09T20:14:27.127Z",
   "weeks": [
     {
       "label": "S1",
       "start": "2026-11-02",
-      "daysElapsed": 6,
+      "daysElapsed": 7,
       "values": {
-        "Dormir": 83,
+        "Dormir": 86,
         "Salud": 100,
-        "Ejercicio": 17,
+        "Ejercicio": 14,
         "Orar": 0,
-        "Ahorrar": 67,
+        "Ahorrar": 57,
         "Leer": 0,
-        "Agua": 33,
+        "Agua": 43,
         "Uñas": 100,
-        "Tocarse": 83,
+        "Tocarse": 57,
         "Bienestar": 100,
-        "Promedio general": 58
+        "Promedio general": 56
+      }
+    },
+    {
+      "label": "S2",
+      "start": "2026-11-09",
+      "daysElapsed": 0,
+      "values": {
+        "Dormir": null,
+        "Salud": null,
+        "Ejercicio": null,
+        "Orar": null,
+        "Ahorrar": null,
+        "Leer": null,
+        "Agua": null,
+        "Uñas": null,
+        "Tocarse": null,
+        "Bienestar": null,
+        "Promedio general": null
       }
     }
   ]
