@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T17:25:01.580Z",
+  "updatedAt": "2026-11-14T16:11:50.522Z",
   "weeks": [
     {
       "label": "S1",
@@ -22,19 +22,19 @@
     {
       "label": "S2",
       "start": "2026-11-09",
-      "daysElapsed": 4,
+      "daysElapsed": 5,
       "values": {
         "Dormir": 0,
-        "Salud": 75,
+        "Salud": 60,
         "Ejercicio": 0,
         "Orar": 0,
         "Ahorrar": 0,
         "Leer": 0,
         "Agua": 0,
-        "Uñas": 75,
-        "Tocarse": 75,
+        "Uñas": 80,
+        "Tocarse": 80,
         "Bienestar": 100,
-        "Promedio general": 33
+        "Promedio general": 32
       }
     }
   ]
