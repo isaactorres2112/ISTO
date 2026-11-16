@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T16:40:20.811Z",
+  "updatedAt": "2026-11-16T14:01:30.038Z",
   "weeks": [
     {
       "label": "S1",
@@ -25,22 +25,43 @@
     {
       "label": "S2",
       "start": "2026-11-09",
-      "daysElapsed": 6,
+      "daysElapsed": 7,
       "values": {
-        "Yo": 61,
-        "Pareja": 63,
+        "Yo": 62,
+        "Pareja": 64,
         "Trabajo": 59,
         "Amigos": 64,
         "Familia": 52,
-        "Promedio general": 59
+        "Promedio general": 60
       },
       "counts": {
-        "Yo": 5,
-        "Pareja": 3,
+        "Yo": 6,
+        "Pareja": 4,
         "Familia": 1,
         "Amigos": 1,
         "Trabajo": 6,
-        "Promedio general": 6
+        "Promedio general": 7
+      }
+    },
+    {
+      "label": "S3",
+      "start": "2026-11-16",
+      "daysElapsed": 0,
+      "values": {
+        "Yo": null,
+        "Pareja": null,
+        "Familia": null,
+        "Amigos": null,
+        "Trabajo": null,
+        "Promedio general": null
+      },
+      "counts": {
+        "Yo": 0,
+        "Pareja": 0,
+        "Familia": 0,
+        "Amigos": 0,
+        "Trabajo": 0,
+        "Promedio general": 0
       }
     }
   ]
