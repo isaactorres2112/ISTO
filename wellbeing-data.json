@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T18:49:45.256Z",
+  "updatedAt": "2026-11-18T18:28:21.289Z",
   "weeks": [
     {
       "label": "S1",
@@ -46,22 +46,22 @@
     {
       "label": "S3",
       "start": "2026-11-16",
-      "daysElapsed": 1,
+      "daysElapsed": 2,
       "values": {
         "Yo": 68,
         "Pareja": 68,
-        "Familia": 68,
         "Trabajo": 68,
+        "Familia": 68,
         "Amigos": null,
         "Promedio general": 68
       },
       "counts": {
-        "Yo": 1,
-        "Pareja": 1,
+        "Yo": 2,
+        "Pareja": 2,
         "Familia": 1,
         "Amigos": 0,
-        "Trabajo": 1,
-        "Promedio general": 1
+        "Trabajo": 2,
+        "Promedio general": 2
       }
     }
   ]
